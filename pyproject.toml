@@ -1,14 +1,16 @@
 [project]
 name = "consumption-layer"
 version = "0.1.0"
-description = "Add your description here"
+description = "Consumption layer for O2NL"
 readme = "README.md"
-authors = [{ name = "Allan Ou", email = "AOu@tonkintaylor.co.nz" }]
-requires-python = ">=3.12"
-dependencies = [
-    "ipykernel>=6.29.5",
-    "ipython>=8.31.0",
+authors = [
+    { name = "Allan Ou", email = "allan.ou@o2nl.nz" },
+    { name = "Daniel Le Roux", email = "daniel.leroux@o2nl.nz" },
+    { name = "Dave Braendler", email = "dave.braendler@o2nl.nz" },
+    { name = "Jonty Parkin", email = "jonty.parkin@o2nl.nz" },
 ]
+requires-python = ">=3.12"
+dependencies = ["ipykernel>=6.29.5", "ipython>=8.31.0"]
 
 [build-system]
 requires = ["hatchling"]
