@@ -1,0 +1,716 @@
+
+export interface SustainabilityInitiative {
+    theme: string;
+    outcome: string;
+    status: 'Proposed' | 'Pending' | 'Delayed' | 'Implemented';
+    priorty: '5 - Very High' | '4 - High' | '3 - Medium' | '2 - Low' | '1 - Vrey Low';
+    target: string;
+    measure: string;
+    dataType: string;
+    unit: string;
+    parameters: string;
+    reportingApproach: string;
+    processOrOutcome: 'Process' | 'Outcome' | 'Process / Outcome';
+    mustOrShould: 'Must' | 'Should';
+    measurementMethod: string;
+    notes: string;
+    measureOwner: string;
+    evidence: string;
+    targetDate: string;
+}
+
+export const sustainabilityData: SustainabilityInitiative[] = [
+
+    {
+        theme: "Emissions",
+        outcome: "Project manages it's negative impact on the climate from GHG emissions",
+        status: "Implemented",
+        priority: "5- Very High",
+        target: "Contractors representing 75% of spend are monitoring their emissions and reporting initiatives to reduce emissions.",
+        measure: "",
+        dataType: "Spend by contractor; Y/N for up-to-date emissions reporting submissions",
+        unit: "%",
+        parameters: "Monthly",
+        reportingApproach: "On track = actual vs target",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-15" 
+      
+    },
+
+    {
+        theme: "Emissions",
+        outcome: "Project manages it's negative impact on the climate from GHG emissions",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Project pursues a total reduction in WOL GHG emissions of 10%, with a strech target of 20%",
+        measure: "",
+        dataType: "Aggregated measure based on purchases and energy data",
+        unit: "tCO2e / %",
+        parameters: "Milestone activity. End of Baseline; Detailed Design; Construction",
+        reportingApproach: "Visualise as a line / bar (or multiple), with a breakdown table.",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "Base this on Costing and Procurement / Invoicing information",
+        notes: "need to also report core assumptions",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-04-15" 
+      
+    },
+
+    {
+        theme: "Emissions",
+        outcome: "Project manages it's negative impact on the climate from GHG emissions",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Project pursues a total reduction in WOL GHG emissions of 10%, with a strech target of 20%",
+        measure: "",
+        dataType: "Aggregated measure based on purchases and energy data",
+        unit: "tCO2e / %",
+        parameters: "Monthly / quarterly",
+        reportingApproach: "Visual: Line / Bar graph with baseline vs detailed design vs actual emissions.On track = actual vs. baseline difference (since beginning of measurement)",
+        processOrOutcome: "Process / Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "EF for concrete, steel, plastic and general (spend-based), and make a rough estimate of emissions each month",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-05-15" 
+      
+    },
+
+    {
+        theme: "Energy",
+        outcome: "Operational GHG emissions are reduced to near zero",
+        status: "Proposed",
+        priority: "4- High",
+        target: "A +20% reduction in operational energy is achieved",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "",
+        notes: "Indicator unconfirmed",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-04-19" 
+      
+    },
+
+    {
+        theme: "Energy",
+        outcome: "Reduce energy/fuel consumption and associated GHG emissions; Delivery supports energy efficiency",
+        status: "Proposed",
+        priority: "4- High",
+        target: "10 energy-saving initiatives are implemented during construction, including selecting local suppliers",
+        measure: "",
+        dataType: "Opportunities Register (sharepoint)",
+        unit: "# / %",
+        parameters: "Monthly",
+        reportingApproach: "On track = 80% of inititaives are 'on track' or 'complete'",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-06-15" 
+      
+    },
+
+    {
+        theme: "Energy",
+        outcome: "Reduce energy/fuel consumption and associated GHG emissions; Delivery supports energy efficiency",
+        status: "Implemented",
+        priority: "4- High",
+        target: "A +20% reduction in energy use during construction is achieved; Including X% reduction in transport emissions to site",
+        measure: "",
+        dataType: "Diesel Petrol Electricity (and hydrogen?) breakdown between on-site / off-site",
+        unit: "Litres / KMs / tCO2e",
+        parameters: "Monthly; Construction vs transport split",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "Set up system to collect information from contractors; and provide visibility within Alliance",
+        notes: "Also possible to estimate from number of trips and locations, etc.",
+        measureOwner: "",
+        evidence: "Invoices, or similar / meter readings",
+        targetDate: "2025-06-15" 
+      
+    },
+
+    {
+        theme: "Energy",
+        outcome: "Reduce energy/fuel consumption and associated GHG emissions; Delivery supports energy efficiency",
+        status: "Proposed",
+        priority: "4- High",
+        target: "X% of materials are locally procured",
+        measure: "",
+        dataType: "Spend broken down by location (spatial element)",
+        unit: "%",
+        parameters: "Monthly",
+        reportingApproach: "On track is >=X%",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-07-15" 
+      
+    },
+
+    {
+        theme: "General",
+        outcome: "Sustainability is integrated into project management",
+        status: "Proposed",
+        priority: "4- High",
+        target: "No target",
+        measure: "",
+        dataType: "Sustainability Opportunities Register",
+        unit: "#",
+        parameters: "Type / Category breakdowns",
+        reportingApproach: "Monthly",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-08-15" 
+      
+    },
+
+    {
+        theme: "Materials",
+        outcome: "Project minimises use of virgin and high-emissions intensity materials in design & construction.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "+10% reduction in embodied carbon across core structural materials",
+        measure: "",
+        dataType: "Material type (categorised) Estimate based on purchases of steel, conrete and asphalt / bitumen Aggregated measure based on purchases and energy data (categorised by type of concrete / source)",
+        unit: "tonnes / m3 / tCO2e",
+        parameters: "Monthly",
+        reportingApproach: "Cumulative line graphs; actual vs. baseline On track = actual vs target",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "Cost estimations / accounting",
+        targetDate: "2025-09-15" 
+      
+    },
+
+    {
+        theme: "Materials",
+        outcome: "Project minimises use of virgin and high-emissions intensity materials in design & construction.",
+        status: "Implemented",
+        priority: "4- High",
+        target: "+10% reduction in embodied carbon across core structural materials",
+        measure: "",
+        dataType: "Material type (multiple categories)",
+        unit: "tCO2e",
+        parameters: "Quarterly / Annual",
+        reportingApproach: "Cumulative line graphs; actual vs. baseline",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-10-15" 
+      
+    },
+
+    {
+        theme: "Materials",
+        outcome: "Project minimises use of virgin and high-emissions intensity materials in design & construction.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "+10% reduction in embodied carbon across core structural materials",
+        measure: "",
+        dataType: "Material type (multiple categories)",
+        unit: "tonnes / m3",
+        parameters: "Monthly",
+        reportingApproach: "Cumulative line graphs; actual vs. baseline",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "Cost estimations / accounting",
+        targetDate: "2025-08-25" 
+      
+    },
+
+    {
+        theme: "Materials",
+        outcome: "Project minimises use of virgin and high-emissions intensity materials in design & construction.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "At least 10 resource efficiency / recovery opportunities are adopted.",
+        measure: "",
+        dataType: "Opportunities Register",
+        unit: "#",
+        parameters: "Monthly",
+        reportingApproach: "On track = 80% of inititaives are on track or complete",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-07-05" 
+      
+    },
+
+    {
+        theme: "Materials",
+        outcome: "Project minimises use of virgin and high-emissions intensity materials in design & construction.",
+        status: "Implemented",
+        priority: "4- High",
+        target: "At least three opportunities relating to Operations & Maintenance materials have be investigated.",
+        measure: "",
+        dataType: "Opportunities Register",
+        unit: "#",
+        parameters: "Monthly",
+        reportingApproach: "On track = 80% of inititaives are on track or complete",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-08" 
+      
+    },
+
+    {
+        theme: "Nature",
+        outcome: "The Project minimises harm to nature / demand on nature",
+        status: "Proposed",
+        priority: "4- High",
+        target: "80% Canopy cover by 5 years (performance requirement)",
+        measure: "",
+        dataType: "Net number of trees planted vs. estimated total trees planned; Area covered by trees now; Area covered by trees in 5 years (est.)",
+        unit: "m2",
+        parameters: "Quarterly / Annual",
+        reportingApproach: "Visual: Planned / scheduled  planting #'s vs actual #'s;  Indicator: On track / behind with % complete",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "Use drones / digital solution to remotely map canopy cover Use estimates of planting rate, growth rate and time to estimate cover",
+        notes: "",
+        measureOwner: "Jeremy",
+        evidence: "?",
+        targetDate: "2025-05-29" 
+      
+    },
+
+    {
+        theme: "Nature",
+        outcome: "The Project minimises harm to nature / demand on nature",
+        status: "Proposed",
+        priority: "4- High",
+        target: "At least two adopted initiatives are nature-based solutions.",
+        measure: "",
+        dataType: "Opportunities Register (sharepoint)",
+        unit: "#",
+        parameters: "Quarterly / Annual",
+        reportingApproach: "Visual: Numerical (on track = 80% of identified initiatives are 'on track' or 'complete')",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-04-03" 
+      
+    },
+
+    {
+        theme: "Nature",
+        outcome: "The Project minimises harm to nature / demand on nature",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Net improvement in sequestration of GHG emissions",
+        measure: "",
+        dataType: "Estimate based on # and type of plantings",
+        unit: "tCO2e",
+        parameters: "Quarterly / Annual",
+        reportingApproach: "Visual: Numerical (on track = above zero)",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Should",
+        measurementMethod: "Measure estimate of planting, removals, and and-use changes by m2 and type.",
+        notes: "Landscape plan includes more planting than required by consents.  Measure the net contribution to sequestration over life of project. Measure estimated sequestraion potential from plantings, less die-back, less removals, and consider changes from pasture / forest to road, etc..",
+        measureOwner: "John L",
+        evidence: "",
+        targetDate: "2025-06-15" 
+      
+    },
+
+    {
+        theme: "Nature",
+        outcome: "The Project minimises harm to nature / demand on nature",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Three nurseries are established.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "Park for now, LOIF doesn't have budget - will depending on landscaping strategy and consult with iwi reps.",
+        measureOwner: "Jarrod T and Jeremy",
+        evidence: "",
+        targetDate: "2025-05-14" 
+      
+    },
+
+    {
+        theme: "Resilience",
+        outcome: "Project supports the strengthening of wider community resilience and adaptive capacity to climate-related hazards and natural disasters. Project supports local community engagement and awareness on the effects of climate change",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Two priority opportunities to improve community resilience have been investigated.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "Park for now, LOIF doesn't have budget",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-05-17" 
+      
+    },
+
+    {
+        theme: "Sustainable Procurement",
+        outcome: "Project procurement supports local economic uplift, resource and emissions efficiency, and climate resilience.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "75% of contracts by value incorporate sustainability objectives and targets.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-02-15" 
+      
+    },
+
+    {
+        theme: "Sustainable Procurement",
+        outcome: "Project procurement supports local economic uplift, resource and emissions efficiency, and climate resilience.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "75% of tendered goods and services by value incorporate sustainability criteria",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-02-19" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project design increases the uptake of innovative, recycled and alternative materials, and innovative practices",
+        status: "Proposed",
+        priority: "4- High",
+        target: "+10% use of materials with recycled content",
+        measure: "",
+        dataType: "TBC",
+        unit: "% / tonnes",
+        parameters: "Monthly",
+        reportingApproach: "TBC",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-05-18" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project design increases the uptake of innovative, recycled and alternative materials, and innovative practices",
+        status: "Proposed",
+        priority: "4- High",
+        target: "75% of material used in operations and maintenance (by volume) has reuse / recovery potential at end of life.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-27" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project incorporates resource recovery and waste diversion opportunities, using the waste hierarchy.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "+95% diversion of construction waste from landfill is achieved. [exclude hazardous waste from assessment]",
+        measure: "",
+        dataType: "Material type (multiple categories) Disposal path / Diversion path",
+        unit: "tonnes / m3",
+        parameters: "Monthly",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "Breakdown by location sent Reocrd reasons for landfilling",
+        notes: "",
+        measureOwner: "",
+        evidence: "Disposal dockets or invoices detailing material /waste type, quantity and diversion method or disposal site location.",
+        targetDate: "2025-06-15" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project incorporates resource recovery and waste diversion opportunities, using the waste hierarchy.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "100% of paints / solvents enter paintwise (product stewardship handling).",
+        measure: "",
+        dataType: "Volume of paints / solvents procured; Disposal approach recorded",
+        unit: "% / litres / kg",
+        parameters: "Monthly",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-18" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project incorporates resource recovery and waste diversion opportunities, using the waste hierarchy.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "100% of topsoil remains onsite.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-15" 
+            
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project incorporates resource recovery and waste diversion opportunities, using the waste hierarchy.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "At least five opportunities to improve resource recovery are investigated for feasibility and prioritised.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-15" 
+      
+    },
+
+    {
+        theme: "Waste / Recovery",
+        outcome: "Project incorporates resource recovery and waste diversion opportunities, using the waste hierarchy.",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Three waste initiatives are incorporated into relevant pricing pack or management plan.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-15" 
+      
+    },
+
+    {
+        theme: "Water",
+        outcome: "Project's lifecycle water demand is reduced / minimised",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Construction achieved a +10% reduction in water use when comparing construction to Base Case estimate / model. ",
+        measure: "",
+        dataType: "Potable Non-potable",
+        unit: "tCO2e",
+        parameters: "Quarterly / Annual",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-06-15" 
+      
+    },
+
+    {
+        theme: "Water",
+        outcome: "Project's lifecycle water demand is reduced / minimised",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Construction achieved a +10% reduction in water use when comparing construction to Base Case estimate / model. ",
+        measure: "",
+        dataType: "Potable Non-potable",
+        unit: "kilolitres / m3",
+        parameters: "Monthly",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Must",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-05-15" 
+      
+    },
+
+    {
+        theme: "Water",
+        outcome: "Project's lifecycle water demand is reduced / minimised",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Five priority water use initiatives have been incorporated into the design and pricing packs.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Process",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-04-02" 
+      
+    },
+
+    {
+        theme: "Water",
+        outcome: "Project's lifecycle water demand is reduced / minimised",
+        status: "Proposed",
+        priority: "4- High",
+        target: "Two legacy water storage sites are transferred to HDC / Partners at the end of construction for the benefit of the community.",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "Outcome",
+        mustOrShould: "Should",
+        measurementMethod: "",
+        notes: "Park, no LOIF budget",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-02-16" 
+      
+    },
+
+    {
+        theme: "Nature",
+        outcome: "The Project minimises harm to nature / demand on nature",
+        status: "Proposed",
+        priority: "4- High",
+        target: "TBC",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "",
+        mustOrShould: "",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-03-28" 
+      
+    },
+
+    {
+        theme: "Legacy",
+        outcome: "Leave a Lasting Legacy",
+        status: "Proposed",
+        priority: "4- High",
+        target: "",
+        measure: "",
+        dataType: "",
+        unit: "",
+        parameters: "",
+        reportingApproach: "",
+        processOrOutcome: "",
+        mustOrShould: "",
+        measurementMethod: "",
+        notes: "",
+        measureOwner: "",
+        evidence: "",
+        targetDate: "2025-04-15" 
+      
+    },
+];

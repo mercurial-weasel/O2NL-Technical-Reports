@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tabulator Custom Theme */
+.tabulator-custom-theme {
+  @apply bg-transparent;
+}
+
+.tabulator-custom-theme .tabulator-header {
+  @apply bg-gray-800/50 border-gray-700 text-text-primary font-semibold;
+}
+
+.tabulator-custom-theme .tabulator-header .tabulator-col {
+  @apply bg-transparent border-gray-700;
+}
+
+.tabulator-custom-theme .tabulator-row {
+  @apply bg-transparent border-gray-700 text-text-primary;
+}
+
+.tabulator-custom-theme .tabulator-row.tabulator-row-even {
+  @apply bg-gray-800/20;
+}
+
+.tabulator-custom-theme .tabulator-row:hover {
+  @apply bg-gray-700/30;
+}
+
+.tabulator-custom-theme .tabulator-footer {
+  @apply bg-gray-800/50 border-gray-700 text-text-primary;
+}
+
+.tabulator-custom-theme input {
+  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-text-primary text-sm;
+}
+
+.tabulator-custom-theme select {
+  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-text-primary text-sm;
+}
+
+.tabulator-custom-theme .tabulator-page {
+  @apply bg-gray-700/50 border border-gray-600 rounded px-3 py-1 text-text-primary text-sm;
+}
+
+.tabulator-custom-theme .tabulator-page.active {
+  @apply bg-brand-primary text-white;
+}

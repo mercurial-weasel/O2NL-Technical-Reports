@@ -1,0 +1,1 @@
+export { BoreholesCard } from './BoreholesCard';
