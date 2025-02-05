@@ -24,7 +24,7 @@ export function EmissionsChart({ data }: EmissionsChartProps) {
     type: 'bar' as const,
     name: source,
     x: data.map(d => d.month),
-    y: data.map(d => d.emissions[source as EmissionSourceType] || 0),
+    y: data.map(d => d.emissions[source as EmissionSourceType]?.total || 0),
     marker: {
       color: sourceColors[source as EmissionSourceType]
     },
@@ -32,13 +32,66 @@ export function EmissionsChart({ data }: EmissionsChartProps) {
       <b>${source}</b><br>
       Month: %{x}<br>
       Emissions: %{y:.2f} tCO2e<br>
+      Number Records: %{customdata}<br>
       <extra></extra>
-    `
+    `,
+    customdata: data.map(d => d.emissions[source as EmissionSourceType]?.count || 0)
   }));
+
+  // Add "Actual" line trace
+  const actualTrace = {
+    type: 'scatter' as const,
+    mode: 'lines+markers',
+    name: 'Actual',
+    x: data.map(d => d.month),
+    y: data.map(d => d.total),
+    line: {
+      color: '#FFFFFF',
+      width: 2
+    },
+    marker: {
+      color: '#FFFFFF',
+      size: 6
+    },
+    hovertemplate: `
+      <b>Actual</b><br>
+      Month: %{x}<br>
+      Total Emissions: %{y:.2f} tCO2e<br>
+      Number Records: %{customdata}<br>
+      <extra></extra>
+    `,
+    customdata: data.map(d => Object.values(d.emissions).reduce((sum, value) => sum + (value?.count || 0), 0))
+  };
+
+  // Add "Budget" line trace
+  const budgetTrace = {
+    type: 'scatter' as const,
+    mode: 'lines+markers',
+    name: 'Budget',
+    x: data.map(d => d.month),
+    y: data.map(d => d.total * 1.2),
+    line: {
+      color: '#FF0000',
+      width: 2,
+      dash: 'dash'
+    },
+    marker: {
+      color: '#FF0000',
+      size: 6
+    },
+    hovertemplate: `
+      <b>Budget</b><br>
+      Month: %{x}<br>
+      Budget Emissions: %{y:.2f} tCO2e<br>
+      Number Records: %{customdata}<br>
+      <extra></extra>
+    `,
+    customdata: data.map(d => Object.values(d.emissions).reduce((sum, value) => sum + (value?.count || 0), 0))
+  };
 
   return (
     <Plot
-      data={traces}
+      data={[...traces, actualTrace, budgetTrace]}
       layout={{
         title: {
           text: 'Monthly Carbon Emissions by Source',

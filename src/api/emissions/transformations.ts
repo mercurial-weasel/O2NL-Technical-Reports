@@ -13,12 +13,16 @@ export interface EmissionTrend {
   date: string;
   amount: number;
   source: EmissionSourceType;
+  number_records: number;
 }
 
 export interface MonthlyEmissions {
   month: string; // YYYY-MM format
   emissions: {
-    [key in EmissionSourceType]?: number;
+    [key in EmissionSourceType]?: {
+      total: number;
+      count: number;
+    };
   };
   total: number;
 }
@@ -64,7 +68,6 @@ export function calculateMonthlyEmissions(emissions: CarbonEmissionRecord[]): Mo
     let monthData = monthlyMap.get(monthKey);
     logger.info('Setup month key and month data', { monthKey, monthData });
 
-    logger.info('About to initialize monthData', { monthData });
     // Initialize monthData if it doesn't exist
     if (!monthData) {
       monthData = {
@@ -74,22 +77,20 @@ export function calculateMonthlyEmissions(emissions: CarbonEmissionRecord[]): Mo
       };
       monthlyMap.set(monthKey, monthData);
     }
-    logger.info('MonthData initialized monthData', { monthData });
 
-   
     // Ensure the source is a valid key
     const source = emission.source as EmissionSourceType;
-    logger.info('About to initialize the source1', { source });
+    logger.info('About to initialize the source', { source });
 
     // Initialize source if not exists
     if (!monthData.emissions[source]) {
-      monthData.emissions[source] = 0;
+      monthData.emissions[source] = { total: 0, count: 0 };
       logger.info('Initialized the source', { source });
     }
-    logger.info('MonthData setup  monthData', { monthData });
 
-    // Add emission amount
-    monthData.emissions[source]! += emission.amount;
+    // Add emission amount and increment count
+    monthData.emissions[source]!.total += emission.amount;
+    monthData.emissions[source]!.count += 1;
     monthData.total += emission.amount;
     logger.info('Added the emission amount', { source, amount: emission.amount });
 
@@ -158,7 +159,8 @@ export function calculateEmissionTrends(
         trends.push({
           date: dateStr,
           amount,
-          source: source as EmissionSourceType
+          source: source as EmissionSourceType,
+          number_records: dayEmissions.filter(e => e.source === source).length
         });
       }
     });
