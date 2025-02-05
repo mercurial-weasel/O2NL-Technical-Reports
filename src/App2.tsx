@@ -12,6 +12,7 @@ import { StaffNumbers } from './components/Dashboards/ProjectControls/P+C';
 import { StaffFTEDashboard } from './components/Dashboards/ProjectControls/StaffFTE';
 import { EarnedValueSummary } from './components/Dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { SustainabilityInitiatives } from './components/Dashboards/ProjectControls/SustainabilityInitiatives';
+import { SustainabilityTracking } from './components/Dashboards/ProjectControls/SustainabilityTracking';
 import { GeoDashboardSPT } from './components/Dashboards/Geo';
 import { RoadmapPage } from './components/Roadmap';
 
@@ -40,6 +41,7 @@ function App2() {
         <Route path="/project-controls/staff-fte" element={<StaffFTEDashboard />} />
         <Route path="/project-controls/commercial/earned-value" element={<EarnedValueSummary />} />
         <Route path="/project-controls/sustainability" element={<SustainabilityInitiatives />} />
+        <Route path="/project-controls/sustainability-tracking" element={<SustainabilityTracking />} />
         
         {/* Fallback Route */}
         <Route path="*" element={<Navigate to="/" replace />} />

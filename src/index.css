@@ -21,7 +21,7 @@
 }
 
 .tabulator-custom-theme .tabulator-header {
-  @apply bg-gray-800/50 border-gray-700 text-text-primary font-semibold;
+  @apply bg-gray-800/50 border-gray-700 font-semibold text-white;
 }
 
 .tabulator-custom-theme .tabulator-header .tabulator-col {
@@ -29,7 +29,7 @@
 }
 
 .tabulator-custom-theme .tabulator-row {
-  @apply bg-transparent border-gray-700 text-text-primary;
+  @apply bg-transparent border-gray-700 text-white;
 }
 
 .tabulator-custom-theme .tabulator-row.tabulator-row-even {
@@ -41,19 +41,19 @@
 }
 
 .tabulator-custom-theme .tabulator-footer {
-  @apply bg-gray-800/50 border-gray-700 text-text-primary;
+  @apply bg-gray-800/50 border-gray-700 text-white;
 }
 
 .tabulator-custom-theme input {
-  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-text-primary text-sm;
+  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-sm text-white;
 }
 
 .tabulator-custom-theme select {
-  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-text-primary text-sm;
+  @apply bg-gray-700/50 border border-gray-600 rounded px-2 py-1 text-sm text-white;
 }
 
 .tabulator-custom-theme .tabulator-page {
-  @apply bg-gray-700/50 border border-gray-600 rounded px-3 py-1 text-text-primary text-sm;
+  @apply bg-gray-700/50 border border-gray-600 rounded px-3 py-1 text-sm text-white;
 }
 
 .tabulator-custom-theme .tabulator-page.active {

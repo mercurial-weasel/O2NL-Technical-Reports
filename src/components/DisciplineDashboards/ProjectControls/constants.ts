@@ -90,7 +90,8 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     title: 'Other',
     icon: Boxes,
     tests: [
-      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept' }
+      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept' },
+      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept' }
     ]
   }
 ];

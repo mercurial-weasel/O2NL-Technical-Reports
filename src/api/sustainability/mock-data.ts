@@ -1,26 +1,6 @@
+import { SustainabilityInitiative } from './types';
 
-export interface SustainabilityInitiative {
-    theme: string;
-    outcome: string;
-    status: 'Proposed' | 'Pending' | 'Delayed' | 'Implemented';
-    priorty: '5 - Very High' | '4 - High' | '3 - Medium' | '2 - Low' | '1 - Vrey Low';
-    target: string;
-    measure: string;
-    dataType: string;
-    unit: string;
-    parameters: string;
-    reportingApproach: string;
-    processOrOutcome: 'Process' | 'Outcome' | 'Process / Outcome';
-    mustOrShould: 'Must' | 'Should';
-    measurementMethod: string;
-    notes: string;
-    measureOwner: string;
-    evidence: string;
-    targetDate: string;
-}
-
-export const sustainabilityData: SustainabilityInitiative[] = [
-
+export const mockSustainabilityData: SustainabilityInitiative[] = [
     {
         theme: "Emissions",
         outcome: "Project manages it's negative impact on the climate from GHG emissions",

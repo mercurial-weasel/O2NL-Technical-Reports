@@ -1,4 +1,4 @@
-import { SystemInfo } from './types';
+import { SystemData, SystemStatus, Adoption } from './types';
 
 export interface PivotItem {
   name: string;
@@ -31,37 +31,55 @@ export const adoptionLevels = [
   '9 - N/A'
 ] as const;
 
-function filterSystems(systems: SystemInfo[], filters: FilterCriteria): SystemInfo[] {
+// Helper function to get status based on adoption level
+export const getSystemStatus = (adoption: Adoption): SystemStatus => {
+  switch (adoption) {
+    case '4 - very good':
+    case '5 - comprehensive':
+    case '3 - good':
+      return 'operational';
+    case '2 - average':
+      return 'degraded';
+    case '1 - poor':
+      return 'maintenance';
+    case '8 - Not commenced':
+      return 'not-started';
+    default:
+      return 'outage';
+  }
+};
+
+function filterSystems(systems: SystemData[], filters: FilterCriteria): SystemData[] {
   return systems.filter(system => {
-    const matchesBusinessArea = filters.businessAreas.has('all') || filters.businessAreas.has(system.businessArea);
-    const matchesLicense = filters.licenseTypes.has('all') || filters.licenseTypes.has(system.licenseType);
-    const matchesSME = filters.smeResponsibles.has('all') || filters.smeResponsibles.has(system.smeResponsible);
-    const matchesAdoption = filters.adoptionLevels.has('all') || filters.adoptionLevels.has(system.adoption);
+    const matchesBusinessArea = filters.businessAreas.has('all') || filters.businessAreas.has(system.BusinessArea);
+    const matchesLicense = filters.licenseTypes.has('all') || filters.licenseTypes.has(system.Licence);
+    const matchesSME = filters.smeResponsibles.has('all') || filters.smeResponsibles.has(system.SMEResponsible);
+    const matchesAdoption = filters.adoptionLevels.has('all') || filters.adoptionLevels.has(system.Adoption);
 
     return matchesBusinessArea && matchesLicense && matchesSME && matchesAdoption;
   });
 }
 
-export function transformToPivotData(systems: SystemInfo[], filters: FilterCriteria): PivotCategory[] {
+export function transformToPivotData(systems: SystemData[], filters: FilterCriteria): PivotCategory[] {
   // Apply filters first
   const filteredSystems = filterSystems(systems, filters);
 
   // Group systems by business area
   const groupedSystems = filteredSystems.reduce((acc, system) => {
-    const category = system.businessArea;
+    const category = system.BusinessArea;
     if (!acc[category]) {
-      acc[category] = new Map<string, SystemInfo[]>();
+      acc[category] = new Map<string, SystemData[]>();
     }
     
     // Group by subcategory within business area
-    const subcategory = system.category;
+    const subcategory = system.Category;
     if (!acc[category].has(subcategory)) {
       acc[category].set(subcategory, []);
     }
     acc[category].get(subcategory)!.push(system);
     
     return acc;
-  }, {} as Record<string, Map<string, SystemInfo[]>>);
+  }, {} as Record<string, Map<string, SystemData[]>>);
 
   // Transform into pivot structure
   return Object.entries(groupedSystems)
@@ -77,14 +95,14 @@ export function transformToPivotData(systems: SystemInfo[], filters: FilterCrite
 
         // Process systems within subcategory
         systems.forEach(system => {
-          const adoptionIndex = adoptionLevels.findIndex(level => level === system.adoption);
+          const adoptionIndex = adoptionLevels.findIndex(level => level === system.Adoption);
           if (adoptionIndex !== -1) {
             subcategoryValues[adoptionIndex]++;
             categoryValues[adoptionIndex]++;
 
             // Add system item
             subcategoryItems.push({
-              name: system.name,
+              name: system.System,
               values: new Array(adoptionLevels.length).fill(0).map((_, i) => 
                 i === adoptionIndex ? 1 : 0
               )
@@ -125,7 +143,7 @@ export function calculateColumnTotals(data: PivotCategory[]): number[] {
 }
 
 // Helper to get the pivot data
-export function getPivotData(systems: SystemInfo[], filters: FilterCriteria) {
+export function getPivotData(systems: SystemData[], filters: FilterCriteria) {
   const pivotData = transformToPivotData(systems, filters);
   const columnTotals = calculateColumnTotals(pivotData);
   

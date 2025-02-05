@@ -1,14 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Filter, BarChart2, Table2 } from 'lucide-react';
 import { Header } from '../../../common/Header';
 import { Footer } from '../../../common/Footer';
 import { Section } from '../../../common';
 import { BackNavigation } from '../../../common/BackNavigation';
-import { SYSTEMS_DATA, BusinessArea } from './constants';
 import { PivotTable } from './components/PivotTable';
 import { SystemsChart } from './components/SystemsChart';
-import { getPivotData } from './data/pivotData';
+import { SystemsApiClient } from '../../../../api/systems/client';
+import { getPivotData } from '../../../../api/systems/transformations';
+import { SystemData } from '../../../../api/systems/types';
 import { MultiSelectFilter } from '../../../Roadmap/components/MultiSelectFilter';
+import { logger } from '../../../../lib/logger';
 
 type ViewMode = 'table' | 'chart';
 
@@ -17,29 +19,51 @@ export function SystemsDashboard() {
   const [selectedImplementers, setSelectedImplementers] = useState<Set<string>>(new Set(['all']));
   const [selectedSMEs, setSelectedSMEs] = useState<Set<string>>(new Set(['all']));
   const [selectedAdoptionLevels, setSelectedAdoptionLevels] = useState<Set<string>>(new Set(['all']));
+  const [systemsData, setSystemsData] = useState<SystemData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  // Fetch systems data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const client = new SystemsApiClient();
+        const data = await client.fetchSystemsData();
+        setSystemsData(data);
+      } catch (err) {
+        const error = err instanceof Error ? err : new Error('Failed to load systems data');
+        logger.error('Systems data fetch failed', { error: error.message });
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // Get unique values for filters
   const implementers = useMemo(() => 
-    Array.from(new Set(SYSTEMS_DATA.map(system => system.implementer))).sort()
-  , []);
+    Array.from(new Set(systemsData.map(system => system.HostedBy))).sort()
+  , [systemsData]);
 
   const smes = useMemo(() => 
-    Array.from(new Set(SYSTEMS_DATA.map(system => system.smeResponsible))).sort()
-  , []);
+    Array.from(new Set(systemsData.map(system => system.SMEResponsible))).sort()
+  , [systemsData]);
 
   const adoptionLevels = useMemo(() => 
-    Array.from(new Set(SYSTEMS_DATA.map(system => system.adoption))).sort()
-  , []);
+    Array.from(new Set(systemsData.map(system => system.Adoption))).sort()
+  , [systemsData]);
 
   // Get pivot data with filters
   const { data: pivotData, columnTotals, adoptionLevels: pivotAdoptionLevels } = useMemo(() => 
-    getPivotData({
+    getPivotData(systemsData, {
       businessAreas: new Set(['all']),
       licenseTypes: new Set(['all']),
       smeResponsibles: selectedSMEs,
       adoptionLevels: selectedAdoptionLevels
     })
-  , [selectedSMEs, selectedAdoptionLevels]);
+  , [systemsData, selectedSMEs, selectedAdoptionLevels]);
 
   // Reset all filters
   const handleResetFilters = () => {
@@ -47,6 +71,40 @@ export function SystemsDashboard() {
     setSelectedSMEs(new Set(['all']));
     setSelectedAdoptionLevels(new Set(['all']));
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="flex items-center justify-center h-64">
+              <div className="text-text-secondary">Loading systems data...</div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="bg-red-500/10 border border-red-500 rounded-lg p-4">
+              <div className="text-red-400">
+                Error loading systems data: {error.message}
+              </div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background-base">

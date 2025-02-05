@@ -29,6 +29,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/commercial/earned-value')
         : test.name === 'Sustainability Initiatives'
         ? () => navigate('/project-controls/sustainability')
+        : test.name === 'Sustainability Tracking'
+        ? () => navigate('/project-controls/sustainability-tracking')
         : undefined
     }))
   }));

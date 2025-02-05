@@ -1,7 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { PivotCategory } from '../data/pivotData';
-import { SYSTEMS_DATA } from '../constants';
+import { PivotCategory } from '../../../../../api/systems/transformations';
 
 // Fixed colors for each adoption level
 const adoptionColors: Record<string, string> = {
@@ -34,9 +33,7 @@ export function BusinessAreaChart({ category, adoptionLevels }: BusinessAreaChar
       if (!acc[subcategory.name][adoptionLevel]) {
         acc[subcategory.name][adoptionLevel] = [];
       }
-      acc[subcategory.name][adoptionLevel].push(
-        SYSTEMS_DATA.find(s => s.name === system.name)?.name || system.name
-      );
+      acc[subcategory.name][adoptionLevel].push(system.name);
     });
     return acc;
   }, {} as Record<string, Record<string, string[]>>);

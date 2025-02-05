@@ -7,7 +7,8 @@ export const API_CONFIG = {
     staffFTE: '/api/staff-fte',
     materials: '/materials',
     zones: '/zones',
-    systems: '/api/systems'
+    systems: '/api/systems',
+    sustainability: '/api/sustainability'
   },
   defaultHeaders: {
     'Content-Type': 'application/json',

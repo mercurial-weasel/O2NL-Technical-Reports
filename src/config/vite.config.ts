@@ -6,5 +6,4 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  configFile: './src/config/vite.config.ts'
 });
