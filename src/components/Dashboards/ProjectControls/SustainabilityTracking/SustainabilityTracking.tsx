@@ -22,21 +22,10 @@ export function SustainabilityTracking() {
 
   useEffect(() => {
     const fetchData = async () => {
-      logger.info('Starting to fetch emissions data');
       try {
         const client = new EmissionsApiClient();
         const data = await client.fetchEmissionsData();
-        
-        logger.info('Emissions data fetched successfully', { data });
-        
-        if (!data || !data.emissions) {
-          throw new Error('Invalid emissions data');
-        }
-        
-        logger.info('Processing emissions data', { emissions: data.emissions });
-        
         const monthlyData = calculateMonthlyEmissions(data.emissions);
-        logger.info('Finisehd Processing emissions data', { emissions: data.emissions });
         setEmissionsData(monthlyData);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load emissions data');
@@ -44,7 +33,6 @@ export function SustainabilityTracking() {
         setError(error);
       } finally {
         setIsLoading(false);
-        logger.info('Finished fetching emissions data');
       }
     };
 

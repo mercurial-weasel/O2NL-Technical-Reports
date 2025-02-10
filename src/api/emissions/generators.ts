@@ -1,14 +1,12 @@
 // generators.ts
 import { CarbonEmissionRecord, EmissionSource, EmissionSubCategories } from './types';
 
-export function generateMockEmissions(numRecords: number): CarbonEmissionRecord[] {
+export function generateMockEmissions(): CarbonEmissionRecord[] {
   const emissions: CarbonEmissionRecord[] = [];
   const sources = Object.keys(EmissionSubCategories) as EmissionSource[];
 
-  for (let i = 0; i < numRecords; i++) {
-    const month = Math.floor(Math.random() * 12); // Random month (0-11)
-    const day = Math.floor(Math.random() * 28) + 1; // Random day (1-28)
-    const date = new Date(2024, month, day);
+  for (let month = 0; month < 12; month++) {
+    const date = new Date(2024, month, 15);
     
     sources.forEach(source => {
       const subCategories = EmissionSubCategories[source];
@@ -16,7 +14,7 @@ export function generateMockEmissions(numRecords: number): CarbonEmissionRecord[
         const amount = Math.random() * 90 + 10;
         
         emissions.push({
-          id: `emission-${i}-${source}-${subCategory}`.toLowerCase().replace(/\s+/g, '-'),
+          id: `emission-${month}-${source}-${subCategory}`.toLowerCase().replace(/\s+/g, '-'),
           projectId: "o2nl-paa",
           source: source,
           subCategory: subCategory,

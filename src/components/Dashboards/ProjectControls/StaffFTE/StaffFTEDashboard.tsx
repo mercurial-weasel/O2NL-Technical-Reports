@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BarChart2, Table2 } from 'lucide-react';
 import { Header } from '../../../common/Header';
 import { Footer } from '../../../common/Footer';
 import { Section } from '../../../common';
@@ -7,8 +8,7 @@ import { BackNavigation } from '../../../common/BackNavigation';
 import { StaffFTEApiClient } from '../../../../api/staff-fte/client';
 import { O2NL_Staff } from '../../../../api/staff-fte/types';
 import { logger } from '../../../../lib/logger';
-import { StaffFTETable } from './StaffFTETable';
-import { FTEChart } from './components/FTEChart';
+import { StaffChart } from '../P+C/StaffComponents/StaffChart';
 import { TableFilters } from './components/TableFilters';
 import { useTableFilters } from './hooks/useTableFilters';
 import { MonthColumn } from './types';
@@ -23,10 +23,10 @@ const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {
 });
 
 export function StaffFTEDashboard() {
+  const [viewMode, setViewMode] = useState<'chart' | 'table'>('chart');
   const [staffData, setStaffData] = useState<O2NL_Staff[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const [viewMode, setViewMode] = useState<'chart' | 'table'>('chart');
 
   // Initialize filters
   const { filterState, uniqueValues, handleFilterChange, filteredData } = useTableFilters(staffData);
@@ -49,6 +49,40 @@ export function StaffFTEDashboard() {
     fetchData();
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="flex items-center justify-center h-64">
+              <div className="text-text-secondary">Loading staff FTE data...</div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="bg-red-500/10 border border-red-500 rounded-lg p-4">
+              <div className="text-red-400">
+                Error loading staff FTE data: {error.message}
+              </div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background-base">
       <Header />
@@ -65,23 +99,25 @@ export function StaffFTEDashboard() {
               <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
                 <button
                   onClick={() => setViewMode('chart')}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     viewMode === 'chart'
                       ? 'bg-brand-primary text-white'
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
-                  Chart
+                  <BarChart2 className="w-4 h-4" />
+                  <span>Chart</span>
                 </button>
                 <button
                   onClick={() => setViewMode('table')}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     viewMode === 'table'
                       ? 'bg-brand-primary text-white'
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
-                  Table
+                  <Table2 className="w-4 h-4" />
+                  <span>Table</span>
                 </button>
               </div>
             </div>
@@ -91,49 +127,27 @@ export function StaffFTEDashboard() {
           </div>
 
           {/* Filters - Always visible */}
-          {!isLoading && !error && (
-            <TableFilters
-              filters={{
-                disciplines: uniqueValues.disciplines.map(d => ({ value: d, label: d })),
-                locations: uniqueValues.locations.map(l => ({ value: l, label: l })),
-                nopTypes: uniqueValues.nopTypes.map(n => ({ value: n, label: n })),
-                orgs: uniqueValues.orgs.map(o => ({ value: o, label: o })),
-                phases: uniqueValues.phases.map(p => ({ value: p, label: p })),
-                statuses: uniqueValues.statuses.map(s => ({ value: s, label: s }))
-              }}
-              selectedValues={filterState}
-              onFilterChange={handleFilterChange}
-            />
-          )}
-
-          {/* Loading State */}
-          {isLoading && (
-            <Card className="p-6" hover>
-              <div className="flex items-center justify-center h-64">
-                <div className="text-text-secondary">Loading staff FTE data...</div>
-              </div>
-            </Card>
-          )}
-
-          {/* Error State */}
-          {error && (
-            <Card className="p-6 bg-red-500/10 border-red-500" hover>
-              <div className="text-red-400">
-                Error loading staff FTE data: {error.message}
-              </div>
-            </Card>
-          )}
+          <TableFilters
+            filters={{
+              disciplines: uniqueValues.disciplines.map(d => ({ value: d, label: d })),
+              locations: uniqueValues.locations.map(l => ({ value: l, label: l })),
+              nopTypes: uniqueValues.nopTypes.map(n => ({ value: n, label: n })),
+              orgs: uniqueValues.orgs.map(o => ({ value: o, label: o })),
+              phases: uniqueValues.phases.map(p => ({ value: p, label: p })),
+              statuses: uniqueValues.statuses.map(s => ({ value: s, label: s }))
+            }}
+            selectedValues={filterState}
+            onFilterChange={handleFilterChange}
+          />
 
           {/* Content */}
-          {!isLoading && !error && (
-            <Card className="p-6" hover>
-              {viewMode === 'chart' ? (
-                <FTEChart data={filteredData} monthColumns={monthColumns} />
-              ) : (
-                <StaffFTETable data={filteredData} />
-              )}
-            </Card>
-          )}
+          <Card className="p-6" hover>
+            <StaffChart 
+              data={filteredData}
+              monthColumns={monthColumns}
+              mode="fte"
+            />
+          </Card>
         </Section>
       </div>
       <Footer />

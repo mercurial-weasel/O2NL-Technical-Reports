@@ -1,43 +1,38 @@
 import React, { useState } from 'react';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { MonthColumn } from '../types';
-import { calculateFTESummaries } from '../../../../../api/staff-fte/transformations';
+import { calculateNumberUsersSummaries } from '../../../../../api/staff-fte/transformations';
 
-interface FTESummaryTableProps {
+interface StaffNumbersTableProps {
   data: O2NL_Staff[];
-  monthColumns: MonthColumn[];
 }
 
 type SummaryView = 'organization' | 'discipline' | 'nop';
 
-export function FTESummaryTable({ data, monthColumns }: FTESummaryTableProps) {
+export function StaffNumbersTable({ data }: StaffNumbersTableProps) {
   const [summaryView, setSummaryView] = useState<SummaryView>('organization');
-  const summaries = calculateFTESummaries(data, monthColumns);
+  const summaries = calculateNumberUsersSummaries(data);
 
   const renderSummaryTable = () => {
     let title: string;
-    let items: { name: string; totals: { [key: string]: number } }[];
+    let items: { name: string; userCounts: { [key: string]: number } }[];
 
     switch (summaryView) {
       case 'organization':
         title = 'Organization Summary';
-        items = summaries.orgSummaries.map(({ org, totals }) => ({
-          name: org,
-          totals
-        }));
+        items = summaries.orgSummaries;
         break;
       case 'discipline':
         title = 'Discipline Summary';
-        items = summaries.disciplineSummaries.map(({ discipline, totals }) => ({
+        items = summaries.disciplineSummaries.map(({ discipline, userCounts }) => ({
           name: discipline,
-          totals
+          userCounts
         }));
         break;
       case 'nop':
         title = 'NOP Type Summary';
-        items = summaries.nopTypeSummaries.map(({ nopType, totals }) => ({
+        items = summaries.nopTypeSummaries.map(({ nopType, userCounts }) => ({
           name: nopType,
-          totals
+          userCounts
         }));
         break;
     }
@@ -93,28 +88,32 @@ export function FTESummaryTable({ data, monthColumns }: FTESummaryTableProps) {
                      summaryView === 'discipline' ? 'Discipline' : 
                      'NOP Type'}
                   </th>
-                  {monthColumns.map(month => (
-                    <th
-                      key={month.key}
-                      className="py-2 px-2 text-right text-sm font-medium text-brand-secondary whitespace-nowrap"
-                    >
-                      {month.label}
-                    </th>
-                  ))}
+                  {summaries.dateRange.months.map(month => {
+                    const date = new Date(month);
+                    const label = `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear().toString().slice(2)}`;
+                    return (
+                      <th
+                        key={month}
+                        className="py-2 px-2 text-right text-sm font-medium text-brand-secondary whitespace-nowrap"
+                      >
+                        {label}
+                      </th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody>
-                {items.map(({ name, totals }) => (
+                {items.map(({ name, userCounts }) => (
                   <tr key={name} className="border-b border-gray-700/50">
                     <td className="py-2 px-4 text-sm font-medium text-text-primary">
                       {name}
                     </td>
-                    {monthColumns.map(month => (
+                    {summaries.dateRange.months.map(month => (
                       <td
-                        key={month.key}
+                        key={month}
                         className="py-2 px-2 text-right text-sm text-text-secondary"
                       >
-                        {totals[month.key].toFixed(2)}
+                        {userCounts[month]}
                       </td>
                     ))}
                   </tr>
@@ -132,12 +131,12 @@ export function FTESummaryTable({ data, monthColumns }: FTESummaryTableProps) {
                 <td className="py-2 px-4 text-sm font-medium text-brand-primary">
                   Total
                 </td>
-                {monthColumns.map(month => (
+                {summaries.dateRange.months.map(month => (
                   <td
-                    key={month.key}
+                    key={month}
                     className="py-2 px-2 text-right text-sm font-medium text-brand-primary"
                   >
-                    {summaries.grandTotal[month.key].toFixed(2)}
+                    {summaries.totalUsers[month]}
                   </td>
                 ))}
               </tr>

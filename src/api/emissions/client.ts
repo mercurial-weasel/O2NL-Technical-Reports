@@ -13,14 +13,6 @@ export class EmissionsApiClient extends BaseApiClient {
         mockEmissionsData
       );
       
-      logger.info('Emissions data response received', { response });
-      
-      if (!response.data) {
-        throw new Error('No data received from emissions API');
-      }
-      
-      logger.info('Processing response data', { data: response.data });
-      
       // Calculate total emissions before returning
       const totalEmissions = response.data.emissions.reduce(
         (sum, emission) => sum + emission.amount,

@@ -1,8 +1,8 @@
 import { CarbonEmissionData } from './types';
 import { generateMockEmissions } from './generators';
 
-// Generate mock data with 200 entries
-const generatedEmissions = generateMockEmissions(200);
+// Generate mock data once at startup
+const generatedEmissions = generateMockEmissions();
 
 // Calculate total emissions
 const totalEmissions = generatedEmissions.reduce(
@@ -10,7 +10,7 @@ const totalEmissions = generatedEmissions.reduce(
   0
 );
 
-// Export the generated mock data
+// Export the static mock data
 export const mockEmissionsData: CarbonEmissionData = {
   projectId: "o2nl-paa",
   emissions: generatedEmissions,

@@ -1,5 +1,4 @@
 import { CarbonEmissionRecord, EmissionSourceType, EmissionSubCategories } from './types';
-import { logger } from '../../lib/logger';
 
 export interface EmissionsBySource {
   source: EmissionSourceType;
@@ -13,23 +12,17 @@ export interface EmissionTrend {
   date: string;
   amount: number;
   source: EmissionSourceType;
-  number_records: number;
 }
 
 export interface MonthlyEmissions {
   month: string; // YYYY-MM format
   emissions: {
-    [key in EmissionSourceType]?: {
-      total: number;
-      count: number;
-    };
+    [key in EmissionSourceType]?: number;
   };
   total: number;
 }
 
 export function calculateMonthlyEmissions(emissions: CarbonEmissionRecord[]): MonthlyEmissions[] {
-  logger.info('Starting to calculate monthly emissions', { emissions });
-
   // Create a map to store emissions by month
   const monthlyMap = new Map<string, MonthlyEmissions>();
 
@@ -38,13 +31,9 @@ export function calculateMonthlyEmissions(emissions: CarbonEmissionRecord[]): Mo
     new Date(a.date).getTime() - new Date(b.date).getTime()
   );
 
-  logger.info('Sorted emissions by date', { sortedEmissions });
-
   // Get start and end months
   const startDate = new Date(sortedEmissions[0]?.date || new Date());
   const endDate = new Date(sortedEmissions[sortedEmissions.length - 1]?.date || new Date());
-
-  logger.info('Start and end dates determined', { startDate, endDate });
 
   // Initialize all months in the range
   let currentDate = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
@@ -60,53 +49,24 @@ export function calculateMonthlyEmissions(emissions: CarbonEmissionRecord[]): Mo
     currentDate.setMonth(currentDate.getMonth() + 1);
   }
 
-  logger.info('Initialized all months in the range', { monthlyMap });
-
   // Aggregate emissions by month and source
   emissions.forEach(emission => {
     const monthKey = emission.date.slice(0, 7);
-    let monthData = monthlyMap.get(monthKey);
-    logger.info('Setup month key and month data', { monthKey, monthData });
-
-    // Initialize monthData if it doesn't exist
-    if (!monthData) {
-      monthData = {
-        month: monthKey,
-        emissions: {},
-        total: 0
-      };
-      monthlyMap.set(monthKey, monthData);
-    }
-
-    // Ensure the source is a valid key
-    const source = emission.source as EmissionSourceType;
-    logger.info('About to initialize the source', { source });
+    const monthData = monthlyMap.get(monthKey)!;
 
     // Initialize source if not exists
-    if (!monthData.emissions[source]) {
-      monthData.emissions[source] = { total: 0, count: 0 };
-      logger.info('Initialized the source', { source });
+    if (!monthData.emissions[emission.source]) {
+      monthData.emissions[emission.source] = 0;
     }
 
-    // Add emission amount and increment count
-    monthData.emissions[source]!.total += emission.amount;
-    monthData.emissions[source]!.count += 1;
+    // Add emission amount
+    monthData.emissions[emission.source]! += emission.amount;
     monthData.total += emission.amount;
-    logger.info('Added the emission amount', { source, amount: emission.amount });
-
-    // Log the monthData after adding the emission amount
-    logger.info('Updated monthData', { monthData });
   });
 
-  logger.info('Aggregated emissions by month and source', { monthlyMap });
-
   // Convert map to sorted array
-  const result = Array.from(monthlyMap.values())
+  return Array.from(monthlyMap.values())
     .sort((a, b) => a.month.localeCompare(b.month));
-
-  logger.info('Converted map to sorted array', { result });
-
-  return result;
 }
 
 export function calculateEmissionsBySource(emissions: CarbonEmissionRecord[]): EmissionsBySource[] {
@@ -159,8 +119,7 @@ export function calculateEmissionTrends(
         trends.push({
           date: dateStr,
           amount,
-          source: source as EmissionSourceType,
-          number_records: dayEmissions.filter(e => e.source === source).length
+          source: source as EmissionSourceType
         });
       }
     });
