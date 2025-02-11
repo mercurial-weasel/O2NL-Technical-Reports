@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart2, Table2 } from 'lucide-react';
+import { BarChart2 } from 'lucide-react';
 import { Header } from '../../../../common/Header';
 import { Footer } from '../../../../common/Footer';
 import { Section } from '../../../../common';
 import { Card } from '../../../../common/Card';
 import { BackNavigation } from '../../../../common/BackNavigation';
-import { StaffNumbersApiClient } from '../../../../../api/staff-numbers/client';
+import { StaffFTEApiClient } from '../../../../../api/staff-fte/client';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { StaffChart } from '../StaffComponents/StaffChart';
+import { calculateStaffMovement } from '../../../../../api/staff-fte/transformations';
+import { StaffMovementChart } from './StaffMovementChart';
 import { TableFilters } from '../../../ProjectControls/StaffFTE/components/TableFilters';
 import { useTableFilters } from '../../../ProjectControls/StaffFTE/hooks/useTableFilters';
 import { logger } from '../../../../../lib/logger';
 
-type ViewMode = 'chart' | 'table';
+type GroupBy = 'organization' | 'discipline' | 'nop';
 
-export function StaffNumbersDashboard() {
-  const [viewMode, setViewMode] = useState<ViewMode>('chart');
+export function StaffMovementDashboard() {
   const [staffData, setStaffData] = useState<O2NL_Staff[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const [groupBy, setGroupBy] = useState<GroupBy>('organization');
 
   // Initialize filters
   const { filterState, uniqueValues, handleFilterChange, filteredData } = useTableFilters(staffData);
@@ -26,12 +27,12 @@ export function StaffNumbersDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const client = new StaffNumbersApiClient();
-        const data = await client.fetchStaffNumbersData();
+        const client = new StaffFTEApiClient();
+        const data = await client.fetchStaffFTEData();
         setStaffData(data);
       } catch (err) {
-        const error = err instanceof Error ? err : new Error('Failed to load staff numbers data');
-        logger.error('Staff numbers data fetch failed', { error: error.message });
+        const error = err instanceof Error ? err : new Error('Failed to load staff movement data');
+        logger.error('Staff movement data fetch failed', { error: error.message });
         setError(error);
       } finally {
         setIsLoading(false);
@@ -48,7 +49,7 @@ export function StaffNumbersDashboard() {
         <div className="pt-24">
           <Section className="py-8">
             <div className="flex items-center justify-center h-64">
-              <div className="text-text-secondary">Loading staff numbers data...</div>
+              <div className="text-text-secondary">Loading staff movement data...</div>
             </div>
           </Section>
         </div>
@@ -65,7 +66,7 @@ export function StaffNumbersDashboard() {
           <Section className="py-8">
             <div className="bg-red-500/10 border border-red-500 rounded-lg p-4">
               <div className="text-red-400">
-                Error loading staff numbers data: {error.message}
+                Error loading staff movement data: {error.message}
               </div>
             </div>
           </Section>
@@ -74,6 +75,8 @@ export function StaffNumbersDashboard() {
       </div>
     );
   }
+
+  const movementData = calculateStaffMovement(filteredData);
 
   return (
     <div className="min-h-screen bg-background-base">
@@ -85,40 +88,51 @@ export function StaffNumbersDashboard() {
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
-              <h1 className="text-3xl font-bold text-text-primary">Staff Numbers</h1>
+              <h1 className="text-3xl font-bold text-text-primary">Staff Movement</h1>
               
-              {/* View Toggle */}
+              {/* Group By Toggle */}
               <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
                 <button
-                  onClick={() => setViewMode('chart')}
+                  onClick={() => setGroupBy('organization')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    viewMode === 'chart'
+                    groupBy === 'organization'
                       ? 'bg-brand-primary text-white'
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
                   <BarChart2 className="w-4 h-4" />
-                  <span>Chart</span>
+                  <span>Organization</span>
                 </button>
                 <button
-                  onClick={() => setViewMode('table')}
+                  onClick={() => setGroupBy('discipline')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    viewMode === 'table'
+                    groupBy === 'discipline'
                       ? 'bg-brand-primary text-white'
                       : 'text-text-secondary hover:text-text-primary'
                   }`}
                 >
-                  <Table2 className="w-4 h-4" />
-                  <span>Table</span>
+                  <BarChart2 className="w-4 h-4" />
+                  <span>Discipline</span>
+                </button>
+                <button
+                  onClick={() => setGroupBy('nop')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    groupBy === 'nop'
+                      ? 'bg-brand-primary text-white'
+                      : 'text-text-secondary hover:text-text-primary'
+                  }`}
+                >
+                  <BarChart2 className="w-4 h-4" />
+                  <span>NOP Type</span>
                 </button>
               </div>
             </div>
             <p className="text-text-secondary">
-              Track and monitor staff numbers across the project
+              Track staff onboarding and offboarding patterns across the project
             </p>
           </div>
 
-          {/* Filters - Always visible */}
+          {/* Filters */}
           <TableFilters
             filters={{
               disciplines: uniqueValues.disciplines.map(d => ({ value: d, label: d })),
@@ -132,11 +146,11 @@ export function StaffNumbersDashboard() {
             onFilterChange={handleFilterChange}
           />
 
-          {/* Content */}
+          {/* Chart */}
           <Card className="p-6" hover>
-            <StaffChart 
-              data={filteredData}
-              mode="numbers"
+            <StaffMovementChart 
+              data={movementData}
+              groupBy={groupBy}
             />
           </Card>
         </Section>

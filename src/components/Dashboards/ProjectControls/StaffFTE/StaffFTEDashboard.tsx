@@ -10,6 +10,8 @@ import { O2NL_Staff } from '../../../../api/staff-fte/types';
 import { logger } from '../../../../lib/logger';
 import { StaffChart } from '../P+C/StaffComponents/StaffChart';
 import { TableFilters } from './components/TableFilters';
+import { FTESummaryTable } from './components/FTESummaryTable';
+import { StaffTable } from './components/StaffTable';
 import { useTableFilters } from './hooks/useTableFilters';
 import { MonthColumn } from './types';
 
@@ -141,13 +143,32 @@ export function StaffFTEDashboard() {
           />
 
           {/* Content */}
-          <Card className="p-6" hover>
-            <StaffChart 
-              data={filteredData}
-              monthColumns={monthColumns}
-              mode="fte"
-            />
-          </Card>
+          {viewMode === 'chart' ? (
+            <Card className="p-6" hover>
+              <StaffChart 
+                data={filteredData}
+                monthColumns={monthColumns}
+                mode="fte"
+              />
+            </Card>
+          ) : (
+            <div className="space-y-6">
+              <Card className="p-6" hover>
+                <FTESummaryTable 
+                  data={filteredData}
+                  monthColumns={monthColumns}
+                />
+              </Card>
+              
+              {/* Staff Table */}
+              <Card className="p-6" hover>
+                <StaffTable 
+                  data={filteredData}
+                  monthColumns={monthColumns}
+                />
+              </Card>
+            </div>
+          )}
         </Section>
       </div>
       <Footer />

@@ -23,6 +23,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/staff-numbers')
         : test.name === 'Staff FTE'
         ? () => navigate('/project-controls/staff-fte')
+        : test.name === 'Staff Movement'
+        ? () => navigate('/project-controls/staff-movement')
         : test.name === 'AMT Budget Tracking'
         ? () => navigate('/project-controls/amt/budget')
         : test.name === 'Earned Value'

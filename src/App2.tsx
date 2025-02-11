@@ -10,6 +10,7 @@ import { AMTDashboard, AMTDetailPage, BudgetTracking } from './components/Dashbo
 import { SystemsDashboard } from './components/Dashboards/ProjectControls/Systems';
 import { StaffNumbers } from './components/Dashboards/ProjectControls/P+C';
 import { StaffFTEDashboard } from './components/Dashboards/ProjectControls/StaffFTE';
+import { StaffMovementDashboard } from './components/Dashboards/ProjectControls/P+C/StaffMovement';
 import { EarnedValueSummary } from './components/Dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { SustainabilityInitiatives } from './components/Dashboards/ProjectControls/SustainabilityInitiatives';
 import { SustainabilityTracking } from './components/Dashboards/ProjectControls/SustainabilityTracking';
@@ -39,6 +40,7 @@ function App2() {
         <Route path="/project-controls/systems" element={<SystemsDashboard />} />
         <Route path="/project-controls/staff-numbers" element={<StaffNumbers />} />
         <Route path="/project-controls/staff-fte" element={<StaffFTEDashboard />} />
+        <Route path="/project-controls/staff-movement" element={<StaffMovementDashboard />} />
         <Route path="/project-controls/commercial/earned-value" element={<EarnedValueSummary />} />
         <Route path="/project-controls/sustainability" element={<SustainabilityInitiatives />} />
         <Route path="/project-controls/sustainability-tracking" element={<SustainabilityTracking />} />

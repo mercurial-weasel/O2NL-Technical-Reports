@@ -82,7 +82,8 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     icon: Users,
     tests: [
       { name: 'Staff Numbers', icon: createIcon(Users), status: 'draft' },
-      { name: 'Staff FTE', icon: createIcon(Users), status: 'draft' }
+      { name: 'Staff FTE', icon: createIcon(Users), status: 'draft' },
+      { name: 'Staff Movement', icon: createIcon(Users), status: 'draft' }
     ]
   },
   {

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Plot from 'react-plotly.js';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { MonthColumn } from '../../StaffFTE/types';
+import { MonthColumn } from '../../../StaffFTE/types';
 import { calculateFTESummaries, calculateNumberUsersSummaries } from '../../../../../api/staff-fte/transformations';
 
 interface StaffChartProps {
@@ -54,99 +54,54 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
     }
   }, [data, monthColumns, mode]);
 
-  // Prepare data for the selected view
-  const traces = useMemo(() => {
-    let items: { name: string; values: { [key: string]: number } }[];
-    let colors: { [key: string]: string };
-    let xLabels: string[];
-
-    // Get x-axis labels based on mode
+  // Get x-axis labels and data based on mode
+  const { xLabels, items } = useMemo(() => {
     if (mode === 'fte' && monthColumns) {
-      xLabels = monthColumns.map(m => m.label);
+      const xLabels = monthColumns.map(m => m.label);
+      const items = chartView === 'organization' 
+        ? summaries.orgSummaries.map(s => ({ name: s.org, values: s.totals }))
+        : chartView === 'discipline'
+        ? summaries.disciplineSummaries.map(s => ({ name: s.discipline, values: s.totals }))
+        : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.totals }));
+      return { xLabels, items };
     } else {
-      xLabels = summaries.dateRange.months.map(m => {
+      const xLabels = summaries.dateRange.months.map(m => {
         const date = new Date(m);
         return `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear().toString().slice(2)}`;
       });
+      const items = chartView === 'organization'
+        ? summaries.orgSummaries.map(s => ({ name: s.org, values: s.userCounts }))
+        : chartView === 'discipline'
+        ? summaries.disciplineSummaries.map(s => ({ name: s.discipline, values: s.userCounts }))
+        : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.userCounts }));
+      return { xLabels, items };
     }
+  }, [summaries, chartView, mode, monthColumns]);
 
-    // Get data based on view and mode
-    switch (chartView) {
-      case 'organization':
-        items = mode === 'fte' 
-          ? summaries.orgSummaries.map(({ org, totals }) => ({ name: org, values: totals }))
-          : summaries.orgSummaries.map(({ org, userCounts }) => ({ name: org, values: userCounts }));
-        colors = colorPalettes.organization;
-        break;
-      case 'discipline':
-        items = mode === 'fte'
-          ? summaries.disciplineSummaries.map(({ discipline, totals }) => ({ name: discipline, values: totals }))
-          : summaries.disciplineSummaries.map(({ discipline, userCounts }) => ({ name: discipline, values: userCounts }));
-        colors = colorPalettes.discipline;
-        break;
-      case 'nop':
-        items = mode === 'fte'
-          ? summaries.nopTypeSummaries.map(({ nopType, totals }) => ({ name: nopType, values: totals }))
-          : summaries.nopTypeSummaries.map(({ nopType, userCounts }) => ({ name: nopType, values: userCounts }));
-        colors = colorPalettes.nop;
-        break;
-    }
-
-    return items.map(({ name, values }) => ({
-      type: 'bar' as const,
-      name,
-      x: xLabels,
-      y: mode === 'fte' && monthColumns
-        ? monthColumns.map(m => values[m.key])
-        : summaries.dateRange.months.map(m => values[m]),
-      marker: {
-        color: colors[name] || '#95A5A6' // Default gray if no color defined
-      },
-      hovertemplate: `
-        <b>${name}</b><br>
-        Month: %{x}<br>
-        ${mode === 'fte' ? 'FTE: %{y:.2f}' : 'Staff Count: %{y}'}<br>
-        <extra></extra>
-      `
-    }));
-  }, [summaries, monthColumns, chartView, mode]);
-
-  // Add total line trace
-  const linePlot = {
-    type: 'scatter' as const,
-    name: mode === 'fte' ? 'Total FTE' : 'Total Staff',
-    x: mode === 'fte' && monthColumns
-      ? monthColumns.map(m => m.label)
-      : summaries.dateRange.months.map(m => {
-          const date = new Date(m);
-          return `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear().toString().slice(2)}`;
-        }),
+  // Create traces for each category
+  const traces = items.map(({ name, values }) => ({
+    type: 'bar' as const,
+    name,
+    x: xLabels,
     y: mode === 'fte' && monthColumns
-      ? monthColumns.map(m => summaries.grandTotal[m.key])
-      : summaries.dateRange.months.map(m => summaries.totalUsers[m]),
-    mode: 'lines+markers' as const,
-    line: {
-      color: '#E74C3C',
-      width: 2,
-      dash: 'solid'
-    },
+      ? monthColumns.map(m => values[m.key])
+      : summaries.dateRange.months.map(m => values[m]),
     marker: {
-      size: 6,
-      color: '#E74C3C'
+      color: colorPalettes[chartView][name as keyof typeof colorPalettes[typeof chartView]] || '#95A5A6'
     },
     hovertemplate: `
-      <b>${mode === 'fte' ? 'Total FTE' : 'Total Staff'}</b><br>
+      <b>${name}</b><br>
       Month: %{x}<br>
       ${mode === 'fte' ? 'FTE: %{y:.2f}' : 'Staff Count: %{y}'}<br>
       <extra></extra>
     `
-  };
+  }));
 
   return (
     <div>
       {/* View Toggle */}
       <div className="flex justify-end mb-4">
-        <div className="flex items-center bg-gray-700/50 rounded-lg p-0.5">
+        <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
           <button
             onClick={() => setChartView('organization')}
             className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
@@ -181,7 +136,7 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
       </div>
 
       <Plot
-        data={[...traces, linePlot]}
+        data={traces}
         layout={{
           title: {
             text: `Monthly ${mode === 'fte' ? 'FTE' : 'Staff Numbers'} by ${chartView.charAt(0).toUpperCase() + chartView.slice(1)}`,
