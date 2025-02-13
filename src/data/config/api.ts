@@ -8,7 +8,12 @@ export const API_CONFIG = {
     materials: '/materials',
     zones: '/zones',
     systems: '/api/systems',
-    sustainability: '/api/sustainability'
+    sustainability: '/api/sustainability',
+    emissions: '/api/emissions',
+    amtBudget: '/api/cost/amt-budgets',
+    earnedValue: '/api/cost/earned-value',
+    consenting: '/api/programme/consenting',
+    hours: '/api/cost/hours'
   },
   defaultHeaders: {
     'Content-Type': 'application/json',

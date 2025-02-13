@@ -25,6 +25,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/staff-fte')
         : test.name === 'Staff Movement'
         ? () => navigate('/project-controls/staff-movement')
+        : test.name === 'Time Logs'
+        ? () => navigate('/project-controls/time-logs')
         : test.name === 'AMT Budget Tracking'
         ? () => navigate('/project-controls/amt/budget')
         : test.name === 'Earned Value'
@@ -33,6 +35,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/sustainability')
         : test.name === 'Sustainability Tracking'
         ? () => navigate('/project-controls/sustainability-tracking')
+        : test.name === 'Consenting'
+        ? () => navigate('/project-controls/consenting')
         : undefined
     }))
   }));

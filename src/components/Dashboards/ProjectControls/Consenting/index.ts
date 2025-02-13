@@ -1,0 +1,1 @@
+export { ConsentingDashboard } from './ConsentingDashboard';

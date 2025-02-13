@@ -12,6 +12,8 @@ import {
   Boxes,
   Leaf,
   DollarSign,
+  Clock,
+  FileCheck,
   DivideIcon as LucideIcon
 } from 'lucide-react';
 import { DisciplineSection } from '../AllDisciplines/types';
@@ -53,7 +55,8 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
       { name: 'PAB Report', icon: createIcon(FileText), status: 'draft' },
       { name: 'AMT Report', icon: createIcon(BarChart2), status: 'concept' },
       { name: 'Programme Milestones', icon: createIcon(Milestone), status: 'published' },
-      { name: 'Systems/Software', icon: createIcon(Monitor), status: 'draft' }
+      { name: 'Systems/Software', icon: createIcon(Monitor), status: 'draft' },
+      { name: 'Consenting', icon: createIcon(FileCheck), status: 'draft' }
     ]
   },
   {
@@ -83,7 +86,8 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     tests: [
       { name: 'Staff Numbers', icon: createIcon(Users), status: 'draft' },
       { name: 'Staff FTE', icon: createIcon(Users), status: 'draft' },
-      { name: 'Staff Movement', icon: createIcon(Users), status: 'draft' }
+      { name: 'Staff Movement', icon: createIcon(Users), status: 'draft' },
+      { name: 'Time Logs', icon: createIcon(Clock), status: 'draft' }
     ]
   },
   {

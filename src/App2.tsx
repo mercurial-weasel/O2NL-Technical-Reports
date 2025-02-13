@@ -11,9 +11,11 @@ import { SystemsDashboard } from './components/Dashboards/ProjectControls/System
 import { StaffNumbers } from './components/Dashboards/ProjectControls/P+C';
 import { StaffFTEDashboard } from './components/Dashboards/ProjectControls/StaffFTE';
 import { StaffMovementDashboard } from './components/Dashboards/ProjectControls/P+C/StaffMovement';
+import { TimeLogsDashboard } from './components/Dashboards/P+C/TimeLogs';
 import { EarnedValueSummary } from './components/Dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { SustainabilityInitiatives } from './components/Dashboards/ProjectControls/SustainabilityInitiatives';
 import { SustainabilityTracking } from './components/Dashboards/ProjectControls/SustainabilityTracking';
+import { ConsentingDashboard } from './components/Dashboards/ProjectControls/Consenting';
 import { GeoDashboardSPT } from './components/Dashboards/Geo';
 import { RoadmapPage } from './components/Roadmap';
 
@@ -41,9 +43,11 @@ function App2() {
         <Route path="/project-controls/staff-numbers" element={<StaffNumbers />} />
         <Route path="/project-controls/staff-fte" element={<StaffFTEDashboard />} />
         <Route path="/project-controls/staff-movement" element={<StaffMovementDashboard />} />
+        <Route path="/project-controls/time-logs" element={<TimeLogsDashboard />} />
         <Route path="/project-controls/commercial/earned-value" element={<EarnedValueSummary />} />
         <Route path="/project-controls/sustainability" element={<SustainabilityInitiatives />} />
         <Route path="/project-controls/sustainability-tracking" element={<SustainabilityTracking />} />
+        <Route path="/project-controls/consenting" element={<ConsentingDashboard />} />
         
         {/* Fallback Route */}
         <Route path="*" element={<Navigate to="/" replace />} />
