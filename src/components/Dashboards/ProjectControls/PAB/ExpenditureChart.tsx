@@ -1,17 +1,14 @@
+// src/components/Dashboards/ProjectControls/PAB/ExpenditureChart.tsx
 import React from 'react';
 import Plot from 'react-plotly.js';
 import { Card } from '../../../common/Card';
-import {
-  months,
-  plannedMonthly,
-  actualMonthly,
-  forecastMonthly,
-  plannedCumulative,
-  actualCumulative,
-  forecastCumulative
-} from './data/expenditureData';
+import { ExpenditureData } from '../../../../api/cost/pab/types';
 
-export function ExpenditureChart() {
+interface ExpenditureChartProps {
+  data: ExpenditureData;
+}
+
+export function ExpenditureChart({ data }: ExpenditureChartProps) {
   return (
     <Card className="p-4" hover glow>
       <div className="w-full bg-purple-900 text-text-primary text-center py-1 px-3 mb-4 rounded-lg font-semibold text-base">
@@ -21,29 +18,29 @@ export function ExpenditureChart() {
       <Plot
         data={[
           {
-            x: months,
-            y: plannedMonthly,
+            x: data.months,
+            y: data.planned.monthly,
             type: 'bar',
             name: 'Planned Monthly',
             marker: { color: '#C6C6C6' },  // Light gray color
           },
           {
-            x: months,
-            y: actualMonthly,
+            x: data.months,
+            y: data.actual.monthly,
             type: 'bar',
             name: 'Actual Monthly',
             marker: { color: '#FFDC73' },  // Light yellow color
           },
           {
-            x: months,
-            y: forecastMonthly,
+            x: data.months,
+            y: data.forecast.monthly,
             type: 'bar',
             name: 'Forecast Monthly',
             marker: { color: '#4C7389' },  // Blue color
           },
           {
-            x: months,
-            y: plannedCumulative,
+            x: data.months,
+            y: data.planned.cumulative,
             type: 'scatter',
             mode: 'lines',
             name: 'Planned Cumulative',
@@ -51,8 +48,8 @@ export function ExpenditureChart() {
             yaxis: 'y2',
           },
           {
-            x: months,
-            y: actualCumulative,
+            x: data.months,
+            y: data.actual.cumulative,
             type: 'scatter',
             mode: 'lines',
             name: 'Actual Cumulative',
@@ -60,8 +57,8 @@ export function ExpenditureChart() {
             yaxis: 'y2',
           },
           {
-            x: months,
-            y: forecastCumulative,
+            x: data.months,
+            y: data.forecast.cumulative,
             type: 'scatter',
             mode: 'lines',
             name: 'Forecast Cumulative',
@@ -70,7 +67,6 @@ export function ExpenditureChart() {
           },
         ]}
         layout={{
-          // Remove the title since we now have the header div
           paper_bgcolor: 'rgba(0,0,0,0)',
           plot_bgcolor: 'rgba(0,0,0,0)',
           barmode: 'group',
@@ -82,7 +78,7 @@ export function ExpenditureChart() {
             },
             tickfont: { color: '#FFFFFF' },
             gridcolor: '#333333',
-            tickvals: months,
+            tickvals: data.months,
             showline: true,
             linecolor: '#333333',
             mirror: true
@@ -122,7 +118,7 @@ export function ExpenditureChart() {
           margin: {
             l: 80,
             r: 80,
-            t: 20, // Reduced top margin since we removed the title
+            t: 20,
             b: 100
           },
           modebar: {

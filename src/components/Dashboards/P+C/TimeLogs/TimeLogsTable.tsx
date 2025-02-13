@@ -10,7 +10,7 @@ interface TimeLogsTableProps {
 export function TimeLogsTable({ data }: TimeLogsTableProps) {
   const [selectedProjects, setSelectedProjects] = useState<Set<string>>(new Set(['all']));
   const [selectedTasks, setSelectedTasks] = useState<Set<string>>(new Set(['all']));
-  const [selectedStatuses, setSelectedStatuses] = useState<Set<string>>(new Set(['all']));
+  const [selectedStatuses, setSelectedStatuses] = useState<Set<string>>(new Set(['Pending']));
   const [expandedProjects, setExpandedProjects] = useState<Set<string>>(new Set());
   const [expandedTasks, setExpandedTasks] = useState<Set<string>>(new Set());
 

@@ -1,9 +1,22 @@
+// src/components/Dashboards/ProjectControls/PAB/FundingSplitCard.tsx
 import React from 'react';
 import Plot from 'react-plotly.js';
 import { Card } from '../../../common/Card';
-import { currentMonthData, projectSplitData, colors } from './data/fundingSplitData';
+import { FundingSplitData } from '../../../../api/cost/pab/types';
 
-export function FundingSplitCard() {
+interface FundingSplitCardProps {
+  data: FundingSplitData;
+}
+
+// Custom colors for the pie charts
+const colors = [
+  '#4C7389', // Blue
+  '#6CC24A', // Green
+  '#FFD700', // Gold
+  '#E63946'  // Red
+];
+
+export function FundingSplitCard({ data }: FundingSplitCardProps) {
   const commonLayout = {
     showlegend: true,
     legend: {
@@ -40,29 +53,25 @@ export function FundingSplitCard() {
   };
 
   // Function to get chart data with abbreviated names in chart and full names with values in legend
-  const getChartData = (data: typeof currentMonthData) => ({
+  const getChartData = (data: typeof data.currentMonth) => ({
     values: data.map(d => d.value),
     labels: data.map(d => d.name === 'McConnell Dowell' ? 'McD' : d.name),
     type: 'pie' as const,
     hole: 0.4,
     marker: { colors },
-    // Show both label and percentage in the pie slices
     textinfo: 'text+percent',
     textposition: 'inside',
     textfont: { 
       color: '#FFFFFF',
       size: 11
     },
-    // Custom text for pie slices (abbreviated name)
     text: data.map(d => d.name === 'McConnell Dowell' ? 'McD' : d.name),
     hovertemplate: '%{customdata}: %{value}%<extra></extra>',
-    customdata: data.map(d => d.name), // Store full names for hover
+    customdata: data.map(d => d.name),
     name: '',
     showlegend: true,
     legendgroup: 'companies',
-    // Custom legend text with full names and values
     legendtext: data.map(d => `${d.name}: ${d.value}%`),
-    // Custom legend formatting
     legendgrouptitle: {
       font: { color: '#FFFFFF' }
     }
@@ -81,7 +90,7 @@ export function FundingSplitCard() {
             Current Month Split
           </h3>
           <Plot
-            data={[getChartData(currentMonthData)]}
+            data={[getChartData(data.currentMonth)]}
             layout={{
               ...commonLayout,
               title: {
@@ -101,7 +110,7 @@ export function FundingSplitCard() {
             Project Split
           </h3>
           <Plot
-            data={[getChartData(projectSplitData)]}
+            data={[getChartData(data.projectSplit)]}
             layout={{
               ...commonLayout,
               title: {

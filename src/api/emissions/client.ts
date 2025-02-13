@@ -13,11 +13,14 @@ export class EmissionsApiClient extends BaseApiClient {
         mockEmissionsData
       );
       
+      logger.info('complete fetch response, got response:', { response });
+      
       // Calculate total emissions before returning
       const totalEmissions = response.data.emissions.reduce(
         (sum, emission) => sum + emission.amount,
         0
       );
+      logger.info('finished cacluating total emissions:');
 
       return {
         ...response.data,

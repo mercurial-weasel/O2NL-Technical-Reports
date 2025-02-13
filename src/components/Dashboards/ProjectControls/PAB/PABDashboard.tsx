@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/components/Dashboards/ProjectControls/PAB/PABDashboard.tsx
+import React, { useState, useEffect } from 'react';
 import { Header } from '../../../common/Header';
 import { Footer } from '../../../common/Footer';
 import { Section } from '../../../common';
@@ -12,15 +13,75 @@ import { Limb3IndicatorsCard } from './Limb3IndicatorsCard';
 import { ExpenditureIndicatorsCard } from './ExpenditureIndicatorsCard';
 import { ExpenditureChart } from './ExpenditureChart';
 import { FundingSplitCard } from './FundingSplitCard';
+import { PABApiClient } from '../../../../api/cost/pab/client';
+import { PABResponse } from '../../../../api/cost/pab/types';
+import { logger } from '../../../../lib/logger';
 
 export function PABDashboard() {
   const [selectedMonth, setSelectedMonth] = useState('Current');
+  const [pabData, setPabData] = useState<PABResponse | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
   const months = [
     'Current',
     'December 2024',
     'November 2024'
   ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const client = new PABApiClient();
+        const data = await client.fetchPABData();
+        setPabData(data);
+      } catch (err) {
+        const error = err instanceof Error ? err : new Error('Failed to load PAB data');
+        logger.error('PAB data fetch failed', { error: error.message });
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="flex items-center justify-center h-64">
+              <div className="text-text-secondary">Loading PAB data...</div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background-base">
+        <Header />
+        <div className="pt-24">
+          <Section className="py-8">
+            <div className="bg-red-500/10 border border-red-500 rounded-lg p-4">
+              <div className="text-red-400">
+                Error loading PAB data: {error.message}
+              </div>
+            </div>
+          </Section>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!pabData) return null;
 
   return (
     <div className="min-h-screen bg-background-base">
@@ -64,9 +125,9 @@ export function PABDashboard() {
 
             {/* Right Column */}
             <div className="space-y-0">
-              <ExpenditureChart />
+              <ExpenditureChart data={pabData.expenditure} />
               <RiskIndicatorsCard />
-              <FundingSplitCard />
+              <FundingSplitCard data={pabData.fundingSplit} />
               <Limb3IndicatorsCard />
             </div>
           </div>

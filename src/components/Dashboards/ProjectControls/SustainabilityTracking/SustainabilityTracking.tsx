@@ -25,7 +25,9 @@ export function SustainabilityTracking() {
       try {
         const client = new EmissionsApiClient();
         const data = await client.fetchEmissionsData();
+        logger.info('Emissions data fetched');
         const monthlyData = calculateMonthlyEmissions(data.emissions);
+        logger.info('calculateMonthlyEmissions complete');
         setEmissionsData(monthlyData);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load emissions data');

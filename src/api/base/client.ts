@@ -35,6 +35,7 @@ export abstract class BaseApiClient {
 
       const url = `${this.baseUrl}${endpoint}`;
       const startTime = performance.now();
+      logger.info('about  to make a call to ', { url }, ' with ', {options});
       
       const response = await fetch(url, {
         ...options,

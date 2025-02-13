@@ -79,9 +79,9 @@ export function TimeLogsDashboard() {
           <div className="mb-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-text-primary">Time Logs</h1>
+                <h1 className="text-3xl font-bold text-text-primary">Time Logs </h1>
                 <p className="text-text-secondary mt-2">
-                  Track and analyze project time logs across teams and activities
+                  By default shows only unapproved time. Filter by status to show time logs with different approval status
                 </p>
               </div>
               <div className="text-sm text-text-muted">
