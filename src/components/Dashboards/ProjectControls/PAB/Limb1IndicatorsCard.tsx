@@ -1,38 +1,13 @@
 import React from 'react';
 import { Card } from '../../../common/Card';
 import { Chevron } from '../../Common/Chevron';
+import { Limb1Indicators } from '../../../../api/cost/pab/types';
 
-interface Limb1_Costs_to_Completion {
-  text: string;
-  indicator: string;
-  backgroundColor?: string;
-  textColor?: string;
+interface Limb1IndicatorsCardProps {
+  data: Limb1Indicators;
 }
 
-export function Limb1IndicatorsCard() {
-  const indicators: Limb1_Costs_to_Completion[] = [
-    {
-      text: "Main Shared Works",
-      indicator: "0.2m",
-      backgroundColor: "bg-blue-900"
-    },
-    {
-      text: "Main Non-Shared Workss",
-      indicator: "0.3m",
-      backgroundColor: "bg-blue-900"
-    },	
-    {
-      text: "Initiative #1",
-      indicator: "",
-      backgroundColor: "bg-blue-900"
-    },		
-    {
-      text: "Initiative #1",
-      indicator: "",
-      backgroundColor: "bg-blue-900"
-    }			
-  ];
-
+export function Limb1IndicatorsCard({ data }: Limb1IndicatorsCardProps) {
   return (
     <Card className="p-0 overflow-hidden" hover glow>
       {/* Header matching other cards style */}
@@ -43,11 +18,11 @@ export function Limb1IndicatorsCard() {
       {/* Content */}
       <div className="p-4">
         <div className="grid grid-cols-4 gap-1">
-          {indicators.map((item, index) => (
+          {data.indicators.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <Chevron
                 indicator={item.indicator}
-                backgroundColor={item.backgroundColor}
+                backgroundColor="bg-blue-900"
                 textColor={item.textColor}
                 width={100}
                 height={20}

@@ -1,4 +1,3 @@
-// src/components/Dashboards/ProjectControls/PAB/PABDashboard.tsx
 import React, { useState, useEffect } from 'react';
 import { Header } from '../../../common/Header';
 import { Footer } from '../../../common/Footer';
@@ -18,23 +17,24 @@ import { PABResponse } from '../../../../api/cost/pab/types';
 import { logger } from '../../../../lib/logger';
 
 export function PABDashboard() {
-  const [selectedMonth, setSelectedMonth] = useState('Current');
+  const [selectedMonth, setSelectedMonth] = useState<string>('');
+  const [availableMonths, setAvailableMonths] = useState<string[]>([]);
   const [pabData, setPabData] = useState<PABResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-
-  const months = [
-    'Current',
-    'December 2024',
-    'November 2024'
-  ];
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const client = new PABApiClient();
-        const data = await client.fetchPABData();
+        const data = await client.fetchPABData(selectedMonth);
         setPabData(data);
+        setAvailableMonths(data.availableMonths);
+        
+        // Set initial selected month if not already set
+        if (!selectedMonth && data.availableMonths.length > 0) {
+          setSelectedMonth(data.availableMonths[0]);
+        }
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load PAB data');
         logger.error('PAB data fetch failed', { error: error.message });
@@ -45,7 +45,7 @@ export function PABDashboard() {
     };
 
     fetchData();
-  }, []);
+  }, [selectedMonth]);
 
   if (isLoading) {
     return (
@@ -101,8 +101,10 @@ export function PABDashboard() {
                 onChange={(e) => setSelectedMonth(e.target.value)}
                 className="appearance-none bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 pr-10 text-sm text-text-primary hover:bg-gray-700/50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary min-w-[160px]"
               >
-                {months.map(month => (
-                  <option key={month} value={month}>{month}</option>
+                {availableMonths.map(month => (
+                  <option key={month} value={month}>
+                    {new Date(month + '-01').toLocaleString('default', { month: 'long', year: 'numeric' })}
+                  </option>
                 ))}
               </select>
               <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -117,18 +119,18 @@ export function PABDashboard() {
           <div className="grid grid-cols-2 gap-x-6">
             {/* Left Column */}
             <div className="space-y-0">
-              <BudgetCard />
-              <CostIndicatorsCard />
-              <CostCard />
-              <Limb1IndicatorsCard />
+              <BudgetCard data={pabData.currentMonth.budget} />
+              <CostIndicatorsCard data={pabData.currentMonth.costIndicators} />
+              <CostCard data={pabData.currentMonth.cost} />
+              <Limb1IndicatorsCard data={pabData.currentMonth.limb1Indicators} />
             </div>
 
             {/* Right Column */}
             <div className="space-y-0">
-              <ExpenditureChart data={pabData.expenditure} />
-              <RiskIndicatorsCard />
-              <FundingSplitCard data={pabData.fundingSplit} />
-              <Limb3IndicatorsCard />
+              <ExpenditureChart data={pabData.currentMonth.expenditure} />
+              <RiskIndicatorsCard data={pabData.currentMonth.riskIndicators} />
+              <FundingSplitCard data={pabData.currentMonth.fundingSplit} />
+              <Limb3IndicatorsCard data={pabData.currentMonth.limb3Indicators} />
             </div>
           </div>
         </Section>

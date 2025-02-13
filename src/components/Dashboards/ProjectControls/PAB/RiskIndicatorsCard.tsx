@@ -1,48 +1,13 @@
 import React from 'react';
 import { Card } from '../../../common/Card';
 import { Chevron } from '../../Common/Chevron';
+import { RiskIndicators } from '../../../../api/cost/pab/types';
 
-interface RiskIndicator {
-  text: string;
-  indicator: string;
-  backgroundColor?: string;
-  textColor?: string;
+interface RiskIndicatorsCardProps {
+  data: RiskIndicators;
 }
 
-export function RiskIndicatorsCard() {
-  const indicators: RiskIndicator[] = [
-    {
-      text: "Original Allocation",
-      indicator: "3.2m",
-      backgroundColor: "bg-red-900"
-    },
-    {
-      text: "Current Exposure",
-      indicator: "0.1m",
-      backgroundColor: "bg-red-900"
-    },	
-    {
-      text: "Retained Allocation",
-      indicator: "0.71%",
-      backgroundColor: "bg-red-900"
-    },		
-    {
-      text: "Monthly Exposure Movement",
-      indicator: "-0.02m",
-      backgroundColor: "bg-red-900"
-    },			
-    {
-      text: "Current Contingency",
-      indicator: "0.75m",
-      backgroundColor: "bg-red-900"
-    },				
-    {
-      text: "Remaining Exposure and Allocation",
-      indicator: "0.89m",
-      backgroundColor: "bg-red-900"
-    }
-  ];
-
+export function RiskIndicatorsCard({ data }: RiskIndicatorsCardProps) {
   return (
     <Card className="p-0 overflow-hidden" hover glow>
       {/* Header matching other cards style */}
@@ -53,12 +18,11 @@ export function RiskIndicatorsCard() {
       {/* Content */}
       <div className="p-4">
         <div className="grid grid-cols-3 gap-1">
-          {indicators.map((item, index) => (
+          {data.indicators.map((item, index) => (
             <div key={index} className={`flex flex-col items-center ${index >= 3 ? 'mt-1' : ''}`}>
               <Chevron
                 indicator={item.indicator}
-                backgroundColor={item.backgroundColor}
-                textColor={item.textColor}
+                backgroundColor="bg-red-900"
                 width={100}
                 height={20}
                 className="transform hover:scale-105 transition-transform duration-200"

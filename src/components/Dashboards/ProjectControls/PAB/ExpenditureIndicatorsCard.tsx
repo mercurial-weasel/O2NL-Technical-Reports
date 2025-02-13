@@ -1,28 +1,13 @@
 import React from 'react';
 import { Card } from '../../../common/Card';
 import { Chevron } from '../../Common/Chevron';
+import { ExpenditureIndicators } from '../../../../api/cost/pab/types';
 
-interface Expenditure {
-  text: string;
-  indicator: string;
-  backgroundColor?: string;
-  textColor?: string;
+interface ExpenditureIndicatorsCardProps {
+  data: ExpenditureIndicators;
 }
 
-export function ExpenditureIndicatorsCard() {
-  const indicators: Expenditure[] = [
-    {
-      text: "Monthly Cashflow Variance",
-      indicator: "44.3",
-      backgroundColor: "bg-purple-900"
-    },
-    {
-      text: "Expenditure to data variance",
-      indicator: "-6.40 %",
-      backgroundColor: "bg-purple-900"
-    }
-  ];
-
+export function ExpenditureIndicatorsCard({ data }: ExpenditureIndicatorsCardProps) {
   return (
     <Card className="p-0 overflow-hidden" hover glow>
       {/* Header matching other cards style */}
@@ -33,11 +18,11 @@ export function ExpenditureIndicatorsCard() {
       {/* Content */}
       <div className="p-4">
         <div className="grid grid-cols-2 gap-1">
-          {indicators.map((item, index) => (
+          {data.indicators.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <Chevron
                 indicator={item.indicator}
-                backgroundColor={item.backgroundColor}
+                backgroundColor="bg-purple-900"
                 textColor={item.textColor}
                 width={100}
                 height={20}

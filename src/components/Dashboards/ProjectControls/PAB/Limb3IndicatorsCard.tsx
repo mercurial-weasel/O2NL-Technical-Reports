@@ -1,33 +1,13 @@
 import React from 'react';
 import { Card } from '../../../common/Card';
 import { Chevron } from '../../Common/Chevron';
+import { Limb3Indicators } from '../../../../api/cost/pab/types';
 
-interface Limb3 {
-  text: string;
-  indicator: string;
-  backgroundColor?: string;
-  textColor?: string;
+interface Limb3IndicatorsCardProps {
+  data: Limb3Indicators;
 }
 
-export function Limb3IndicatorsCard() {
-  const indicators: Limb3[] = [
-    {
-      text: "Dec 2024 Ops",
-      indicator: "96.5%",
-      backgroundColor: "bg-orange-900"
-    },
-    {
-      text: "Jan 2025 Ops",
-      indicator: "96%",
-      backgroundColor: "bg-orange-900"
-    },
-    {
-      text: "Final Rolling Averange Ops",
-      indicator: "0.71%",
-      backgroundColor: "bg-orange-900"
-    }
-  ];
-
+export function Limb3IndicatorsCard({ data }: Limb3IndicatorsCardProps) {
   return (
     <Card className="p-0 overflow-hidden" hover glow>
       {/* Header matching other cards style */}
@@ -38,11 +18,11 @@ export function Limb3IndicatorsCard() {
       {/* Content */}
       <div className="p-4">
         <div className="grid grid-cols-3 gap-1">
-          {indicators.map((item, index) => (
+          {data.indicators.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <Chevron
                 indicator={item.indicator}
-                backgroundColor={item.backgroundColor}
+                backgroundColor="bg-orange-900"
                 textColor={item.textColor}
                 width={100}
                 height={20}
