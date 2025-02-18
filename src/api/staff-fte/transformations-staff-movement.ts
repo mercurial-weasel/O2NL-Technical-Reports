@@ -30,18 +30,21 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
 
   // Find date range
   const dates = data.flatMap(record => [
-    new Date(record.RequiredStart),
-    new Date(record.RequiredFinish)
+    new Date(record.Required_Start),
+    new Date(record.Required_Finish)
   ]).filter(date => !isNaN(date.getTime()));
 
-  const startDate = new Date(Math.min(...dates.map(d => d.getTime())));
+  //const startDate = new Date(Math.min(...dates.map(d => d.getTime())));
+  const startDate = new Date(2024, 0, 1); // January 1, 2024
+ 
   const endDate = new Date(Math.max(...dates.map(d => d.getTime())));
 
   // Generate array of months
   const months: string[] = [];
   const currentDate = new Date(startDate);
   while (currentDate <= endDate) {
-    const monthKey = currentDate.toISOString().slice(0, 7);
+    const monthKey = currentDate.toLocaleString('default', { month: 'long' }) + '_' + 
+                    currentDate.getFullYear().toString().slice(-2);
     months.push(monthKey);
     
     // Initialize total movement for this month
@@ -57,16 +60,16 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
 
   // Process each staff member
   data.forEach(staff => {
-    const startDate = new Date(staff.RequiredStart);
-    const endDate = new Date(staff.RequiredFinish);
+    const startDate = new Date(staff.Required_Start);
+    const endDate = new Date(staff.Required_Finish);
 
     // Skip if dates are invalid
     if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
       return;
     }
 
-    const startMonth = startDate.toISOString().slice(0, 7);
-    const endMonth = endDate.toISOString().slice(0, 7);
+    const startMonth = `${startDate.toLocaleString('default', { month: 'long' })}_${startDate.getFullYear().toString().slice(-2)}`;
+    const endMonth = `${endDate.toLocaleString('default', { month: 'long' })}_${endDate.getFullYear().toString().slice(-2)}`;
 
     // Initialize maps if needed
     if (!orgMap.has(staff.Org)) {
@@ -93,10 +96,10 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
       });
     }
 
-    if (!nopTypeMap.has(staff.NOPType)) {
-      nopTypeMap.set(staff.NOPType, {});
+    if (!nopTypeMap.has(staff.NOP_Type)) {
+      nopTypeMap.set(staff.NOP_Type, {});
       months.forEach(month => {
-        nopTypeMap.get(staff.NOPType)![month] = { 
+        nopTypeMap.get(staff.NOP_Type)![month] = { 
           onboarding: 0, 
           offboarding: 0,
           onboardingStaff: [],
@@ -113,8 +116,8 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
       disciplineMap.get(staff.Team)![startMonth].onboarding++;
       disciplineMap.get(staff.Team)![startMonth].onboardingStaff.push(staff.Name);
       
-      nopTypeMap.get(staff.NOPType)![startMonth].onboarding++;
-      nopTypeMap.get(staff.NOPType)![startMonth].onboardingStaff.push(staff.Name);
+      nopTypeMap.get(staff.NOP_Type)![startMonth].onboarding++;
+      nopTypeMap.get(staff.NOP_Type)![startMonth].onboardingStaff.push(staff.Name);
       
       totalMovement[startMonth].onboarding++;
       totalMovement[startMonth].onboardingStaff.push(staff.Name);
@@ -128,8 +131,8 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
       disciplineMap.get(staff.Team)![endMonth].offboarding++;
       disciplineMap.get(staff.Team)![endMonth].offboardingStaff.push(staff.Name);
       
-      nopTypeMap.get(staff.NOPType)![endMonth].offboarding++;
-      nopTypeMap.get(staff.NOPType)![endMonth].offboardingStaff.push(staff.Name);
+      nopTypeMap.get(staff.NOP_Type)![endMonth].offboarding++;
+      nopTypeMap.get(staff.NOP_Type)![endMonth].offboardingStaff.push(staff.Name);
       
       totalMovement[endMonth].offboarding++;
       totalMovement[endMonth].offboardingStaff.push(staff.Name);

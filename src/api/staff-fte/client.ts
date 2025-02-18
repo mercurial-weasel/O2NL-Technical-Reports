@@ -52,7 +52,31 @@ export class StaffFTEApiClient {
         recordCount: data.length || 0
       });
 
-      return data;
+      // Transform response to match O2NL_Staff structure
+      return data.map((item: any) => ({
+        Discipline_Manager: item.Discipline_Manager || '',
+        Team: item.Team || '',
+        Location: item.Location || '',
+        NOP_Type: item.NOP_Type || '',
+        Org: item.Org || '',
+        Project_Role_Title: item.Project_Role_Title || '',
+        Phase: item.Phase || '',
+        Name: item.Name || '',
+        Status: item.Status || '',
+        Last_updated_conf: item.Last_updated_conf || new Date().toISOString(),
+        Split_Assignment_: item.Split_Assignment_ || '',
+        Resource_Options: item.Resource_Options || '',
+        Site_Based_: item.Site_Based_ || '',
+        Pricing_P_G___Prof___Direct_Works: item.Pricing_P_G___Prof___Direct_Works || '',
+        FTE__AVE_: parseFloat(item.FTE__AVE_) || 0,
+        Required_Start: new Date(item.Required_Start),
+        Required_Finish: new Date(item.Required_Finish),
+        ...Object.fromEntries(
+          Object.entries(item)
+            .filter(([key]) => /^(January|February|March|April|May|June|July|August|September|October|November|December)_\d{2}$/.test(key))
+            .map(([key, value]) => [key, parseFloat(value) || 0])
+        )
+      }));
     } catch (error) {
       logger.error('Failed to fetch staff FTE data', {
         error: error instanceof Error ? error.message : 'Unknown error',

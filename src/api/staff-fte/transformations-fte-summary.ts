@@ -1,5 +1,6 @@
 import { O2NL_Staff } from './types';
 import { MonthColumn } from '../../components/Dashboards/ProjectControls/StaffFTE/types';
+import { logger } from '../../lib/logger';
 
 // FTE Summary Types
 export interface OrgSummary {
@@ -55,16 +56,17 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
     }
 
     // Get or create NOP type totals
-    if (!nopTypeMap.has(staff.NOPType)) {
-      nopTypeMap.set(staff.NOPType, {});
+    if (!nopTypeMap.has(staff.NOP_Type)) {
+      nopTypeMap.set(staff.NOP_Type, {});
       monthColumns.forEach(month => {
-        nopTypeMap.get(staff.NOPType)![month.key] = 0;
+        nopTypeMap.get(staff.NOP_Type)![month.key] = 0;
       });
     }
 
     // Calculate totals for each month
     monthColumns.forEach(month => {
-      const fte = staff[month.key as keyof O2NL_Staff] as number || 0;
+      const monthKey = month.key as keyof O2NL_Staff;
+      const fte = staff[monthKey] as number || 0;
       
       // Add to organization totals
       orgMap.get(staff.Org)![month.key] += fte;
@@ -73,14 +75,14 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
       disciplineMap.get(staff.Team)![month.key] += fte;
       
       // Add to NOP type totals
-      nopTypeMap.get(staff.NOPType)![month.key] += fte;
+      nopTypeMap.get(staff.NOP_Type)![month.key] += fte;
       
       // Add to grand total
       grandTotal[month.key] += fte;
     });
   });
 
-  // Convert maps to arrays and sort
+  // Convert maps to sorted arrays
   const orgSummaries = Array.from(orgMap.entries())
     .map(([org, totals]) => ({ org, totals }))
     .sort((a, b) => a.org.localeCompare(b.org));
@@ -92,6 +94,8 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
   const nopTypeSummaries = Array.from(nopTypeMap.entries())
     .map(([nopType, totals]) => ({ nopType, totals }))
     .sort((a, b) => a.nopType.localeCompare(b.nopType));
+
+  logger.info("Org Summaries:", orgSummaries);
 
   return {
     orgSummaries,

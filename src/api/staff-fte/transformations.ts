@@ -1,10 +1,9 @@
-// Main transformations file that serves as an entry point and documentation
 import { O2NL_Staff } from './types';
 import { MonthColumn } from '../../components/Dashboards/ProjectControls/StaffFTE/types';
 
 // Re-export types and functions from individual transformation files
 export * from './transformations-fte-summary';
-export * from './transformations-staff-numbers';
+export * from './transformations-staff-numbers2';
 export * from './transformations-staff-movement';
 
 /**
@@ -17,7 +16,7 @@ export * from './transformations-staff-movement';
  *    - Breaks down FTE by organization, discipline, and NOP type
  *    - Provides monthly FTE totals and grand totals
  * 
- * 2. Staff Numbers (transformations-staff-numbers.ts)
+ * 2. Staff Numbers (transformations-staff-numbers2.ts)
  *    - Tracks actual headcount of staff
  *    - Provides user counts by organization, discipline, and NOP type
  *    - Includes monthly movement tracking (onboarding/offboarding)
@@ -31,7 +30,7 @@ export * from './transformations-staff-movement';
  * ```typescript
  * import { 
  *   calculateFTESummaries,
- *   calculateNumberUsersSummaries,
+ *   calculateStaffNumbers,
  *   calculateStaffMovement
  * } from './transformations';
  * 
@@ -39,7 +38,7 @@ export * from './transformations-staff-movement';
  * const fteSummaries = calculateFTESummaries(staffData, monthColumns);
  * 
  * // Get staff number summaries with movement tracking
- * const staffNumbers = calculateNumberUsersSummaries(staffData);
+ * const staffNumbers = calculateStaffNumbers(staffData);
  * 
  * // Get detailed staff movement analysis
  * const staffMovement = calculateStaffMovement(staffData);

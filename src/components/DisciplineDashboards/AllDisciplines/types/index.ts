@@ -1,4 +1,5 @@
 import { DivideIcon as LucideIcon } from 'lucide-react';
+import { AccessRight } from '../../../../lib/auth/types';
 
 export interface IconConfig {
   icon: LucideIcon;
@@ -14,6 +15,7 @@ export interface DisciplineTest {
   icon: IconConfig;
   onClick?: () => void;
   status: DisciplineStatus;
+  accessFor: AccessRight[];
 }
 
 export interface DisciplineSection {
@@ -21,6 +23,7 @@ export interface DisciplineSection {
   title: string;
   icon: LucideIcon;
   tests: DisciplineTest[];
+  accessFor: AccessRight[];
 }
 
 export interface DisciplineProps {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MultiSelectFilter } from '../../../../Roadmap/components/MultiSelectFilter';
+import { MultiSelectFilter } from '../../../../common/Filters';
 
 interface FilterOption {
   value: string;

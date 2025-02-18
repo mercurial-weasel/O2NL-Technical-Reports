@@ -37,6 +37,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/sustainability-tracking')
         : test.name === 'Consenting'
         ? () => navigate('/project-controls/consenting')
+        : test.name === 'Equipment Status'
+        ? () => navigate('/project-controls/equipment')
         : undefined
     }))
   }));

@@ -1,3 +1,4 @@
+import { MultiSelectFilter } from '../../../common/Filters';
 import React, { useState, useEffect, useMemo } from 'react';
 import { Filter, BarChart2, Table2 } from 'lucide-react';
 import { Header } from '../../../common/Header';
@@ -9,7 +10,6 @@ import { SystemsChart } from './components/SystemsChart';
 import { SystemsApiClient } from '../../../../api/systems/client';
 import { getPivotData } from '../../../../api/systems/transformations';
 import { SystemData } from '../../../../api/systems/types';
-import { MultiSelectFilter } from '../../../Roadmap/components/MultiSelectFilter';
 import { logger } from '../../../../lib/logger';
 
 type ViewMode = 'table' | 'chart';

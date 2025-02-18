@@ -11,7 +11,7 @@ import { GanttChart } from './GanttChart';
 import { SustainabilityApiClient } from '../../../../api/sustainability/client';
 import { SustainabilityInitiative } from '../../../../api/sustainability/types';
 import { logger } from '../../../../lib/logger';
-import { MultiSelectFilter } from '../../../Roadmap/components/MultiSelectFilter';
+import { MultiSelectFilter } from '../../../common/Filters';
 import { 
   filterInitiativesByStatus, 
   filterInitiativesByTheme,

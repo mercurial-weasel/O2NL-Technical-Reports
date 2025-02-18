@@ -1,7 +1,7 @@
 // Professional color palettes for different groupings
 export const colorPalettes = {
   organization: {
-    'T+T': '#4C7389',        // Rich Blue
+    'TT': '#0077FF',        // Blue for T+T
     'Beca': '#6CC24A',       // Vibrant Green
     'MCD/Downer': '#3EB1C8', // Bright Cyan
     'Downer': '#3EB1C8',     // Bright Cyan

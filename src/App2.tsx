@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './lib/auth';
+import { ProtectedRoute } from './components/auth/ProtectedRoute';
+import { LoginPage } from './components/auth/LoginPage';
 import HomeTest from './components/HomeTest';
 import { GeotechnicalTests } from './components/DisciplineDashboards/Geotechnical';
 import { EnvironmentalTests } from './components/DisciplineDashboards/Environmental';
@@ -17,42 +20,140 @@ import { SustainabilityInitiatives } from './components/Dashboards/ProjectContro
 import { SustainabilityTracking } from './components/Dashboards/ProjectControls/SustainabilityTracking';
 import { ConsentingDashboard } from './components/Dashboards/ProjectControls/Consenting';
 import { GeoDashboardSPT } from './components/Dashboards/Geo';
-import { RoadmapPage } from './components/Roadmap';
+import { EquipmentStatus } from './components/Dashboards/ProjectControls/Equipment';
+import { routeConfig, getRequiredAccessRights } from './routes/accessControl';
 
 function App2() {
   return (
-    <Router>
-      <Routes>
-        {/* Main Routes */}
-        <Route path="/" element={<HomeTest />} />
-        <Route path="/roadmap" element={<RoadmapPage />} />
-        
-        {/* Discipline Routes */}
-        <Route path="/geotechnical" element={<GeotechnicalTests />} />
-        <Route path="/environmental" element={<EnvironmentalTests />} />
-        <Route path="/project-controls" element={<ProjectControlsDashboards />} />
-        
-        {/* Dashboard Routes */}
-        <Route path="/geotechnical/spt" element={<GeoDashboardSPT />} />
-        <Route path="/project-controls/milestones" element={<ProjectMilestones />} />
-        <Route path="/project-controls/pab" element={<PABDashboard />} />
-        <Route path="/project-controls/amt" element={<AMTDashboard />} />
-        <Route path="/project-controls/amt/:id" element={<AMTDetailPage />} />
-        <Route path="/project-controls/amt/budget" element={<BudgetTracking />} />
-        <Route path="/project-controls/systems" element={<SystemsDashboard />} />
-        <Route path="/project-controls/staff-numbers" element={<StaffNumbers />} />
-        <Route path="/project-controls/staff-fte" element={<StaffFTEDashboard />} />
-        <Route path="/project-controls/staff-movement" element={<StaffMovementDashboard />} />
-        <Route path="/project-controls/time-logs" element={<TimeLogsDashboard />} />
-        <Route path="/project-controls/commercial/earned-value" element={<EarnedValueSummary />} />
-        <Route path="/project-controls/sustainability" element={<SustainabilityInitiatives />} />
-        <Route path="/project-controls/sustainability-tracking" element={<SustainabilityTracking />} />
-        <Route path="/project-controls/consenting" element={<ConsentingDashboard />} />
-        
-        {/* Fallback Route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/login" element={<LoginPage />} />
+          
+          {/* Protected Routes */}
+          <Route path="/" element={
+            <ProtectedRoute>
+              <HomeTest />
+            </ProtectedRoute>
+          } />
+          
+          {/* Project Controls Routes */}
+          <Route path="/project-controls" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls')}>
+              <ProjectControlsDashboards />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/pab" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/pab')}>
+              <PABDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/amt" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/amt')}>
+              <AMTDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/amt/:id" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/amt')}>
+              <AMTDetailPage />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/amt/budget" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/amt/budget')}>
+              <BudgetTracking />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/systems" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/systems')}>
+              <SystemsDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/staff-numbers" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/staff-numbers')}>
+              <StaffNumbers />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/staff-fte" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/staff-fte')}>
+              <StaffFTEDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/staff-movement" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/staff-movement')}>
+              <StaffMovementDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/time-logs" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/time-logs')}>
+              <TimeLogsDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/commercial/earned-value" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/commercial/earned-value')}>
+              <EarnedValueSummary />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/sustainability" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/sustainability')}>
+              <SustainabilityInitiatives />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/sustainability-tracking" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/sustainability-tracking')}>
+              <SustainabilityTracking />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/consenting" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/consenting')}>
+              <ConsentingDashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/project-controls/equipment" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/equipment')}>
+              <EquipmentStatus />
+            </ProtectedRoute>
+          } />
+          
+          {/* Geotechnical Routes */}
+          <Route path="/geotechnical" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/geotechnical')}>
+              <GeotechnicalTests />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/geotechnical/spt" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/geotechnical/spt')}>
+              <GeoDashboardSPT />
+            </ProtectedRoute>
+          } />
+          
+          {/* Environmental Routes */}
+          <Route path="/environmental" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/environmental')}>
+              <EnvironmentalTests />
+            </ProtectedRoute>
+          } />
+          
+          {/* Fallback Route */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

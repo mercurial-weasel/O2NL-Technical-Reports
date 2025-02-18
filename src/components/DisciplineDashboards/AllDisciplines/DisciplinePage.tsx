@@ -5,8 +5,11 @@ import { Section } from '../../common';
 import { DisciplineSection } from './DisciplineSection';
 import { DisciplineProps, DisciplineStatus } from './types';
 import { StatusFilter } from './StatusFilter';
+import { useAuth } from '../../../lib/auth';
+import { logger } from '../../../lib/logger';
 
 export function DisciplinePage({ title, sections }: DisciplineProps) {
+  const { state: authState } = useAuth();
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>(
     sections.reduce((acc, section) => ({
       ...acc,
@@ -14,7 +17,6 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
     }), {})
   );
   
-  // Initialize with published, draft, and concept selected by default
   const [selectedStatuses, setSelectedStatuses] = useState<Set<DisciplineStatus | 'all'>>(
     new Set(['published', 'draft', 'concept'])
   );
@@ -31,16 +33,13 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
       const next = new Set(prev);
       
       if (status === 'all') {
-        // If 'all' is clicked, toggle between all selected and none selected
         return next.has('all') ? new Set() : new Set(['all']);
       }
       
-      // Remove 'all' when selecting specific statuses
       next.delete('all');
       
       if (next.has(status)) {
         next.delete(status);
-        // If no specific statuses are selected, select default statuses
         if (next.size === 0) {
           next.add('published');
           next.add('draft');
@@ -54,17 +53,58 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
     });
   };
 
-  // Filter sections and only include those with matching tests
-  const filteredSections = sections
-    .map(section => ({
-      ...section,
-      tests: section.tests.filter(test => {
-        // Handle both 'not-available' and 'not_available' as the same status
-        const testStatus = test.status === 'not_available' ? 'not-available' : test.status;
-        return selectedStatuses.has('all') || selectedStatuses.has(testStatus);
-      })
-    }))
-    .filter(section => section.tests.length > 0); // Only include sections with tests
+  // Filter sections based on user access rights
+  const accessibleSections = sections.filter(section => {
+    // Admin has access to all sections
+    if (authState.user?.accessRights.includes('Admin')) {
+      return true;
+    }
+
+    // Check if user has access to the section
+    const hasAccess = section.accessFor.some(right => 
+      authState.user?.accessRights.includes(right)
+    );
+
+    if (!hasAccess) {
+      logger.debug('User does not have access to section', { 
+        section: section.title, 
+        requiredAccess: section.accessFor,
+        userAccess: authState.user?.accessRights 
+      });
+      return false;
+    }
+
+    return true;
+  });
+
+  // Filter sections and tests based on status and access
+  const filteredSections = accessibleSections.map(section => ({
+    ...section,
+    tests: section.tests.filter(test => {
+      // Check status filter
+      const statusMatch = selectedStatuses.has('all') || selectedStatuses.has(test.status);
+      
+      // Admin has access to all tests
+      if (authState.user?.accessRights.includes('Admin')) {
+        return statusMatch;
+      }
+
+      // Check access rights
+      const accessMatch = test.accessFor.some(right => 
+        authState.user?.accessRights.includes(right)
+      );
+
+      if (!accessMatch) {
+        logger.debug('User does not have access to test', {
+          test: test.name,
+          requiredAccess: test.accessFor,
+          userAccess: authState.user?.accessRights
+        });
+      }
+
+      return statusMatch && accessMatch;
+    })
+  })).filter(section => section.tests.length > 0);
 
   return (
     <div className="min-h-screen bg-background-base">
@@ -92,7 +132,9 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
             ))
           ) : (
             <div className="text-center py-12 text-text-secondary">
-              No tests match the selected filters
+              {authState.user ? 
+                "You don't have access to any tests in this section" : 
+                "Please sign in to view available tests"}
             </div>
           )}
         </Section>

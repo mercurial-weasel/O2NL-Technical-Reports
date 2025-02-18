@@ -5,7 +5,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Aaron Washington",
-    "Approved_2024-11": 0.75,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 10.75,
     "Approved_2025-01": 4.0,
     "Approved_2025-02": 3.0,
@@ -17,15 +17,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Andrew Goldie",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 152.0,
     "Approved_2025-02": 0.0,
@@ -36,10 +36,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 64.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 88.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -53,19 +53,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.5,
+    "Pending_2024-11": 5.0,
     "Pending_2024-12": 16.0,
     "Pending_2025-01": 15.0,
     "Pending_2025-02": 4.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Hugh Milliken",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -73,13 +73,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 40.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 40.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -93,19 +93,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 20.0,
+    "Pending_2024-11": 12.0,
     "Pending_2024-12": 20.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Kate Searle",
-    "Approved_2024-11": 58.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 104.0,
     "Approved_2025-02": 0.0,
@@ -116,16 +116,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 25.5,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 72.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Natalie Roach",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 112.0,
     "Approved_2025-02": 0.0,
@@ -137,15 +137,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Peter Bradshaw",
-    "Approved_2024-11": 49.0,
+    "Approved_2024-11": 31.0,
     "Approved_2024-12": 76.0,
     "Approved_2025-01": 110.0,
     "Approved_2025-02": 0.0,
@@ -156,10 +156,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 41.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 67.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -173,13 +173,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 40.0,
+    "Pending_2024-11": 24.0,
     "Pending_2024-12": 64.0,
     "Pending_2025-01": 88.0,
     "Pending_2025-02": 52.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -197,15 +197,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
     "taskName": "Leadership",
     "userName": "Sally Walker-garner",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -217,9 +217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 8.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -236,10 +236,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 96.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -253,13 +253,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 47.5,
+    "Pending_2024-11": 24.0,
     "Pending_2024-12": 112.0,
     "Pending_2025-01": 111.0,
-    "Pending_2025-02": 24.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 64.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "AMT",
@@ -273,22 +273,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 1.5,
+    "Pending_2024-11": 1.0,
     "Pending_2024-12": 2.75,
     "Pending_2025-01": 0.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "Andrew Drummond",
-    "Approved_2024-11": 48.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 112.0,
-    "Approved_2025-02": 64.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -297,18 +297,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "Conor Brownlow",
-    "Approved_2024-11": 24.0,
+    "Approved_2024-11": 7.5,
     "Approved_2024-12": 112.0,
     "Approved_2025-01": 104.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 21.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -317,9 +317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
@@ -337,18 +337,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "Mark Hill",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 112.0,
-    "Approved_2025-02": 64.0,
+    "Approved_2025-02": 88.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -357,18 +357,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "Phil Barker",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 78.0,
-    "Approved_2025-01": 53.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 59.0,
+    "Approved_2025-02": 13.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -377,15 +377,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "Richard Gush",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 112.0,
     "Approved_2025-02": 24.0,
@@ -397,18 +397,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Estimating",
     "userName": "XC Shi",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 112.0,
-    "Approved_2025-02": 64.0,
+    "Approved_2025-02": 80.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -417,18 +417,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Finance and Administration",
     "userName": "Dean Sumner",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 12.0,
     "Approved_2024-12": 29.0,
     "Approved_2025-01": 19.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 2.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -437,15 +437,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Finance and Administration",
     "userName": "Elisa Yangco",
-    "Approved_2024-11": 15.0,
+    "Approved_2024-11": 7.0,
     "Approved_2024-12": 24.0,
     "Approved_2025-01": 24.0,
     "Approved_2025-02": 4.0,
@@ -457,18 +457,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Procurement",
     "userName": "Bobby Buksh",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 88.0,
-    "Approved_2025-02": 8.0,
+    "Approved_2025-02": 48.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -477,9 +477,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
@@ -488,7 +488,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 112.0,
-    "Approved_2025-02": 32.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -497,15 +497,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Procurement",
     "userName": "Madonna Lobido",
-    "Approved_2024-11": 42.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 100.0,
     "Approved_2025-01": 108.0,
     "Approved_2025-02": 24.0,
@@ -517,18 +517,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Risk",
     "userName": "Marcus Lin",
-    "Approved_2024-11": 44.0,
+    "Approved_2024-11": 26.0,
     "Approved_2024-12": 105.5,
     "Approved_2025-01": 84.5,
-    "Approved_2025-02": 18.0,
+    "Approved_2025-02": 58.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -537,18 +537,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Commercial",
     "taskName": "Risk",
     "userName": "Samuel Burden",
-    "Approved_2024-11": 16.5,
+    "Approved_2024-11": 11.0,
     "Approved_2024-12": 30.0,
     "Approved_2025-01": 23.0,
-    "Approved_2025-02": 6.0,
+    "Approved_2025-02": 19.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -557,9 +557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
@@ -573,39 +573,39 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 48.0,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 60.0,
     "Pending_2025-01": 44.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Ajish Joseph",
-    "Approved_2024-11": 39.0,
+    "Approved_2024-11": 31.0,
     "Approved_2024-12": 119.0,
-    "Approved_2025-01": 96.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 112.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 16.0,
-    "Pending_2025-02": 64.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 24.0
+    "Rejected_2025-01": 24.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Caleb Smith",
-    "Approved_2024-11": 5.5,
+    "Approved_2024-11": 4.0,
     "Approved_2024-12": 26.0,
     "Approved_2025-01": 2.0,
     "Approved_2025-02": 0.0,
@@ -616,16 +616,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 5.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Craig Campbell",
-    "Approved_2024-11": 48.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 64.0,
     "Approved_2025-01": 28.0,
     "Approved_2025-02": 0.0,
@@ -637,29 +637,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Daniel Dryland",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 64.0,
     "Approved_2025-01": 39.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 76.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 31.0,
+    "Pending_2024-11": 23.0,
     "Pending_2024-12": 24.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 52.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
@@ -677,15 +677,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Hamish Croad",
-    "Approved_2024-11": 2.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 3.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -697,18 +697,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 2.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Jamie Nisbet",
-    "Approved_2024-11": 44.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 96.0,
     "Approved_2025-01": 120.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 64.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -716,10 +716,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
@@ -728,7 +728,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -736,56 +736,56 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "John Mill",
-    "Approved_2024-11": 52.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 104.0,
-    "Approved_2025-01": 96.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 112.0,
+    "Approved_2025-02": 40.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 16.0,
-    "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Karu Lelwala",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
-    "Approved_2025-01": 96.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 112.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 16.0,
-    "Pending_2025-02": 56.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Logan Hill",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -797,29 +797,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Marco Edwards",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
-    "Approved_2025-01": 96.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 120.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 24.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
@@ -828,7 +828,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 72.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 64.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -836,30 +836,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 56.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Miguel Antonio",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 104.0,
-    "Approved_2025-01": 120.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 152.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 32.0,
-    "Pending_2025-02": 64.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
@@ -877,55 +877,55 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 20.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Mike McConnell",
-    "Approved_2024-11": 28.5,
+    "Approved_2024-11": 16.0,
     "Approved_2024-12": 108.0,
-    "Approved_2025-01": 78.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 98.5,
+    "Approved_2025-02": 30.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 20.5,
-    "Pending_2025-02": 19.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Nico Aandewiel",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 88.0,
-    "Approved_2025-01": 24.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 48.0,
+    "Approved_2025-02": 24.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 24.0,
+    "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Nikhila Leelaratna",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 88.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -937,15 +937,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Sam Moore",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -957,15 +957,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 40.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Scott Grace",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 40.0,
     "Approved_2025-02": 0.0,
@@ -977,18 +977,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 40.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
-    "userName": "Sequoia Senior",
-    "Approved_2024-11": 16.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "userName": "Steve Ricketts",
+    "Approved_2024-11": 29.0,
+    "Approved_2024-12": 96.0,
+    "Approved_2025-01": 67.5,
+    "Approved_2025-02": 61.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -997,38 +997,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Construction",
-    "taskName": "Coordination",
-    "userName": "Steve Ricketts",
-    "Approved_2024-11": 46.0,
-    "Approved_2024-12": 96.0,
-    "Approved_2025-01": 51.5,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 16.0,
-    "Pending_2025-02": 45.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Construction",
     "taskName": "Coordination",
     "userName": "Viraja Leelaratna",
-    "Approved_2024-11": 53.0,
+    "Approved_2024-11": 30.0,
     "Approved_2024-12": 104.0,
     "Approved_2025-01": 85.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 70.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1036,10 +1016,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1057,9 +1037,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1076,10 +1056,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1097,9 +1077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1116,10 +1096,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 28.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1128,7 +1108,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 2.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1136,10 +1116,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 2.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1156,10 +1136,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 52.75,
-    "Pending_2025-02": 5.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 32.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1176,10 +1156,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 72.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 72.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1188,7 +1168,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 2.5,
-    "Approved_2025-02": 1.5,
+    "Approved_2025-02": 9.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1197,9 +1177,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1216,10 +1196,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 40.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 20.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1237,9 +1217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1257,9 +1237,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 12.0,
     "Pending_2025-02": 4.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1276,10 +1256,70 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 20.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 10.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Civil / Roading",
+    "taskName": "08 - Pavement & Subsoils",
+    "userName": "Sudharsan Ravi",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 30.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Civil / Roading",
+    "taskName": "09 - General Civils",
+    "userName": "Chapa Ranige",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 2.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Civil / Roading",
+    "taskName": "09 - General Civils",
+    "userName": "Matt Griffith",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.25,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.75,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1297,9 +1337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1313,13 +1353,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 33.5,
+    "Pending_2024-11": 18.0,
     "Pending_2024-12": 46.5,
     "Pending_2025-01": 6.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1333,13 +1373,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 23.5,
     "Pending_2025-01": 29.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1353,13 +1393,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 13.0,
+    "Pending_2024-11": 6.0,
     "Pending_2024-12": 9.5,
     "Pending_2025-01": 28.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1373,13 +1413,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 30.5,
+    "Pending_2024-11": 13.75,
     "Pending_2024-12": 52.0,
     "Pending_2025-01": 55.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 32.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1396,10 +1436,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 24.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Civil / Roading",
+    "taskName": "Roading - Local",
+    "userName": "Riaan Theron",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 5.5,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1417,9 +1477,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 6.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1437,14 +1497,14 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 12.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
     "taskName": "Roading - Main",
-    "userName": "Ken Cuttle",
+    "userName": "Greg Williams",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
@@ -1456,10 +1516,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 20.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Civil / Roading",
+    "taskName": "Roading - Main",
+    "userName": "Ken Cuttle",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 33.75,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1473,13 +1553,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 56.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 118.0,
     "Pending_2025-01": 40.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 20.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1497,15 +1577,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 65.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
     "taskName": "Roading - SUP",
     "userName": "Janine Sziklasi",
-    "Approved_2024-11": 9.5,
+    "Approved_2024-11": 5.0,
     "Approved_2024-12": 5.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -1517,15 +1597,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
     "taskName": "Technical Leadership",
     "userName": "Aaron Washington",
-    "Approved_2024-11": 39.25,
+    "Approved_2024-11": 28.25,
     "Approved_2024-12": 85.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -1537,15 +1617,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
     "taskName": "Technical Leadership",
     "userName": "Bruno Busnardo",
-    "Approved_2024-11": 15.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 20.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -1557,9 +1637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1573,33 +1653,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 16.0,
+    "Pending_2024-11": 7.0,
     "Pending_2024-12": 21.0,
     "Pending_2025-01": 10.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Design - Civil / Roading",
-    "taskName": "Utilities",
-    "userName": "Ken Cuttle",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 7.75,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Civil / Roading",
@@ -1608,7 +1668,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 25.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 15.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1617,9 +1677,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
@@ -1628,7 +1688,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 31.25,
-    "Approved_2025-02": 12.5,
+    "Approved_2025-02": 28.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1637,9 +1697,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
@@ -1648,7 +1708,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 31.75,
-    "Approved_2025-02": 12.5,
+    "Approved_2025-02": 28.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1657,9 +1717,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
@@ -1673,13 +1733,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 54.0,
+    "Pending_2024-11": 31.0,
     "Pending_2024-12": 104.0,
     "Pending_2025-01": 73.75,
-    "Pending_2025-02": 29.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 67.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
@@ -1697,9 +1757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
@@ -1717,15 +1777,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 3.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
     "taskName": "General",
     "userName": "Raye Powell",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 105.0,
     "Approved_2025-01": 28.5,
     "Approved_2025-02": 0.0,
@@ -1737,15 +1797,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Design Delivery",
     "taskName": "General",
     "userName": "Samuel Burden",
-    "Approved_2024-11": 10.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 18.0,
     "Approved_2025-01": 3.0,
     "Approved_2025-02": 0.0,
@@ -1757,9 +1817,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Digital Delivery",
+    "taskName": "01 - Technical Leadership",
+    "userName": "Cara Liu",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 37.5,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Digital Delivery",
@@ -1777,18 +1857,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 42.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Digital Delivery",
     "taskName": "General",
     "userName": "Craig Burke",
-    "Approved_2024-11": 46.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 105.0,
     "Approved_2025-01": 110.0,
-    "Approved_2025-02": 24.0,
+    "Approved_2025-02": 64.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1796,10 +1876,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Digital Delivery",
@@ -1813,13 +1893,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 45.25,
+    "Pending_2024-11": 27.75,
     "Pending_2024-12": 51.25,
     "Pending_2025-01": 8.25,
-    "Pending_2025-02": 5.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 10.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Digital Delivery",
@@ -1833,13 +1913,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 36.0,
+    "Pending_2024-11": 19.5,
     "Pending_2024-12": 60.0,
     "Pending_2025-01": 18.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 66.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1848,7 +1928,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 32.0,
-    "Approved_2025-02": 13.5,
+    "Approved_2025-02": 32.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -1856,10 +1936,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 10.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Geotechnical",
+    "taskName": "02 - Technical Verification",
+    "userName": "Clive Anderson",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.75,
+    "Pending_2025-02": 23.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1876,10 +1976,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 78.5,
-    "Pending_2025-02": 22.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 58.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1896,10 +1996,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 17.75,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 32.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1916,10 +2016,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 65.0,
-    "Pending_2025-02": 25.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 62.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1936,10 +2036,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 29.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 55.58,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1956,10 +2056,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 7.5,
-    "Pending_2025-02": 6.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 46.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1977,9 +2077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 34.5,
     "Pending_2025-02": 4.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -1996,10 +2096,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 34.0,
-    "Pending_2025-02": 10.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 35.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2017,9 +2117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 28.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2037,9 +2137,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 6.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Geotechnical",
+    "taskName": "Bridges / Retaining Walls",
+    "userName": "Cameron Burnell-Gray",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 17.5,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2053,13 +2173,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 29.25,
+    "Pending_2024-11": 19.75,
     "Pending_2024-12": 27.75,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2076,10 +2196,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 29.75,
-    "Pending_2025-02": 17.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 47.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2097,9 +2217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 29.5,
     "Pending_2025-01": 79.75,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2113,13 +2233,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 48.0,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 70.0,
     "Pending_2025-01": 17.75,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 32.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2133,13 +2253,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 47.5,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 103.0,
     "Pending_2025-01": 36.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2156,10 +2276,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 26.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2173,13 +2293,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 46.75,
+    "Pending_2024-11": 23.25,
     "Pending_2024-12": 85.0,
     "Pending_2025-01": 98.25,
     "Pending_2025-02": 17.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2193,13 +2313,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 49.5,
+    "Pending_2024-11": 27.5,
     "Pending_2024-12": 54.5,
     "Pending_2025-01": 36.0,
     "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2213,13 +2333,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 43.0,
+    "Pending_2024-11": 22.0,
     "Pending_2024-12": 102.0,
     "Pending_2025-01": 62.5,
-    "Pending_2025-02": 9.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 20.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2236,10 +2356,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 67.75,
     "Pending_2025-01": 85.25,
-    "Pending_2025-02": 17.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 54.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2256,10 +2376,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 19.75,
     "Pending_2025-01": 6.75,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 14.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2277,9 +2397,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 6.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2297,9 +2417,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 28.75,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2313,13 +2433,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 32.5,
+    "Pending_2024-11": 19.0,
     "Pending_2024-12": 11.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2333,13 +2453,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.25,
+    "Pending_2024-11": 3.0,
     "Pending_2024-12": 2.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2353,13 +2473,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 2.5,
     "Pending_2025-01": 0.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2373,13 +2493,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 62.5,
+    "Pending_2024-11": 39.0,
     "Pending_2024-12": 128.75,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2393,13 +2513,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 50.75,
+    "Pending_2024-11": 29.75,
     "Pending_2024-12": 129.0,
     "Pending_2025-01": 117.5,
-    "Pending_2025-02": 24.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 64.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2413,13 +2533,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 51.5,
+    "Pending_2024-11": 29.5,
     "Pending_2024-12": 106.0,
     "Pending_2025-01": 39.5,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 27.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2436,10 +2556,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 9.5,
     "Pending_2025-01": 8.75,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 14.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2457,9 +2577,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 16.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2476,10 +2596,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 53.75,
-    "Pending_2025-02": 9.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 43.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2493,13 +2613,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 53.5,
+    "Pending_2024-11": 31.0,
     "Pending_2024-12": 99.75,
     "Pending_2025-01": 101.75,
-    "Pending_2025-02": 18.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 46.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2516,10 +2636,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 3.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2533,13 +2653,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 62.75,
+    "Pending_2024-11": 36.25,
     "Pending_2024-12": 120.0,
     "Pending_2025-01": 112.0,
-    "Pending_2025-02": 24.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 64.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2557,9 +2677,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 151.0,
     "Pending_2025-02": 11.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2573,13 +2693,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 13.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
@@ -2593,22 +2713,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.5,
+    "Pending_2024-11": 2.0,
     "Pending_2024-12": 11.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 18.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Geotechnical",
     "taskName": "Technical Leadership",
     "userName": "Emma Christie",
-    "Approved_2024-11": 48.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 92.0,
     "Approved_2025-01": 32.0,
-    "Approved_2025-02": 13.5,
+    "Approved_2025-02": 30.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2616,10 +2736,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 10.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
@@ -2628,7 +2748,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 45.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 29.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2637,9 +2757,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Landscaping & Urban Design",
+    "taskName": "04 - Landscape and Urban Design",
+    "userName": "Darroch Day",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 16.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
@@ -2648,7 +2788,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 4.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2656,18 +2796,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 2.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
     "taskName": "General",
     "userName": "Darroch Day",
-    "Approved_2024-11": 55.5,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 31.0,
-    "Approved_2025-01": 0.0,
+    "Approved_2025-01": 15.5,
     "Approved_2025-02": 0.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
@@ -2675,17 +2815,17 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 8.0,
-    "Pending_2025-01": 15.5,
+    "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
     "taskName": "General",
     "userName": "Genevieve Doube",
-    "Approved_2024-11": 6.0,
+    "Approved_2024-11": 4.0,
     "Approved_2024-12": 20.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -2697,15 +2837,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
     "taskName": "General",
     "userName": "Jesse Byrne",
-    "Approved_2024-11": 25.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 5.0,
     "Approved_2025-01": 8.0,
     "Approved_2025-02": 0.0,
@@ -2717,9 +2857,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
@@ -2733,22 +2873,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.0,
+    "Pending_2024-11": 1.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Landscaping & Urban Design",
     "taskName": "Technical Leadership",
     "userName": "Jeremy Cooke",
-    "Approved_2024-11": 50.0,
+    "Approved_2024-11": 27.0,
     "Approved_2024-12": 76.0,
     "Approved_2025-01": 53.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 36.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2757,9 +2897,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2768,18 +2908,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.5,
+    "Approved_2025-02": 3.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 1.0,
+    "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2796,10 +2936,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 18.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2817,9 +2957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2835,11 +2975,11 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 1.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 2.0,
+    "Pending_2025-02": 0.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2857,29 +2997,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 16.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Design - Stormwater",
-    "taskName": "03 - CAD/Drafting/Modelling",
-    "userName": "Cara Liu",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 29.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2897,9 +3017,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 34.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 7.0
+    "Rejected_2025-01": 7.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2908,7 +3028,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 24.5,
-    "Approved_2025-02": 20.75,
+    "Approved_2025-02": 35.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2917,9 +3037,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 62.75,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2928,7 +3048,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 11.5,
-    "Approved_2025-02": 22.0,
+    "Approved_2025-02": 37.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -2937,9 +3057,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2957,9 +3077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 39.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 15.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2977,9 +3097,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 53.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -2997,9 +3117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 29.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3008,7 +3128,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 40.5,
-    "Approved_2025-02": 17.0,
+    "Approved_2025-02": 52.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -3017,9 +3137,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3036,10 +3156,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 2.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3048,7 +3168,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 18.0,
-    "Approved_2025-02": 27.5,
+    "Approved_2025-02": 63.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -3057,9 +3177,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3073,13 +3193,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 18.0,
+    "Pending_2024-11": 16.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3093,13 +3213,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 49.0,
+    "Pending_2024-11": 23.0,
     "Pending_2024-12": 60.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3108,18 +3228,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 3.0,
-    "Approved_2025-02": 3.0,
+    "Approved_2025-02": 22.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 54.5,
+    "Pending_2024-11": 31.0,
     "Pending_2024-12": 108.75,
     "Pending_2025-01": 0.75,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3128,7 +3248,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 4.0,
-    "Approved_2025-02": 0.5,
+    "Approved_2025-02": 19.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -3137,9 +3257,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3153,33 +3273,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 48.5,
+    "Pending_2024-11": 26.5,
     "Pending_2024-12": 89.5,
     "Pending_2025-01": 8.0,
-    "Pending_2025-02": 28.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 60.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Design - Stormwater",
-    "taskName": "Flood Modelling",
-    "userName": "Cameron Paintin",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.25,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3193,13 +3293,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 14.0,
+    "Pending_2024-11": 8.0,
     "Pending_2024-12": 21.0,
     "Pending_2025-01": 29.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 19.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3217,9 +3317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3237,9 +3337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 12.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3257,9 +3357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 6.5,
     "Pending_2025-01": 5.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3273,13 +3373,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 26.0,
+    "Pending_2024-11": 13.75,
     "Pending_2024-12": 58.0,
     "Pending_2025-01": 73.75,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3297,9 +3397,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3308,18 +3408,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 4.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 2.25,
+    "Approved_2025-02": 15.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 32.0,
+    "Pending_2024-11": 18.0,
     "Pending_2024-12": 30.0,
     "Pending_2025-01": 28.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3337,9 +3437,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 37.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 19.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3357,9 +3457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3373,13 +3473,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 43.0,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 99.5,
     "Pending_2025-01": 32.83,
     "Pending_2025-02": 45.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3393,13 +3493,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 39.0,
+    "Pending_2024-11": 22.5,
     "Pending_2024-12": 54.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3413,13 +3513,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 55.5,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 47.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3433,13 +3533,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 33.0,
+    "Pending_2024-11": 13.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3453,13 +3553,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 38.25,
+    "Pending_2024-11": 19.75,
     "Pending_2024-12": 63.5,
     "Pending_2025-01": 16.75,
-    "Pending_2025-02": 3.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3473,13 +3573,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.0,
+    "Pending_2024-11": 4.5,
     "Pending_2024-12": 22.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3496,10 +3596,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 18.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Stormwater",
@@ -3513,13 +3613,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 48.25,
+    "Pending_2024-11": 29.0,
     "Pending_2024-12": 109.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3537,9 +3637,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 2.75,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Structures",
+    "taskName": "01 - Technical Leadership",
+    "userName": "Ted Polley",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 24.0,
+    "Approved_2025-02": 31.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3556,10 +3676,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3576,10 +3696,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 2.25,
-    "Pending_2025-02": 4.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 12.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3596,10 +3716,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.75,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3616,10 +3736,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.75,
-    "Pending_2025-02": 4.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 13.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3636,10 +3756,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.75,
-    "Pending_2025-02": 2.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 3.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3656,10 +3776,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.75,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3676,10 +3796,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.75,
-    "Pending_2025-02": 0.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3696,10 +3816,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.75,
-    "Pending_2025-02": 0.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3716,10 +3836,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 56.5,
-    "Pending_2025-02": 20.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 60.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3736,10 +3856,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 40.0,
-    "Pending_2025-02": 56.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 80.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
@@ -3753,19 +3873,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 7.25,
+    "Pending_2024-11": 4.5,
     "Pending_2024-12": 9.75,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
     "taskName": "Structures - Bridges",
     "userName": "Cameron Weir",
-    "Approved_2024-11": 52.0,
+    "Approved_2024-11": 30.0,
     "Approved_2024-12": 72.5,
     "Approved_2025-01": 33.5,
     "Approved_2025-02": 0.0,
@@ -3777,15 +3897,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 12.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
     "taskName": "Structures - Bridges",
     "userName": "Jeffery Yang",
-    "Approved_2024-11": 55.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 48.0,
     "Approved_2025-01": 40.0,
     "Approved_2025-02": 0.0,
@@ -3797,15 +3917,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
     "taskName": "Structures - Bridges",
     "userName": "Laura Chen",
-    "Approved_2024-11": 22.25,
+    "Approved_2024-11": 7.75,
     "Approved_2024-12": 70.0,
     "Approved_2025-01": 25.25,
     "Approved_2025-02": 0.0,
@@ -3817,18 +3937,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 5.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Structures",
     "taskName": "Technical Leadership",
     "userName": "Ted Polley",
-    "Approved_2024-11": 47.5,
+    "Approved_2024-11": 24.5,
     "Approved_2024-12": 74.0,
-    "Approved_2025-01": 32.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 55.0,
+    "Approved_2025-02": 31.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -3837,9 +3957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3856,10 +3976,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 15.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3873,13 +3993,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 31.5,
+    "Pending_2024-11": 15.5,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3893,13 +4013,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 12.5,
+    "Pending_2024-11": 5.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3913,13 +4033,33 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 15.0,
+    "Pending_2024-11": 9.5,
     "Pending_2024-12": 5.5,
     "Pending_2025-01": 5.0,
-    "Pending_2025-02": 3.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 6.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Survey",
+    "taskName": "Survey - Flood Modelling",
+    "userName": "Tim Swan",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 24.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3937,9 +4077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 10.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3953,13 +4093,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 34.75,
+    "Pending_2024-11": 19.0,
     "Pending_2024-12": 49.75,
     "Pending_2025-01": 0.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Survey",
@@ -3973,13 +4113,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 13.5,
+    "Pending_2024-11": 5.0,
     "Pending_2024-12": 60.0,
     "Pending_2025-01": 22.0,
     "Pending_2025-02": 10.25,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -3988,7 +4128,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 56.0,
-    "Approved_2025-02": 12.0,
+    "Approved_2025-02": 20.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -3996,10 +4136,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 12.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4008,7 +4148,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 3.25,
-    "Approved_2025-02": 2.25,
+    "Approved_2025-02": 2.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4017,9 +4157,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4028,6 +4168,26 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 22.0,
+    "Approved_2025-02": 33.75,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Traffic Services",
+    "taskName": "03 - CAD/Drafting/Modelling",
+    "userName": "Cara Liu",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
@@ -4036,10 +4196,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 13.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 29.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4056,30 +4216,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 3.0,
-    "Pending_2025-02": 11.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 12.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Design - Traffic Services",
-    "taskName": "04 - ITS + SUP",
-    "userName": "Matt Griffith",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 2.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4087,8 +4227,8 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Ken Cuttle",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.25,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 8.0,
+    "Approved_2025-02": 4.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4096,10 +4236,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 4.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4108,7 +4248,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 4.0,
+    "Approved_2025-02": 7.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4117,9 +4257,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4128,7 +4268,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 30.5,
-    "Approved_2025-02": 11.5,
+    "Approved_2025-02": 15.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4137,9 +4277,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4148,7 +4288,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 51.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 14.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4156,10 +4296,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 18.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 4.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4168,7 +4308,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 9.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 17.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4176,16 +4316,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 10.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
     "taskName": "ITS",
     "userName": "Connell Pham",
-    "Approved_2024-11": 4.5,
+    "Approved_2024-11": 2.5,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 3.0,
     "Approved_2025-02": 0.0,
@@ -4197,9 +4337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4208,7 +4348,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 8.5,
-    "Approved_2025-02": 2.0,
+    "Approved_2025-02": 5.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4217,18 +4357,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
     "taskName": "Technical Leadership",
     "userName": "Ryan Dunn",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 116.0,
     "Approved_2025-01": 56.0,
-    "Approved_2025-02": 12.0,
+    "Approved_2025-02": 20.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4236,16 +4376,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 12.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
     "taskName": "Traffic Modelling",
     "userName": "Nyan Lin",
-    "Approved_2024-11": 1.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 1.0,
     "Approved_2025-01": 11.0,
     "Approved_2025-02": 0.0,
@@ -4257,18 +4397,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
     "taskName": "Traffic Services",
     "userName": "Billy Rodenburg",
-    "Approved_2024-11": 33.25,
+    "Approved_2024-11": 17.25,
     "Approved_2024-12": 79.25,
     "Approved_2025-01": 8.25,
-    "Approved_2025-02": 7.0,
+    "Approved_2025-02": 12.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4277,9 +4417,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
@@ -4297,18 +4437,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Design - Traffic Services",
     "taskName": "Traffic Services",
-    "userName": "Timothy Broadhead",
-    "Approved_2024-11": 2.5,
-    "Approved_2024-12": 0.5,
+    "userName": "Janine Sziklasi",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 9.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4317,9 +4457,49 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Traffic Services",
+    "taskName": "Traffic Services",
+    "userName": "Matt Griffith",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 13.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Design - Traffic Services",
+    "taskName": "Traffic Services",
+    "userName": "Timothy Broadhead",
+    "Approved_2024-11": 2.5,
+    "Approved_2024-12": 0.5,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 4.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4333,33 +4513,33 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 34.0,
+    "Pending_2024-11": 20.0,
     "Pending_2024-12": 34.0,
     "Pending_2025-01": 3.5,
     "Pending_2025-02": 3.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "DE",
     "userName": "Mohit Vyas",
-    "Approved_2024-11": 12.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 50.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 68.0,
+    "Approved_2025-02": 39.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 18.0,
+    "Pending_2024-11": 16.0,
     "Pending_2024-12": 2.0,
-    "Pending_2025-01": 18.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4376,10 +4556,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 12.5,
     "Pending_2024-12": 16.0,
     "Pending_2025-01": 76.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 40.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4393,13 +4573,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.75,
+    "Pending_2024-11": 2.75,
     "Pending_2024-12": 67.5,
     "Pending_2025-01": 90.75,
     "Pending_2025-02": 7.75,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4413,13 +4593,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 5.0,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 3.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4436,10 +4616,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 9.0,
     "Pending_2024-12": 11.0,
     "Pending_2025-01": 29.75,
-    "Pending_2025-02": 8.5,
-    "Rejected_2024-11": 3.5,
+    "Pending_2025-02": 15.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4453,13 +4633,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 29.0,
+    "Pending_2024-11": 11.5,
     "Pending_2024-12": 60.5,
     "Pending_2025-01": 86.0,
-    "Pending_2025-02": 14.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 38.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4476,10 +4656,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 4.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 28.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4493,13 +4673,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 56.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 120.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4513,19 +4693,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 56.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 120.0,
     "Pending_2025-01": 120.0,
-    "Pending_2025-02": 64.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 72.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "GIS",
     "userName": "Ben Peyton",
-    "Approved_2024-11": 10.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 19.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -4536,16 +4716,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 20.5,
     "Pending_2024-12": 34.5,
     "Pending_2025-01": 65.5,
-    "Pending_2025-02": 12.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "GIS",
     "userName": "Christian Utech",
-    "Approved_2024-11": 3.75,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 36.25,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -4553,13 +4733,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 14.25,
+    "Pending_2024-11": 12.25,
     "Pending_2024-12": 15.75,
     "Pending_2025-01": 65.5,
-    "Pending_2025-02": 16.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 35.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4573,19 +4753,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 10.0,
+    "Pending_2024-11": 9.0,
     "Pending_2024-12": 13.5,
     "Pending_2025-01": 40.5,
-    "Pending_2025-02": 9.0,
-    "Rejected_2024-11": 2.5,
+    "Pending_2025-02": 24.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "GIS",
     "userName": "Hins Zhang",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 16.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -4596,10 +4776,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 18.0,
     "Pending_2024-12": 14.0,
     "Pending_2025-01": 22.0,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4616,10 +4796,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 3.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 4.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4633,13 +4813,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 27.0,
+    "Pending_2024-11": 15.0,
     "Pending_2024-12": 50.0,
     "Pending_2025-01": 40.0,
-    "Pending_2025-02": 9.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 27.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4653,13 +4833,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 1.5,
+    "Pending_2024-11": 0.5,
     "Pending_2024-12": 7.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4673,13 +4853,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 21.5,
+    "Pending_2024-11": 12.5,
     "Pending_2024-12": 5.0,
     "Pending_2025-01": 12.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4697,15 +4877,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 2.0,
     "Pending_2025-01": 4.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "Sustainability",
     "userName": "John Lohrentz",
-    "Approved_2024-11": 31.0,
+    "Approved_2024-11": 19.25,
     "Approved_2024-12": 59.0,
     "Approved_2025-01": 14.5,
     "Approved_2025-02": 0.0,
@@ -4716,10 +4896,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 12.5,
-    "Pending_2025-02": 15.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 35.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
@@ -4733,19 +4913,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 17.5,
+    "Pending_2024-11": 13.5,
     "Pending_2024-12": 25.0,
     "Pending_2025-01": 59.0,
-    "Pending_2025-02": 14.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 28.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "Sustainability",
     "userName": "Sam Turner",
-    "Approved_2024-11": 18.5,
+    "Approved_2024-11": 12.0,
     "Approved_2024-12": 7.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -4756,38 +4936,38 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "Technical Leadership",
     "userName": "Dave Braendler",
-    "Approved_2024-11": 43.0,
+    "Approved_2024-11": 27.0,
     "Approved_2024-12": 93.5,
-    "Approved_2025-01": 96.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 124.0,
+    "Approved_2025-02": 72.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 28.0,
-    "Pending_2025-02": 56.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Engineering",
     "taskName": "Technical Leadership",
     "userName": "Markus Reiberg",
-    "Approved_2024-11": 26.0,
+    "Approved_2024-11": 22.0,
     "Approved_2024-12": 59.5,
-    "Approved_2025-01": 33.5,
+    "Approved_2025-01": 37.5,
     "Approved_2025-02": 0.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
@@ -4795,11 +4975,11 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 4.0,
-    "Pending_2025-02": 1.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 8.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4808,7 +4988,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 1.0,
-    "Approved_2025-02": 2.0,
+    "Approved_2025-02": 11.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4817,9 +4997,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4828,7 +5008,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 28.0,
-    "Approved_2025-02": 11.0,
+    "Approved_2025-02": 24.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4837,9 +5017,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4857,9 +5037,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4877,9 +5057,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4888,7 +5068,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 52.0,
-    "Approved_2025-02": 12.0,
+    "Approved_2025-02": 29.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4897,9 +5077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 30.0
+    "Rejected_2025-01": 30.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4908,7 +5088,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 11.25,
-    "Approved_2025-02": 0.75,
+    "Approved_2025-02": 1.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4917,9 +5097,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4937,9 +5117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4948,7 +5128,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 13.25,
-    "Approved_2025-02": 14.25,
+    "Approved_2025-02": 20.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4957,9 +5137,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4968,7 +5148,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 42.5,
-    "Approved_2025-02": 6.0,
+    "Approved_2025-02": 27.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -4977,9 +5157,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Environmental / Planning",
+    "taskName": "02 - General Planning",
+    "userName": "Genevieve Smith",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 12.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -4997,9 +5197,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5017,9 +5217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5028,7 +5228,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 37.0,
-    "Approved_2025-02": 10.0,
+    "Approved_2025-02": 20.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5037,9 +5237,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5048,7 +5248,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 7.0,
-    "Approved_2025-02": 10.0,
+    "Approved_2025-02": 11.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5057,9 +5257,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5076,10 +5276,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 21.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 12.5
+    "Rejected_2025-01": 12.5,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5096,10 +5296,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 3.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5108,7 +5308,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 20.25,
-    "Approved_2025-02": 7.0,
+    "Approved_2025-02": 26.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5117,9 +5317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5137,9 +5337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5157,9 +5357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 2.0
+    "Rejected_2025-01": 2.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5177,9 +5377,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5197,9 +5397,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5208,7 +5408,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 13.5,
-    "Approved_2025-02": 16.5,
+    "Approved_2025-02": 18.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5217,9 +5417,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5237,9 +5437,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5248,7 +5448,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 18.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 6.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5257,9 +5457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5267,8 +5467,8 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Claire Webb",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 3.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 4.0,
+    "Approved_2025-02": 8.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5277,9 +5477,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5296,10 +5496,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 49.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5308,7 +5508,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 16.0,
-    "Approved_2025-02": 1.0,
+    "Approved_2025-02": 14.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5317,9 +5517,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5337,9 +5537,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5357,9 +5557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5376,10 +5576,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5388,7 +5588,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 7.0,
-    "Approved_2025-02": 3.25,
+    "Approved_2025-02": 8.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5397,9 +5597,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5408,7 +5608,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 10.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 2.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5417,9 +5617,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5437,9 +5637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5457,9 +5657,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 16.0
+    "Rejected_2025-01": 16.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5477,9 +5677,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5497,9 +5697,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5508,7 +5708,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 24.25,
+    "Approved_2025-02": 43.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5517,9 +5717,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5537,9 +5737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5548,7 +5748,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 8.0,
+    "Approved_2025-02": 14.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5557,9 +5757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5568,7 +5768,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 2.25,
-    "Approved_2025-02": 6.0,
+    "Approved_2025-02": 6.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5577,9 +5777,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5597,9 +5797,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5608,7 +5808,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 7.0,
-    "Approved_2025-02": 8.0,
+    "Approved_2025-02": 29.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -5617,9 +5817,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5636,16 +5836,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 23.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Additional Consents (e.g. Enabling Works)",
     "userName": "Billy Rodenburg",
-    "Approved_2024-11": 2.5,
+    "Approved_2024-11": 1.5,
     "Approved_2024-12": 0.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5657,15 +5857,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Additional Consents (e.g. Enabling Works)",
     "userName": "Kasey Pitt",
-    "Approved_2024-11": 10.25,
+    "Approved_2024-11": 5.25,
     "Approved_2024-12": 2.75,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5677,15 +5877,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Additional Consents (e.g. Enabling Works)",
     "userName": "Miles Calder",
-    "Approved_2024-11": 32.5,
+    "Approved_2024-11": 21.0,
     "Approved_2024-12": 49.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5697,15 +5897,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Additional Consents (e.g. Enabling Works)",
     "userName": "Paul McGimpsey",
-    "Approved_2024-11": 7.0,
+    "Approved_2024-11": 2.0,
     "Approved_2024-12": 3.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5717,9 +5917,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5737,15 +5937,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Aimee Brown",
-    "Approved_2024-11": 38.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 69.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5757,15 +5957,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Andrew Kim",
-    "Approved_2024-11": 28.5,
+    "Approved_2024-11": 18.25,
     "Approved_2024-12": 8.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5777,9 +5977,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 4.25,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5797,15 +5997,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Duncan Law",
-    "Approved_2024-11": 18.0,
+    "Approved_2024-11": 11.0,
     "Approved_2024-12": 27.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5817,15 +6017,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 10.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Patrick Lees",
-    "Approved_2024-11": 2.75,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 3.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5837,15 +6037,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Paul McGimpsey",
-    "Approved_2024-11": 21.0,
+    "Approved_2024-11": 13.0,
     "Approved_2024-12": 48.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5857,15 +6057,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Rubie McLintock",
-    "Approved_2024-11": 40.5,
+    "Approved_2024-11": 18.75,
     "Approved_2024-12": 92.25,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5877,15 +6077,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Sharon Yung",
-    "Approved_2024-11": 19.0,
+    "Approved_2024-11": 12.5,
     "Approved_2024-12": 17.25,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5897,9 +6097,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5917,15 +6117,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Trent Bell",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 6.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5937,15 +6137,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "General Planning",
     "userName": "Tyler Neve",
-    "Approved_2024-11": 14.5,
+    "Approved_2024-11": 13.0,
     "Approved_2024-12": 58.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -5957,9 +6157,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5977,9 +6177,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -5997,15 +6197,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Management Plans",
     "userName": "Dave Brockerhoff",
-    "Approved_2024-11": 36.0,
+    "Approved_2024-11": 25.0,
     "Approved_2024-12": 83.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6017,15 +6217,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Management Plans",
     "userName": "Duncan Law",
-    "Approved_2024-11": 2.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 10.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6037,9 +6237,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 4.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6057,15 +6257,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 1.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Management Plans",
     "userName": "Kylie Park",
-    "Approved_2024-11": 15.5,
+    "Approved_2024-11": 8.25,
     "Approved_2024-12": 43.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6077,9 +6277,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6097,15 +6297,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Management Plans",
     "userName": "Sharon Yung",
-    "Approved_2024-11": 0.75,
+    "Approved_2024-11": 0.25,
     "Approved_2024-12": 9.75,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6117,9 +6317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6137,9 +6337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6157,9 +6357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6177,15 +6377,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Andrew Kim",
-    "Approved_2024-11": 1.0,
+    "Approved_2024-11": 0.5,
     "Approved_2024-12": 4.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6197,15 +6397,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 1.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Claire Bullock",
-    "Approved_2024-11": 2.0,
+    "Approved_2024-11": 0.5,
     "Approved_2024-12": 14.25,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6217,15 +6417,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Dave Brockerhoff",
-    "Approved_2024-11": 4.5,
+    "Approved_2024-11": 1.25,
     "Approved_2024-12": 2.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6237,15 +6437,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Duncan Law",
-    "Approved_2024-11": 0.25,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 9.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6257,15 +6457,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Kylie Park",
-    "Approved_2024-11": 1.75,
+    "Approved_2024-11": 1.0,
     "Approved_2024-12": 5.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6277,15 +6477,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Project Management",
     "userName": "Rubie McLintock",
-    "Approved_2024-11": 4.5,
+    "Approved_2024-11": 2.75,
     "Approved_2024-12": 15.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6297,29 +6497,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Environmental / Planning",
-    "taskName": "Project Management",
-    "userName": "Sharon Yung",
-    "Approved_2024-11": 0.5,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
@@ -6337,15 +6517,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Surveys & Monitoring",
     "userName": "Claire Bullock",
-    "Approved_2024-11": 12.5,
+    "Approved_2024-11": 2.5,
     "Approved_2024-12": 11.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6357,15 +6537,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Environmental / Planning",
     "taskName": "Surveys & Monitoring",
     "userName": "Dave Brockerhoff",
-    "Approved_2024-11": 11.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 13.75,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -6377,9 +6557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6388,7 +6568,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 40.0,
+    "Approved_2025-02": 80.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -6396,10 +6576,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6417,9 +6597,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6437,9 +6617,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 42.0,
     "Pending_2025-01": 78.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6457,9 +6637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6477,9 +6657,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
+    "userName": "Ajish Joseph",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 8.0,
+    "Approved_2025-02": 8.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6493,13 +6693,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 56.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 67.25,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6517,15 +6717,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 56.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Andrew Drummond",
-    "Approved_2024-11": 8.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 56.0,
     "Approved_2025-01": 72.0,
     "Approved_2025-02": 8.0,
@@ -6537,9 +6737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6557,9 +6757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6577,9 +6777,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6597,9 +6797,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 8.0,
     "Pending_2025-01": 2.5,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6617,9 +6817,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6637,9 +6837,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6657,15 +6857,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Bruno Busnardo",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 148.0,
     "Approved_2025-01": 64.0,
     "Approved_2025-02": 0.0,
@@ -6677,9 +6877,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 16.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
+    "userName": "Cameron Burnell-Gray",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 16.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6697,9 +6917,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6717,9 +6937,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 21.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6737,9 +6957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 80.0,
     "Pending_2025-01": 40.0,
     "Pending_2025-02": 20.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 1.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6757,9 +6977,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 23.25,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6768,7 +6988,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 45.0,
-    "Approved_2025-02": 15.0,
+    "Approved_2025-02": 40.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -6777,9 +6997,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 52.5,
     "Pending_2025-01": 22.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6797,9 +7017,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6817,9 +7037,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6837,9 +7057,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6856,10 +7076,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6867,19 +7087,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Craig Campbell",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 40.0,
+    "Approved_2025-02": 40.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 40.0,
-    "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6897,9 +7117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 136.0,
     "Pending_2025-01": 96.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6908,7 +7128,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -6916,10 +7136,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 16.0,
-    "Rejected_2025-01": 24.0
+    "Rejected_2025-01": 24.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6937,9 +7157,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6957,9 +7177,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6968,7 +7188,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 40.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -6976,10 +7196,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -6987,19 +7207,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Dave Braendler",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 16.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 8.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7017,9 +7237,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7037,15 +7257,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Duncan Law",
-    "Approved_2024-11": 28.75,
+    "Approved_2024-11": 21.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 24.0,
@@ -7057,15 +7277,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Elisa Yangco",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 2.0,
     "Approved_2024-12": 80.0,
     "Approved_2025-01": 48.0,
     "Approved_2025-02": 8.0,
@@ -7077,9 +7297,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7097,9 +7317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7117,15 +7337,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Gavin Mecchia",
-    "Approved_2024-11": 8.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -7137,9 +7357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 8.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7157,9 +7377,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7177,9 +7397,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7197,9 +7417,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 104.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7217,9 +7437,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 65.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7237,9 +7457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7257,9 +7477,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7277,9 +7497,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 36.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7288,7 +7508,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7296,10 +7516,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7317,9 +7537,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7337,9 +7557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 16.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7357,9 +7577,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7377,9 +7597,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 64.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7397,9 +7617,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7417,9 +7637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7437,18 +7657,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "John Mill",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 48.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7456,10 +7676,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 16.0,
-    "Rejected_2025-01": 64.0
+    "Rejected_2025-01": 64.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7477,9 +7697,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7497,9 +7717,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7517,9 +7737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7537,9 +7757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7556,10 +7776,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 40.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7568,7 +7788,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7576,10 +7796,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7597,15 +7817,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 40.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Kylie Park",
-    "Approved_2024-11": 5.0,
+    "Approved_2024-11": 2.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 7.5,
     "Approved_2025-02": 7.5,
@@ -7617,9 +7837,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7637,9 +7857,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 10.25,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7657,9 +7877,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 22.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7677,9 +7897,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7696,10 +7916,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 16.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7717,9 +7937,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7737,9 +7957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7748,7 +7968,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 40.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7756,10 +7976,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7777,9 +7997,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7797,29 +8017,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Markus Reiberg",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 8.0,
+    "Approved_2025-02": 18.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 8.0,
-    "Pending_2025-02": 18.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7836,10 +8056,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 72.0,
-    "Pending_2025-02": 72.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 96.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7857,9 +8077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7868,7 +8088,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7876,10 +8096,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
+    "userName": "Matt Griffith",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 24.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7897,9 +8137,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 69.0,
     "Pending_2025-01": 70.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7908,7 +8148,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 56.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -7916,10 +8156,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 16.0,
-    "Rejected_2025-01": 24.0
+    "Rejected_2025-01": 24.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7937,9 +8177,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 96.0,
     "Pending_2025-01": 144.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7957,9 +8197,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7977,9 +8217,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 64.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
+    "userName": "Mohit Vyas",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 8.0,
+    "Approved_2025-02": 8.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 168.0,
+    "Pending_2025-01": 64.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -7997,9 +8257,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8008,7 +8268,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8016,10 +8276,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8028,7 +8288,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 8.0,
     "Approved_2025-01": 24.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 32.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8036,10 +8296,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8057,9 +8317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8077,9 +8337,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8097,9 +8357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8116,10 +8376,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 14.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8137,9 +8397,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 88.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8157,9 +8417,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8177,9 +8437,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8197,9 +8457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8217,9 +8477,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 52.0,
     "Pending_2025-01": 62.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8236,10 +8496,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 87.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 4.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8257,9 +8517,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 80.0,
     "Pending_2025-01": 56.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8277,15 +8537,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Robert Jilg",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 16.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -8297,9 +8557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8317,9 +8577,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 16.0
+    "Rejected_2025-01": 16.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8337,9 +8597,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8357,15 +8617,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Leave (Annual/Sick/Statutory/Bereavement/etc)",
     "userName": "Sharon Yung",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 64.0,
     "Approved_2025-01": 48.0,
     "Approved_2025-02": 16.0,
@@ -8377,9 +8637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8397,9 +8657,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 60.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8417,9 +8677,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8437,9 +8697,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 64.0,
     "Pending_2025-01": 72.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8456,10 +8716,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 72.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 27.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8477,9 +8737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 59.5,
     "Pending_2025-01": 104.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8487,19 +8747,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Ted Polley",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 56.0,
-    "Approved_2025-01": 72.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 80.0,
+    "Approved_2025-02": 16.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 8.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8517,9 +8777,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 40.0,
     "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8537,9 +8797,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 16.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8557,9 +8817,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8577,9 +8837,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8596,10 +8856,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 32.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8617,18 +8877,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Aaron Washington",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 3.75,
     "Approved_2024-12": 15.75,
     "Approved_2025-01": 14.5,
-    "Approved_2025-02": 4.0,
+    "Approved_2025-02": 11.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8637,9 +8897,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8648,7 +8908,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 1.0,
     "Approved_2025-01": 13.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 1.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8657,18 +8917,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 13.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Aimee Brown",
-    "Approved_2024-11": 18.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 48.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 7.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8677,9 +8937,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 10.0
+    "Rejected_2025-01": 10.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8689,7 +8949,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 8.0,
+    "NoStatus_2024-11": 4.0,
     "NoStatus_2024-12": 52.0,
     "NoStatus_2025-01": 76.0,
     "NoStatus_2025-02": 32.0,
@@ -8697,9 +8957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8713,13 +8973,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 15.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 77.5,
     "Pending_2025-01": 39.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 39.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8736,10 +8996,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 12.25,
     "Pending_2025-01": 26.75,
-    "Pending_2025-02": 7.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 15.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8753,13 +9013,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 46.25,
+    "Pending_2024-11": 29.25,
     "Pending_2024-12": 52.5,
     "Pending_2025-01": 29.25,
     "Pending_2025-02": 32.25,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8777,9 +9037,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 73.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8793,22 +9053,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 48.75,
+    "Pending_2024-11": 27.5,
     "Pending_2024-12": 110.25,
     "Pending_2025-01": 40.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Andrew Kim",
-    "Approved_2024-11": 26.5,
+    "Approved_2024-11": 13.25,
     "Approved_2024-12": 59.5,
     "Approved_2025-01": 95.25,
-    "Approved_2025-02": 14.75,
+    "Approved_2025-02": 52.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8817,9 +9077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 41.75,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8837,9 +9097,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 104.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8857,9 +9117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 68.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8876,10 +9136,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 8.0,
     "Pending_2025-01": 3.75,
-    "Pending_2025-02": 2.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 4.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8888,24 +9148,24 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 39.0,
-    "Approved_2025-02": 39.5,
+    "Approved_2025-02": 76.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 50.0,
+    "Pending_2024-11": 27.5,
     "Pending_2024-12": 97.5,
     "Pending_2025-01": 39.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Ben Peyton",
-    "Approved_2024-11": 6.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 20.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -8916,10 +9176,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 11.5,
     "Pending_2024-12": 45.5,
     "Pending_2025-01": 29.5,
-    "Pending_2025-02": 11.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 27.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8933,22 +9193,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 35.0,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 37.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Billy Rodenburg",
-    "Approved_2024-11": 18.75,
+    "Approved_2024-11": 13.75,
     "Approved_2024-12": 31.75,
     "Approved_2025-01": 22.25,
-    "Approved_2025-02": 10.0,
+    "Approved_2025-02": 12.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8957,9 +9217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8973,13 +9233,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 26.5,
+    "Pending_2024-11": 18.25,
     "Pending_2024-12": 68.0,
     "Pending_2025-01": 25.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -8988,7 +9248,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 58.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 46.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -8996,16 +9256,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 26.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Bruno Busnardo",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 8.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -9017,9 +9277,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9036,36 +9296,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 31.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Non O2NL Hours",
-    "taskName": "Non O2NL Time (other projects, learning etc)",
-    "userName": "Cameron Paintin",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 15.75,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Cameron Weir",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 2.0,
     "Approved_2024-12": 103.5,
     "Approved_2025-01": 70.5,
     "Approved_2025-02": 0.0,
@@ -9077,9 +9317,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 11.5,
     "Pending_2025-02": 20.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Non O2NL Time (other projects, learning etc)",
+    "userName": "Cara Liu",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 0.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 5.5,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9096,10 +9356,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 2.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9113,19 +9373,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 5.0,
+    "Pending_2024-11": 3.0,
     "Pending_2024-12": 19.0,
     "Pending_2025-01": 24.5,
     "Pending_2025-02": 1.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Chris Hillman",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 77.5,
     "Approved_2025-02": 39.5,
@@ -9137,15 +9397,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Christian Utech",
-    "Approved_2024-11": 12.25,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 43.75,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -9153,19 +9413,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 25.75,
+    "Pending_2024-11": 19.75,
     "Pending_2024-12": 24.25,
     "Pending_2025-01": 54.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 21.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Claire Bullock",
-    "Approved_2024-11": 34.75,
+    "Approved_2024-11": 21.75,
     "Approved_2024-12": 66.75,
     "Approved_2025-01": 58.25,
     "Approved_2025-02": 8.0,
@@ -9177,18 +9437,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Claire Webb",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 103.5,
-    "Approved_2025-01": 76.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 116.0,
+    "Approved_2025-02": 31.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9197,9 +9457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9213,22 +9473,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 49.5,
+    "Pending_2024-11": 30.0,
     "Pending_2024-12": 45.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 38.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 39.25,
+    "Pending_2025-02": 57.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Conor Brownlow",
-    "Approved_2024-11": 8.0,
+    "Approved_2024-11": 0.5,
     "Approved_2024-12": 8.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 1.5,
+    "Approved_2025-02": 4.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9237,15 +9497,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Craig Burke",
-    "Approved_2024-11": 10.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 15.0,
     "Approved_2025-01": 2.0,
     "Approved_2025-02": 0.0,
@@ -9257,9 +9517,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9277,9 +9537,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 16.0,
-    "Rejected_2025-01": 64.0
+    "Rejected_2025-01": 64.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9293,13 +9553,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 26.75,
+    "Pending_2024-11": 10.75,
     "Pending_2024-12": 12.25,
     "Pending_2025-01": 9.5,
-    "Pending_2025-02": 1.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 5.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9307,19 +9567,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Daniel Dryland",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 16.0,
-    "Approved_2025-01": 41.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 73.0,
+    "Approved_2025-02": 3.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 9.0,
     "Pending_2024-12": 8.0,
-    "Pending_2025-01": 32.0,
-    "Pending_2025-02": 3.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 40.0
+    "Rejected_2025-01": 40.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9333,13 +9593,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 31.0,
+    "Pending_2024-11": 14.0,
     "Pending_2024-12": 15.5,
     "Pending_2025-01": 50.75,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 18.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9353,19 +9613,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 2.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 27.25,
     "Pending_2025-01": 27.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Darran Humpheson",
-    "Approved_2024-11": 55.25,
+    "Approved_2024-11": 31.25,
     "Approved_2024-12": 111.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -9377,9 +9637,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9387,25 +9647,25 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Darroch Day",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 49.0,
-    "Approved_2025-01": 40.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 77.0,
+    "Approved_2025-02": 24.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 32.0,
-    "Pending_2025-01": 37.0,
+    "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Dave Braendler",
-    "Approved_2024-11": 13.0,
+    "Approved_2024-11": 5.0,
     "Approved_2024-12": 26.5,
     "Approved_2025-01": 16.0,
     "Approved_2025-02": 0.0,
@@ -9417,15 +9677,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Dave Brockerhoff",
-    "Approved_2024-11": 4.75,
+    "Approved_2024-11": 2.75,
     "Approved_2024-12": 20.25,
     "Approved_2025-01": 16.5,
     "Approved_2025-02": 4.0,
@@ -9436,19 +9696,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Duncan Law",
-    "Approved_2024-11": 4.5,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 33.5,
     "Approved_2025-01": 46.25,
-    "Approved_2025-02": 3.0,
+    "Approved_2025-02": 8.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9457,15 +9717,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Elisa Yangco",
-    "Approved_2024-11": 37.0,
+    "Approved_2024-11": 23.0,
     "Approved_2024-12": 72.0,
     "Approved_2025-01": 112.0,
     "Approved_2025-02": 28.0,
@@ -9477,9 +9737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9497,9 +9757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 10.5,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9508,7 +9768,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 24.0,
     "Approved_2025-01": 8.0,
-    "Approved_2025-02": 5.0,
+    "Approved_2025-02": 9.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9517,9 +9777,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9533,13 +9793,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 4.5,
+    "Pending_2024-11": 2.5,
     "Pending_2024-12": 70.0,
     "Pending_2025-01": 128.5,
-    "Pending_2025-02": 24.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 28.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9553,13 +9813,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 7.5,
+    "Pending_2024-11": 5.5,
     "Pending_2024-12": 30.5,
     "Pending_2025-01": 32.0,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 19.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9577,9 +9837,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9593,19 +9853,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 42.0,
+    "Pending_2024-11": 24.0,
     "Pending_2024-12": 115.0,
     "Pending_2025-01": 154.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 20.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Gavin Mecchia",
-    "Approved_2024-11": 8.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -9613,13 +9873,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 32.0,
+    "Pending_2024-11": 24.0,
     "Pending_2024-12": 68.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9637,9 +9897,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Non O2NL Time (other projects, learning etc)",
+    "userName": "Genevieve Smith",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 28.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9657,9 +9937,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9677,9 +9957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 31.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9693,13 +9973,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.25,
+    "Pending_2024-11": 8.75,
     "Pending_2024-12": 35.0,
     "Pending_2025-01": 6.25,
-    "Pending_2025-02": 0.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 1.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9717,9 +9997,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 59.0,
     "Pending_2025-01": 30.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9737,9 +10017,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 38.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9753,19 +10033,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 23.5,
+    "Pending_2024-11": 13.0,
     "Pending_2024-12": 144.75,
     "Pending_2025-01": 177.25,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 66.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Hins Zhang",
-    "Approved_2024-11": 12.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 24.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -9773,13 +10053,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 22.0,
+    "Pending_2024-11": 14.0,
     "Pending_2024-12": 50.0,
     "Pending_2025-01": 138.0,
-    "Pending_2025-02": 60.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 64.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9793,13 +10073,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 10.75,
+    "Pending_2024-11": 4.25,
     "Pending_2024-12": 21.25,
     "Pending_2025-01": 48.0,
-    "Pending_2025-02": 2.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 8.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9813,13 +10093,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 29.0,
+    "Pending_2024-11": 17.0,
     "Pending_2024-12": 62.0,
     "Pending_2025-01": 55.0,
-    "Pending_2025-02": 23.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 45.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9833,22 +10113,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 17.75,
+    "Pending_2024-11": 12.25,
     "Pending_2024-12": 39.0,
     "Pending_2025-01": 53.25,
     "Pending_2025-02": 28.5,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "James Ellison",
-    "Approved_2024-11": 56.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 120.0,
     "Approved_2025-01": 73.5,
-    "Approved_2025-02": 30.0,
+    "Approved_2025-02": 67.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9857,9 +10137,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9876,10 +10156,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 110.5,
     "Pending_2025-01": 111.25,
-    "Pending_2025-02": 28.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 66.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9893,13 +10173,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 36.0,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 78.0,
     "Pending_2025-01": 36.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9917,9 +10197,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 68.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9936,19 +10216,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 26.25,
-    "Pending_2025-02": 31.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Janine Sziklasi",
-    "Approved_2024-11": 46.5,
+    "Approved_2024-11": 27.0,
     "Approved_2024-12": 79.75,
     "Approved_2025-01": 70.75,
-    "Approved_2025-02": 19.0,
+    "Approved_2025-02": 38.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -9957,9 +10237,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -9973,39 +10253,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 36.0,
+    "Pending_2024-11": 20.0,
     "Pending_2024-12": 20.0,
     "Pending_2025-01": 56.0,
     "Pending_2025-02": 40.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Non O2NL Hours",
-    "taskName": "Non O2NL Time (other projects, learning etc)",
-    "userName": "Jason Pene",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 16.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Jeffery Yang",
-    "Approved_2024-11": 1.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 72.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -10017,9 +10277,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10033,22 +10293,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 3.0,
+    "Pending_2024-11": 1.5,
     "Pending_2024-12": 12.75,
     "Pending_2025-01": 4.25,
-    "Pending_2025-02": 7.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 9.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Jeremy Cooke",
-    "Approved_2024-11": 6.0,
+    "Approved_2024-11": 5.0,
     "Approved_2024-12": 44.0,
     "Approved_2025-01": 22.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 19.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10057,29 +10317,29 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Jesse Byrne",
-    "Approved_2024-11": 31.0,
+    "Approved_2024-11": 24.0,
     "Approved_2024-12": 115.0,
-    "Approved_2025-01": 32.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 72.0,
+    "Approved_2025-02": 76.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 40.0,
-    "Pending_2025-02": 46.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10097,9 +10357,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 38.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10117,9 +10377,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 32.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10133,19 +10393,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 52.0,
+    "Pending_2024-11": 28.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 28.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "John Lohrentz",
-    "Approved_2024-11": 25.0,
+    "Approved_2024-11": 12.75,
     "Approved_2024-12": 61.0,
     "Approved_2025-01": 17.5,
     "Approved_2025-02": 0.0,
@@ -10156,10 +10416,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 17.0,
-    "Pending_2025-02": 16.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10177,15 +10437,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "John Oey",
-    "Approved_2024-11": 52.5,
+    "Approved_2024-11": 28.5,
     "Approved_2024-12": 117.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -10197,9 +10457,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10213,13 +10473,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 38.0,
+    "Pending_2024-11": 30.0,
     "Pending_2024-12": 73.5,
     "Pending_2025-01": 74.75,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10233,13 +10493,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 16.0,
+    "Pending_2024-11": 12.0,
     "Pending_2024-12": 46.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10253,22 +10513,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 38.5,
+    "Pending_2024-11": 18.5,
     "Pending_2024-12": 95.0,
     "Pending_2025-01": 53.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 42.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Kasey Pitt",
-    "Approved_2024-11": 45.75,
+    "Approved_2024-11": 26.75,
     "Approved_2024-12": 77.25,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 17.75,
+    "Approved_2025-02": 38.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10277,9 +10537,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10297,9 +10557,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10313,13 +10573,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 30.0,
+    "Pending_2024-11": 18.25,
     "Pending_2024-12": 118.0,
     "Pending_2025-01": 102.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10327,19 +10587,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Ken Cuttle",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 31.75,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 64.0,
+    "Approved_2025-02": 25.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 32.25,
-    "Pending_2025-02": 23.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10357,15 +10617,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 24.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Kylie Park",
-    "Approved_2024-11": 22.75,
+    "Approved_2024-11": 11.25,
     "Approved_2024-12": 41.5,
     "Approved_2025-01": 48.25,
     "Approved_2025-02": 3.5,
@@ -10376,16 +10636,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Laura Chen",
-    "Approved_2024-11": 33.75,
+    "Approved_2024-11": 24.25,
     "Approved_2024-12": 43.0,
     "Approved_2025-01": 30.75,
     "Approved_2025-02": 0.0,
@@ -10396,10 +10656,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 17.25,
-    "Pending_2025-02": 16.25,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 32.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10416,10 +10676,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 66.0,
-    "Pending_2025-02": 21.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 53.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10436,10 +10696,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 2.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 7.58,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10456,16 +10716,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 32.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 24.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Madonna Lobido",
-    "Approved_2024-11": 14.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 28.0,
     "Approved_2025-01": 12.0,
     "Approved_2025-02": 0.0,
@@ -10477,9 +10737,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10497,9 +10757,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 90.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10517,35 +10777,35 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Markus Reiberg",
-    "Approved_2024-11": 14.0,
+    "Approved_2024-11": 10.0,
     "Approved_2024-12": 60.5,
-    "Approved_2025-01": 38.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 58.5,
+    "Approved_2025-02": 14.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
-    "Pending_2025-01": 28.0,
-    "Pending_2025-02": 20.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 8.0,
+    "Pending_2025-02": 39.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Martin Barrientos",
-    "Approved_2024-11": 54.0,
+    "Approved_2024-11": 30.0,
     "Approved_2024-12": 33.5,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -10557,9 +10817,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 10.5,
     "Pending_2025-01": 32.25,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10577,9 +10837,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 2.0,
     "Pending_2025-01": 40.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10588,7 +10848,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 68.5,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 21.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10596,10 +10856,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 17.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10613,13 +10873,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 1.5,
+    "Pending_2024-11": 1.0,
     "Pending_2024-12": 4.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 1.0
+    "Rejected_2025-01": 1.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10629,7 +10889,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 24.0,
+    "NoStatus_2024-11": 16.0,
     "NoStatus_2024-12": 60.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
@@ -10637,9 +10897,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10653,13 +10913,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 8.0,
+    "Pending_2024-11": 4.0,
     "Pending_2024-12": 10.0,
     "Pending_2025-01": 4.5,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10676,16 +10936,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 35.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 51.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Miles Calder",
-    "Approved_2024-11": 0.5,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 63.0,
     "Approved_2025-01": 108.0,
     "Approved_2025-02": 8.0,
@@ -10697,9 +10957,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10717,9 +10977,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 79.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10733,33 +10993,33 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.0,
+    "Pending_2024-11": 8.25,
     "Pending_2024-12": 65.25,
     "Pending_2025-01": 8.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Mohit Vyas",
-    "Approved_2024-11": 4.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
-    "Approved_2025-01": 30.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 44.0,
+    "Approved_2025-02": 33.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 22.0,
+    "Pending_2024-11": 16.0,
     "Pending_2024-12": 6.0,
-    "Pending_2025-01": 14.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10773,13 +11033,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 55.5,
+    "Pending_2024-11": 32.0,
     "Pending_2024-12": 66.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10793,13 +11053,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 54.5,
+    "Pending_2024-11": 31.5,
     "Pending_2024-12": 113.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10808,7 +11068,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 16.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 35.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10816,30 +11076,30 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Nico Aandewiel",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 72.0,
-    "Approved_2025-01": 40.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 48.0,
+    "Approved_2025-02": 24.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 16.0,
-    "Pending_2025-01": 72.0,
-    "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-01": 64.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10853,13 +11113,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 4.75,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 11.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 3.25,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10868,24 +11128,24 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 36.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 37.75,
+    "Approved_2025-02": 64.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 24.0,
+    "Pending_2024-11": 14.0,
     "Pending_2024-12": 106.0,
     "Pending_2025-01": 156.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Nyan Lin",
-    "Approved_2024-11": 55.0,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 119.0,
     "Approved_2025-01": 101.0,
     "Approved_2025-02": 0.0,
@@ -10897,18 +11157,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Patrick Lees",
-    "Approved_2024-11": 53.25,
+    "Approved_2024-11": 32.0,
     "Approved_2024-12": 116.5,
     "Approved_2025-01": 153.0,
-    "Approved_2025-02": 36.75,
+    "Approved_2025-02": 63.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10917,18 +11177,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Paul McGimpsey",
-    "Approved_2024-11": 28.0,
+    "Approved_2024-11": 17.0,
     "Approved_2024-12": 69.0,
     "Approved_2025-01": 81.0,
-    "Approved_2025-02": 14.0,
+    "Approved_2025-02": 44.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10937,9 +11197,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10956,10 +11216,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 2.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 6.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10973,13 +11233,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.5,
+    "Pending_2024-11": 4.5,
     "Pending_2024-12": 9.5,
     "Pending_2025-01": 25.5,
     "Pending_2025-02": 4.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -10987,8 +11247,8 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "userName": "Phil Barker",
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 42.0,
-    "Approved_2025-01": 67.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 101.0,
+    "Approved_2025-02": 37.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -10997,9 +11257,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11008,18 +11268,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 24.5,
-    "Approved_2025-02": 16.25,
+    "Approved_2025-02": 22.25,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 1.5,
+    "Pending_2024-11": 1.0,
     "Pending_2024-12": 11.25,
     "Pending_2025-01": 4.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11028,7 +11288,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 7.0,
-    "Approved_2025-02": 3.0,
+    "Approved_2025-02": 8.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11037,9 +11297,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11057,9 +11317,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11073,13 +11333,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 5.0,
+    "Pending_2024-11": 2.0,
     "Pending_2024-12": 85.0,
     "Pending_2025-01": 79.5,
-    "Pending_2025-02": 13.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 17.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11088,18 +11348,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 12.5,
     "Approved_2025-01": 12.5,
-    "Approved_2025-02": 0.5,
+    "Approved_2025-02": 1.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 11.0,
+    "Pending_2024-11": 5.5,
     "Pending_2024-12": 17.5,
     "Pending_2025-01": 1.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11113,13 +11373,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 96.5,
     "Pending_2025-01": 22.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 36.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11133,19 +11393,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 16.0,
+    "Pending_2024-11": 8.0,
     "Pending_2024-12": 32.0,
     "Pending_2025-01": 40.0,
-    "Pending_2025-02": 12.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 20.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Rubie McLintock",
-    "Approved_2024-11": 1.75,
+    "Approved_2024-11": 1.0,
     "Approved_2024-12": 7.75,
     "Approved_2025-01": 3.75,
     "Approved_2025-02": 1.25,
@@ -11156,10 +11416,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 4.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.75
+    "Rejected_2025-01": 0.75,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11177,9 +11437,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11197,15 +11457,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 64.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Sam Turner",
-    "Approved_2024-11": 26.0,
+    "Approved_2024-11": 6.0,
     "Approved_2024-12": 73.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -11216,19 +11476,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 39.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Samuel Burden",
-    "Approved_2024-11": 29.5,
+    "Approved_2024-11": 13.0,
     "Approved_2024-12": 72.0,
     "Approved_2025-01": 94.0,
-    "Approved_2025-02": 34.0,
+    "Approved_2025-02": 50.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11237,9 +11497,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11256,19 +11516,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 13.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Sharon Yung",
-    "Approved_2024-11": 23.75,
+    "Approved_2024-11": 11.25,
     "Approved_2024-12": 29.0,
     "Approved_2025-01": 82.25,
-    "Approved_2025-02": 17.0,
+    "Approved_2025-02": 35.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11277,9 +11537,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11293,13 +11553,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 30.75,
+    "Pending_2024-11": 13.0,
     "Pending_2024-12": 111.5,
     "Pending_2025-01": 4.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11317,9 +11577,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11328,7 +11588,7 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 24.5,
-    "Approved_2025-02": 1.5,
+    "Approved_2025-02": 6.75,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11337,9 +11597,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11353,13 +11613,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.5,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 1.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11373,13 +11633,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 54.5,
+    "Pending_2024-11": 31.0,
     "Pending_2024-12": 117.25,
     "Pending_2025-01": 39.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11393,13 +11653,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 8.5,
+    "Pending_2024-11": 4.0,
     "Pending_2024-12": 17.0,
     "Pending_2025-01": 10.5,
     "Pending_2025-02": 7.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11416,19 +11676,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 20.5,
     "Pending_2025-01": 5.5,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 10.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Tarryn Wyman",
-    "Approved_2024-11": 35.0,
+    "Approved_2024-11": 11.0,
     "Approved_2024-12": 45.0,
     "Approved_2025-01": 104.5,
-    "Approved_2025-02": 40.0,
+    "Approved_2025-02": 80.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11436,19 +11696,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 56.0,
     "Pending_2025-01": 24.0,
-    "Pending_2025-02": 32.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Ted Polley",
-    "Approved_2024-11": 8.5,
+    "Approved_2024-11": 7.5,
     "Approved_2024-12": 46.0,
-    "Approved_2025-01": 16.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-01": 25.0,
+    "Approved_2025-02": 2.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11456,16 +11716,16 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 1.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Tevita Tuicakau",
-    "Approved_2024-11": 16.0,
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 48.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -11473,13 +11733,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 27.5,
+    "Pending_2024-11": 19.5,
     "Pending_2024-12": 24.0,
     "Pending_2025-01": 44.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11493,22 +11753,22 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 11.5,
+    "Pending_2024-11": 9.5,
     "Pending_2024-12": 30.5,
     "Pending_2025-01": 55.42,
-    "Pending_2025-02": 14.75,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 33.75,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Timothy Broadhead",
-    "Approved_2024-11": 37.5,
+    "Approved_2024-11": 29.5,
     "Approved_2024-12": 39.5,
     "Approved_2025-01": 76.75,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 35.5,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11517,15 +11777,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Trent Bell",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 26.0,
     "Approved_2024-12": 62.5,
     "Approved_2025-01": 59.0,
     "Approved_2025-02": 22.0,
@@ -11537,15 +11797,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non O2NL Time (other projects, learning etc)",
     "userName": "Tyler Neve",
-    "Approved_2024-11": 25.5,
+    "Approved_2024-11": 19.0,
     "Approved_2024-12": 61.5,
     "Approved_2025-01": 26.0,
     "Approved_2025-02": 0.0,
@@ -11557,9 +11817,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11573,13 +11833,33 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 20.0,
+    "Pending_2024-11": 12.5,
     "Pending_2024-12": 60.0,
     "Pending_2025-01": 92.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 22.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
+  },
+  {
+    "projectName": "Non O2NL Hours",
+    "taskName": "Non O2NL Time (other projects, learning etc)",
+    "userName": "XC Shi",
+    "Approved_2024-11": 0.0,
+    "Approved_2024-12": 0.0,
+    "Approved_2025-01": 0.0,
+    "Approved_2025-02": 8.0,
+    "NoStatus_2024-11": 0.0,
+    "NoStatus_2024-12": 0.0,
+    "NoStatus_2025-01": 0.0,
+    "NoStatus_2025-02": 0.0,
+    "Pending_2024-11": 0.0,
+    "Pending_2024-12": 0.0,
+    "Pending_2025-01": 0.0,
+    "Pending_2025-02": 0.0,
+    "Rejected_2024-12": 0.0,
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11597,9 +11877,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11617,9 +11897,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 36.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11637,29 +11917,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 17.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Non O2NL Hours",
-    "taskName": "Non chargeable O2NL Overtime",
-    "userName": "Cara Liu",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 0.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 3.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11677,9 +11937,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11693,13 +11953,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 18.0,
+    "Pending_2024-11": 14.5,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 21.5,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11716,10 +11976,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 17.5,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 34.5,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11733,13 +11993,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 36.5,
+    "Pending_2024-11": 28.5,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11757,29 +12017,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 40.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
-  },
-  {
-    "projectName": "Non O2NL Hours",
-    "taskName": "Non chargeable O2NL Overtime",
-    "userName": "Jonathan Navarrete",
-    "Approved_2024-11": 0.0,
-    "Approved_2024-12": 0.0,
-    "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
-    "NoStatus_2024-11": 0.0,
-    "NoStatus_2024-12": 0.0,
-    "NoStatus_2025-01": 0.0,
-    "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 6.0,
-    "Pending_2024-12": 0.0,
-    "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
-    "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11796,19 +12036,19 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 22.5,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 33.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non chargeable O2NL Overtime",
     "userName": "Miles Calder",
-    "Approved_2024-11": 15.0,
+    "Approved_2024-11": 11.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 27.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11817,18 +12057,18 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non chargeable O2NL Overtime",
-    "userName": "Peter Bradshaw",
-    "Approved_2024-11": 5.0,
+    "userName": "Phil Barker",
+    "Approved_2024-11": 0.0,
     "Approved_2024-12": 0.0,
     "Approved_2025-01": 0.0,
-    "Approved_2025-02": 0.0,
+    "Approved_2025-02": 30.0,
     "NoStatus_2024-11": 0.0,
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
@@ -11837,9 +12077,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11857,15 +12097,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 1.5,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
     "taskName": "Non chargeable O2NL Overtime",
     "userName": "Scott Grace",
-    "Approved_2024-11": 14.0,
+    "Approved_2024-11": 8.0,
     "Approved_2024-12": 18.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -11877,9 +12117,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11893,13 +12133,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 9.5,
+    "Pending_2024-11": 8.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "Non O2NL Hours",
@@ -11917,15 +12157,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 22.0
+    "Rejected_2025-01": 22.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
     "taskName": "Communications & Engagement",
     "userName": "Liz Emery",
-    "Approved_2024-11": 40.0,
+    "Approved_2024-11": 16.0,
     "Approved_2024-12": 24.0,
     "Approved_2025-01": 72.0,
     "Approved_2025-02": 16.0,
@@ -11936,10 +12176,10 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 48.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 24.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
@@ -11957,15 +12197,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 4.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
     "taskName": "Health & Safety",
     "userName": "Kylee Scott",
-    "Approved_2024-11": 24.0,
+    "Approved_2024-11": 16.0,
     "Approved_2024-12": 32.0,
     "Approved_2025-01": 0.0,
     "Approved_2025-02": 0.0,
@@ -11977,9 +12217,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 16.0,
     "Pending_2025-01": 16.0,
     "Pending_2025-02": 16.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
@@ -11997,15 +12237,15 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 8.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
     "taskName": "P&C",
     "userName": "Amanda Palmer",
-    "Approved_2024-11": 3.5,
+    "Approved_2024-11": 2.5,
     "Approved_2024-12": 10.0,
     "Approved_2025-01": 6.0,
     "Approved_2025-02": 0.0,
@@ -12013,13 +12253,13 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "NoStatus_2024-12": 0.0,
     "NoStatus_2025-01": 0.0,
     "NoStatus_2025-02": 0.0,
-    "Pending_2024-11": 1.0,
+    "Pending_2024-11": 0.0,
     "Pending_2024-12": 3.0,
     "Pending_2025-01": 0.0,
     "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   },
   {
     "projectName": "People & Operational Performance",
@@ -12036,9 +12276,9 @@ export const mockTimeLogs: TimeLogEntry[] = [
     "Pending_2024-11": 0.0,
     "Pending_2024-12": 0.0,
     "Pending_2025-01": 0.0,
-    "Pending_2025-02": 0.0,
-    "Rejected_2024-11": 0.0,
+    "Pending_2025-02": 40.0,
     "Rejected_2024-12": 0.0,
-    "Rejected_2025-01": 0.0
+    "Rejected_2025-01": 0.0,
+    "Rejected_2025-02": 0.0
   }
 ];

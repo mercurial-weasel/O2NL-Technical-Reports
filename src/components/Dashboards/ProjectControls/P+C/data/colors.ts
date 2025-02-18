@@ -1,6 +1,6 @@
 // Organization colors
 export const organizationColors = {
-  'T+T': '#9B59B6',        // Purple
+  'TT': '#0077FF',         // Purple
   'Beca': '#3498DB',       // Blue
   'Downer': '#2ECC71',     // Green
   'Mc Connell Dowell': '#E67E22', // Orange

@@ -18,9 +18,11 @@ import { MonthColumn } from './types';
 // Generate array of month columns from Sep 24 to Dec 30
 const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {
   const date = new Date(2024, 8 + i); // Start from Sep 2024 (month 8)
+  const monthName = date.toLocaleString('default', { month: 'long' });
+  const year = date.getFullYear().toString().slice(-2);
   return {
-    key: `${date.toLocaleString('default', { month: 'short' })}_${date.getFullYear().toString().slice(2)}`,
-    label: `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear().toString().slice(2)}`
+    key: `${monthName}_${year}`,
+    label: `${date.toLocaleString('default', { month: 'short' })} ${year}`
   };
 });
 

@@ -13,7 +13,8 @@ export const API_CONFIG = {
     amtBudget: '/api/cost/amt-budgets',
     earnedValue: '/api/cost/earned-value',
     consenting: '/api/programme/consenting',
-    hours: '/api/cost/hours'
+    hours: '/api/cost/hours',
+    equipment: '/api/equipment/status'
   },
   defaultHeaders: {
     'Content-Type': 'application/json',

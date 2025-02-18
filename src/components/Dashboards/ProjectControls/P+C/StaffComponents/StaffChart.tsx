@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
 import { MonthColumn } from '../../../StaffFTE/types';
-import { calculateFTESummaries, calculateNumberUsersSummaries } from '../../../../../api/staff-fte/transformations';
+import { calculateFTESummaries, calculateStaffNumbers } from '../../../../../api/staff-fte/transformations';
+import { colorPalettes } from './colors';
 
 interface StaffChartProps {
   data: O2NL_Staff[];
@@ -12,50 +13,20 @@ interface StaffChartProps {
 
 type ChartView = 'organization' | 'discipline' | 'nop';
 
-// Professional color palettes for each view type
-const colorPalettes = {
-  organization: {
-    'T&T': '#4C7389',        // Rich Blue
-    'Beca': '#6CC24A',       // Vibrant Green
-    'MCD/Downer': '#3EB1C8', // Bright Cyan
-    'Downer': '#3EB1C8',     // Bright Cyan
-    'MCD': '#F5A623',        // Warm Orange
-    'DNZ': '#E63946',        // Bold Red
-    'Other': '#9B59B6'       // Rich Purple
-  },
-  discipline: {
-    'PSS': '#6A0DAD',      // Vivid Purple
-    'POP': '#1F618D',      // Royal Blue
-    'OS': '#229954',       // Emerald Green
-    'LO': '#E67E22',       // Bright Orange
-    'ENV': '#95A5A6',      // Medium Gray
-    'ENG': '#D72638',      // Bold Red
-    'DES': '#2ECC71',      // Fresh Green
-    'CONST': '#FF5733',    // Bright Coral Red
-    'COM': '#34495E',      // Deep Navy
-    'AMT': '#F1C40F'       // Bright Yellow
-  },
-  nop: {
-    'CNOP': '#3498DB',      // Blue
-    'DNOP': '#E74C3C',      // Red
-    'CNOP/DNOP': '#2ECC71'  // Green
-  }
-};
-
 export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
   const [chartView, setChartView] = useState<ChartView>('organization');
 
   // Calculate summaries based on mode
-  const summaries = useMemo(() => {
+  const summaries = React.useMemo(() => {
     if (mode === 'fte' && monthColumns) {
       return calculateFTESummaries(data, monthColumns);
     } else {
-      return calculateNumberUsersSummaries(data);
+      return calculateStaffNumbers(data);
     }
   }, [data, monthColumns, mode]);
 
   // Get x-axis labels and data based on mode
-  const { xLabels, items } = useMemo(() => {
+  const { xLabels, items } = React.useMemo(() => {
     if (mode === 'fte' && monthColumns) {
       const xLabels = monthColumns.map(m => m.label);
       const items = chartView === 'organization' 
@@ -65,15 +36,21 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
         : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.totals }));
       return { xLabels, items };
     } else {
-      const xLabels = summaries.dateRange.months.map(m => {
-        const date = new Date(m);
-        return `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear().toString().slice(2)}`;
-      });
+      const xLabels = summaries.months;
       const items = chartView === 'organization'
-        ? summaries.orgSummaries.map(s => ({ name: s.org, values: s.userCounts }))
+        ? summaries.organizations.map(s => ({ 
+            name: s.name, 
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+          }))
         : chartView === 'discipline'
-        ? summaries.disciplineSummaries.map(s => ({ name: s.discipline, values: s.userCounts }))
-        : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.userCounts }));
+        ? summaries.disciplines.map(s => ({ 
+            name: s.name, 
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+          }))
+        : summaries.nopTypes.map(s => ({ 
+            name: s.name, 
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+          }));
       return { xLabels, items };
     }
   }, [summaries, chartView, mode, monthColumns]);
@@ -85,7 +62,7 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
     x: xLabels,
     y: mode === 'fte' && monthColumns
       ? monthColumns.map(m => values[m.key])
-      : summaries.dateRange.months.map(m => values[m]),
+      : summaries.months.map(m => values[m]),
     marker: {
       color: colorPalettes[chartView][name as keyof typeof colorPalettes[typeof chartView]] || '#95A5A6'
     },
@@ -143,8 +120,8 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
             font: { color: '#FFFFFF', size: 16 }
           },
           barmode: 'stack',
-          height: 600,
-          margin: { l: 60, r: 180, t: 60, b: 80 },
+          height: 500,
+          margin: { l: 60, r: 180, t: 60, b: 50 },
           showlegend: true,
           legend: {
             x: 1.02,

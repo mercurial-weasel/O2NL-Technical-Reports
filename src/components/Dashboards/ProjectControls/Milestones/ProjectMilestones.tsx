@@ -5,7 +5,7 @@ import { Footer } from '../../../common/Footer';
 import { Section } from '../../../common';
 import { Card } from '../../../common/Card';
 import { BackNavigation } from '../../../common/BackNavigation';
-import { MultiSelectFilter } from '../../../Roadmap/components/MultiSelectFilter';
+import { MultiSelectFilter } from '../../../common/Filters';
 import { milestoneData, MilestoneTask } from './data';
 
 type SortField = keyof MilestoneTask;
@@ -17,9 +17,14 @@ interface SortConfig {
 }
 
 export function ProjectMilestones() {
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [trendFilter, setTrendFilter] = useState('all');
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ 
+    field: 'status', 
+    direction: 'asc' 
+  });
+  const [selectedMonth, setSelectedMonth] = useState<string>('');
   const [selectedAlliances, setSelectedAlliances] = useState<Set<string>>(new Set(['all']));
-  const [selectedStatus, setSelectedStatus] = useState<'all' | MilestoneTask['Item Status']>('all');
-  const [sortConfig, setSortConfig] = useState<SortConfig>({ field: 'Milestone', direction: 'asc' });
 
   // Get unique alliances for filter
   const alliances = useMemo(() => 
@@ -27,7 +32,7 @@ export function ProjectMilestones() {
   , []);
 
   // Filter and sort data
-  const filteredAndSortedData = useMemo(() => {
+  const filteredAndSortedData = React.useMemo(() => {
     let filtered = milestoneData;
 
     // Apply alliance filter
@@ -36,27 +41,21 @@ export function ProjectMilestones() {
     }
 
     // Apply status filter
-    if (selectedStatus !== 'all') {
-      filtered = filtered.filter(item => item['Item Status'] === selectedStatus);
+    if (statusFilter !== 'all') {
+      filtered = filtered.filter(item => item['Item Status'] === statusFilter);
     }
 
     // Sort data
     return [...filtered].sort((a, b) => {
-      const aValue = a[sortConfig.field];
-      const bValue = b[sortConfig.field];
       const direction = sortConfig.direction === 'asc' ? 1 : -1;
-
-      if (typeof aValue === 'number' && typeof bValue === 'number') {
-        return (aValue - bValue) * direction;
-      }
-      return String(aValue).localeCompare(String(bValue)) * direction;
+      return String(a[sortConfig.field]).localeCompare(String(b[sortConfig.field])) * direction;
     });
-  }, [selectedAlliances, selectedStatus, sortConfig]);
+  }, [milestoneData, selectedAlliances, statusFilter, sortConfig]);
 
   const handleSort = (field: SortField) => {
-    setSortConfig(current => ({
+    setSortConfig(prev => ({
       field,
-      direction: current.field === field && current.direction === 'asc' ? 'desc' : 'asc'
+      direction: prev.field === field && prev.direction === 'asc' ? 'desc' : 'asc'
     }));
   };
 
@@ -108,8 +107,8 @@ export function ProjectMilestones() {
               </div>
 
               <select
-                value={selectedStatus}
-                onChange={(e) => setSelectedStatus(e.target.value as typeof selectedStatus)}
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
                 className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-brand-primary"
               >
                 <option value="all">All Statuses</option>
@@ -142,7 +141,10 @@ export function ProjectMilestones() {
                   </thead>
                   <tbody>
                     {filteredAndSortedData.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-700/50 hover:bg-gray-700/20">
+                      <tr
+                        key={index}
+                        className="border-b border-gray-700/50 hover:bg-gray-700/20"
+                      >
                         <td className="py-3 px-4 text-sm text-text-primary">{item.Milestone}</td>
                         <td className="py-3 px-4 text-sm text-text-primary">{item.Alliance}</td>
                         <td className="py-3 px-4 text-sm">

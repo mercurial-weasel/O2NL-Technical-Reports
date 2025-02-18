@@ -14,9 +14,11 @@ import {
   DollarSign,
   Clock,
   FileCheck,
+  Wrench,
   DivideIcon as LucideIcon
 } from 'lucide-react';
 import { DisciplineSection } from '../AllDisciplines/types';
+import { AccessRight } from '../../../lib/auth/types';
 
 // Helper function to create icon components
 const createIcon = (Icon: LucideIcon) => {
@@ -31,72 +33,80 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     id: 'cost',
     title: 'Cost',
     icon: DollarSign,
+    accessFor: ['Commercial', 'Admin'],
     tests: [
-      { name: 'Cost Performance', icon: createIcon(DollarSign), status: 'not_available' },
-      { name: 'AMT Budget Tracking', icon: createIcon(DollarSign), status: 'draft' },
-      { name: 'Earned Value', icon: createIcon(DollarSign), status: 'draft' }
+      { name: 'Cost Performance', icon: createIcon(DollarSign), status: 'not_available', accessFor: ['Commercial', 'AMT'] },
+      { name: 'AMT Budget Tracking', icon: createIcon(DollarSign), status: 'draft', accessFor: ['AMT', 'Commercial'] },
+      { name: 'Earned Value', icon: createIcon(DollarSign), status: 'draft', accessFor: ['Commercial', 'AMT'] }
     ]
   },
   {
     id: 'risk',
     title: 'Risk',
     icon: AlertTriangle,
+    accessFor: ['Admin', 'Commercial', 'AMT'],
     tests: [
-      { name: 'Risk Register', icon: createIcon(AlertTriangle), status: 'not_available' },
-      { name: 'Risk Analysis', icon: createIcon(AlertTriangle), status: 'not_available' },
-      { name: 'Mitigation Tracking', icon: createIcon(AlertTriangle), status: 'not_available' }
+      { name: 'Risk Register', icon: createIcon(AlertTriangle), status: 'not_available', accessFor: ['Commercial', 'AMT'] },
+      { name: 'Risk Analysis', icon: createIcon(AlertTriangle), status: 'not_available', accessFor: ['Commercial', 'AMT'] },
+      { name: 'Mitigation Tracking', icon: createIcon(AlertTriangle), status: 'not_available', accessFor: ['Commercial', 'AMT'] }
     ]
   },
   {
     id: 'programme',
     title: 'Programme',
     icon: Calendar,
+    accessFor: ['Admin', 'PAB', 'AMT'],
     tests: [
-      { name: 'PAB Report', icon: createIcon(FileText), status: 'draft' },
-      { name: 'AMT Report', icon: createIcon(BarChart2), status: 'concept' },
-      { name: 'Programme Milestones', icon: createIcon(Milestone), status: 'published' },
-      { name: 'Systems/Software', icon: createIcon(Monitor), status: 'draft' },
-      { name: 'Consenting', icon: createIcon(FileCheck), status: 'draft' }
+      { name: 'PAB Report', icon: createIcon(FileText), status: 'draft', accessFor: ['PAB'] },
+      { name: 'AMT Report', icon: createIcon(BarChart2), status: 'draft', accessFor: ['AMT', 'PAB'] },
+      { name: 'Programme Milestones', icon: createIcon(Milestone), status: 'published', accessFor: ['PAB', 'AMT'] },
+      { name: 'Systems/Software', icon: createIcon(Monitor), status: 'draft', accessFor: ['AMT'] },
+      { name: 'Consenting', icon: createIcon(FileCheck), status: 'draft', accessFor: ['PAB', 'AMT'] }
     ]
   },
   {
     id: 'quality',
     title: 'Quality',
     icon: CheckSquare,
+    accessFor: ['AMT'],
     tests: [
-      { name: 'Quality Metrics', icon: createIcon(CheckSquare), status: 'not_available' },
-      { name: 'Compliance Reports', icon: createIcon(CheckSquare), status: 'not_available' },
-      { name: 'Audit Results', icon: createIcon(CheckSquare), status: 'not_available' }
+      { name: 'Quality Metrics', icon: createIcon(CheckSquare), status: 'not_available', accessFor: ['AMT'] },
+      { name: 'Compliance Reports', icon: createIcon(CheckSquare), status: 'not_available', accessFor: ['AMT'] },
+      { name: 'Audit Results', icon: createIcon(CheckSquare), status: 'not_available', accessFor: ['AMT'] }
     ]
   },
   {
     id: 'scope',
     title: 'Scope',
     icon: Target,
+    accessFor: ['AMT'],
     tests: [
-      { name: 'Scope Changes', icon: createIcon(Target), status: 'not_available' },
-      { name: 'Requirements Tracking', icon: createIcon(Target), status: 'not_available' },
-      { name: 'Deliverables Status', icon: createIcon(Target), status: 'not_available' }
+      { name: 'Scope Changes', icon: createIcon(Target), status: 'not_available', accessFor: ['AMT'] },
+      { name: 'Requirements Tracking', icon: createIcon(Target), status: 'not_available', accessFor: ['AMT'] },
+      { name: 'Deliverables Status', icon: createIcon(Target), status: 'not_available', accessFor: ['AMT'] }
     ]
   },
   {
     id: 'people-culture',
     title: 'People and Culture',
     icon: Users,
+    accessFor: ['AMT'],
     tests: [
-      { name: 'Staff Numbers', icon: createIcon(Users), status: 'draft' },
-      { name: 'Staff FTE', icon: createIcon(Users), status: 'draft' },
-      { name: 'Staff Movement', icon: createIcon(Users), status: 'draft' },
-      { name: 'Time Logs', icon: createIcon(Clock), status: 'draft' }
+      { name: 'Staff Numbers', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
+      { name: 'Staff FTE', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
+      { name: 'Staff Movement', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
+      { name: 'Time Logs', icon: createIcon(Clock), status: 'published', accessFor: ['AMT'] }
     ]
   },
   {
     id: 'other',
     title: 'Other',
     icon: Boxes,
+    accessFor: ['Admin', 'Commercial', 'AMT'],
     tests: [
-      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept' },
-      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept' }
+      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['AMT'] },
+      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['AMT'] },
+      { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['AMT'] }
     ]
   }
 ];
