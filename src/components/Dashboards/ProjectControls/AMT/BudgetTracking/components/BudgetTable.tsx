@@ -10,11 +10,35 @@ interface BudgetTableProps {
 }
 
 export function BudgetTable({ data, onSort, sortConfig, formatCurrency }: BudgetTableProps) {
-  const tableSections = [
+  // Sort the data based on current sort configuration
+  const sortedData = React.useMemo(() => {
+    if (!sortConfig) return data;
+
+    return [...data].sort((a, b) => {
+      const direction = sortConfig.direction === 'asc' ? 1 : -1;
+      
+      // Handle numeric fields
+      if (typeof a[sortConfig.field as keyof AMTBudgetItem] === 'number') {
+        return ((a[sortConfig.field as keyof AMTBudgetItem] as number) - 
+                (b[sortConfig.field as keyof AMTBudgetItem] as number)) * direction;
+      }
+      
+      // Handle string fields (like WORKSTREAM)
+      return String(a[sortConfig.field as keyof AMTBudgetItem])
+        .localeCompare(String(b[sortConfig.field as keyof AMTBudgetItem])) * direction;
+    });
+  }, [data, sortConfig]);
+
+  const sections = [
     {
       title: "",
       columns: [
-        { field: "WORKSTREAM", title: "Workstream", align: "left" }
+        { 
+          field: "WORKSTREAM", 
+          title: "Workstream", 
+          align: "left",
+          sortable: true
+        }
       ]
     },
     {
@@ -94,8 +118,8 @@ export function BudgetTable({ data, onSort, sortConfig, formatCurrency }: Budget
   return (
     <ReusableTable
       title="Budget Details"
-      sections={tableSections}
-      data={data}
+      sections={sections}
+      data={sortedData}
       config={{
         headerColor: 'bg-blue-900',
         textColor: 'text-text-primary',
