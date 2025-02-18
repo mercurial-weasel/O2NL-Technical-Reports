@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const AccessRight = z.enum(['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead']);
+export const AccessRight = z.enum(['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead', 'P+C']);
 export type AccessRight = z.infer<typeof AccessRight>;
 
 export const UserRoleSchema = z.object({

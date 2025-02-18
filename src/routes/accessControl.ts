@@ -10,7 +10,7 @@ export interface RouteConfig {
 export const routeConfig: RouteConfig[] = [
   {
     path: '/project-controls',
-    accessRights: ['Admin', 'PAB', 'AMT', 'Commercial'],
+    accessRights: ['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead', 'P+C'],
     children: [
       {
         path: '/project-controls/pab',
@@ -22,27 +22,27 @@ export const routeConfig: RouteConfig[] = [
       },
       {
         path: '/project-controls/amt/budget',
-        accessRights: ['AMT', 'Commercial']
+        accessRights: ['AMT', 'Commercial', 'Admin']
       },
       {
         path: '/project-controls/commercial/earned-value',
-        accessRights: ['Commercial']
+        accessRights: ['AMT', 'Commercial', 'Admin']
       },
       {
         path: '/project-controls/staff-numbers',
-        accessRights: ['AMT', 'Admin']
+        accessRights: ['AMT', 'P+C', 'Admin']
       },
       {
         path: '/project-controls/staff-fte',
-        accessRights: ['AMT', 'Admin']
+        accessRights: ['AMT', 'P+C', 'Admin']
       },
       {
         path: '/project-controls/staff-movement',
-        accessRights: ['AMT', 'Admin']
+        accessRights: ['AMT', 'P+C', 'Admin']
       },
       {
         path: '/project-controls/time-logs',
-        accessRights: ['AMT', 'Admin']
+        accessRights: ['AMT', 'P+C', 'Admin']
       },
       {
         path: '/project-controls/systems',
@@ -50,29 +50,29 @@ export const routeConfig: RouteConfig[] = [
       },
       {
         path: '/project-controls/milestones',
-        accessRights: ['AMT', 'PAB']
+        accessRights: ['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead', 'P+C']
       },
       {
         path: '/project-controls/sustainability',
-        accessRights: ['AMT']
+        accessRights: ['AMT', 'Admin', 'General']
       },
       {
         path: '/project-controls/sustainability-tracking',
-        accessRights: ['AMT']
+        accessRights: ['PAB', 'AMT', 'Design Leads', 'General', 'Admin']
       },
       {
         path: '/project-controls/consenting',
-        accessRights: ['AMT', 'PAB']
+        accessRights: ['AMT', 'PAB', 'Design Leads', 'Admin']
       },
       {
         path: '/project-controls/equipment',
-        accessRights: ['AMT']
+        accessRights: ['AMT', 'Design Leads', 'General', 'Admin']
       }
     ]
   },
   {
     path: '/geotechnical',
-    accessRights: ['Design Lead', 'Admin'],
+    accessRights: ['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead', 'P+C'],
     children: [
       {
         path: '/geotechnical/spt',
@@ -82,7 +82,7 @@ export const routeConfig: RouteConfig[] = [
   },
   {
     path: '/environmental',
-    accessRights: ['Design Lead', 'Admin'],
+    accessRights: ['PAB', 'AMT', 'Commercial', 'Admin', 'Design Lead', 'P+C'],
     children: []
   }
 ];

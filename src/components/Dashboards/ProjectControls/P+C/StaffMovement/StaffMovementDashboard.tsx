@@ -1,10 +1,10 @@
-import { MultiSelectFilter } from '../../../../common/Filters';
 import React, { useState, useEffect } from 'react';
-import { BarChart2 } from 'lucide-react';
+import { BarChart2, Download } from 'lucide-react';
 import { Header } from '../../../../common/Header';
 import { Footer } from '../../../../common/Footer';
 import { Section } from '../../../../common';
 import { Card } from '../../../../common/Card';
+import { Button } from '../../../../common/Button';
 import { BackNavigation } from '../../../../common/BackNavigation';
 import { StaffFTEApiClient } from '../../../../../api/staff-fte/client';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
@@ -42,6 +42,110 @@ export function StaffMovementDashboard() {
 
     fetchData();
   }, []);
+
+  const handleDownloadCSV = () => {
+    try {
+      const movementData = calculateStaffMovement(filteredData);
+      
+      // Create headers for the CSV
+      const baseHeaders = [
+        'Category',
+        'Name'
+      ];
+
+      // Add month headers
+      const monthHeaders = movementData.months;
+
+      // Prepare CSV rows
+      const onboardingRows: string[][] = [];
+      const offboardingRows: string[][] = [];
+
+      // Add organization data
+      movementData.organizations.forEach(org => {
+        onboardingRows.push([
+          'Organization',
+          org.name,
+          ...monthHeaders.map(month => org.movements[month]?.onboarding.toString() || '0')
+        ]);
+        
+        offboardingRows.push([
+          'Organization',
+          org.name,
+          ...monthHeaders.map(month => org.movements[month]?.offboarding.toString() || '0')
+        ]);
+      });
+
+      // Add discipline data
+      movementData.disciplines.forEach(discipline => {
+        onboardingRows.push([
+          'Discipline',
+          discipline.name,
+          ...monthHeaders.map(month => discipline.movements[month]?.onboarding.toString() || '0')
+        ]);
+        
+        offboardingRows.push([
+          'Discipline',
+          discipline.name,
+          ...monthHeaders.map(month => discipline.movements[month]?.offboarding.toString() || '0')
+        ]);
+      });
+
+      // Add NOP type data
+      movementData.nopTypes.forEach(nopType => {
+        onboardingRows.push([
+          'NOP Type',
+          nopType.name,
+          ...monthHeaders.map(month => nopType.movements[month]?.onboarding.toString() || '0')
+        ]);
+        
+        offboardingRows.push([
+          'NOP Type',
+          nopType.name,
+          ...monthHeaders.map(month => nopType.movements[month]?.offboarding.toString() || '0')
+        ]);
+      });
+
+      // Add total rows
+      onboardingRows.push([
+        'Total',
+        'All Staff',
+        ...monthHeaders.map(month => movementData.total[month]?.onboarding.toString() || '0')
+      ]);
+      
+      offboardingRows.push([
+        'Total',
+        'All Staff',
+        ...monthHeaders.map(month => movementData.total[month]?.offboarding.toString() || '0')
+      ]);
+
+      // Create CSV content with sections
+      const csvContent = [
+        'Onboarding',
+        [baseHeaders.join(','), monthHeaders.join(',')].join(','),
+        ...onboardingRows.map(row => row.map(cell => `"${cell}"`).join(',')),
+        '', // Empty line between sections
+        'Offboarding',
+        [baseHeaders.join(','), monthHeaders.join(',')].join(','),
+        ...offboardingRows.map(row => row.map(cell => `"${cell}"`).join(','))
+      ].join('\n');
+
+      // Create and trigger download
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'staff_movement_by_month.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      logger.info('Staff movement CSV download completed');
+    } catch (error) {
+      logger.error('Staff movement CSV download failed', { error });
+      // You might want to show a user-friendly error message here
+    }
+  };
 
   if (isLoading) {
     return (
@@ -91,41 +195,53 @@ export function StaffMovementDashboard() {
             <div className="flex items-center justify-between mb-4">
               <h1 className="text-3xl font-bold text-text-primary">Staff Movement</h1>
               
-              {/* Group By Toggle */}
-              <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
-                <button
-                  onClick={() => setGroupBy('organization')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    groupBy === 'organization'
-                      ? 'bg-brand-primary text-white'
-                      : 'text-text-secondary hover:text-text-primary'
-                  }`}
+              <div className="flex items-center gap-4">
+                {/* Download Button */}
+                <Button
+                  onClick={handleDownloadCSV}
+                  variant="secondary"
+                  size="sm"
+                  icon={Download}
                 >
-                  <BarChart2 className="w-4 h-4" />
-                  <span>Organization</span>
-                </button>
-                <button
-                  onClick={() => setGroupBy('discipline')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    groupBy === 'discipline'
-                      ? 'bg-brand-primary text-white'
-                      : 'text-text-secondary hover:text-text-primary'
-                  }`}
-                >
-                  <BarChart2 className="w-4 h-4" />
-                  <span>Discipline</span>
-                </button>
-                <button
-                  onClick={() => setGroupBy('nop')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    groupBy === 'nop'
-                      ? 'bg-brand-primary text-white'
-                      : 'text-text-secondary hover:text-text-primary'
-                  }`}
-                >
-                  <BarChart2 className="w-4 h-4" />
-                  <span>NOP Type</span>
-                </button>
+                  Download CSV
+                </Button>
+                
+                {/* Group By Toggle */}
+                <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
+                  <button
+                    onClick={() => setGroupBy('organization')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      groupBy === 'organization'
+                        ? 'bg-brand-primary text-white'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                  >
+                    <BarChart2 className="w-4 h-4" />
+                    <span>Organization</span>
+                  </button>
+                  <button
+                    onClick={() => setGroupBy('discipline')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      groupBy === 'discipline'
+                        ? 'bg-brand-primary text-white'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                  >
+                    <BarChart2 className="w-4 h-4" />
+                    <span>Discipline</span>
+                  </button>
+                  <button
+                    onClick={() => setGroupBy('nop')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      groupBy === 'nop'
+                        ? 'bg-brand-primary text-white'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                  >
+                    <BarChart2 className="w-4 h-4" />
+                    <span>NOP Type</span>
+                  </button>
+                </div>
               </div>
             </div>
             <p className="text-text-secondary">

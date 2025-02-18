@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { MapPin, Table } from 'lucide-react';
+import { MapPin, Table, Download } from 'lucide-react';
 import { EquipmentType, EquipmentStatus } from '../../../../../api/equipment/types';
 import { EquipmentTable } from './EquipmentTable';
 import { EquipmentMap } from './EquipmentMap';
+import { Button } from '../../../../common/Button';
+import { logger } from '../../../../../lib/logger';
 
 interface EquipmentDetailProps {
   equipmentType: EquipmentType;
@@ -23,6 +25,65 @@ export function EquipmentDetail({ equipmentType, onClose }: EquipmentDetailProps
     return matchesEquipmentId && matchesSerialNumber && matchesStatus;
   });
 
+  const handleDownloadCSV = () => {
+    try {
+      // Define headers
+      const headers = [
+        'Equipment ID',
+        'Serial Number',
+        'Status',
+        'Last Updated Date',
+        'Last Updated Time',
+        'Easting',
+        'Northing',
+        'Elevation',
+        'Unit',
+        'Measurement Type',
+        'Key Metrics',
+        'Alert Comments'
+      ];
+
+      // Create rows
+      const rows = filteredEquipment.map(equipment => [
+        equipment.equipmentId,
+        equipment.serialNumber,
+        equipment.status,
+        equipment.lastUpdated.date,
+        equipment.lastUpdated.time,
+        equipment.easting.toString(),
+        equipment.northing.toString(),
+        equipment.elevation.toString(),
+        equipment.unit,
+        equipment.measurementType,
+        equipment.keyMetrics,
+        equipment.alert?.comments || ''
+      ]);
+
+      // Create CSV content
+      const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+      ].join('\n');
+
+      // Create and trigger download
+      const date = new Date().toISOString().slice(0, 10);
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', `equipment_${equipmentType.name.toLowerCase()}_${date}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      logger.info('Equipment CSV download completed', { type: equipmentType.name });
+    } catch (error) {
+      logger.error('Equipment CSV download failed', { error, type: equipmentType.name });
+      // You might want to show a user-friendly error message here
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -31,12 +92,22 @@ export function EquipmentDetail({ equipmentType, onClose }: EquipmentDetailProps
           <h2 className="text-2xl font-bold text-text-primary">{equipmentType.name}</h2>
           <p className="text-text-secondary mt-1">{equipmentType.description}</p>
         </div>
-        <button
-          onClick={onClose}
-          className="text-text-secondary hover:text-text-primary transition-colors"
-        >
-          Back to Overview
-        </button>
+        <div className="flex items-center gap-4">
+          <Button
+            onClick={handleDownloadCSV}
+            variant="secondary"
+            size="sm"
+            icon={Download}
+          >
+            Download CSV
+          </Button>
+          <button
+            onClick={onClose}
+            className="text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Back to Overview
+          </button>
+        </div>
       </div>
 
       {/* Filters */}

@@ -1,4 +1,4 @@
-import { LucideIcon } from 'lucide-react';
+import { DivideIcon as LucideIcon } from 'lucide-react';
 
 export interface CardProps {
   id: string;
@@ -8,7 +8,8 @@ export interface CardProps {
   color: string;
   onClick?: () => void;
   comingSoon?: boolean;
-  enabled: boolean; // Added enabled prop
+  enabled: boolean;
+  requiresAuth?: boolean; // Add new property for auth requirement
 }
 
 export interface ContactLinkProps {

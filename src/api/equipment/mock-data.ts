@@ -1,11 +1,42 @@
 import { EquipmentData } from './types';
 
-// Helper function to generate random coordinates within Auckland bounds
-function getRandomAucklandLocation() {
-  // Auckland region bounds in NZTM coordinates
+// Function to generate random points along O2NL project corridor
+function getProjectLocation() {
+  // Ōtaki and Levin coordinates in NZTM2000
+  const otaki = {
+    easting: 1831416.0437707643,
+    northing: 5485851.405896847
+  };
+  
+  const levin = {
+    easting: 1842782.6674082244,
+    northing: 5500694.8768536365
+  };
+
+  // Calculate a random point along the line with some randomness
+  const t = Math.random(); // Random value between 0 and 1
+  const randomOffset = 500; // Random offset up to 500m perpendicular to alignment
+
+  // Linear interpolation between points
+  const easting = otaki.easting + (levin.easting - otaki.easting) * t;
+  const northing = otaki.northing + (levin.northing - otaki.northing) * t;
+
+  // Add some random perpendicular offset
+  // Calculate perpendicular vector
+  const dx = levin.easting - otaki.easting;
+  const dy = levin.northing - otaki.northing;
+  const length = Math.sqrt(dx * dx + dy * dy);
+  
+  // Normalize and rotate 90 degrees
+  const perpX = -dy / length;
+  const perpY = dx / length;
+
+  // Apply random offset
+  const offset = (Math.random() - 0.5) * 2 * randomOffset;
+  
   return {
-    easting: 1740000 + Math.random() * 40000,  // Between 1740000-1780000
-    northing: 5890000 + Math.random() * 50000  // Between 5890000-5940000
+    easting: easting + perpX * offset,
+    northing: northing + perpY * offset
   };
 }
 
@@ -24,7 +55,6 @@ function getRandomStatus(): 'operational' | 'maintenance' | 'fault' | 'offline' 
   return 'operational';
 }
 
-// Generate mock data for each equipment type
 export const mockEquipmentData: EquipmentData = {
   lastUpdated: new Date().toISOString(),
   equipmentTypes: [
@@ -34,7 +64,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Groundwater monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 102 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `GW-${(i + 1).toString().padStart(3, '0')}`,
@@ -68,7 +98,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Noise monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 15 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `NM-${(i + 1).toString().padStart(3, '0')}`,
@@ -102,7 +132,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Dust monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 10 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `DM-${(i + 1).toString().padStart(3, '0')}`,
@@ -136,7 +166,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Vibration monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 40 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `VM-${(i + 1).toString().padStart(3, '0')}`,
@@ -170,7 +200,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Weather monitoring stations',
       category: 'monitoring',
       equipment: Array.from({ length: 4 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `WS-${(i + 1).toString().padStart(3, '0')}`,
@@ -204,7 +234,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Toe displacement monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 5 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `TD-${(i + 1).toString().padStart(3, '0')}`,
@@ -238,7 +268,7 @@ export const mockEquipmentData: EquipmentData = {
       description: 'Slope displacement monitoring equipment',
       category: 'monitoring',
       equipment: Array.from({ length: 56 }, (_, i) => {
-        const location = getRandomAucklandLocation();
+        const location = getProjectLocation();
         const status = getRandomStatus();
         return {
           equipmentId: `SD-${(i + 1).toString().padStart(3, '0')}`,

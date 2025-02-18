@@ -33,7 +33,7 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     id: 'cost',
     title: 'Cost',
     icon: DollarSign,
-    accessFor: ['Commercial', 'Admin'],
+    accessFor: ['Commercial', 'AMT', 'Admin'],
     tests: [
       { name: 'Cost Performance', icon: createIcon(DollarSign), status: 'not_available', accessFor: ['Commercial', 'AMT'] },
       { name: 'AMT Budget Tracking', icon: createIcon(DollarSign), status: 'draft', accessFor: ['AMT', 'Commercial'] },
@@ -90,12 +90,12 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     id: 'people-culture',
     title: 'People and Culture',
     icon: Users,
-    accessFor: ['AMT'],
+    accessFor: ['AMT', 'P+C'],
     tests: [
-      { name: 'Staff Numbers', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
-      { name: 'Staff FTE', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
-      { name: 'Staff Movement', icon: createIcon(Users), status: 'published', accessFor: ['AMT'] },
-      { name: 'Time Logs', icon: createIcon(Clock), status: 'published', accessFor: ['AMT'] }
+      { name: 'Staff Numbers', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
+      { name: 'Staff FTE', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
+      { name: 'Staff Movement', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
+      { name: 'Time Logs', icon: createIcon(Clock), status: 'published', accessFor: ['AMT', 'P+C'] }
     ]
   },
   {
@@ -104,9 +104,9 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     icon: Boxes,
     accessFor: ['Admin', 'Commercial', 'AMT'],
     tests: [
-      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['AMT'] },
-      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['AMT'] },
-      { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['AMT'] }
+      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
+      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
+      { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['Design Lead', 'AMT'] }
     ]
   }
 ];

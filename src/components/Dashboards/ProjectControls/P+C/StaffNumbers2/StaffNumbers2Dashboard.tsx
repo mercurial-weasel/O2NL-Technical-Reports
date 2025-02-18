@@ -1,10 +1,10 @@
-import { MultiSelectFilter } from '../../../../common/Filters';
 import React, { useState, useEffect } from 'react';
-import { BarChart2, Table2 } from 'lucide-react';
+import { BarChart2, Table2, Download } from 'lucide-react';
 import { Header } from '../../../../common/Header';
 import { Footer } from '../../../../common/Footer';
 import { Section } from '../../../../common';
 import { Card } from '../../../../common/Card';
+import { Button } from '../../../../common/Button';
 import { BackNavigation } from '../../../../common/BackNavigation';
 import { StaffNumbersApiClient } from '../../../../../api/staff-numbers/client';
 import { O2NL_Staff } from '../../../../../api/staff-fte/types';
@@ -44,11 +44,85 @@ export function StaffNumbers2Dashboard() {
     fetchData();
   }, []);
 
-  // Calculate staff numbers using the new transformation
-  const staffNumbers = React.useMemo(() => {
-    if (!filteredData.length) return null;
-    return calculateStaffNumbers(filteredData);
-  }, [filteredData]);
+  const handleDownloadCSV = () => {
+    try {
+      const staffNumbers = calculateStaffNumbers(filteredData);
+      
+      // Get all months from the data
+      const months = staffNumbers.months;
+
+      // Create headers for the CSV
+      const baseHeaders = [
+        'Category',
+        'Name'
+      ];
+
+      // Add month headers
+      const headers = [
+        ...baseHeaders,
+        ...months.map(month => month)
+      ];
+
+      // Prepare CSV rows
+      const rows: string[][] = [];
+
+      // Add organization data
+      staffNumbers.organizations.forEach(org => {
+        rows.push([
+          'Organization',
+          org.name,
+          ...months.map(month => org.staffCounts[month].activeCount.toString())
+        ]);
+      });
+
+      // Add discipline data
+      staffNumbers.disciplines.forEach(discipline => {
+        rows.push([
+          'Discipline',
+          discipline.name,
+          ...months.map(month => discipline.staffCounts[month].activeCount.toString())
+        ]);
+      });
+
+      // Add NOP type data
+      staffNumbers.nopTypes.forEach(nopType => {
+        rows.push([
+          'NOP Type',
+          nopType.name,
+          ...months.map(month => nopType.staffCounts[month].activeCount.toString())
+        ]);
+      });
+
+      // Add total row
+      rows.push([
+        'Total',
+        'All Staff',
+        ...months.map(month => staffNumbers.total[month].activeCount.toString())
+      ]);
+
+      // Convert to CSV content
+      const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+      ].join('\n');
+
+      // Create and trigger download
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'staff_numbers_by_month.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      logger.info('CSV download completed');
+    } catch (error) {
+      logger.error('CSV download failed', { error });
+      // You might want to show a user-friendly error message here
+    }
+  };
 
   if (isLoading) {
     return (
@@ -84,7 +158,7 @@ export function StaffNumbers2Dashboard() {
     );
   }
 
-  if (!staffNumbers) return null;
+  const staffNumbers = calculateStaffNumbers(filteredData);
 
   return (
     <div className="min-h-screen bg-background-base">
@@ -98,30 +172,42 @@ export function StaffNumbers2Dashboard() {
             <div className="flex items-center justify-between mb-4">
               <h1 className="text-3xl font-bold text-text-primary">Staff Numbers</h1>
               
-              {/* View Toggle */}
-              <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
-                <button
-                  onClick={() => setViewMode('chart')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    viewMode === 'chart'
-                      ? 'bg-brand-primary text-white'
-                      : 'text-text-secondary hover:text-text-primary'
-                  }`}
+              <div className="flex items-center gap-4">
+                {/* Download Button */}
+                <Button
+                  onClick={handleDownloadCSV}
+                  variant="secondary"
+                  size="sm"
+                  icon={Download}
                 >
-                  <BarChart2 className="w-4 h-4" />
-                  <span>Chart</span>
-                </button>
-                <button
-                  onClick={() => setViewMode('table')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    viewMode === 'table'
-                      ? 'bg-brand-primary text-white'
-                      : 'text-text-secondary hover:text-text-primary'
-                  }`}
-                >
-                  <Table2 className="w-4 h-4" />
-                  <span>Table</span>
-                </button>
+                  Download CSV
+                </Button>
+
+                {/* View Toggle */}
+                <div className="flex items-center bg-gray-800/50 rounded-lg p-0.5">
+                  <button
+                    onClick={() => setViewMode('chart')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      viewMode === 'chart'
+                        ? 'bg-brand-primary text-white'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                  >
+                    <BarChart2 className="w-4 h-4" />
+                    <span>Chart</span>
+                  </button>
+                  <button
+                    onClick={() => setViewMode('table')}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      viewMode === 'table'
+                        ? 'bg-brand-primary text-white'
+                        : 'text-text-secondary hover:text-text-primary'
+                    }`}
+                  >
+                    <Table2 className="w-4 h-4" />
+                    <span>Table</span>
+                  </button>
+                </div>
               </div>
             </div>
             <p className="text-text-secondary">
@@ -144,13 +230,17 @@ export function StaffNumbers2Dashboard() {
           />
 
           {/* Content */}
-          <Card className="p-6" hover>
-            {viewMode === 'chart' ? (
+          {viewMode === 'chart' ? (
+            <Card className="p-6" hover>
               <StaffNumbers2Chart data={staffNumbers} />
-            ) : (
-              <StaffNumbers2Table data={staffNumbers} />
-            )}
-          </Card>
+            </Card>
+          ) : (
+            <div className="space-y-6">
+              <Card className="p-6" hover>
+                <StaffNumbers2Table data={staffNumbers} />
+              </Card>
+            </div>
+          )}
         </Section>
       </div>
       <Footer />

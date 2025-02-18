@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../../../common/Header';
 import { Footer } from '../../../common/Footer';
 import { Section } from '../../../common';
+import { Button } from '../../../common/Button';
 import { BackNavigation } from '../../../common/BackNavigation';
 import { EquipmentCard } from './components/EquipmentCard';
 import { EquipmentDetail } from './components/EquipmentDetail';
@@ -9,6 +10,7 @@ import { EquipmentApiClient } from '../../../../api/equipment/client';
 import { EquipmentType } from '../../../../api/equipment/types';
 import { calculateEquipmentSummaries } from '../../../../api/equipment/transformations';
 import { logger } from '../../../../lib/logger';
+import { Download } from 'lucide-react';
 
 export function EquipmentStatus() {
   const [selectedType, setSelectedType] = useState<EquipmentType | null>(null);
@@ -33,6 +35,69 @@ export function EquipmentStatus() {
 
     fetchData();
   }, []);
+
+  const handleDownloadCSV = () => {
+    try {
+      // Define headers
+      const headers = [
+        'Equipment Type',
+        'Equipment ID',
+        'Serial Number',
+        'Status',
+        'Last Updated Date',
+        'Last Updated Time',
+        'Easting',
+        'Northing',
+        'Elevation',
+        'Unit',
+        'Measurement Type',
+        'Key Metrics',
+        'Alert Comments'
+      ];
+
+      // Create rows
+      const rows = equipmentData.flatMap(type => 
+        type.equipment.map(equipment => [
+          type.name,
+          equipment.equipmentId,
+          equipment.serialNumber,
+          equipment.status,
+          equipment.lastUpdated.date,
+          equipment.lastUpdated.time,
+          equipment.easting.toString(),
+          equipment.northing.toString(),
+          equipment.elevation.toString(),
+          equipment.unit,
+          equipment.measurementType,
+          equipment.keyMetrics,
+          equipment.alert?.comments || ''
+        ])
+      );
+
+      // Create CSV content
+      const csvContent = [
+        headers.join(','),
+        ...rows.map(row => row.map(cell => `"${cell}"`).join(','))
+      ].join('\n');
+
+      // Create and trigger download
+      const date = new Date().toISOString().slice(0, 10);
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', `equipment_status_${date}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      logger.info('Equipment status CSV download completed');
+    } catch (error) {
+      logger.error('Equipment status CSV download failed', { error });
+      // You might want to show a user-friendly error message here
+    }
+  };
 
   if (isLoading) {
     return (
@@ -82,8 +147,20 @@ export function EquipmentStatus() {
           
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-text-primary">Equipment Status</h1>
-            <p className="text-text-secondary mt-2">
+            <div className="flex items-center justify-between mb-2">
+              <h1 className="text-3xl font-bold text-text-primary">Equipment Status</h1>
+              {!selectedType && (
+                <Button
+                  onClick={handleDownloadCSV}
+                  variant="secondary"
+                  size="sm"
+                  icon={Download}
+                >
+                  Download CSV
+                </Button>
+              )}
+            </div>
+            <p className="text-text-secondary">
               Monitor and track the status of project equipment and machinery
             </p>
           </div>

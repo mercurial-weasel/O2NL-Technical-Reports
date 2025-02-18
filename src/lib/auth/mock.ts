@@ -9,7 +9,7 @@ const mockUsers: (AuthUser & { password: string })[] = [
     firstName: 'Dave',
     lastName: 'Braendler',
     password: 'admin123', // In a real app, this would be hashed
-    accessRights: ['Admin', 'General'],
+    accessRights: ['PAB', 'AMT', 'Design Lead', 'General', 'Admin'],
     created_at: new Date().toISOString()
   },
   {
@@ -56,7 +56,34 @@ const mockUsers: (AuthUser & { password: string })[] = [
     password: 'O2NL2025',
     accessRights: ['PAB', 'AMT', 'Commercial', 'Design Lead'],
     created_at: new Date().toISOString()
-  }
+  },
+  {
+    id: '6',
+    email: 'danielle.bevan@o2nl.nz',
+    firstName: 'Danielle',
+    lastName: 'Bevan',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '7',
+    email: 'natalie.roach@o2nl.nz',
+    firstName: 'Natalie',
+    lastName: 'Roach',
+    password: 'O2NL2025',
+    accessRights: ['AMT', 'P+C'],
+    created_at: new Date().toISOString()
+  },
+  {
+    id: '8',
+    email: 'steph.blackford@o2nl.nz',
+    firstName: 'Steph',
+    lastName: 'Blackford',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+  }    
 ];
 
 // Mock authentication functions
@@ -89,9 +116,8 @@ export const mockAuth = {
   },
 
   getCurrentUser: async (): Promise<AuthUser | null> => {
-    // Simulate getting the first user
-    const { password: _, ...userWithoutPassword } = mockUsers[0];
-    return userWithoutPassword;
+    // Return null to require login
+    return null;
   },
 
   getUserAccessRights: async (userId: string): Promise<AccessRight[]> => {
