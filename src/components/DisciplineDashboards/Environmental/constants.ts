@@ -15,8 +15,15 @@ export const ENVIRONMENTAL_SECTIONS: DisciplineSection[] = [
     id: 'field',
     title: 'Field Monitoring',
     icon: Leaf,
-    accessFor: ['Admin', 'Design Lead'] as AccessRight[],
+    accessFor: ['Admin', 'Design Lead', 'AMT', 'PAB', 'Commercial', 'P+C'] as AccessRight[],
     tests: [
+      { 
+        name: 'Dust', 
+        icon: createIcon(Wind), 
+        status: 'concept', 
+        accessFor: ['Admin', 'Design Lead', 'AMT', 'PAB', 'Commercial', 'P+C'],
+        onClick: undefined // Will be set in EnvironmentalTests component
+      },
       { name: 'Air Quality', icon: createIcon(Wind), status: 'not-available', accessFor: ['AMT', 'Design Lead'] },
       { name: 'Water Quality', icon: createIcon(Droplets), status: 'not-available', accessFor: ['AMT', 'Design Lead'] },
       { name: 'Rainfall', icon: createIcon(CloudRain), status: 'not-available', accessFor: ['AMT', 'Design Lead'] },

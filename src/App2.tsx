@@ -21,6 +21,7 @@ import { SustainabilityTracking } from './components/Dashboards/ProjectControls/
 import { ConsentingDashboard } from './components/Dashboards/ProjectControls/Consenting';
 import { GeoDashboardSPT } from './components/Dashboards/Geo';
 import { EquipmentStatus } from './components/Dashboards/ProjectControls/Equipment';
+import { DustMonitoring } from './components/Dashboards/Environmental/sensors/dust';
 import { routeConfig, getRequiredAccessRights } from './routes/accessControl';
 
 function App2() {
@@ -146,6 +147,12 @@ function App2() {
           <Route path="/environmental" element={
             <ProtectedRoute requiredAccess={getRequiredAccessRights('/environmental')}>
               <EnvironmentalTests />
+            </ProtectedRoute>
+          } />
+
+          <Route path="/environmental/sensors/dust" element={
+            <ProtectedRoute>
+              <DustMonitoring />
             </ProtectedRoute>
           } />
           
