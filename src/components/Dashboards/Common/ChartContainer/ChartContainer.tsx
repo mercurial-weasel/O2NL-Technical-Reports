@@ -42,7 +42,11 @@ export function ChartContainer({ data, layout, title, height = 600 }: ChartConta
       data={data}
       layout={{
         ...defaultLayout,
-        ...layout
+        ...layout,
+        title: title ? {
+          text: title,
+          font: { color: '#FFFFFF', size: 16 }
+        } : layout.title
       }}
       config={{
         displayModeBar: true,

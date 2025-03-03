@@ -19,7 +19,7 @@ export function LoginButton() {
 
   if (state.loading) {
     return (
-      <div className="animate-pulse">
+      <div data-testid="loading-pulse" className="animate-pulse">
         <div className="w-24 h-9 bg-gray-700/50 rounded-lg"></div>
       </div>
     );
@@ -65,7 +65,7 @@ export function LoginButton() {
   }
 
   return (
-    <button
+    <button 
       onClick={() => navigate('/login')}
       className={`relative group px-4 py-2 bg-gradient-to-b from-brand-secondary to-[#0055CC] text-text-primary font-medium rounded-lg ${shadows.button.primary} transition-all duration-200 hover:${shadows.button.hover} hover:translate-y-[-1px] active:translate-y-[1px]`}
     >

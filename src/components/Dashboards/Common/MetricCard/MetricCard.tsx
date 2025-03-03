@@ -32,7 +32,7 @@ export function MetricCard({ title, value, unit, change, threshold, icon }: Metr
           </div>
         </div>
         {icon && (
-          <div className="p-2 rounded-lg bg-brand-primary/10">
+          <div className="p-2 rounded-lg bg-brand-primary/10" data-testid="metric-icon">
             {icon}
           </div>
         )}

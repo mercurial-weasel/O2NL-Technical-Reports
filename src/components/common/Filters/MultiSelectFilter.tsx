@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Check } from 'lucide-react';
 
 interface Option {
@@ -14,11 +14,11 @@ interface MultiSelectFilterProps {
 }
 
 export function MultiSelectFilter({ options, selectedValues, onChange, placeholder }: MultiSelectFilterProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const dropdownRef = React.useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle click outside to close dropdown
-  React.useEffect(() => {
+  useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
@@ -32,6 +32,7 @@ export function MultiSelectFilter({ options, selectedValues, onChange, placehold
   return (
     <div className="relative" ref={dropdownRef}>
       <button
+        data-testid="multiselect-trigger"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-sm text-text-primary hover:bg-gray-700/50 transition-colors min-w-[200px]"
       >
@@ -56,16 +57,20 @@ export function MultiSelectFilter({ options, selectedValues, onChange, placehold
       </button>
 
       {isOpen && (
-        <div className="absolute z-50 w-full mt-2 bg-gray-800/95 border border-gray-700 rounded-lg shadow-xl backdrop-blur-sm">
+        <div 
+          data-testid="multiselect-dropdown"
+          className="absolute z-50 w-full mt-2 bg-gray-800/95 border border-gray-700 rounded-lg shadow-xl backdrop-blur-sm"
+        >
           <div className="py-2 max-h-60 overflow-y-auto">
             {/* "All" option */}
             <button
+              data-testid="multiselect-all-option"
               onClick={() => onChange('all')}
               className="flex items-center justify-between w-full px-4 py-2 text-sm text-text-primary hover:bg-gray-700/50"
             >
               <span>All</span>
               {selectedValues.has('all') && (
-                <Check className="w-4 h-4 text-brand-primary" />
+                <Check data-testid="check-icon" className="w-4 h-4 text-brand-primary" />
               )}
             </button>
 
@@ -74,12 +79,13 @@ export function MultiSelectFilter({ options, selectedValues, onChange, placehold
             {options.map((option) => (
               <button
                 key={option.value}
+                data-testid={`multiselect-option-${option.value}`}
                 onClick={() => onChange(option.value)}
                 className="flex items-center justify-between w-full px-4 py-2 text-sm text-text-primary hover:bg-gray-700/50"
               >
                 <span>{option.label}</span>
                 {selectedValues.has(option.value) && (
-                  <Check className="w-4 h-4 text-brand-primary" />
+                  <Check data-testid="check-icon" className="w-4 h-4 text-brand-primary" />
                 )}
               </button>
             ))}

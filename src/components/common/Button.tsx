@@ -1,5 +1,5 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
+import { DivideIcon as LucideIcon } from 'lucide-react';
 import { shadows } from '../../constants/theme';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -38,10 +38,11 @@ export function Button({
   };
 
   const widthStyles = fullWidth ? 'w-full' : '';
+  const disabledStyles = (disabled || loading) ? 'opacity-50 cursor-not-allowed' : '';
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyles} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyles} ${disabledStyles} ${className}`}
       disabled={disabled || loading}
       {...props}
     >
@@ -49,9 +50,9 @@ export function Button({
         <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
       ) : (
         <>
-          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4" />}
+          {Icon && iconPosition === 'left' && <Icon className="w-4 h-4" data-testid={Icon.displayName?.toLowerCase()} />}
           {children}
-          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4" />}
+          {Icon && iconPosition === 'right' && <Icon className="w-4 h-4" data-testid={Icon.displayName?.toLowerCase()} />}
         </>
       )}
     </button>

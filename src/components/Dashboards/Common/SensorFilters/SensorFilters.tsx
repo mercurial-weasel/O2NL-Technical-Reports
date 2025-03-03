@@ -1,7 +1,6 @@
 import React from 'react';
 import { DateRangeSelector } from '../DateRangeSelector';
 import { DeviceSelector } from '../DeviceSelector';
-import { ParameterSelector } from '../ParameterSelector';
 
 interface SensorFiltersProps {
   devices: Array<{ id: string; name: string; model?: string }>;
@@ -25,7 +24,12 @@ export function SensorFilters({
   parameters
 }: SensorFiltersProps) {
   return (
-    <div className="grid grid-cols-3 gap-4 mb-6">
+    <div 
+      role="region" 
+      aria-label="Sensor Filters"
+      data-testid="sensor-filters"
+      className="grid grid-cols-3 gap-4 mb-6"
+    >
       <DeviceSelector
         devices={devices}
         selectedDevices={selectedDevices}
@@ -43,6 +47,7 @@ export function SensorFilters({
           {parameters.map(param => (
             <button
               key={param.key}
+              data-testid={`parameter-${param.key}`}
               onClick={() => onParameterChange(prev => {
                 const next = new Set(prev);
                 if (next.has(param.key)) {

@@ -26,19 +26,37 @@ export function SensorAlerts({ alerts }: SensorAlertsProps) {
     }
   };
 
+  const formatTime = (timestamp: string) => {
+    // Create a date object from the UTC timestamp
+    const date = new Date(timestamp);
+    
+    // Format the time in 12-hour format with AM/PM
+    return new Intl.DateTimeFormat('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+      timeZone: 'UTC' // Ensure UTC time is used
+    }).format(date);
+  };
+
   return (
     <Card className="p-4" hover>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium text-text-primary">Recent Alerts</h3>
         <div className="relative">
-          <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+          <div 
+            data-testid="notification-badge"
+            className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse" 
+          />
           <Bell className="w-5 h-5 text-text-secondary" />
         </div>
       </div>
       <div className="space-y-3">
         {alerts.map(alert => (
-          <div
+          <article
             key={alert.id}
+            data-testid={`alert-${alert.id}`}
             className={`p-3 rounded-lg ${getAlertColor(alert.type)}`}
           >
             <div className="flex items-start justify-between">
@@ -46,11 +64,14 @@ export function SensorAlerts({ alerts }: SensorAlertsProps) {
                 <p className="text-sm font-medium">{alert.message}</p>
                 <p className="text-xs text-text-secondary">{alert.device}</p>
               </div>
-              <span className="text-xs text-text-secondary">
-                {new Date(alert.timestamp).toLocaleTimeString()}
-              </span>
+              <time 
+                dateTime={alert.timestamp}
+                className="text-xs text-text-secondary"
+              >
+                {formatTime(alert.timestamp)}
+              </time>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </Card>

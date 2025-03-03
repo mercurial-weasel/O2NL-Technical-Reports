@@ -14,13 +14,18 @@ interface ChartLegendProps {
 
 export function ChartLegend({ title, items }: ChartLegendProps) {
   return (
-    <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+    <div 
+      role="region"
+      aria-label={title}
+      className="bg-gray-800/50 border border-gray-700 rounded-lg p-4"
+    >
       <h4 className="text-sm font-medium text-text-secondary mb-4">{title}</h4>
       <div className="space-y-3">
         {items.map((item, index) => (
           <div key={index} className="flex items-center gap-3">
             {item.color && (
               <div 
+                role="presentation"
                 className="w-4 h-4 rounded flex-shrink-0"
                 style={{ backgroundColor: `${item.color}40` }}
               />

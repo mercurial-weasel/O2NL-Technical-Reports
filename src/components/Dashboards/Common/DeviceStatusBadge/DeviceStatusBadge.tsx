@@ -28,6 +28,11 @@ export function DeviceStatusBadge({ status, size = 'md' }: DeviceStatusBadgeProp
   };
 
   return (
-    <div className={`${sizeClasses[size]} rounded-full ${getStatusColor(status)} animate-pulse`} />
+    <div 
+      role="status"
+      aria-label={`Device status: ${status || 'unknown'}`}
+      className={`${sizeClasses[size]} rounded-full ${getStatusColor(status)} animate-pulse`}
+      data-testid="device-status-badge"
+    />
   );
 }

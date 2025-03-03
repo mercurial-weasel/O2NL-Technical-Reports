@@ -27,9 +27,17 @@ export function ComplianceIndicator({ status, size = 'md' }: ComplianceIndicator
     }
   };
 
+  const displayStatus = status || 'Unknown';
+  const ariaLabel = `Compliance status: ${displayStatus.toLowerCase()}`;
+
   return (
-    <span className={`inline-flex items-center justify-center rounded-full font-medium ${sizeClasses[size]} ${getStatusColor(status)}`}>
-      {status}
+    <span 
+      role="status"
+      aria-label={ariaLabel}
+      className={`inline-flex items-center justify-center rounded-full font-medium ${sizeClasses[size]} ${getStatusColor(status)}`}
+      data-testid="compliance-indicator"
+    >
+      {displayStatus}
     </span>
   );
 }
