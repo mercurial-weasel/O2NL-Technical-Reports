@@ -59,6 +59,7 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     tests: [
       { name: 'PAB Report', icon: createIcon(FileText), status: 'draft', accessFor: ['PAB'] },
       { name: 'AMT Report', icon: createIcon(BarChart2), status: 'draft', accessFor: ['AMT', 'PAB'] },
+      { name: 'Sustainability Report', icon: createIcon(BarChart2), status: 'concept', accessFor: ['AMT', 'PAB'] },
       { name: 'Programme Milestones', icon: createIcon(Milestone), status: 'published', accessFor: ['PAB', 'AMT'] },
       { name: 'Systems/Software', icon: createIcon(Monitor), status: 'draft', accessFor: ['AMT'] },
       { name: 'Consenting', icon: createIcon(FileCheck), status: 'draft', accessFor: ['PAB', 'AMT'] }
@@ -105,7 +106,7 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     accessFor: ['Admin', 'Commercial', 'AMT'],
     tests: [
       { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
-      { name: 'Sustainability Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
+      { name: 'Emission Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
       { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['Design Lead', 'AMT'] }
     ]
   }

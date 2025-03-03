@@ -19,6 +19,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/pab')
         : test.name === 'AMT Report'
         ? () => navigate('/project-controls/amt')
+        : test.name === 'Sustainability Report'
+        ? () => navigate('/project-controls/sustainability')
         : test.name === 'Staff Numbers'
         ? () => navigate('/project-controls/staff-numbers')
         : test.name === 'Staff FTE'
@@ -33,8 +35,8 @@ function ProjectControlsDashboards() {
         ? () => navigate('/project-controls/commercial/earned-value')
         : test.name === 'Sustainability Initiatives'
         ? () => navigate('/project-controls/sustainability')
-        : test.name === 'Sustainability Tracking'
-        ? () => navigate('/project-controls/sustainability-tracking')
+        : test.name === 'Emission Tracking'
+        ? () => navigate('/project-controls/emissions')
         : test.name === 'Consenting'
         ? () => navigate('/project-controls/consenting')
         : test.name === 'Equipment Status'

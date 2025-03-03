@@ -17,12 +17,13 @@ import { StaffMovementDashboard } from './components/Dashboards/ProjectControls/
 import { TimeLogsDashboard } from './components/Dashboards/P+C/TimeLogs';
 import { EarnedValueSummary } from './components/Dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { SustainabilityInitiatives } from './components/Dashboards/ProjectControls/SustainabilityInitiatives';
-import { SustainabilityTracking } from './components/Dashboards/ProjectControls/SustainabilityTracking';
+import { EmissionsTracking } from './components/Dashboards/ProjectControls/EmissionsTracking';
 import { ConsentingDashboard } from './components/Dashboards/ProjectControls/Consenting';
 import { GeoDashboardSPT } from './components/Dashboards/Geo';
 import { EquipmentStatus } from './components/Dashboards/ProjectControls/Equipment';
 import { DustMonitoring } from './components/Dashboards/Environmental/sensors/dust';
 import { routeConfig, getRequiredAccessRights } from './routes/accessControl';
+import { SustainabilityDashboard, SustainabilityDetailPage } from './components/Dashboards/ProjectControls/Sustainability';
 
 function App2() {
   return (
@@ -108,13 +109,19 @@ function App2() {
           
           <Route path="/project-controls/sustainability" element={
             <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/sustainability')}>
-              <SustainabilityInitiatives />
+              <SustainabilityDashboard />
+            </ProtectedRoute>
+          } />
+
+          <Route path="/project-controls/sustainability/:id" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/sustainability/:id')}>
+              <SustainabilityDetailPage />
             </ProtectedRoute>
           } />
           
-          <Route path="/project-controls/sustainability-tracking" element={
-            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/sustainability-tracking')}>
-              <SustainabilityTracking />
+          <Route path="/project-controls/emissions" element={
+            <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/emissions')}>
+              <EmissionsTracking />
             </ProtectedRoute>
           } />
           

@@ -57,7 +57,11 @@ export const routeConfig: RouteConfig[] = [
         accessRights: ['AMT', 'Admin', 'General']
       },
       {
-        path: '/project-controls/sustainability-tracking',
+        path: '/project-controls/sustainability/:id',
+        accessRights: ['AMT', 'PAB', 'Admin']
+      },
+      {
+        path: '/project-controls/emissions',
         accessRights: ['PAB', 'AMT', 'Design Leads', 'General', 'Admin']
       },
       {

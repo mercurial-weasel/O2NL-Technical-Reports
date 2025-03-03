@@ -83,7 +83,16 @@ const mockUsers: (AuthUser & { password: string })[] = [
     password: 'O2NL2025',
     accessRights: ['P+C'],
     created_at: new Date().toISOString()
-  }    
+  },
+  {
+    id: '9',
+    email: 'john.lohrentz@o2nl.nz',
+    firstName: 'John',
+    lastName: 'Loherentz',
+    password: 'O2NL2025',
+    accessRights: ['AMT'],
+    created_at: new Date().toISOString()
+  }        
 ];
 
 // Mock authentication functions
