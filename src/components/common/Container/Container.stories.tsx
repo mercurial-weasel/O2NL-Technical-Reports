@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Container } from './Container';
+import { Container } from '../Container';
 import { Card } from '../Card';
 import { Button } from '../Button';
 import { Download, BarChart2, Table2 } from 'lucide-react';

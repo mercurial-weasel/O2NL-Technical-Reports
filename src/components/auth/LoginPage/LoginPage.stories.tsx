@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { LoginPage } from './LoginPage';
+import { LoginPage } from '../LoginPage';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '../../../lib/auth';
 

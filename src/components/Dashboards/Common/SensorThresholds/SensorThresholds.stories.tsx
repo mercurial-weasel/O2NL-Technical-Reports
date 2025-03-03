@@ -49,9 +49,9 @@ export const NoUnits: Story = {
   args: {
     title: 'Risk Thresholds',
     thresholds: [
-      { label: 'Low Risk', value: 3, color: '#10B981' },
-      { label: 'Medium Risk', value: 6, color: '#F59E0B' },
-      { label: 'High Risk', value: 9, color: '#EF4444' }
+      { label: 'Low Risk', value: 3, unit: '', color: '#10B981' },
+      { label: 'Medium Risk', value: 6, unit: '', color: '#F59E0B' },
+      { label: 'High Risk', value: 9, unit: '', color: '#EF4444' }
     ]
   }
 };

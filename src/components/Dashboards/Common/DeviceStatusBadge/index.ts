@@ -1,0 +1,1 @@
+export { DeviceStatusBadge } from './DeviceStatusBadge';

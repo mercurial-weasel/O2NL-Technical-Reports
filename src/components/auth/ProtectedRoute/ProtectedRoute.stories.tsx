@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProtectedRoute } from './ProtectedRoute';
+import { ProtectedRoute } from '../ProtectedRoute';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '../../../lib/auth';
 
