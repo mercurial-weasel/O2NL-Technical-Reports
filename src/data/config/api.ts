@@ -3,8 +3,8 @@ export const API_CONFIG = {
   useMockData: import.meta.env.VITE_USE_MOCK_DATA === 'true', 
   endpoints: {
     spt: '/spt/data',
-    staff: '/api/appGKLkgJPRufHGtg/Staff',
-    staffFTE: '/api/staff-fte',
+    staff: '/staff-mock',
+    staffFTE: '/staff-mock',
     materials: '/materials',
     zones: '/zones',
     systems: '/api/systems',

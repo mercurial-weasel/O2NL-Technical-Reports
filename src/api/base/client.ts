@@ -18,13 +18,20 @@ export abstract class BaseApiClient {
     options: RequestInit = {}
   ): Promise<APIResponse<T>> {
     try {
-      logger.info(`Starting API request to ${endpoint}`, {
+      logger.info(`API Request Started`, {
+        endpoint,
         useMockData: this.useMockData,
-        baseUrl: this.baseUrl
+        baseUrl: this.baseUrl,
+        method: options.method || 'GET',
+        headers: options.headers
       });
 
       if (this.useMockData && mockData) {
-        logger.info('Using mock data', { endpoint });
+        logger.info('Using mock data', { 
+          endpoint,
+          mockDataType: typeof mockData,
+          mockDataLength: Array.isArray(mockData) ? mockData.length : null
+        });
         return {
           data: mockData,
           meta: {
@@ -35,7 +42,17 @@ export abstract class BaseApiClient {
 
       const url = `${this.baseUrl}${endpoint}`;
       const startTime = performance.now();
-      logger.info('about  to make a call to ', { url }, ' with ', {options});
+      
+      logger.debug('Making API call', { 
+        url,
+        options: {
+          ...options,
+          headers: {
+            ...API_CONFIG.defaultHeaders,
+            ...options.headers
+          }
+        }
+      });
       
       const response = await fetch(url, {
         ...options,
@@ -46,26 +63,38 @@ export abstract class BaseApiClient {
       });
       
       const endTime = performance.now();
-      logger.info('Received API response', {
+      const duration = (endTime - startTime).toFixed(2);
+      
+      logger.info('API Response Received', {
         status: response.status,
         statusText: response.statusText,
-        responseTime: `${(endTime - startTime).toFixed(2)}ms`
+        duration: `${duration}ms`,
+        contentType: response.headers.get('content-type'),
+        endpoint
       });
 
       if (!response.ok) {
         const error = await response.json() as APIError;
-        logger.error('API request failed', { status: response.status, error, url });
+        logger.error('API Request Failed', { 
+          status: response.status, 
+          error,
+          url,
+          duration
+        });
         throw error;
       }
 
       const data = await response.json() as APIResponse<T>;
-      logger.info('Successfully parsed API response', {
-        recordCount: Array.isArray(data.data) ? data.data.length : 1
+      logger.info('API Response Parsed Successfully', {
+        recordCount: Array.isArray(data.data) ? data.data.length : 1,
+        endpoint,
+        duration,
+        meta: data.meta
       });
 
       return data;
     } catch (error) {
-      logger.error('API request failed', {
+      logger.error('API Request Error', {
         error: error instanceof Error ? error.message : 'Unknown error',
         stack: error instanceof Error ? error.stack : undefined,
         endpoint

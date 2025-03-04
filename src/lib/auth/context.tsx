@@ -24,8 +24,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const initAuth = async () => {
-      logger.info('Initializing authentication');
+      logger.info('Initializing authentication', {
+        bypassAuth: import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true'
+      });
+
       try {
+        // If bypass is enabled, automatically authenticate as admin
+        if (import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true') {
+          const adminUser = await auth.signIn('admin@o2nl.nz', 'admin123');
+          logger.info('Auth bypassed - using admin user', { email: adminUser.email });
+          setState(prev => ({ ...prev, user: adminUser, loading: false }));
+          return;
+        }
+
         const user = await auth.getCurrentUser();
         logger.info('Auth initialization complete', { 
           authenticated: !!user,
