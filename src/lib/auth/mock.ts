@@ -40,59 +40,14 @@ const mockUsers: (AuthUser & { password: string })[] = [
     created_at: new Date().toISOString()
   },
   {
-    id: '4',
+    id: '5',
     email: 'pab@o2nl.nz',
     firstName: 'PAB',
     lastName: 'Member',
     password: 'pab123',
-    accessRights: ['AMT'],
+    accessRights: ['PAB'],
     created_at: new Date().toISOString()
-  },
-  {
-    id: '5',
-    email: 'andrew.goldie@o2nl.nz',
-    firstName: 'Andrew',
-    lastName: 'Goldie',
-    password: 'O2NL2025',
-    accessRights: ['PAB', 'AMT', 'Commercial', 'Design Lead'],
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '6',
-    email: 'danielle.bevan@o2nl.nz',
-    firstName: 'Danielle',
-    lastName: 'Bevan',
-    password: 'O2NL2025',
-    accessRights: ['P+C'],
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '7',
-    email: 'natalie.roach@o2nl.nz',
-    firstName: 'Natalie',
-    lastName: 'Roach',
-    password: 'O2NL2025',
-    accessRights: ['AMT', 'P+C'],
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '8',
-    email: 'steph.blackford@o2nl.nz',
-    firstName: 'Steph',
-    lastName: 'Blackford',
-    password: 'O2NL2025',
-    accessRights: ['P+C'],
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '9',
-    email: 'john.lohrentz@o2nl.nz',
-    firstName: 'John',
-    lastName: 'Loherentz',
-    password: 'O2NL2025',
-    accessRights: ['AMT'],
-    created_at: new Date().toISOString()
-  }        
+  }
 ];
 
 // Mock authentication functions
@@ -107,12 +62,20 @@ export const mockAuth = {
       throw new Error('Invalid email or password');
     }
     
-    if (user.password !== password) {
+    // Skip password check if bypass is enabled
+    const bypassAuth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true';
+    logger.info('Mock auth: bypass status', { bypassAuth });
+
+    if (!bypassAuth && user.password !== password) {
       logger.error('Mock auth: invalid password', { email });
       throw new Error('Invalid email or password');
     }
     
-    logger.info('Mock auth: sign in successful', { email, accessRights: user.accessRights });
+    logger.info('Mock auth: sign in successful', { 
+      email, 
+      accessRights: user.accessRights,
+      bypassAuth 
+    });
     
     // Return user without password
     const { password: _, ...userWithoutPassword } = user;
@@ -121,11 +84,23 @@ export const mockAuth = {
 
   signOut: async () => {
     logger.info('Mock auth: signing out');
-    return;
   },
 
   getCurrentUser: async (): Promise<AuthUser | null> => {
-    // Return null to require login
+    // Check if bypass is enabled
+    const bypassAuth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true';
+    logger.info('Mock auth: getCurrentUser called', { bypassAuth });
+    
+    if (bypassAuth) {
+      logger.info('Mock auth: bypass enabled - auto-logging as admin');
+      const adminUser = mockUsers.find(u => u.email === 'admin@o2nl.nz');
+      if (adminUser) {
+        const { password: _, ...userWithoutPassword } = adminUser;
+        return userWithoutPassword;
+      }
+    }
+    
+    logger.info('Mock auth: no current user');
     return null;
   },
 
