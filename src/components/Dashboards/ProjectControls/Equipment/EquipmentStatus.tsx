@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Button } from '../../../common/Button';
-import { BackNavigation } from '../../../common/BackNavigation';
+import { Header, Footer, Section, Button, BackNavigation } from '@common';
 import { EquipmentCard } from './components/EquipmentCard';
 import { EquipmentDetail } from './components/EquipmentDetail';
-import { EquipmentApiClient } from '../../../../api/equipment/client';
-import { EquipmentType } from '../../../../api/equipment/types';
-import { calculateEquipmentSummaries } from '../../../../api/equipment/transformations';
-import { logger } from '../../../../lib/logger';
+import { EquipmentApiClient } from '@api/equipment/client';
+import { EquipmentType } from '@api/equipment/types';
+import { calculateEquipmentSummaries } from '@api/equipment/transformations';
+import { logger } from '@lib/logger';
 import { Download } from 'lucide-react';
 
 export function EquipmentStatus() {

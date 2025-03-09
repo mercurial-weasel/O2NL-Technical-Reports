@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Filter, BarChart2, Table2 } from 'lucide-react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Card } from '../../../common/Card';
-import { BackNavigation } from '../../../common/BackNavigation';
+import { Header, Footer, Section, Card, BackNavigation, MultiSelectFilter } from '@common';
 import { ThemeCard } from './ThemeCard';
 import { ThemeDetail } from './ThemeDetail';
 import { GanttChart } from './GanttChart';
 import { SustainabilityApiClient } from '../../../../api/sustainability/client';
 import { SustainabilityInitiative } from '../../../../api/sustainability/types';
 import { logger } from '../../../../lib/logger';
-import { MultiSelectFilter } from '../../../common/Filters';
 import { 
   filterInitiativesByStatus, 
   filterInitiativesByTheme,

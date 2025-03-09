@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Card } from '../../../common/Card';
-import { BackNavigation } from '../../../common/BackNavigation';
-import { AMTReportApiClient } from '../../../../api/programme/amt/client';
-import { AMTMonthlyRecord } from '../../../../api/programme/amt/types';
-import { logger } from '../../../../lib/logger';
+import { Header, Footer, Section, Card, BackNavigation } from '@common';
+import { AMTReportApiClient } from '@api/programme/amt/client';
+import { AMTMonthlyRecord } from '@api/programme/amt/types';
+import { logger } from '@lib/logger';
 
 type SortField = 'discipline' | 'status' | 'trend';
 type SortDirection = 'asc' | 'desc';

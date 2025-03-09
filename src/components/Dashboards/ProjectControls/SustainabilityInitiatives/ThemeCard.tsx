@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../../../common/Card';
+import { Card } from '@common';
 import { SustainabilityInitiative } from './data';
 import { Leaf, Zap, Factory, Droplets, Recycle, Building2, ShoppingBag, TreePine, DivideIcon as LucideIcon } from 'lucide-react';
 

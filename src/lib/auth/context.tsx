@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AuthState, AuthUser } from './types';
 import { mockAuth } from './mock';
 import { supabaseAuth } from './supabase';
-import { API_CONFIG } from '../../data/config/api';
 import { logger } from '../logger';
 
 // Create context
@@ -20,7 +19,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     error: null
   });
 
-  const auth = API_CONFIG.useMockData ? mockAuth : supabaseAuth;
+  // Select auth implementation based on VITE_BYPASS_AUTHENTICATION
+  const auth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true' ? mockAuth : supabaseAuth;
+  logger.info('Auth implementation selected', { 
+    bypassAuth: import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true',
+    implementation: import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true' ? 'mockAuth' : 'supabaseAuth'
+  });
 
   useEffect(() => {
     const initAuth = async () => {
@@ -41,7 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const user = await auth.getCurrentUser();
         logger.info('Auth initialization complete', { 
           authenticated: !!user,
-          useMockData: API_CONFIG.useMockData 
+          bypassAuth 
         });
         setState({ user, loading: false, error: null });
       } catch (error) {

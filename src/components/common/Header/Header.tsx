@@ -2,7 +2,7 @@ import React from 'react';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderNav } from './HeaderNav';
 import { LoginButton } from './LoginButton';
-import { gradients, shadows } from '../../../constants/theme';
+import { gradients, shadows } from '@constants/theme';
 
 export function Header() {
   return (

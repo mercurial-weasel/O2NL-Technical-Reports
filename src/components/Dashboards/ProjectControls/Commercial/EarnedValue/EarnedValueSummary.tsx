@@ -1,20 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../../../../common/Header';
 import { Footer } from '../../../../common/Footer';
-import { Section } from '../../../../common';
-import { Card } from '../../../../common/Card';
-import { Button } from '../../../../common/Button';
-import { BackNavigation } from '../../../../common/BackNavigation';
+import { Section } from '../../../../common/Section/Section';
+import { Card } from '../../../../common/Card/Card';
+import { Button } from '../../../../common/Button/Button';
+import { BackNavigation } from '../../../../common/BackNavigation/';
 import { EarnedValuePivotTable } from './EarnedValuePivotTable';
 import { EarnedValueApiClient } from '../../../../../api/cost/earned-value/client';
 import { calculateEarnedValueMetrics, getAvailableMonths, calculateLineItems } from '../../../../../api/cost/earned-value/transformations';
 import { logger } from '../../../../../lib/logger';
 import { Download, Image } from 'lucide-react';
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import jsPDF from 'jspdf'; 
 
 export function EarnedValueSummary() {
-  const [selectedPeriod, setSelectedPeriod] = useState<string>('');
+  const [selectedMonth, setSelectedMonth] = useState<string>('');
   const [earnedValueData, setEarnedValueData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -27,10 +28,10 @@ export function EarnedValueSummary() {
         const data = await client.fetchEarnedValueData();
         setEarnedValueData(data);
         
-        // Set initial selected period to latest month
+        // Set initial selected month to latest month
         const months = getAvailableMonths(data);
         if (months.length > 0) {
-          setSelectedPeriod(months[0]);
+          setSelectedMonth(months[0]);
         }
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load earned value data');
@@ -44,17 +45,18 @@ export function EarnedValueSummary() {
     fetchData();
   }, []);
 
+  // Get available months from data
   const availableMonths = React.useMemo(() => 
     earnedValueData ? getAvailableMonths(earnedValueData) : [],
   [earnedValueData]);
 
   const metrics = React.useMemo(() => 
-    earnedValueData && selectedPeriod ? calculateEarnedValueMetrics(earnedValueData, selectedPeriod) : null,
-  [earnedValueData, selectedPeriod]);
+    earnedValueData && selectedMonth ? calculateEarnedValueMetrics(earnedValueData, selectedMonth) : null,
+  [earnedValueData, selectedMonth]);
 
   const lineItems = React.useMemo(() => 
-    earnedValueData && selectedPeriod ? calculateLineItems(earnedValueData, selectedPeriod) : [],
-  [earnedValueData, selectedPeriod]);
+    earnedValueData && selectedMonth ? calculateLineItems(earnedValueData, selectedMonth) : [],
+  [earnedValueData, selectedMonth]);
 
   // Formatting helpers
   const formatCurrency = (value: number) => {
@@ -78,7 +80,7 @@ export function EarnedValueSummary() {
       const pageHeight = pdf.internal.pageSize.getHeight();
 
       // Add title
-      const title = `Earned Value Analysis - ${selectedPeriod}`;
+      const title = `Earned Value Analysis - ${selectedMonth}`;
       pdf.setFontSize(16);
       pdf.text(title, pageWidth / 2, 15, { align: 'center' });
 
@@ -189,7 +191,7 @@ export function EarnedValueSummary() {
         <Section className="py-8">
           <BackNavigation to="/project-controls" text="Back to Project Controls" />
           
-          {/* Header with Controls */}
+          {/* Header */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -220,8 +222,8 @@ export function EarnedValueSummary() {
 
                 {/* Period Selector */}
                 <select
-                  value={selectedPeriod}
-                  onChange={(e) => setSelectedPeriod(e.target.value)}
+                  value={selectedMonth}
+                  onChange={(e) => setSelectedMonth(e.target.value)}
                   className="appearance-none bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 pr-10 text-sm text-text-primary hover:bg-gray-700/50 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary min-w-[160px]"
                 >
                   {availableMonths.map(month => (

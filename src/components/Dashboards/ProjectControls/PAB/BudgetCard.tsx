@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReusableTable, formatCurrency } from '../../Common/Tables/ReusableTable';
+import { ReusableTable, formatCurrency } from '../../../common/Tables/ReusableTable';
 import { BudgetData } from '../../../../api/cost/pab/types';
 
 interface BudgetCardProps {

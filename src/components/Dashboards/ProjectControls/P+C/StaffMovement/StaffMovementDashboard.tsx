@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart2, Download } from 'lucide-react';
 import { Header } from '../../../../common/Header';
 import { Footer } from '../../../../common/Footer';
-import { Section } from '../../../../common';
-import { Card } from '../../../../common/Card';
-import { Button } from '../../../../common/Button';
-import { BackNavigation } from '../../../../common/BackNavigation';
-import { StaffFTEApiClient } from '../../../../../api/staff-fte/client';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { calculateStaffMovement } from '../../../../../api/staff-fte/transformations';
+import { Section } from '../../../../common/Section/Section';
+import { Card } from '../../../../common/Card/Card';
+import { Button } from '../../../../common/Button/Button';
+import { BackNavigation } from '../../../../common/BackNavigation/BackNavigation';
 import { StaffMovementChart } from './StaffMovementChart';
 import { TableFilters } from '../../../ProjectControls/StaffFTE/components/TableFilters';
 import { useTableFilters } from '../../../ProjectControls/StaffFTE/hooks/useTableFilters';
+import { StaffFTEApiClient } from '../../../../../api/staff-fte/client';
+import { O2NL_Staff } from '../../../../../api/staff-fte/types';
+import { calculateStaffMovement } from '../../../../../api/staff-fte/transformations';
 import { logger } from '../../../../../lib/logger';
+import { BarChart2, Download } from 'lucide-react';
 
 type GroupBy = 'organization' | 'discipline' | 'nop';
 

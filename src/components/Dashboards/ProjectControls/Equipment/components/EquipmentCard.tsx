@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HelpCircle } from 'lucide-react';
-import { Card } from '../../../../common/Card';
+import { Card } from '../../../../common/Card/Card';
 import { EquipmentSummary } from '../../../../../api/equipment/transformations';
 
 interface EquipmentCardProps {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { MonthColumn } from '../../../StaffFTE/types';
-import { calculateFTESummaries, calculateStaffNumbers } from '../../../../../api/staff-fte/transformations';
+import { O2NL_Staff } from '@api/staff-fte/types';
+import { MonthColumn } from '@dashboards/ProjectControls/StaffFTE/types';
+import { calculateFTESummaries, calculateStaffNumbers } from '@api/staff-fte/transformations';
 import { colorPalettes } from './colors';
 
 interface StaffChartProps {
@@ -57,8 +57,8 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
 
   // Create traces for each category
   const traces = items.map(({ name, values }) => ({
-    type: 'bar' as const,
     name,
+    type: 'bar' as const,
     x: xLabels,
     y: mode === 'fte' && monthColumns
       ? monthColumns.map(m => values[m.key])
@@ -66,12 +66,9 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
     marker: {
       color: colorPalettes[chartView][name as keyof typeof colorPalettes[typeof chartView]] || '#95A5A6'
     },
-    hovertemplate: `
-      <b>${name}</b><br>
-      Month: %{x}<br>
-      ${mode === 'fte' ? 'FTE: %{y:.2f}' : 'Staff Count: %{y}'}<br>
-      <extra></extra>
-    `
+    hovertemplate: mode === 'fte'
+      ? `${name}<br>Month: %{x}<br>FTE: %{y:.2f}<extra></extra>`
+      : `${name}<br>Month: %{x}<br>Staff Count: %{y}<extra></extra>`
   }));
 
   return (
@@ -116,7 +113,7 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
         data={traces}
         layout={{
           title: {
-            text: `Monthly ${mode === 'fte' ? 'FTE' : 'Staff Numbers'} by ${chartView.charAt(0).toUpperCase() + chartView.slice(1)}`,
+            text: `${mode === 'fte' ? 'FTE' : 'Staff Numbers'} by ${chartView.charAt(0).toUpperCase() + chartView.slice(1)}`,
             font: { color: '#FFFFFF', size: 16 }
           },
           barmode: 'stack',
@@ -147,7 +144,7 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
           },
           yaxis: {
             title: {
-              text: mode === 'fte' ? 'Full Time Equivalent (FTE)' : 'Staff Count',
+              text: mode === 'fte' ? 'Full Time Equivalent (FTE)' : 'Number of Staff',
               font: { color: '#FFFFFF' }
             },
             tickfont: { color: '#FFFFFF' },

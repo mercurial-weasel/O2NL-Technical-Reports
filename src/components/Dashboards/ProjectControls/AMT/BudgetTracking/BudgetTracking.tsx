@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Header } from '../../../../common/Header';
-import { Footer } from '../../../../common/Footer';
-import { Section } from '../../../../common';
-import { Card } from '../../../../common/Card';
-import { Button } from '../../../../common/Button';
-import { BackNavigation } from '../../../../common/BackNavigation';
+import { Header } from '../../../../common/Header/Header';
+import { Footer } from '../../../../common/Footer/Footer';
+import { Section } from '../../../../common/Section/Section';
+import { Card } from '../../../../common/Card/Card';
+import { Button } from '../../../../common/Button/Button';
+import { BackNavigation } from '../../../../common/BackNavigation/BackNavigation';
 import { BudgetVisualization } from './BudgetVisualization';
 import { BudgetMetrics } from './components/BudgetMetrics';
 import { ViewToggle } from './components/ViewToggle';
