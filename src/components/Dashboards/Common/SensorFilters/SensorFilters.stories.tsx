@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SensorFilters } from './SensorFilters';
+import { SensorFilters } from '@components/SensorFilters';
 
 const meta = {
   title: 'Dashboards/Common/SensorFilters',

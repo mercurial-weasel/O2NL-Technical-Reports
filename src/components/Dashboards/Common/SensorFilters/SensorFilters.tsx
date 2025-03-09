@@ -1,6 +1,6 @@
 import React from 'react';
-import { DateRangeSelector } from '../DateRangeSelector';
-import { DeviceSelector } from '../DeviceSelector';
+import { DateRangeSelector } from '@components/DateRangeSelector';
+import { DeviceSelector } from '@components/DeviceSelector';
 
 interface SensorFiltersProps {
   devices: Array<{ id: string; name: string; model?: string }>;

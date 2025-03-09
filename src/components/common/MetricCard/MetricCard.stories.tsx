@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MetricCard } from './MetricCard';
+import { MetricCard } from '@common/MetricCard';
 import { Thermometer, Wind, Droplets } from 'lucide-react';
 
 const meta = {
