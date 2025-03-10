@@ -28,6 +28,7 @@ export default defineConfig({
       '@features': path.resolve(__dirname, './src/components/features'),
       '@FeaturesCommon': path.resolve(__dirname, './src/components/features/Common'),
       '@features_environmental': path.resolve(__dirname, './src/components/features/environmental'),
+      '@features_ProjectControls': path.resolve(__dirname, './src/components/features/ProjectControls'),
       '@environmental_sensor_common': path.resolve(__dirname, './src/components/features/environmental/sensor_common'),
       '@environmental_dust': path.resolve(__dirname, './src/components/features/environmental/dust'),
       '@dashboards': path.resolve(__dirname, './src/components/Dashboards'),

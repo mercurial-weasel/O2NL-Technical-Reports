@@ -26,6 +26,8 @@
       "@FeaturesCommon": ["./src/components/features/Common"],
       "@features_environmental/*": ["./src/components/features/environmental/*"],
       "@features_environmental": ["./src/components/features/environmental"],
+      "@features_ProjectControls/*": ["./src/components/features/ProjectControls/*"],
+      "@features_ProjectControls": ["./src/components/features/ProjectControls"],
       "@environmental_sensor_common/*": ["./src/components/features/environmental/sensor_common/*"],
       "@environmental_sensor_common": ["./src/components/features/environmental/sensor_common"],
       "@environmental_dust/*": ["./src/components/features/environmental/dust/*"],

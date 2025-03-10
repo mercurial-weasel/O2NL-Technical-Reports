@@ -1,15 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Header } from '@common/Header/Header';
-import { Footer } from '@common/Footer/Footer';
-import { Section } from '@common/Section/Section';
-import { Card } from '@common/Card/Card';
-import { Button } from '@common/Button/Button';
-import { BackNavigation } from '@common/BackNavigation/BackNavigation';
+import { Header, Footer, Section, Card, Button, BackNavigation, View } from '@common';
 import { BudgetVisualization } from './BudgetVisualization';
-import { BudgetMetrics } from './components/BudgetMetrics';
-import { ViewToggle } from './components/ViewToggle';
-import { BudgetTable } from './components/BudgetTable';
-import { MonthSelector } from './components/MonthSelector';
+import { BudgetMetrics, BudgetViewToggle, BudgetTable, MonthSelector } from '@features_ProjectControls/BudgetTracking';
 import { AMTBudgetApiClient } from '@api/cost/amt-budgets/client';
 import { calculateBudgetMetrics, getAvailableMonths, getMonthlyData } from '@api/cost/amt-budgets/transformations';
 import { logger } from '@lib/logger';
@@ -200,7 +192,7 @@ export function BudgetTracking() {
             />
 
             {/* View Toggle */}
-            <ViewToggle 
+            <BudgetViewToggle 
               viewMode={viewMode}
               onViewChange={setViewMode}
             />

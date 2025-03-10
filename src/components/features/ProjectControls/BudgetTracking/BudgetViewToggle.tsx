@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface ViewToggleProps {
+interface BudgetViewToggleProps {
   viewMode: 'table' | 'hours' | 'budget';
   onViewChange: (mode: 'table' | 'hours' | 'budget') => void;
 }
 
-export function ViewToggle({ viewMode, onViewChange }: ViewToggleProps) {
+export function BudgetViewToggle({ viewMode, onViewChange }: BudgetViewToggleProps) {
   return (
     <div className="flex items-center justify-center mb-8">
       <div className="flex items-center gap-2 bg-gray-800/50 rounded-lg p-1">
