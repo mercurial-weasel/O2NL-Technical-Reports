@@ -4,7 +4,11 @@ import { logger } from '@lib/logger';
 // Interface for active staff counts
 export interface ActiveStaff {
   activeCount: number;
-  staffNames: string[];
+  staffNames: Array<{
+    name: string;
+    projectRoleTitle: string;
+  }>;
+  staffTitles: string[]; // Added new field for titles only
 }
 
 // Category movement interfaces
@@ -61,7 +65,7 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
 
   // Initialize total staff counts for each month
   months.forEach(month => {
-    totalStaff[month] = { activeCount: 0, staffNames: [] };
+    totalStaff[month] = { activeCount: 0, staffNames: [], staffTitles: [] };
   });
 
   // Process each staff member
@@ -78,21 +82,21 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
     if (!orgMap.has(staff.Org)) {
       orgMap.set(staff.Org, {});
       months.forEach(month => {
-        orgMap.get(staff.Org)![month] = { activeCount: 0, staffNames: [] };
+        orgMap.get(staff.Org)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
     if (!disciplineMap.has(staff.Team)) {
       disciplineMap.set(staff.Team, {});
       months.forEach(month => {
-        disciplineMap.get(staff.Team)![month] = { activeCount: 0, staffNames: [] };
+        disciplineMap.get(staff.Team)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
     if (!nopTypeMap.has(staff.NOP_Type)) {
       nopTypeMap.set(staff.NOP_Type, {});
       months.forEach(month => {
-        nopTypeMap.get(staff.NOP_Type)![month] = { activeCount: 0, staffNames: [] };
+        nopTypeMap.get(staff.NOP_Type)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
@@ -105,21 +109,37 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
         // Add to organization counts
         const orgCounts = orgMap.get(staff.Org)![monthStr];
         orgCounts.activeCount++;
-        orgCounts.staffNames.push(staff.Name);
+        orgCounts.staffNames.push({
+          name: staff.Name,
+          projectRoleTitle: staff.Project_Role_Title
+        });
+        orgCounts.staffTitles.push(staff.Project_Role_Title);
 
         // Add to discipline counts
         const disciplineCounts = disciplineMap.get(staff.Team)![monthStr];
         disciplineCounts.activeCount++;
-        disciplineCounts.staffNames.push(staff.Name);
+        disciplineCounts.staffNames.push({
+          name: staff.Name,
+          projectRoleTitle: staff.Project_Role_Title
+        });
+        disciplineCounts.staffTitles.push(staff.Project_Role_Title);
 
         // Add to NOP type counts
         const nopTypeCounts = nopTypeMap.get(staff.NOP_Type)![monthStr];
         nopTypeCounts.activeCount++;
-        nopTypeCounts.staffNames.push(staff.Name);
+        nopTypeCounts.staffNames.push({
+          name: staff.Name,
+          projectRoleTitle: staff.Project_Role_Title
+        });
+        nopTypeCounts.staffTitles.push(staff.Project_Role_Title);
 
         // Add to total counts
         totalStaff[monthStr].activeCount++;
-        totalStaff[monthStr].staffNames.push(staff.Name);
+        totalStaff[monthStr].staffNames.push({
+          name: staff.Name,
+          projectRoleTitle: staff.Project_Role_Title
+        });
+        totalStaff[monthStr].staffTitles.push(staff.Project_Role_Title);
       }
     });
   });

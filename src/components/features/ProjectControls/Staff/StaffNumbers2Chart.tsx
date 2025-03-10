@@ -36,7 +36,7 @@ export function StaffNumbers2Chart({ data }: StaffNumbers2ChartProps) {
         <b>${category.name}</b><br>
         Month: ${month}<br>
         Active Staff: ${staffData.activeCount}<br>
-        ${staffData.staffNames.length > 0 ? '<br>Staff:<br>' + staffData.staffNames.join('<br>') : ''}
+        ${staffData.staffTitles.length > 0 ? '<br>Roles:<br>' + staffData.staffTitles.join('<br>') : ''}
         <extra></extra>
       `
     }),
