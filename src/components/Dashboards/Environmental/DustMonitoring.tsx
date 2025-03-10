@@ -1,44 +1,65 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '@common/Card/Card';
-import { Button } from '@common/Button/Button';
+import { Card } from '@common';
 import { DustApiClient } from '@api/sensors/dust/client';
-import { DustChart } from './components/DustChart';
-import { DustCalendar } from './components/DustCalendar';
-import { DustMap } from './components/DustMap';
-import { calculateWindRoseData, calculateDailyAverages } from '@api/sensors/dust/transformations';
+import { DateRangeSelector, DeviceSelector, ViewModeToggle } from '@common'
 
-// Import common components
-import {
-  DateRangeSelector,
-  DeviceSelector,
-  ViewModeToggle,
-  SensorMap,
-  ChartContainer,
-  ChartLegend,
-  ComplianceIndicator,
-  DeviceStatusBadge,
-  MetricCard
-} from '@common';
-
-// Import sensor-specific components
-import {
+import { 
+  DustTable, 
+  DustChart, 
+  DustCalendar, 
+  WindRose, 
+  DustMap,
   SensorHeader,
   SensorLayout,
   LoadingState,
-  ErrorState,
-  SensorMetrics,
-  SensorStats,
-  SensorFilters,
-  SensorThresholds,
-  SensorAlerts,
-  SensorExport
-} from '@sensor_common';
+  ErrorState
+} from '@features_environmental';
+import { calculateWindRoseData, calculateDailyAverages } from '@api/sensors/dust/transformations';
 
 type ViewMode = 'table' | 'chart' | 'calendar';
 
+// Enhanced types that match the API response structure
+interface DustRecord {
+  dateTime: string;
+  pm10: number;
+  pm2_5: number;
+  id: string;
+  deviceName: string;
+  dustLevel: number;
+  unit: string;
+  windSpeed?: number;
+  windDirection?: number;
+  temperature?: number;
+  humidity?: number;
+  pressure?: number;
+  remarks?: string;
+  [key: string]: any;
+}
+
+interface DustDevice {
+  id: string;
+  deviceName: string;
+  deviceModel: string;
+  latitude: number;
+  longitude: number;
+  childRecords: DustRecord[];
+  deviceType?: string;
+  deviceClass?: string;
+  deviceStatus?: string;
+  [key: string]: any;
+}
+
+interface DustData {
+  devices: DustDevice[];
+  timestamp?: string;
+  project?: string;
+  location?: string;
+  [key: string]: any;
+}
+
 export function DustMonitoring() {
   const [viewMode, setViewMode] = useState<ViewMode>('calendar');
-  const [dustData, setDustData] = useState<any>(null);
+  const [dustData, setDustData] = useState<DustData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [selectedDevices, setSelectedDevices] = useState<Set<string>>(new Set(['all']));
@@ -50,7 +71,8 @@ export function DustMonitoring() {
       try {
         const client = new DustApiClient();
         const data = await client.fetchDustData();
-        setDustData(data);
+        // Cast the data to match our DustData interface since we know the structure
+        setDustData(data as DustData);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load dust monitoring data');
         setError(error);
@@ -62,14 +84,15 @@ export function DustMonitoring() {
     fetchData();
   }, []);
 
-  const devices = dustData?.devices.map(device => ({
+  const devices = dustData?.devices.map((device: DustDevice) => ({
     id: device.id,
     name: device.deviceName,
     model: device.deviceModel
   })) || [];
 
-  const windRoseData = calculateWindRoseData(dustData, selectedDevices, dateRange);
-  const monthlyData = calculateDailyAverages(dustData, selectedDevices, dateRange, selectedParameters);
+  // Ensure dustData is not null when passing to functions
+  const windRoseData = calculateWindRoseData(dustData || { devices: [] }, selectedDevices, dateRange);
+  const monthlyData = calculateDailyAverages(dustData || { devices: [] }, selectedDevices, dateRange, selectedParameters);
 
   const handleDownloadCSV = () => {
     // ... CSV download logic (unchanged)
@@ -82,6 +105,9 @@ export function DustMonitoring() {
   if (error) {
     return <ErrorState error={error} backLink="/environmental" backText="Back to Environmental Tests" />;
   }
+
+  // Provide a default empty data structure if dustData is null
+  const safeData: DustData = dustData || { devices: [] };
 
   return (
     <SensorLayout backLink="/environmental" backText="Back to Environmental Tests">
@@ -134,12 +160,12 @@ export function DustMonitoring() {
         <div className="space-y-6">
           {/* Wind Rose */}
           <Card className="p-6 h-[500px]" hover>
-            <DustMap data={dustData} />
+            <WindRose data={windRoseData} />
           </Card>
 
           {/* Map */}
           <Card className="p-6" hover>
-            <DustMap data={dustData} />
+            <DustMap data={safeData} />
           </Card>
         </div>
 
@@ -156,34 +182,38 @@ export function DustMonitoring() {
             {viewMode === 'chart' && (
               <DustChart 
                 data={{
-                  ...dustData,
-                  devices: dustData.devices.filter(device => 
-                    selectedDevices.has('all') || selectedDevices.has(device.id)
-                  ).map(device => ({
-                    ...device,
-                    childRecords: device.childRecords.filter(record => {
-                      const recordDate = new Date(record.dateTime);
-                      return (!dateRange[0] || recordDate >= dateRange[0]) &&
-                             (!dateRange[1] || recordDate <= dateRange[1]);
-                    })
-                  }))
+                  ...safeData,
+                  devices: safeData.devices
+                    .filter((device: DustDevice) => 
+                      selectedDevices.has('all') || selectedDevices.has(device.id)
+                    )
+                    .map((device: DustDevice) => ({
+                      ...device,
+                      childRecords: device.childRecords.filter((record: DustRecord) => {
+                        const recordDate = new Date(record.dateTime);
+                        return (!dateRange[0] || recordDate >= dateRange[0]) &&
+                               (!dateRange[1] || recordDate <= dateRange[1]);
+                      })
+                    }))
                 }} 
               />
             )}
             {viewMode === 'table' && (
               <DustTable 
                 data={{
-                  ...dustData,
-                  devices: dustData.devices.filter(device => 
-                    selectedDevices.has('all') || selectedDevices.has(device.id)
-                  ).map(device => ({
-                    ...device,
-                    childRecords: device.childRecords.filter(record => {
-                      const recordDate = new Date(record.dateTime);
-                      return (!dateRange[0] || recordDate >= dateRange[0]) &&
-                             (!dateRange[1] || recordDate <= dateRange[1]);
-                    })
-                  }))
+                  ...safeData,
+                  devices: safeData.devices
+                    .filter((device: DustDevice) => 
+                      selectedDevices.has('all') || selectedDevices.has(device.id)
+                    )
+                    .map((device: DustDevice) => ({
+                      ...device,
+                      childRecords: device.childRecords.filter((record: DustRecord) => {
+                        const recordDate = new Date(record.dateTime);
+                        return (!dateRange[0] || recordDate >= dateRange[0]) &&
+                               (!dateRange[1] || recordDate <= dateRange[1]);
+                      })
+                    }))
                 }}
               />
             )}

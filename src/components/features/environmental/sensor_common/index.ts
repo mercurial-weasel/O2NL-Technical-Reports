@@ -11,4 +11,8 @@ export { SensorFilters } from './SensorFilters';
 export { SensorThresholds } from './SensorThresholds';
 export { SensorAlerts } from './SensorAlerts';
 export { SensorExport } from './SensorExport';
+//export { DateRangeSelector } from '../../../../components/common/DateRangeSelector';
+//export { DeviceSelector } from '../../../../components/common/DeviceSelector';
+//export { ViewModeToggle } from '../../../../components/common/ViewModeToggle';
+export { ParameterSelector } from './ParameterSelector';
 export * from './types';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { DustChart } from './DustChart';
-import { DustData } from '../../../../../../api/sensors/dust/types';
+import { DustData } from '@api/sensors/dust/types';
 
 const meta = {
   title: 'Dashboards/Environmental/Sensors/DustChart',

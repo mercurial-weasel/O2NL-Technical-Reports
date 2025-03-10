@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReusableTable, formatCurrency } from '../../../../../common/Tables/ReusableTable';
-import { AMTBudgetItem } from '../../../../../../api/cost/amt-budgets/types';
+import { AMTBudgetItem } from '@api/cost/amt-budgets/types';
 
 interface BudgetTableProps {
   data: AMTBudgetItem[];

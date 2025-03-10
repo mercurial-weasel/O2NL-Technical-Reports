@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet';
-import { EquipmentStatus } from '../../../../../api/equipment/types';
+import { EquipmentStatus } from '@api/equipment/types';
 import 'leaflet/dist/leaflet.css';
 
 interface EquipmentMapProps {

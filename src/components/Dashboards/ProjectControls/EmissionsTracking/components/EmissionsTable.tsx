@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { EmissionRecord } from '../../../../../api/emissions/types';
+import { EmissionRecord } from '@api/emissions/types';
 
 interface EmissionsTableProps {
   data: EmissionRecord[];

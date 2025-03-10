@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Chevron } from '../../../common';
-import { RiskIndicators } from '../../../../api/cost/pab/types';
+import { RiskIndicators } from '@api/cost/pab/types';
 
 interface RiskIndicatorsCardProps {
   data: RiskIndicators;

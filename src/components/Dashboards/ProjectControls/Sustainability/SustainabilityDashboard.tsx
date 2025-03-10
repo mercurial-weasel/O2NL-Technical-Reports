@@ -6,8 +6,8 @@ import { Footer } from '../../../common/Footer/Footer';
 import { Section } from '../../../common/Section/Section';
 import { Card } from '../../../common/Card/Card';
 import { BackNavigation } from '../../../common/BackNavigation/BackNavigation';
-import { SustainabilityReportApiClient } from '../../../../api/programme/sustainability/client';
-import { SustainabilityMonthlyRecord } from '../../../../api/programme/sustainability/types';
+import { SustainabilityReportApiClient } from '@api/programme/sustainability/client';
+import { SustainabilityMonthlyRecord } from '@api/programme/sustainability/types';
 import { logger } from '../../../../lib/logger';
 
 type SortField = 'discipline' | 'status' | 'trend';

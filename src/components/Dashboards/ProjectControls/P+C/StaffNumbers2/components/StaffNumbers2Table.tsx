@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StaffSummary } from '../../../../../../api/staff-fte/transformations-staff-numbers2';
+import { StaffSummary } from '@api/staff-fte/transformations-staff-numbers2';
 
 interface StaffNumbers2TableProps {
   data: StaffSummary;

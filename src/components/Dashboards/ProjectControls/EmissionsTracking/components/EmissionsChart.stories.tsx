@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { EmissionsChart } from './EmissionsChart';
-import { EmissionRecord } from '../../../../../api/emissions/types';
+import { EmissionRecord } from '@api/emissions/types';
 
 const meta = {
   title: 'Dashboards/ProjectControls/EmissionsTracking/EmissionsChart',

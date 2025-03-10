@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Chevron } from '../../../common';
-import { Limb1Indicators } from '../../../../api/cost/pab/types';
+import { Limb1Indicators } from '@api/cost/pab/types';
 
 interface Limb1IndicatorsCardProps {
   data: Limb1Indicators;

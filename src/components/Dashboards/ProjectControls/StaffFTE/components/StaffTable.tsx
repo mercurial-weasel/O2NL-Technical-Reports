@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
+import { O2NL_Staff } from '@api/staff-fte/types';
 import { MonthColumn } from '../types';
 
 interface StaffTableProps {

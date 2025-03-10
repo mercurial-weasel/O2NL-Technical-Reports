@@ -7,9 +7,9 @@ import { Section } from '../../../common';
 import { BackNavigation } from '../../../common/BackNavigation';
 import { PivotTable } from './components/PivotTable';
 import { SystemsChart } from './components/SystemsChart';
-import { SystemsApiClient } from '../../../../api/systems/client';
-import { getPivotData } from '../../../../api/systems/transformations';
-import { SystemData } from '../../../../api/systems/types';
+import { SystemsApiClient } from '@api/systems/client';
+import { getPivotData } from '@api/systems/transformations';
+import { SystemData } from '@api/systems/types';
 import { logger } from '../../../../lib/logger';
 
 type ViewMode = 'table' | 'chart';

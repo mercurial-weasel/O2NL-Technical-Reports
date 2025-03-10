@@ -1,6 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { AMTBudgetItem } from '../../../../../api/cost/amt-budgets/types';
+import { AMTBudgetItem } from '@api/cost/amt-budgets/types';
 
 interface BudgetVisualizationProps {
   data: AMTBudgetItem[];

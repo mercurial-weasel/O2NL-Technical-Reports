@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { DustData } from '../../../../../../api/sensors/dust/types';
+import { DustData } from '@api/sensors/dust/types';
 
 interface DustTableProps {
   data: DustData;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { EquipmentStatus } from '../../../../../api/equipment/types';
+import { EquipmentStatus } from '@api/equipment/types';
 
 interface EquipmentTableProps {
   equipment: EquipmentStatus[];

@@ -1,6 +1,17 @@
 // Environmental Dashboards
 //export { EnvironmentalTests } from './Environmental';
-export { DustMonitoring } from './Environmental/sensors/dust';
+// Remove or comment out this line since the component has moved
+// export { DustMonitoring } from './Environmental/sensors/dust';
+
+// Updated imports for environmental components that have been moved
+import * as EnvironmentalComponents from '@features/environmental';
+
+// Re-export for backward compatibility if needed
+export const Environmental = {
+  sensors: {
+    dust: EnvironmentalComponents
+  }
+};
 
 // Geotechnical Dashboards
 //export { GeotechnicalTests } from './Geotechnical';

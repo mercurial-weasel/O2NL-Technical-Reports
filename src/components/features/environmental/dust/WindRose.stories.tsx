@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { WindRose } from './WindRose';
-import { WindRoseData } from '../../../../../../api/sensors/dust/transformations';
+import { WindRoseData } from '@api/sensors/dust/transformations';
 
 const meta = {
   title: 'Dashboards/Environmental/Sensors/WindRose',

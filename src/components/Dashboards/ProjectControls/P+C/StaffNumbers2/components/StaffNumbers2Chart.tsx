@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { StaffSummary } from '../../../../../../api/staff-fte/transformations-staff-numbers2';
+import { StaffSummary } from '@api/staff-fte/transformations-staff-numbers2';
 import { colorPalettes } from '../../StaffComponents/colors';
 
 interface StaffNumbers2ChartProps {

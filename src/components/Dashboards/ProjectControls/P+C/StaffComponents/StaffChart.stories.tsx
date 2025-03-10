@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StaffChart } from './StaffChart';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
+import { O2NL_Staff } from '@api/staff-fte/types';
 import { MonthColumn } from '../../../StaffFTE/types';
 
 const meta = {

@@ -4,8 +4,8 @@ import { Header, Footer, Section, Card, BackNavigation, MultiSelectFilter } from
 import { ThemeCard } from './ThemeCard';
 import { ThemeDetail } from './ThemeDetail';
 import { GanttChart } from './GanttChart';
-import { SustainabilityApiClient } from '../../../../api/sustainability/client';
-import { SustainabilityInitiative } from '../../../../api/sustainability/types';
+import { SustainabilityApiClient } from '@api/sustainability/client';
+import { SustainabilityInitiative } from '@api/sustainability/types';
 import { logger } from '../../../../lib/logger';
 import { 
   filterInitiativesByStatus, 

@@ -16,13 +16,12 @@ import { StaffFTEDashboard } from '@dashboards/ProjectControls/StaffFTE';
 import { StaffMovementDashboard } from '@dashboards/ProjectControls/P+C/StaffMovement';
 import { TimeLogsDashboard } from '@dashboards/P+C/TimeLogs';
 import { EarnedValueSummary } from '@dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
-import { SustainabilityInitiatives } from '@dashboards/ProjectControls/SustainabilityInitiatives';
 import { EmissionsTracking } from '@dashboards/ProjectControls/EmissionsTracking';
 import { ConsentingDashboard } from '@dashboards/ProjectControls/Consenting';
 import { GeoDashboardSPT } from '@dashboards/Geo';
 import { EquipmentStatus } from '@dashboards/ProjectControls/Equipment';
-import { DustMonitoring } from '@dashboards/Environmental/sensors/dust';
-import { routeConfig, getRequiredAccessRights } from '@routes/accessControl';
+//import { DustMonitoring } from '@environmental_dust'; // Fixed import path
+import { getRequiredAccessRights } from '@routes/accessControl';
 import { SustainabilityDashboard, SustainabilityDetailPage } from '@dashboards/ProjectControls/Sustainability';
 
 function App2() {
@@ -157,11 +156,11 @@ function App2() {
             </ProtectedRoute>
           } />
 
-          <Route path="/environmental/sensors/dust" element={
+          {/* <Route path="/environmental/sensors/dust" element={
             <ProtectedRoute>
               <DustMonitoring />
             </ProtectedRoute>
-          } />
+          } /> */}
           
           {/* Fallback Route */}
           <Route path="*" element={<Navigate to="/" replace />} />

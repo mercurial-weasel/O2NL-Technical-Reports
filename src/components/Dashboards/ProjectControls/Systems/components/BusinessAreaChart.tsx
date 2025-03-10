@@ -1,6 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { PivotCategory } from '../../../../../api/systems/transformations';
+import { PivotCategory } from '@api/systems/transformations';
 
 // Fixed colors for each adoption level
 const adoptionColors: Record<string, string> = {

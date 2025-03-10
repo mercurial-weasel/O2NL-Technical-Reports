@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../../../common/Card';
 import { Chevron } from '../../Common/Chevron';
-import { ExpenditureIndicators } from '../../../../api/cost/pab/types';
+import { ExpenditureIndicators } from '@api/cost/pab/types';
 
 interface ExpenditureIndicatorsCardProps {
   data: ExpenditureIndicators;

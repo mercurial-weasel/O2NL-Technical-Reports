@@ -1,7 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { StaffMovement } from '../../../../../api/staff-fte/transformations';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
+import { StaffMovement } from '@api/staff-fte/transformations';
+import { O2NL_Staff } from '@api/staff-fte/types';
 import { colorPalettes } from '../StaffComponents/colors';
 
 interface StaffMovementChartProps {

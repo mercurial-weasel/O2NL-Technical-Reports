@@ -15,8 +15,8 @@ import { Header } from '../../common/Header/Header';
 import { Footer } from '../../common/Footer/Footer';
 import { Section } from '../../common/Section/Section';
 import { BackNavigation } from '../../common/BackNavigation/BackNavigation';
-import { SPTApiClient } from '../../../api/spt/client';
-import { Point, SPTResult } from '../../../api/spt/types';
+import { SPTApiClient } from '@api/spt/client';
+import { Point, SPTResult } from '@api/spt/types';
 import { logger } from '../../../lib/logger';
 
 function GeoDashboardSPT() {

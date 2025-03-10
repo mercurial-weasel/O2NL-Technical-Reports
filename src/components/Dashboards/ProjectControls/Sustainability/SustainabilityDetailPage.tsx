@@ -9,8 +9,8 @@ import { TrendIndicator } from '../AMT/components/TrendIndicator';
 import { TaskList } from '../AMT/components/TaskList';
 import { RisksCard } from '../AMT/components/RisksCard';
 import { DependenciesCard } from '../AMT/components/DependenciesCard';
-import { SustainabilityReportApiClient } from '../../../../api/programme/sustainability/client';
-import { SustainabilityMonthlyRecord } from '../../../../api/programme/sustainability/types';
+import { SustainabilityReportApiClient } from '@api/programme/sustainability/client';
+import { SustainabilityMonthlyRecord } from '@api/programme/sustainability/types';
 import { logger } from '../../../../lib/logger';
 
 export function SustainabilityDetailPage() {

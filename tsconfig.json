@@ -17,24 +17,29 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@common/*": ["src/components/common/*"],
-      "@sensor_common/*": ["src/components/Dashboards/Environmental/sensors/sensor_common/*"],
-      "@dashboards/*": ["src/components/Dashboards/*"],
-      "@api/*": ["src/api/*"],
-      "@lib/*": ["src/lib/*"],
-      "@constants/*": ["src/constants/*"],
-      "@config/*": ["src/config/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@types/*": ["src/types/*"],
-      "@tests/*": ["src/tests/*"],
-      "@data/*": ["src/data/*"],
-      "@routes/*": ["src/routes/*"]
+      "@/*": ["./src/*"],
+      "@common/*": ["./src/components/common/*"],
+      "@common": ["./src/components/common"],
+      "@components/*": ["./src/components/*"],
+      "@features/*": ["./src/components/features/*"],
+      "@features_environmental/*": ["./src/components/features/environmental/*"],
+      "@features_environmental": ["./src/components/features/environmental"],
+      "@environmental_sensor_common/*": ["./src/components/features/environmental/sensor_common/*"],
+      "@environmental_sensor_common": ["./src/components/features/environmental/sensor_common"],
+      "@environmental_dust/*": ["./src/components/features/environmental/dust/*"],
+      "@environmental_dust": ["./src/components/features/environmental/dust"],
+      "@dashboards/*": ["./src/components/Dashboards/*"],
+      "@api/*": ["./src/api/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@config/*": ["./src/config/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@types/*": ["./src/types/*"],
+      "@tests/*": ["./src/tests/*"],
+      "@data/*": ["./src/data/*"],
+      "@routes/*": ["./src/routes/*"]
     }
   },
   "include": ["src"],
-  "references": [
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

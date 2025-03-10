@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { O2NL_Staff } from '../../../../api/staff-fte/types';
+import { O2NL_Staff } from '@api/staff-fte/types';
 import { TableHeader } from './components/TableHeader';
 import { TablePagination } from './components/TablePagination';
 import { FTESummaryTable } from './components/FTESummaryTable';

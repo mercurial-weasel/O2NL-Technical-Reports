@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Plot from 'react-plotly.js';
 import { organizationColors, disciplineColors } from '../data/colors';
-import { StaffMember } from '../../../../../api/staff/types';
+import { StaffMember } from '@api/staff/types';
 
 interface StaffChartProps {
   data: StaffMember[];

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StaffMovementChart } from './StaffMovementChart';
-import { StaffMovement } from '../../../../../api/staff-fte/transformations';
+import { StaffMovement } from '@api/staff-fte/transformations';
 
 const meta = {
   title: 'Dashboards/ProjectControls/P+C/StaffMovementChart',

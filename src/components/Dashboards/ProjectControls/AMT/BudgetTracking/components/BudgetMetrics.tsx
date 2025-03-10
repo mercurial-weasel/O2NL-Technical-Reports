@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../../../../../common/Card/Card';
 import { TrendingUp } from 'lucide-react';
-import { BudgetMetric } from '../../../../../../api/cost/amt-budgets/transformations';
+import { BudgetMetric } from '@api/cost/amt-budgets/transformations';
 
 interface BudgetMetricsProps {
   metrics: BudgetMetric[];

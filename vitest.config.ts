@@ -24,7 +24,11 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@common': path.resolve(__dirname, './src/components/common'),
-      '@sensor_common': path.resolve(__dirname, './src/components/Dashboards/Environmental/sensors/sensor_common'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@features': path.resolve(__dirname, './src/components/features'),
+      '@features_environmental': path.resolve(__dirname, './src/components/features/environmental'),
+      '@environmental_sensor_common': path.resolve(__dirname, './src/components/features/environmental/sensor_common'),
+      '@environmental_dust': path.resolve(__dirname, './src/components/features/environmental/dust'),
       '@dashboards': path.resolve(__dirname, './src/components/Dashboards'),
       '@api': path.resolve(__dirname, './src/api'),
       '@lib': path.resolve(__dirname, './src/lib'),
@@ -34,7 +38,6 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/types'),
       '@tests': path.resolve(__dirname, './src/tests'),
       '@data': path.resolve(__dirname, './src/data'),
-      '@components': path.resolve(__dirname, './src/components'),
       '@routes': path.resolve(__dirname, './src/routes')
     }
   }

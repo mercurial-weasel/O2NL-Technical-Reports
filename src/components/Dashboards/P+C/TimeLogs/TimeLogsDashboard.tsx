@@ -7,8 +7,8 @@ import { Card } from '../../../common/Card/Card';
 import { Button } from '../../../common/Button/Button';
 import { BackNavigation } from '../../../common/BackNavigation/BackNavigation';
 import { TimeLogsTable } from './TimeLogsTable';
-import { HoursApiClient } from '../../../../api/cost/hours/client';
-import { HoursResponse } from '../../../../api/cost/hours/types';
+import { HoursApiClient } from '@api/cost/hours/client';
+import { HoursResponse } from '@api/cost/hours/types';
 import { logger } from '../../../../lib/logger';
 
 export function TimeLogsDashboard() {

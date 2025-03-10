@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../../../../common/Card/Card';
-import { RiskSummary } from '../../../../../api/programme/consenting/transformations';
+import { RiskSummary } from '@api/programme/consenting/transformations';
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
 
 interface RiskSummaryCardsProps {

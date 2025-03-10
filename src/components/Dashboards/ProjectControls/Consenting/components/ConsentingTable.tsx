@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { ConsentMonth, ConsentAssessment } from '../../../../../api/programme/consenting/types';
+import { ConsentMonth, ConsentAssessment } from '@api/programme/consenting/types';
 
 interface ConsentingTableProps {
   data: ConsentMonth;

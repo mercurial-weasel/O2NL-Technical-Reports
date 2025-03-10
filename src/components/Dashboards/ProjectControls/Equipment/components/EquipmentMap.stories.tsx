@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { EquipmentMap } from './EquipmentMap';
-import { EquipmentStatus } from '../../../../../api/equipment/types';
+import { EquipmentStatus } from '@api/equipment/types';
 import 'leaflet/dist/leaflet.css';
 
 const meta = {

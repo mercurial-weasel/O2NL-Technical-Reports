@@ -8,9 +8,9 @@ import { BackNavigation } from '../../../../common/BackNavigation/BackNavigation
 import { StaffMovementChart } from './StaffMovementChart';
 import { TableFilters } from '../../../ProjectControls/StaffFTE/components/TableFilters';
 import { useTableFilters } from '../../../ProjectControls/StaffFTE/hooks/useTableFilters';
-import { StaffFTEApiClient } from '../../../../../api/staff-fte/client';
-import { O2NL_Staff } from '../../../../../api/staff-fte/types';
-import { calculateStaffMovement } from '../../../../../api/staff-fte/transformations';
+import { StaffFTEApiClient } from '@api/staff-fte/client';
+import { O2NL_Staff } from '@api/staff-fte/types';
+import { calculateStaffMovement } from '@api/staff-fte/transformations';
 import { logger } from '../../../../../lib/logger';
 import { BarChart2, Download } from 'lucide-react';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { WindRoseData } from '../../../../../../api/sensors/dust/transformations';
+import { WindRoseData, calculateWindRoseData } from '@api/sensors/dust/transformations';
 
 interface WindRoseProps {
   data: WindRoseData;
