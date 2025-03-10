@@ -1,16 +1,46 @@
 import { createClient } from '@supabase/supabase-js';
-import { AuthUser, UserRole } from './types';
+import { AuthUser, UserRole, AccessRight } from './types';
 import { logger } from '../logger';
 
-// Initialize Supabase client
-//const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-//const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Create a dummy client when not actually using Supabase
+// This prevents "supabase is not defined" errors when the code path might reach here
+// but we're actually using mock authentication
+const createDummyClient = () => {
+  logger.warn('Creating dummy Supabase client - this should only happen in development');
+  return {
+    auth: {
+      signInWithPassword: async () => ({ data: null, error: new Error('Supabase not configured') }),
+      signOut: async () => ({ error: null }),
+      getUser: async () => ({ data: { user: null }, error: null }),
+    },
+    from: () => ({
+      select: () => ({
+        eq: async () => ({ data: [], error: null }),
+      }),
+    }),
+  };
+};
 
-//if (!supabaseUrl || !supabaseKey) {
-//  throw new Error('Missing Supabase environment variables');
-//}
+// Initialize Supabase client only if we're not using mock data
+const useMockData = import.meta.env.VITE_USE_MOCK_DATA === 'true';
+let supabase;
 
-// const supabase = createClient(supabaseUrl, supabaseKey);
+if (!useMockData) {
+  // Only try to connect to Supabase if we're not using mock data
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+  
+  if (supabaseUrl && supabaseKey) {
+    supabase = createClient(supabaseUrl, supabaseKey);
+    logger.info('Supabase client initialized');
+  } else {
+    logger.warn('Missing Supabase environment variables');
+    supabase = createDummyClient();
+  }
+} else {
+  // Use dummy client if we're using mock data
+  supabase = createDummyClient();
+}
 
 export const supabaseAuth = {
   signIn: async (email: string, password: string): Promise<AuthUser> => {
@@ -31,10 +61,14 @@ export const supabaseAuth = {
 
       if (rolesError) throw rolesError;
 
+      const accessRights = roles.map(r => r.role) as AccessRight[];
+
       return {
         id: authData.user.id,
         email: authData.user.email!,
-        roles: roles.map(r => r.role),
+        firstName: '', // These fields need to be populated from profile data
+        lastName: '',  // These fields need to be populated from profile data
+        accessRights,
         created_at: authData.user.created_at
       };
     } catch (error) {

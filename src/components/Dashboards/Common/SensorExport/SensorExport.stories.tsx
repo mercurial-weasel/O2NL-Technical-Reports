@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SensorExport } from '@components/SensorExport';
+import { SensorExport } from '@dashboards/Common/SensorExport';
 
 const meta = {
   title: 'Dashboards/Common/SensorExport',

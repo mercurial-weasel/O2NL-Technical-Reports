@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SensorThresholds } from '@components/SensorThresholds';
+import { SensorThresholds } from '@dashboards/Common/SensorThresholds';
 
 const meta = {
   title: 'Dashboards/Common/SensorThresholds',

@@ -19,17 +19,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     error: null
   });
 
-  // Select auth implementation based on VITE_BYPASS_AUTHENTICATION
-  const auth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true' ? mockAuth : supabaseAuth;
+  // Select auth implementation based on environment variables
+  const useMockData = import.meta.env.VITE_USE_MOCK_DATA === 'true';
+  const bypassAuth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true';
+  
+  // Use mockAuth if either useMockData is true OR bypassAuth is true
+  const auth = useMockData || bypassAuth ? mockAuth : supabaseAuth;
+  
   logger.info('Auth implementation selected', { 
-    bypassAuth: import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true',
-    implementation: import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true' ? 'mockAuth' : 'supabaseAuth'
+    useMockData,
+    bypassAuth,
+    implementation: useMockData || bypassAuth ? 'mockAuth' : 'supabaseAuth'
   });
 
   useEffect(() => {
     const initAuth = async () => {
-      const bypassAuth = import.meta.env.VITE_BYPASS_AUTHENTICATION === 'true';
-      logger.info('Initializing authentication', { bypassAuth });
+      logger.info('Initializing authentication', { useMockData, bypassAuth });
 
       try {
         // If bypass is enabled, automatically authenticate as admin
@@ -45,6 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         const user = await auth.getCurrentUser();
         logger.info('Auth initialization complete', { 
           authenticated: !!user,
+          useMockData,
           bypassAuth 
         });
         setState({ user, loading: false, error: null });

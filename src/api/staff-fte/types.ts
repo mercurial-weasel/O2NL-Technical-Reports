@@ -5,13 +5,15 @@ export interface O2NL_Staff {
   NOP_Type: string;
   Org: string;
   Project_Role_Title: string;
+  Job_Code: string;
   Phase: string;
   Name: string;
   Status: string;
   Last_updated_conf: string;
-  Split_Assignment_: string;
+  //Split_Assignment_: string;
   Resource_Options: string;
-  Site_Based_: string;
+  Taitoko_Levin_Site_Based_ : string;
+  //Site_Based_: string;
   Pricing_P_G___Prof___Direct_Works: string;
   FTE__AVE_: number;
   Required_Start: Date;

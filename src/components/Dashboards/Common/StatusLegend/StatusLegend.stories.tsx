@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StatusLegend } from '@components/StatusLegend';
+import { StatusLegend } from '@dashboards/Common/StatusLegend';
 
 const meta = {
   title: 'Dashboards/Common/StatusLegend',
