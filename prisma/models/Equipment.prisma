@@ -1,0 +1,44 @@
+
+// Equipment Models
+model EquipmentStatus {
+  id                 String     @id @default(uuid())
+  equipmentId        String
+  serialNumber       String
+  easting            Float
+  northing           Float
+  lastUpdatedDate    String
+  lastUpdatedTime    String
+  elevation          Float
+  status             String     // Enum: 'operational', 'maintenance', 'fault', 'offline'
+  keyMetrics         String
+  unit               String
+  measurementType    String
+  alertDate          String?
+  alertTime          String?
+  alertComments      String?
+  
+  // Relations
+  equipmentType      EquipmentType? @relation(fields: [equipmentTypeId], references: [id])
+  equipmentTypeId    String?
+}
+
+model EquipmentType {
+  id                 String     @id @default(uuid())
+  typeId             String
+  name               String
+  description        String
+  category           String     // Enum: 'heavy', 'light', 'specialized', 'monitoring'
+  
+  // Relations
+  equipment          EquipmentStatus[]
+  equipmentData      EquipmentData? @relation(fields: [equipmentDataId], references: [id])
+  equipmentDataId    String?
+}
+
+model EquipmentData {
+  id                 String     @id @default(uuid())
+  lastUpdated        String
+  
+  // Relations
+  equipmentTypes     EquipmentType[]
+}

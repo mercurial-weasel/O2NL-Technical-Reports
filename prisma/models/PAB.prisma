@@ -1,0 +1,223 @@
+
+
+// PAB Models
+model BudgetItem {
+  id                 String   @id @default(uuid())
+  budgetItem         String
+  shared             Float?
+  nonShared          Float?
+  total              Float?
+  ref                String
+  comments           String
+  movementShared     Float?
+  movementNonShared  Float?
+  movementTotal      Float?
+  highlight          Boolean
+  
+  // Relations
+  budgetData         BudgetData? @relation(fields: [budgetDataId], references: [id])
+  budgetDataId       String?
+}
+
+model BudgetData {
+  id                 String       @id @default(uuid())
+  
+  // Relations
+  items              BudgetItem[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model CostItem {
+  id                 String   @id @default(uuid())
+  budget             String
+  shared             Float?
+  nonShared          Float?
+  total              Float?
+  ref                String
+  comments           String
+  movementShared     Float?
+  movementNonShared  Float?
+  movementTotal      Float?
+  highlight          Boolean
+  
+  // Relations
+  costData           CostData? @relation(fields: [costDataId], references: [id])
+  costDataId         String?
+}
+
+model CostData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  items              CostItem[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model CostIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  costIndicators     CostIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model CostIndicators {
+  id                 String          @id @default(uuid())
+  
+  // Relations
+  indicators         CostIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model RiskIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  
+  // Relations
+  riskIndicators     RiskIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model RiskIndicators {
+  id                 String          @id @default(uuid())
+  
+  // Relations
+  indicators         RiskIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model ExpenditureData {
+  id                 String   @id @default(uuid())
+  months             String[]
+  plannedMonthly     Float[]
+  plannedCumulative  Float[]
+  actualMonthly      Float[]
+  actualCumulative   Float[]
+  forecastMonthly    Float[]
+  forecastCumulative Float[]
+  
+  // Relations
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model ExpenditureIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  expenditureIndicators ExpenditureIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model ExpenditureIndicators {
+  id                 String                  @id @default(uuid())
+  
+  // Relations
+  indicators         ExpenditureIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model FundingShare {
+  id                 String   @id @default(uuid())
+  name               String
+  value              Float
+  
+  // Relations for current month
+  currentMonthData   FundingSplitData? @relation("CurrentMonth", fields: [currentMonthId], references: [id])
+  currentMonthId     String?
+  
+  // Relations for project split
+  projectSplitData   FundingSplitData? @relation("ProjectSplit", fields: [projectSplitId], references: [id])
+  projectSplitId     String?
+}
+
+model FundingSplitData {
+  id                 String   @id @default(uuid())
+  
+  // Relations
+  currentMonth       FundingShare[] @relation("CurrentMonth")
+  projectSplit       FundingShare[] @relation("ProjectSplit")
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model Limb1Indicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  limb1Indicators    Limb1Indicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model Limb1Indicators {
+  id                 String           @id @default(uuid())
+  
+  // Relations
+  indicators         Limb1Indicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model Limb3Indicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  limb3Indicators    Limb3Indicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model Limb3Indicators {
+  id                 String           @id @default(uuid())
+  
+  // Relations
+  indicators         Limb3Indicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model MonthlyPABRecord {
+  id                 String       @id @default(uuid())
+  monthYear          String
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime?
+  
+  // Relations
+  budget             BudgetData?
+  cost               CostData?
+  costIndicators     CostIndicators?
+  riskIndicators     RiskIndicators?
+  expenditure        ExpenditureData?
+  expenditureIndicators ExpenditureIndicators?
+  fundingSplit       FundingSplitData?
+  limb1Indicators    Limb1Indicators?
+  limb3Indicators    Limb3Indicators?
+  
+  // Relation to PABResponse
+  pabResponse        PABResponse[]
+}
+
+model PABResponse {
+  id                 String       @id @default(uuid())
+  currentMonth       MonthlyPABRecord @relation(fields: [currentMonthId], references: [id])
+  currentMonthId     String
+  availableMonths    String[]
+  lastUpdated        DateTime
+}

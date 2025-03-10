@@ -1,0 +1,42 @@
+
+// Consent Models
+enum RiskLevel {
+  Green
+  Amber
+  Red
+}
+
+enum RiskChange {
+  Unknown
+  Unchanged
+  Up
+  Down
+}
+
+model ConsentAssessment {
+  id                  String     @id @default(uuid())
+  designChange        String
+  proposedConsentPathway String
+  currentRiskLevel    RiskLevel
+  comments            String?
+  timestamp           DateTime
+  riskChange          RiskChange
+  
+  // Relations
+  consentMonth        ConsentMonth? @relation(fields: [consentMonthId], references: [id])
+  consentMonthId      String?
+}
+
+model ConsentMonth {
+  id                  String     @id @default(uuid())
+  monthYear           String     // Format: YYYY-MM
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime?
+  totalAssessments    Int
+  greenRiskCount      Int
+  amberRiskCount      Int
+  redRiskCount        Int
+  
+  // Relations
+  assessments         ConsentAssessment[]
+}

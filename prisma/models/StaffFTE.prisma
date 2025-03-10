@@ -1,0 +1,26 @@
+
+
+// Staff FTE Model
+model O2NL_Staff {
+  id                 String     @id @default(uuid())
+  disciplineManager  String
+  team               String
+  location           String
+  nopType            String
+  org                String
+  projectRoleTitle   String
+  jobCode            String
+  phase              String
+  name               String
+  status             String
+  lastUpdatedConf    String
+  resourceOptions    String
+  taitokoLevinSiteBased String
+  pricingPGProfDirectWorks String
+  fteAve             Float
+  requiredStart      DateTime
+  requiredFinish     DateTime
+  monthlyFTE         Json       // Store monthly FTE data as JSON
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+}

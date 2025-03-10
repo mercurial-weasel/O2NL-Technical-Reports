@@ -1,0 +1,50 @@
+
+// Dust Sensor Models
+model DustChild {
+  id                 String     @id @default(uuid())
+  deviceName         String
+  dateTime           DateTime
+  dustLevel          Float
+  unit               String
+  pm10               Float
+  pm2_5              Float
+  temperature        Float
+  humidity           Float
+  windSpeed          Float
+  windDirection      Float
+  complianceStatus   String
+  staff              String
+  remarks            String?
+  
+  // Relations
+  dustParent         DustParent? @relation(fields: [dustParentId], references: [id])
+  dustParentId       String?
+}
+
+model DustParent {
+  id                 String     @id @default(uuid())
+  deviceName         String
+  deviceModel        String?
+  serialNumber       String?
+  manufacturer       String?
+  organisation       String?
+  remarks            String?
+  timeStamp          DateTime?
+  deviceStatus       String?
+  latitude           Float
+  longitude          Float
+  
+  // Relations
+  childRecords       DustChild[]
+  dustData           DustData? @relation(fields: [dustDataId], references: [id])
+  dustDataId         String?
+}
+
+model DustData {
+  id                 String     @id @default(uuid())
+  lastUpdated        DateTime
+  totalReadings      Int
+  
+  // Relations
+  devices            DustParent[]
+}

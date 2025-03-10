@@ -1,0 +1,37 @@
+
+// Earned Value Models
+model Progress {
+  id                 String     @id @default(uuid())
+  month              String
+  planned            Float
+  earned             Float
+  
+  // Relations
+  projectElement     ProjectElement? @relation(fields: [projectElementId], references: [id])
+  projectElementId   String?
+}
+
+model ProjectElement {
+  id                 String     @id @default(uuid())
+  discipline         String
+  element            String
+  directCosts        Float
+  limb2              Float
+  total              Float
+  noOfMonths         Int
+  planStart          String
+  planFinish         String
+  percentWgtOfBudget Float
+  
+  // Relations
+  progress           Progress[]
+  earnedValueData    EarnedValueData? @relation(fields: [earnedValueDataId], references: [id])
+  earnedValueDataId  String?
+}
+
+model EarnedValueData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  data               ProjectElement[]
+}

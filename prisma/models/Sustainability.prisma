@@ -1,0 +1,79 @@
+
+// Sustainability Models
+enum Status {
+  green
+  orange
+  red
+}
+
+enum Trend {
+  up
+  down
+  unchanged
+}
+
+model Risk {
+  id              String   @id @default(uuid())
+  description     String
+  category        String
+  likelihood      Int      @db.SmallInt
+  consequence     Int      @db.SmallInt
+  owner           String?
+  mitigations     String[]
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model Task {
+  id              String   @id @default(uuid())
+  description     String
+  completion      Float
+  status          String   // Enum values: 'on track', 'at risk', 'delayed'
+  critical_path   Boolean
+  owner           String?
+  dueDate         DateTime?
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model KPI {
+  id              String   @id @default(uuid())
+  name            String
+  target          Float
+  actual          Float
+  unit            String
+  trend           Trend
+  status          Status
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model SustainabilityMonthlyRecord {
+  id              String   @id @default(uuid())
+  month           String   // Format: YYYY-MM
+  discipline      String   // Value: "Sustainability"
+  status          Status
+  trend           Trend
+  keyIssue        String
+  dependencies    String[]
+  metrics         Json     // Store metrics as JSON
+  lastUpdated     DateTime
+  createdAt       DateTime @default(now())
+  
+  // Relations
+  keyRisks        Risk[]
+  tasksToComplete Task[]
+  kpis            KPI[]
+}

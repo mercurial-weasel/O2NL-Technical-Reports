@@ -1,0 +1,58 @@
+
+
+// AMT Budget Models
+model AMTBudgetItem {
+  id                 String     @id @default(uuid())
+  workstream         String
+  hours1             Float
+  total1             Float
+  hours2             Float
+  total2             Float
+  hoursDiff          Float
+  totalDiff          Float
+  
+  // Relations
+  monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
+  monthlyBudgetDataId String?
+}
+
+model BudgetSummary {
+  id                 String     @id @default(uuid())
+  totalLabourHours1  Float
+  totalLabourTotal1  Float
+  totalLabourHours2  Float
+  totalLabourTotal2  Float
+  totalLabourHoursDiff Float
+  totalLabourTotalDiff Float
+  totalExpensesTotal1 Float
+  totalExpensesTotal2 Float
+  totalExpensesTotalDiff Float
+  totalAllHours1     Float
+  totalAllTotal1     Float
+  totalAllHours2     Float
+  totalAllTotal2     Float
+  totalAllHoursDiff  Float
+  totalAllTotalDiff  Float
+  
+  // Relations
+  monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
+  monthlyBudgetDataId String?
+}
+
+model MonthlyBudgetData {
+  id                 String     @id @default(uuid())
+  monthYear          String
+  
+  // Relations
+  amtBudgetTrackingData AMTBudgetItem[]
+  summary            BudgetSummary?
+  amtBudgetData      AMTBudgetData? @relation(fields: [amtBudgetDataId], references: [id])
+  amtBudgetDataId    String?
+}
+
+model AMTBudgetData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  monthlyData        MonthlyBudgetData[]
+}

@@ -1,0 +1,28 @@
+
+// Emissions Models
+model EmissionRecord {
+  id                 String     @id @default(uuid())
+  category           String
+  yearMonth          String
+  amount             Float
+  carbonEstimateKgCO2e Float
+  
+  // Relations
+  emissionsData      EmissionsData? @relation(fields: [emissionsDataId], references: [id])
+  emissionsDataId    String?
+}
+
+model CategoryConversion {
+  id                 String     @id @default(uuid())
+  category           String
+  conversionFactor   Float
+}
+
+model EmissionsData {
+  id                 String     @id @default(uuid())
+  totalCarbonEstimate Float
+  lastUpdated        DateTime
+  
+  // Relations
+  records            EmissionRecord[]
+}

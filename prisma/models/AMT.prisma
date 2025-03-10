@@ -1,0 +1,31 @@
+
+
+// AMT Models
+enum DisciplineType {
+  AMT
+  Design
+  Construction
+  Legacy_Outcomes
+  Engineering
+  Other
+}
+
+model AMTMonthlyRecord {
+  id                 String       @id @default(uuid())
+  month              String       // Format: YYYY-MM
+  discipline         DisciplineType
+  status             Status
+  trend              Trend
+  keyIssue           String
+  dependencies       String[]
+  metrics            Json         // Store metrics as JSON
+  notes              String?
+  lastUpdated        DateTime
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime?
+  
+  // Relations
+  keyRisks           Risk[]
+  tasksToComplete    Task[]
+  kpis               KPI[]
+}

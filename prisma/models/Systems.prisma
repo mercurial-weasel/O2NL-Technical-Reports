@@ -1,0 +1,75 @@
+
+
+// System Models
+enum SystemStatus {
+  operational
+  maintenance
+  degraded
+  outage
+  not_started
+}
+
+enum BusinessArea {
+  COMMERCIAL      @map("00 - Commercial")
+  DESIGN          @map("01 - Design")
+  ENGINEERING     @map("02 - Engineering")
+  IT              @map("03 - IT")
+  FITOUT          @map("04 - Fitout")
+  ENVIRONMENTAL   @map("05 - Environmental")
+  HSEQ            @map("06 - HSEQ")
+  STAKEHOLDER     @map("07 - Stakeholder")
+  HOME_ORG        @map("09 - Home Org")
+  PROJECT_CONTROLS @map("10 - Project Controls")
+}
+
+enum Phase {
+  IPAA       @map("0 - IPAA")
+  PAA        @map("1- PAA")
+  IPAA_PAA   @map("2 - IPAA + PAA")
+}
+
+enum Requirement {
+  MUST_HAVE   @map("0 - Must have")
+  WOULD_HAVE  @map("1 - Would Have")
+  COULD_HAVE  @map("2 - Could Have")
+  WONT_HAVE   @map("3 - Wont Have")
+  UNKNOWN     @map("9 - Unknown")
+}
+
+enum Adoption {
+  POOR           @map("1 - poor")
+  AVERAGE        @map("2 - average")
+  GOOD           @map("3 - good")
+  VERY_GOOD      @map("4 - very good")
+  COMPREHENSIVE  @map("5 - comprehensive")
+  UNKNOWN        @map("7 - Unknown")
+  NOT_COMMENCED  @map("8 - Not commenced")
+  NA             @map("9 - N/A")
+}
+
+enum HostedBy {
+  THIRD_PARTY
+  MACDOW
+  TT
+  NZTA
+  BECA
+  HOME_ORG
+  UNKNOWN
+}
+
+model SystemData {
+  id              String       @id @default(uuid())
+  businessArea    BusinessArea
+  category        String
+  system          String
+  purpose         String
+  requirement     Requirement
+  phase           Phase
+  licence         String
+  smeResponsible  String
+  projectRole     String
+  adoption        Adoption
+  hostedBy        HostedBy
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}

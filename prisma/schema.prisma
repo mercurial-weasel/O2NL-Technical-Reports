@@ -1,0 +1,779 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+// AMT Models
+enum DisciplineType {
+  AMT
+  Design
+  Construction
+  Legacy_Outcomes
+  Engineering
+  Other
+}
+
+model AMTMonthlyRecord {
+  id                 String       @id @default(uuid())
+  month              String       // Format: YYYY-MM
+  discipline         DisciplineType
+  status             Status
+  trend              Trend
+  keyIssue           String
+  dependencies       String[]
+  metrics            Json         // Store metrics as JSON
+  notes              String?
+  lastUpdated        DateTime
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime?
+  
+  // Relations
+  keyRisks           Risk[]
+  tasksToComplete    Task[]
+  kpis               KPI[]
+}
+
+// AMT Budget Models
+model AMTBudgetItem {
+  id                 String     @id @default(uuid())
+  workstream         String
+  hours1             Float
+  total1             Float
+  hours2             Float
+  total2             Float
+  hoursDiff          Float
+  totalDiff          Float
+  
+  // Relations
+  monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
+  monthlyBudgetDataId String?
+}
+
+model BudgetSummary {
+  id                 String     @id @default(uuid())
+  totalLabourHours1  Float
+  totalLabourTotal1  Float
+  totalLabourHours2  Float
+  totalLabourTotal2  Float
+  totalLabourHoursDiff Float
+  totalLabourTotalDiff Float
+  totalExpensesTotal1 Float
+  totalExpensesTotal2 Float
+  totalExpensesTotalDiff Float
+  totalAllHours1     Float
+  totalAllTotal1     Float
+  totalAllHours2     Float
+  totalAllTotal2     Float
+  totalAllHoursDiff  Float
+  totalAllTotalDiff  Float
+  
+  // Relations
+  monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
+  monthlyBudgetDataId String?
+}
+
+model MonthlyBudgetData {
+  id                 String     @id @default(uuid())
+  monthYear          String
+  
+  // Relations
+  amtBudgetTrackingData AMTBudgetItem[]
+  summary            BudgetSummary?
+  amtBudgetData      AMTBudgetData? @relation(fields: [amtBudgetDataId], references: [id])
+  amtBudgetDataId    String?
+}
+
+model AMTBudgetData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  monthlyData        MonthlyBudgetData[]
+}
+
+// Consent Models
+enum RiskLevel {
+  Green
+  Amber
+  Red
+}
+
+enum RiskChange {
+  Unknown
+  Unchanged
+  Up
+  Down
+}
+
+model ConsentAssessment {
+  id                  String     @id @default(uuid())
+  designChange        String
+  proposedConsentPathway String
+  currentRiskLevel    RiskLevel
+  comments            String?
+  timestamp           DateTime
+  riskChange          RiskChange
+  
+  // Relations
+  consentMonth        ConsentMonth? @relation(fields: [consentMonthId], references: [id])
+  consentMonthId      String?
+}
+
+model ConsentMonth {
+  id                  String     @id @default(uuid())
+  monthYear           String     // Format: YYYY-MM
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime?
+  totalAssessments    Int
+  greenRiskCount      Int
+  amberRiskCount      Int
+  redRiskCount        Int
+  
+  // Relations
+  assessments         ConsentAssessment[]
+}
+
+// Dust Sensor Models
+model DustChild {
+  id                 String     @id @default(uuid())
+  deviceName         String
+  dateTime           DateTime
+  dustLevel          Float
+  unit               String
+  pm10               Float
+  pm2_5              Float
+  temperature        Float
+  humidity           Float
+  windSpeed          Float
+  windDirection      Float
+  complianceStatus   String
+  staff              String
+  remarks            String?
+  
+  // Relations
+  dustParent         DustParent? @relation(fields: [dustParentId], references: [id])
+  dustParentId       String?
+}
+
+model DustParent {
+  id                 String     @id @default(uuid())
+  deviceName         String
+  deviceModel        String?
+  serialNumber       String?
+  manufacturer       String?
+  organisation       String?
+  remarks            String?
+  timeStamp          DateTime?
+  deviceStatus       String?
+  latitude           Float
+  longitude          Float
+  
+  // Relations
+  childRecords       DustChild[]
+  dustData           DustData? @relation(fields: [dustDataId], references: [id])
+  dustDataId         String?
+}
+
+model DustData {
+  id                 String     @id @default(uuid())
+  lastUpdated        DateTime
+  totalReadings      Int
+  
+  // Relations
+  devices            DustParent[]
+}
+
+// Earned Value Models
+model Progress {
+  id                 String     @id @default(uuid())
+  month              String
+  planned            Float
+  earned             Float
+  
+  // Relations
+  projectElement     ProjectElement? @relation(fields: [projectElementId], references: [id])
+  projectElementId   String?
+}
+
+model ProjectElement {
+  id                 String     @id @default(uuid())
+  discipline         String
+  element            String
+  directCosts        Float
+  limb2              Float
+  total              Float
+  noOfMonths         Int
+  planStart          String
+  planFinish         String
+  percentWgtOfBudget Float
+  
+  // Relations
+  progress           Progress[]
+  earnedValueData    EarnedValueData? @relation(fields: [earnedValueDataId], references: [id])
+  earnedValueDataId  String?
+}
+
+model EarnedValueData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  data               ProjectElement[]
+}
+
+// Emissions Models
+model EmissionRecord {
+  id                 String     @id @default(uuid())
+  category           String
+  yearMonth          String
+  amount             Float
+  carbonEstimateKgCO2e Float
+  
+  // Relations
+  emissionsData      EmissionsData? @relation(fields: [emissionsDataId], references: [id])
+  emissionsDataId    String?
+}
+
+model CategoryConversion {
+  id                 String     @id @default(uuid())
+  category           String
+  conversionFactor   Float
+}
+
+model EmissionsData {
+  id                 String     @id @default(uuid())
+  totalCarbonEstimate Float
+  lastUpdated        DateTime
+  
+  // Relations
+  records            EmissionRecord[]
+}
+
+// Equipment Models
+model EquipmentStatus {
+  id                 String     @id @default(uuid())
+  equipmentId        String
+  serialNumber       String
+  easting            Float
+  northing           Float
+  lastUpdatedDate    String
+  lastUpdatedTime    String
+  elevation          Float
+  status             String     // Enum: 'operational', 'maintenance', 'fault', 'offline'
+  keyMetrics         String
+  unit               String
+  measurementType    String
+  alertDate          String?
+  alertTime          String?
+  alertComments      String?
+  
+  // Relations
+  equipmentType      EquipmentType? @relation(fields: [equipmentTypeId], references: [id])
+  equipmentTypeId    String?
+}
+
+model EquipmentType {
+  id                 String     @id @default(uuid())
+  typeId             String
+  name               String
+  description        String
+  category           String     // Enum: 'heavy', 'light', 'specialized', 'monitoring'
+  
+  // Relations
+  equipment          EquipmentStatus[]
+  equipmentData      EquipmentData? @relation(fields: [equipmentDataId], references: [id])
+  equipmentDataId    String?
+}
+
+model EquipmentData {
+  id                 String     @id @default(uuid())
+  lastUpdated        String
+  
+  // Relations
+  equipmentTypes     EquipmentType[]
+}
+
+// PAB Models
+model BudgetItem {
+  id                 String   @id @default(uuid())
+  budgetItem         String
+  shared             Float?
+  nonShared          Float?
+  total              Float?
+  ref                String
+  comments           String
+  movementShared     Float?
+  movementNonShared  Float?
+  movementTotal      Float?
+  highlight          Boolean
+  
+  // Relations
+  budgetData         BudgetData? @relation(fields: [budgetDataId], references: [id])
+  budgetDataId       String?
+}
+
+model BudgetData {
+  id                 String       @id @default(uuid())
+  
+  // Relations
+  items              BudgetItem[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model CostItem {
+  id                 String   @id @default(uuid())
+  budget             String
+  shared             Float?
+  nonShared          Float?
+  total              Float?
+  ref                String
+  comments           String
+  movementShared     Float?
+  movementNonShared  Float?
+  movementTotal      Float?
+  highlight          Boolean
+  
+  // Relations
+  costData           CostData? @relation(fields: [costDataId], references: [id])
+  costDataId         String?
+}
+
+model CostData {
+  id                 String     @id @default(uuid())
+  
+  // Relations
+  items              CostItem[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model CostIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  costIndicators     CostIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model CostIndicators {
+  id                 String          @id @default(uuid())
+  
+  // Relations
+  indicators         CostIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model RiskIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  
+  // Relations
+  riskIndicators     RiskIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model RiskIndicators {
+  id                 String          @id @default(uuid())
+  
+  // Relations
+  indicators         RiskIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model ExpenditureData {
+  id                 String   @id @default(uuid())
+  months             String[]
+  plannedMonthly     Float[]
+  plannedCumulative  Float[]
+  actualMonthly      Float[]
+  actualCumulative   Float[]
+  forecastMonthly    Float[]
+  forecastCumulative Float[]
+  
+  // Relations
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model ExpenditureIndicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  expenditureIndicators ExpenditureIndicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model ExpenditureIndicators {
+  id                 String                  @id @default(uuid())
+  
+  // Relations
+  indicators         ExpenditureIndicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model FundingShare {
+  id                 String   @id @default(uuid())
+  name               String
+  value              Float
+  
+  // Relations for current month
+  currentMonthData   FundingSplitData? @relation("CurrentMonth", fields: [currentMonthId], references: [id])
+  currentMonthId     String?
+  
+  // Relations for project split
+  projectSplitData   FundingSplitData? @relation("ProjectSplit", fields: [projectSplitId], references: [id])
+  projectSplitId     String?
+}
+
+model FundingSplitData {
+  id                 String   @id @default(uuid())
+  
+  // Relations
+  currentMonth       FundingShare[] @relation("CurrentMonth")
+  projectSplit       FundingShare[] @relation("ProjectSplit")
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model Limb1Indicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  limb1Indicators    Limb1Indicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model Limb1Indicators {
+  id                 String           @id @default(uuid())
+  
+  // Relations
+  indicators         Limb1Indicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model Limb3Indicator {
+  id                 String   @id @default(uuid())
+  text               String
+  indicator          String
+  textColor          String?
+  
+  // Relations
+  limb3Indicators    Limb3Indicators? @relation(fields: [indicatorsId], references: [id])
+  indicatorsId       String?
+}
+
+model Limb3Indicators {
+  id                 String           @id @default(uuid())
+  
+  // Relations
+  indicators         Limb3Indicator[]
+  monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
+  recordId           String?
+}
+
+model MonthlyPABRecord {
+  id                 String       @id @default(uuid())
+  monthYear          String
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime?
+  
+  // Relations
+  budget             BudgetData?
+  cost               CostData?
+  costIndicators     CostIndicators?
+  riskIndicators     RiskIndicators?
+  expenditure        ExpenditureData?
+  expenditureIndicators ExpenditureIndicators?
+  fundingSplit       FundingSplitData?
+  limb1Indicators    Limb1Indicators?
+  limb3Indicators    Limb3Indicators?
+  
+  // Relation to PABResponse
+  pabResponse        PABResponse[]
+}
+
+model PABResponse {
+  id                 String       @id @default(uuid())
+  currentMonth       MonthlyPABRecord @relation(fields: [currentMonthId], references: [id])
+  currentMonthId     String
+  availableMonths    String[]
+  lastUpdated        DateTime
+}
+
+// Staff FTE Model
+model O2NL_Staff {
+  id                 String     @id @default(uuid())
+  disciplineManager  String
+  team               String
+  location           String
+  nopType            String
+  org                String
+  projectRoleTitle   String
+  jobCode            String
+  phase              String
+  name               String
+  status             String
+  lastUpdatedConf    String
+  resourceOptions    String
+  taitokoLevinSiteBased String
+  pricingPGProfDirectWorks String
+  fteAve             Float
+  requiredStart      DateTime
+  requiredFinish     DateTime
+  monthlyFTE         Json       // Store monthly FTE data as JSON
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+}
+
+// Sustainability Models
+enum Status {
+  green
+  orange
+  red
+}
+
+enum Trend {
+  up
+  down
+  unchanged
+}
+
+model Risk {
+  id              String   @id @default(uuid())
+  description     String
+  category        String
+  likelihood      Int      @db.SmallInt
+  consequence     Int      @db.SmallInt
+  owner           String?
+  mitigations     String[]
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model Task {
+  id              String   @id @default(uuid())
+  description     String
+  completion      Float
+  status          String   // Enum values: 'on track', 'at risk', 'delayed'
+  critical_path   Boolean
+  owner           String?
+  dueDate         DateTime?
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model KPI {
+  id              String   @id @default(uuid())
+  name            String
+  target          Float
+  actual          Float
+  unit            String
+  trend           Trend
+  status          Status
+  
+  // Relations
+  sustainabilityRecord SustainabilityMonthlyRecord? @relation(fields: [recordId], references: [id])
+  recordId         String?
+  amtRecord        AMTMonthlyRecord?               @relation(fields: [amtRecordId], references: [id])
+  amtRecordId      String?
+}
+
+model SustainabilityMonthlyRecord {
+  id              String   @id @default(uuid())
+  month           String   // Format: YYYY-MM
+  discipline      String   // Value: "Sustainability"
+  status          Status
+  trend           Trend
+  keyIssue        String
+  dependencies    String[]
+  metrics         Json     // Store metrics as JSON
+  lastUpdated     DateTime
+  createdAt       DateTime @default(now())
+  
+  // Relations
+  keyRisks        Risk[]
+  tasksToComplete Task[]
+  kpis            KPI[]
+}
+
+// Sustainability Initiatives
+enum SustainabilityThemeType {
+  Emissions
+  Energy
+  Water
+  Waste_Recovery
+  Materials
+  Sustainable_Procurement
+  Nature
+  Legacy
+  General
+  Resilience
+}
+
+enum SustainabilityStatusType {
+  Proposed
+  Pending
+  Delayed
+  Implemented
+}
+
+enum SustainabilityPriorityType {
+  VeryHigh  @map("5 - Very High")
+  High      @map("4 - High")
+  Medium    @map("3 - Medium")
+  Low       @map("2 - Low")
+  VeryLow   @map("1 - Very Low")
+}
+
+enum SustainabilityProcessType {
+  Process
+  Outcome
+  Process_Outcome  @map("Process / Outcome")
+}
+
+enum SustainabilityRequirementType {
+  Must
+  Should
+}
+
+model SustainabilityInitiative {
+  id                 String     @id @default(uuid())
+  theme              SustainabilityThemeType
+  outcome            String
+  status             SustainabilityStatusType
+  priority           SustainabilityPriorityType
+  target             String
+  measure            String?
+  dataType           String?
+  unit               String?
+  parameters         String?
+  reportingApproach  String?
+  processOrOutcome   SustainabilityProcessType
+  mustOrShould       SustainabilityRequirementType
+  measurementMethod  String?
+  notes              String?
+  measureOwner       String?
+  evidence           String?
+  targetDate         String
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime?
+}
+
+// System Models
+enum SystemStatus {
+  operational
+  maintenance
+  degraded
+  outage
+  not_started
+}
+
+enum BusinessArea {
+  COMMERCIAL      @map("00 - Commercial")
+  DESIGN          @map("01 - Design")
+  ENGINEERING     @map("02 - Engineering")
+  IT              @map("03 - IT")
+  FITOUT          @map("04 - Fitout")
+  ENVIRONMENTAL   @map("05 - Environmental")
+  HSEQ            @map("06 - HSEQ")
+  STAKEHOLDER     @map("07 - Stakeholder")
+  HOME_ORG        @map("09 - Home Org")
+  PROJECT_CONTROLS @map("10 - Project Controls")
+}
+
+enum Phase {
+  IPAA       @map("0 - IPAA")
+  PAA        @map("1- PAA")
+  IPAA_PAA   @map("2 - IPAA + PAA")
+}
+
+enum Requirement {
+  MUST_HAVE   @map("0 - Must have")
+  WOULD_HAVE  @map("1 - Would Have")
+  COULD_HAVE  @map("2 - Could Have")
+  WONT_HAVE   @map("3 - Wont Have")
+  UNKNOWN     @map("9 - Unknown")
+}
+
+enum Adoption {
+  POOR           @map("1 - poor")
+  AVERAGE        @map("2 - average")
+  GOOD           @map("3 - good")
+  VERY_GOOD      @map("4 - very good")
+  COMPREHENSIVE  @map("5 - comprehensive")
+  UNKNOWN        @map("7 - Unknown")
+  NOT_COMMENCED  @map("8 - Not commenced")
+  NA             @map("9 - N/A")
+}
+
+enum HostedBy {
+  THIRD_PARTY
+  MACDOW
+  TT
+  NZTA
+  BECA
+  HOME_ORG
+  UNKNOWN
+}
+
+model SystemData {
+  id              String       @id @default(uuid())
+  businessArea    BusinessArea
+  category        String
+  system          String
+  purpose         String
+  requirement     Requirement
+  phase           Phase
+  licence         String
+  smeResponsible  String
+  projectRole     String
+  adoption        Adoption
+  hostedBy        HostedBy
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+// Hours Tracking Models
+model TimeLogEntry {
+  id          String   @id @default(uuid())
+  projectName String
+  taskName    String
+  userName    String
+  // For dynamic status_monthYear columns, we'll use JSON
+  hourData    Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model HoursResponse {
+  id          String   @id @default(uuid())
+  data        Json     // Stores the HoursPivot structure
+  lastUpdated DateTime
+  createdAt   DateTime @default(now())
+}

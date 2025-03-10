@@ -18,10 +18,14 @@
     "test:watch": "vitest watch",
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prisma:merge": "node prisma/mergePrismaSchema.js",
+    "prisma:migrate": "npm run prisma:merge && npx prisma migrate dev --name init",
+    "prisma:generate": "npm run prisma:merge && npx prisma generate"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^6.3.1",
+    "@prisma/client": "^6.4.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.51",
     "@supabase/supabase-js": "^2.39.7",
@@ -47,7 +51,7 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^7.6.17",
-    "@storybook/addon-essentials": "^7.6.17", 
+    "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
     "@storybook/addon-onboarding": "^1.0.11",

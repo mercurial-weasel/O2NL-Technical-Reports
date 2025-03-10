@@ -1,0 +1,19 @@
+
+// Hours Tracking Models
+model TimeLogEntry {
+  id          String   @id @default(uuid())
+  projectName String
+  taskName    String
+  userName    String
+  // For dynamic status_monthYear columns, we'll use JSON
+  hourData    Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model HoursResponse {
+  id          String   @id @default(uuid())
+  data        Json     // Stores the HoursPivot structure
+  lastUpdated DateTime
+  createdAt   DateTime @default(now())
+}

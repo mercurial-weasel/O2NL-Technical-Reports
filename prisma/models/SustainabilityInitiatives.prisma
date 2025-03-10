@@ -1,0 +1,64 @@
+
+
+// Sustainability Initiatives
+enum SustainabilityThemeType {
+  Emissions
+  Energy
+  Water
+  Waste_Recovery
+  Materials
+  Sustainable_Procurement
+  Nature
+  Legacy
+  General
+  Resilience
+}
+
+enum SustainabilityStatusType {
+  Proposed
+  Pending
+  Delayed
+  Implemented
+}
+
+enum SustainabilityPriorityType {
+  VeryHigh  @map("5 - Very High")
+  High      @map("4 - High")
+  Medium    @map("3 - Medium")
+  Low       @map("2 - Low")
+  VeryLow   @map("1 - Very Low")
+}
+
+enum SustainabilityProcessType {
+  Process
+  Outcome
+  Process_Outcome  @map("Process / Outcome")
+}
+
+enum SustainabilityRequirementType {
+  Must
+  Should
+}
+
+model SustainabilityInitiative {
+  id                 String     @id @default(uuid())
+  theme              SustainabilityThemeType
+  outcome            String
+  status             SustainabilityStatusType
+  priority           SustainabilityPriorityType
+  target             String
+  measure            String?
+  dataType           String?
+  unit               String?
+  parameters         String?
+  reportingApproach  String?
+  processOrOutcome   SustainabilityProcessType
+  mustOrShould       SustainabilityRequirementType
+  measurementMethod  String?
+  notes              String?
+  measureOwner       String?
+  evidence           String?
+  targetDate         String
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime?
+}
