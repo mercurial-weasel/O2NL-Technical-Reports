@@ -4,9 +4,9 @@ import { Filter, BarChart2, Table2 } from 'lucide-react';
 import { Header, Footer, Section, BackNavigation } from '@common';
 import { PivotTable } from './components/PivotTable';
 import { SystemsChart } from './components/SystemsChart';
-import { SystemsApiClient } from '@api/systems/client';
-import { getPivotData } from '@api/systems/transformations';
-import { SystemData } from '@api/systems/types';
+import { SystemsApiClient } from '@api/projectcontrols/programme';
+import { getPivotData } from '@api/projectcontrols/programme';
+import { SystemData } from '@api/projectcontrols/programme';
 import { logger } from '@lib/logger';
 
 type ViewMode = 'table' | 'chart';

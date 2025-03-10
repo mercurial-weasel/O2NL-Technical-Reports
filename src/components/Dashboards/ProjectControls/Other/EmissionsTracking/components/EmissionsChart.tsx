@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { EmissionRecord } from '@api/emissions/types';
-import { getUniqueCategories, getUniqueMonths } from '@api/emissions/transformations';
+import { EmissionRecord } from '@api/projectcontrols/other';
+import { getUniqueCategories, getUniqueMonths } from '@api/projectcontrols/other';
 
 interface EmissionsChartProps {
   data: EmissionRecord[];

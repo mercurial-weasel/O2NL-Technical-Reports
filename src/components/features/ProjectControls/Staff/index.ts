@@ -7,3 +7,4 @@ export { StaffTable } from './StaffTable';
 export { TableFilters } from './TableFilters';
 export { TableHeader } from './TableHeader';
 export { TablePagination } from './TablePagination';
+export *  from './types';

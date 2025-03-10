@@ -2,7 +2,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 import { Card } from '@common/Card/Card';
-import { ExpenditureData } from '@api/cost/pab/types';
+import { ExpenditureData } from '@api/projectcontrols/programme';
 
 interface ExpenditureChartProps {
   data: ExpenditureData;

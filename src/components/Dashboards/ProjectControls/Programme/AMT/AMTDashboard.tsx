@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
 import { Header, Footer, Section, Card, BackNavigation } from '@common';
-import { AMTReportApiClient } from '@api/programme/amt/client';
-import { AMTMonthlyRecord } from '@api/programme/amt/types';
+import { AMTReportApiClient } from '@api/projectcontrols/programme/amt';
+import { AMTMonthlyRecord } from '@api/projectcontrols/programme/amt';
 import { logger } from '@lib/logger';
 
 type SortField = 'discipline' | 'status' | 'trend';

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Header, Footer, Section, Button, BackNavigation } from '@common';
 import { EquipmentCard } from './components/EquipmentCard';
 import { EquipmentDetail } from './components/EquipmentDetail';
-import { EquipmentApiClient } from '@api/equipment/client';
-import { EquipmentType } from '@api/equipment/types';
-import { calculateEquipmentSummaries } from '@api/equipment/transformations';
+import { EquipmentApiClient } from '@api/projectcontrols/other';
+import { EquipmentType } from '@api/projectcontrols/other';
+import { calculateEquipmentSummaries } from '@api/projectcontrols/other';
 import { logger } from '@lib/logger';
 import { Download } from 'lucide-react';
 

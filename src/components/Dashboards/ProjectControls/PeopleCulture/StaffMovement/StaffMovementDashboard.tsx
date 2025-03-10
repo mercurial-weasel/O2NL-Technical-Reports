@@ -3,9 +3,9 @@ import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
 import { StaffMovementChart } from './StaffMovementChart';
 import { TableFilters } from '@features_ProjectControls/Staff';
 import { useTableFilters } from '../hooks/useTableFilters';
-import { StaffFTEApiClient } from '@api/staff-fte/client';
-import { O2NL_Staff } from '@api/staff-fte/types';
-import { calculateStaffMovement } from '@api/staff-fte/transformations';
+import { StaffFTEApiClient } from '@api/projectcontrols/peopleculture';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { calculateStaffMovement } from '@api/projectcontrols/peopleculture';
 import { logger } from '@lib/logger';
 import { BarChart2, Download } from 'lucide-react';
 

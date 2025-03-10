@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HoursPivot } from '@api/cost/hours/types';
+import { HoursPivot } from '@api/projectcontrols/peopleculture';
 import { MultiSelectFilter } from '@common/Filters';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 

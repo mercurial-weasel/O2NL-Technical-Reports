@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
 import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
-import { EmissionsApiClient } from '@api/emissions/client';
+import { EmissionsApiClient } from '@api/projectcontrols/other';
 import { EmissionsChart } from './components/EmissionsChart';
 import { EmissionsTable } from './components/EmissionsTable';
 import { EmissionsFilters } from './components/EmissionsFilters';
-import { getUniqueCategories } from '@api/emissions/transformations';
+import { getUniqueCategories } from '@api/projectcontrols/other';
 import { logger } from '@lib/logger';
 
 type ViewMode = 'chart' | 'table';

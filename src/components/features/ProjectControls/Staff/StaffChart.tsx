@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { O2NL_Staff } from '@api/staff-fte/types';
-import { MonthColumn } from '@dashboards/ProjectControls/StaffFTE/types';
-import { calculateFTESummaries, calculateStaffNumbers } from '@api/staff-fte/transformations';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { MonthColumn } from '@features_ProjectControls/Staff';
+import { calculateFTESummaries, calculateStaffNumbers } from '@api/projectcontrols/peopleculture';
 import { colorPalettes } from './colors';
 
 interface StaffChartProps {

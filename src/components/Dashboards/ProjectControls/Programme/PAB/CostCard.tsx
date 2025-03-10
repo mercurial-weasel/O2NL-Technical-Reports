@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReusableTable, formatCurrency } from '@common/Tables/ReusableTable';
-import { CostData } from '@api/cost/pab/types';
+import { CostData } from '@api/projectcontrols/programme';
 
 interface CostCardProps {
   data: CostData;

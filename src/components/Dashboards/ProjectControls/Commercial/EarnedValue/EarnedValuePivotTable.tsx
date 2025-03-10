@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ChevronDown, ChevronRight, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { LineItemData } from './transformers';
+import { LineItemData } from '@api/projectcontrols/commercial';
 
 interface EarnedValuePivotTableProps {
   data: LineItemData[];

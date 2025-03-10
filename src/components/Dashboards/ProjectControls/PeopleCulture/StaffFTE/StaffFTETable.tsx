@@ -1,9 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { O2NL_Staff } from '@api/staff-fte/types';
-import { TableHeader } from './components/TableHeader';
-import { TablePagination } from './components/TablePagination';
-import { FTESummaryTable } from './components/FTESummaryTable';
-import { SortConfig, MonthColumn } from './types';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { TableHeader, TablePagination,FTESummaryTable  } from '@features_ProjectControls/Staff/';
+import { SortConfig, MonthColumn } from '@features_ProjectControls/Staff/';
 
 interface StaffFTETableProps {
   data: O2NL_Staff[];

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Header, Footer, Section, BackNavigation } from '@common';
 import { StatusIndicator, TrendIndicator, TaskList, RisksCard, DependenciesCard } from '@features_ProjectControls/MonthlyReport';
-import { AMTReportApiClient } from '@api/programme/amt/client';
-import { AMTMonthlyRecord } from '@api/programme/amt/types';
+import { AMTReportApiClient } from '@api/projectcontrols/programme/amt';
+import { AMTMonthlyRecord } from '@api/projectcontrols/programme/amt';
 import { logger } from '@lib/logger';
 
 export function AMTDetailPage() {

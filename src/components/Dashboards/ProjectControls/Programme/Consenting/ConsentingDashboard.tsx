@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '@common/Header/Header';
-import { Footer } from '@common/Footer/Footer';
-import { Section } from '@common/Section/Section';
-import { Card } from '@common/Card/Card';
-import { BackNavigation } from '@common/BackNavigation/BackNavigation';
-import { ConsentingApiClient } from '@api/programme/consenting/client';
+import { Header, Footer, Section, Card, BackNavigation } from '@common';
+import { ConsentingApiClient } from '@api/projectcontrols/programme';
 import { ConsentingTable } from './components/ConsentingTable';
 import { RiskSummaryCards } from './components/RiskSummaryCards';
-import { calculateRiskSummary } from '@api/programme/consenting/transformations';
+import { calculateRiskSummary } from '@api/projectcontrols/programme';
 import { logger } from '@lib/logger';
 
 export function ConsentingDashboard() {

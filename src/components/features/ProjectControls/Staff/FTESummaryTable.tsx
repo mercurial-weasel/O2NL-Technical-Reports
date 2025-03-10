@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { O2NL_Staff } from '@api/staff-fte/types';
-import { MonthColumn } from '../types';
-import { calculateFTESummaries } from '@api/staff-fte/transformations';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { MonthColumn } from './types';
+import { calculateFTESummaries } from '@api/projectcontrols/peopleculture';
 
 interface FTESummaryTableProps {
   data: O2NL_Staff[];

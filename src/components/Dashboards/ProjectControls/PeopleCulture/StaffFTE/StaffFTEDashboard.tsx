@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
 import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
-import { StaffFTEApiClient } from '@api/staff-fte/client';
-import { O2NL_Staff } from '@api/staff-fte/types';
+import { StaffFTEApiClient } from '@api/projectcontrols/peopleculture';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
 import { logger } from '@lib/logger';
 import { StaffChart } from '@features_ProjectControls/Staff';
 import { TableFilters, FTESummaryTable, StaffTable } from '@features_ProjectControls/Staff/';
 import { useTableFilters } from '../hooks/useTableFilters';
-import { MonthColumn } from './types';
-import { calculateFTESummaries } from '@api/staff-fte/transformations';
+import { MonthColumn } from '@features_ProjectControls/Staff/types';
+import { calculateFTESummaries } from '@api/projectcontrols/peopleculture';
 
 // Generate array of month columns from Sep 24 to Dec 30
 const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {

@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Header, Footer, Section } from '@common';
 import { BackNavigation } from '@common/BackNavigation';
 import { StatusIndicator, TrendIndicator, TaskList, RisksCard, DependenciesCard } from '@features_ProjectControls/MonthlyReport';
-import { SustainabilityReportApiClient } from '@api/programme/sustainability/client';
-import { SustainabilityMonthlyRecord } from '@api/programme/sustainability/types';
+import { SustainabilityReportApiClient } from '@api/projectcontrols/programme';
+import { SustainabilityMonthlyRecord } from '@api/projectcontrols/programme';
 import { logger } from '@lib/logger';
 
 export function SustainabilityDetailPage() {

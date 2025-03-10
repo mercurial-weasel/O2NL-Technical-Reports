@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
 import { TimeLogsTable } from './TimeLogsTable';
-import { HoursApiClient } from '@api/cost/hours/client';
-import { HoursResponse } from '@api/cost/hours/types';
+import { HoursApiClient } from '@api/projectcontrols/peopleculture';
+import { HoursResponse } from '@api/projectcontrols/peopleculture';
 import { logger } from '@lib/logger';
 
 export function TimeLogsDashboard() {

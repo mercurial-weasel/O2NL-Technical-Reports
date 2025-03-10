@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from '@common';
-import { DustApiClient } from '@api/sensors/dust/client';
+import { DustApiClient } from '@api/environmental';
 import { DateRangeSelector, DeviceSelector, ViewModeToggle } from '@common'
 
 import { 
