@@ -7,6 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: 'dist', // Ensure output directory matches Amplify config
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

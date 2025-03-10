@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx vite",
     "start": "npx vite",
-    "build": "npx vite build",
+    "build": "vite build",
     "lint": "eslint . --config src/config/eslint.config.js",
     "preview": "npx vite preview",
     "swagger": "tsx src/services/swagger/generate.ts",
