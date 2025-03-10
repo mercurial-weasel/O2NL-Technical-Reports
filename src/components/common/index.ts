@@ -4,7 +4,7 @@ export { Card } from './Card/Card';
 export { Container } from './Container';
 export { Section } from './Section/Section';
 export { Header } from './Header/Header';
-export { Footer } from './Footer/Footer';
+export { Footer } from './Footer';
 export { BackNavigation } from './BackNavigation/BackNavigation';
 
 // Chart components
