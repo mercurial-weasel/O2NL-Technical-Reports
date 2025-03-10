@@ -4,9 +4,9 @@ import { AuthProvider } from '@lib/auth';
 import { ProtectedRoute } from '@components/Authentication/ProtectedRoute';
 import { LoginPage } from '@components/Authentication/LoginPage';
 import HomeTest from '@components/HomeTest';
-import { GeotechnicalTests } from '@components/DisciplineDashboards/Geotechnical';
-import { EnvironmentalTests } from '@components/DisciplineDashboards/Environmental';
-import { ProjectControlsDashboards } from '@components/DisciplineDashboards/ProjectControls';
+import { GeotechnicalTests } from '@components/DashboardGroups/Geotechnical';
+import { EnvironmentalTests } from '@components/DashboardGroups/Environmental';
+import { ProjectControlsDashboards } from '@components/DashboardGroups/ProjectControls';
 
 // Commercial
 import { BudgetTracking } from '@dashboards/ProjectControls/Commercial/BudgetTracking';
