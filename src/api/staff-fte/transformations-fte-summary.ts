@@ -1,6 +1,6 @@
 import { O2NL_Staff } from './types';
 import { MonthColumn } from '../../components/Dashboards/ProjectControls/StaffFTE/types';
-import { logger } from '../../lib/logger';
+import { logger } from '@lib/logger';
 
 // FTE Summary Types
 export interface OrgSummary {

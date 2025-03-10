@@ -1,7 +1,7 @@
 import { BaseApiClient } from '../../base/client';
 import { AMTMonthlyRecord, AMTRecords } from './types';
 import { mockAMTData } from './mock-data';
-import { logger } from '../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class AMTReportApiClient extends BaseApiClient {
   // Get all available months

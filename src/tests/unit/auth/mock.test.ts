@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mockAuth } from '../../../lib/auth/mock';
+import { mockAuth } from '@lib/auth/mock';
 
 describe('Mock Auth', () => {
   it('should successfully sign in with valid credentials', async () => {

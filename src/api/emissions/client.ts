@@ -3,7 +3,7 @@ import { EmissionsData, EmissionRecord } from './types';
 import { API_CONFIG } from '../../data/config/api';
 import { generateEmissionData } from './generators';
 import { calculateTotalCarbonEstimate } from './transformations';
-import { logger } from '../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class EmissionsApiClient extends BaseApiClient {
   async fetchEmissionsData(): Promise<EmissionsData> {

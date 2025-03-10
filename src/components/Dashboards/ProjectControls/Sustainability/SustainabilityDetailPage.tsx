@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
+import { Header } from '@common/Header';
+import { Footer } from '@common/Footer';
 import { Section } from '../../../common';
-import { BackNavigation } from '../../../common/BackNavigation';
+import { BackNavigation } from '@common/BackNavigation';
 import { StatusIndicator } from '../AMT/components/StatusIndicator';
 import { TrendIndicator } from '../AMT/components/TrendIndicator';
 import { TaskList } from '../AMT/components/TaskList';
@@ -11,7 +11,7 @@ import { RisksCard } from '../AMT/components/RisksCard';
 import { DependenciesCard } from '../AMT/components/DependenciesCard';
 import { SustainabilityReportApiClient } from '@api/programme/sustainability/client';
 import { SustainabilityMonthlyRecord } from '@api/programme/sustainability/types';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export function SustainabilityDetailPage() {
   const { id } = useParams();

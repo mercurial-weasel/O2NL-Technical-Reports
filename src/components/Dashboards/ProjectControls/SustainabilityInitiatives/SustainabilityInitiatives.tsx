@@ -6,7 +6,7 @@ import { ThemeDetail } from './ThemeDetail';
 import { GanttChart } from './GanttChart';
 import { SustainabilityApiClient } from '@api/sustainability/client';
 import { SustainabilityInitiative } from '@api/sustainability/types';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 import { 
   filterInitiativesByStatus, 
   filterInitiativesByTheme,

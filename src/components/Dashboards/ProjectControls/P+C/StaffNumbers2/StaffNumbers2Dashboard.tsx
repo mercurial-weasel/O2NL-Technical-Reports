@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
-import { Header } from '../../../../common/Header/Header';
-import { Footer } from '../../../../common/Footer/Footer';
-import { Section } from '../../../../common/Section/Section';
-import { Card } from '../../../../common/Card/Card';
-import { Button } from '../../../../common/Button/Button';
-import { BackNavigation } from '../../../../common/BackNavigation/BackNavigation';
+import { Header } from '@common/Header/Header';
+import { Footer } from '@common/Footer/Footer';
+import { Section } from '@common/Section/Section';
+import { Card } from '@common/Card/Card';
+import { Button } from '@common/Button/Button';
+import { BackNavigation } from '@common/BackNavigation/BackNavigation';
 import { StaffNumbersApiClient } from '@api/staff-numbers/client';
 import { O2NL_Staff } from '@api/staff-fte/types';
 import { calculateStaffNumbers } from '@api/staff-fte/transformations-staff-numbers2';
@@ -13,7 +13,7 @@ import { TableFilters } from '../../../ProjectControls/StaffFTE/components/Table
 import { useTableFilters } from '../../../ProjectControls/StaffFTE/hooks/useTableFilters';
 import { StaffNumbers2Chart } from './components/StaffNumbers2Chart';
 import { StaffNumbers2Table } from './components/StaffNumbers2Table';
-import { logger } from '../../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 type ViewMode = 'chart' | 'table';
 

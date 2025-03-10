@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
-import { Header } from '../../../common/Header/Header';
-import { Footer } from '../../../common/Footer/Footer';
-import { Section } from '../../../common/Section/Section';
-import { Card } from '../../../common/Card/Card';
-import { Button } from '../../../common/Button/Button';
-import { BackNavigation } from '../../../common/BackNavigation/BackNavigation';
+import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
 import { TimeLogsTable } from './TimeLogsTable';
 import { HoursApiClient } from '@api/cost/hours/client';
 import { HoursResponse } from '@api/cost/hours/types';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export function TimeLogsDashboard() {
   const [hoursData, setHoursData] = useState<HoursResponse | null>(null);

@@ -1,4 +1,4 @@
-import { AuthUser } from '../../lib/auth/types';
+import { AuthUser } from '@lib/auth/types';
 
 export const mockUsers: AuthUser[] = [
   {

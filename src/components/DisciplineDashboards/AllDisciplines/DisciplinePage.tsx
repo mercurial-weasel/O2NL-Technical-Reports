@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Header } from '../../common/Header';
-import { Footer } from '../../common/Footer';
+import { Header } from '@common/Header';
+import { Footer } from '@common/Footer';
 import { Section } from '../../common';
 import { DisciplineSection } from './DisciplineSection';
 import { DisciplineProps, DisciplineStatus } from './types';
 import { StatusFilter } from './StatusFilter';
-import { useAuth } from '../../../lib/auth';
-import { logger } from '../../../lib/logger';
+import { useAuth } from '@lib/auth';
+import { logger } from '@lib/logger';
 
 export function DisciplinePage({ title, sections }: DisciplineProps) {
   const { state: authState } = useAuth();

@@ -1,7 +1,7 @@
-import { useAuth } from '../lib/auth';
+import { useAuth } from '@lib/auth';
 import { hasRouteAccess } from '../routes/accessControl';
-import { AccessRight } from '../lib/auth/types';
-import { logger } from '../lib/logger';
+import { AccessRight } from '@lib/auth/types';
+import { logger } from '@lib/logger';
 
 export function useAccessControl() {
   const { state: authState } = useAuth();

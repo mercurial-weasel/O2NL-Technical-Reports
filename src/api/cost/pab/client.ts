@@ -2,7 +2,7 @@ import { BaseApiClient } from '../../base/client';
 import { MonthlyPABRecord, PABResponse } from './types';
 import { API_CONFIG } from '../../../data/config/api';
 import { mockPABData } from './mock-data';
-import { logger } from '../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class PABApiClient extends BaseApiClient {
   async fetchPABData(month?: string): Promise<PABResponse> {

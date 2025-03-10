@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
+import { Header } from '@common/Header';
+import { Footer } from '@common/Footer';
 import { Section } from '../../../common';
-import { BackNavigation } from '../../../common/BackNavigation';
+import { BackNavigation } from '@common/BackNavigation';
 import { StatusIndicator } from './components/StatusIndicator';
 import { TrendIndicator } from './components/TrendIndicator';
 import { TaskList } from './components/TaskList';
@@ -11,7 +11,7 @@ import { RisksCard } from './components/RisksCard';
 import { DependenciesCard } from './components/DependenciesCard';
 import { AMTReportApiClient } from '@api/programme/amt/client';
 import { AMTMonthlyRecord } from '@api/programme/amt/types';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export function AMTDetailPage() {
   const { id } = useParams();

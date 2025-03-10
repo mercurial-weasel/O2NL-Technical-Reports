@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HoursPivot } from '@api/cost/hours/types';
-import { MultiSelectFilter } from '../../../common/Filters';
+import { MultiSelectFilter } from '@common/Filters';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
 interface TimeLogsTableProps {

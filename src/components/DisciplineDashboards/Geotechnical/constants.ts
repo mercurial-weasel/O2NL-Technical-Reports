@@ -1,6 +1,6 @@
 import { Mountain, Ruler, Compass, ArrowDownUp, Waves, FlaskConical, Hammer, TestTubes, Scale, Container, Droplets, Microscope, Boxes, Atom, Gauge, Beaker, DivideIcon as LucideIcon } from 'lucide-react';
 import { DisciplineSection } from '../AllDisciplines/types';
-import { AccessRight } from '../../../lib/auth/types';
+import { AccessRight } from '@lib/auth/types';
 
 // Helper function to create icon components
 const createIcon = (Icon: LucideIcon) => {

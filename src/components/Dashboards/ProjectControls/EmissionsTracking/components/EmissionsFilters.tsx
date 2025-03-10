@@ -1,5 +1,5 @@
 import React from 'react';
-import { MultiSelectFilter } from '../../../../common/Filters';
+import { MultiSelectFilter } from '@common/Filters';
 
 interface EmissionsFiltersProps {
   categories: string[];

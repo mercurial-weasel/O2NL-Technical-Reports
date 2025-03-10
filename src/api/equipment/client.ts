@@ -2,7 +2,7 @@ import { BaseApiClient } from '../base/client';
 import { EquipmentData } from './types';
 import { API_CONFIG } from '../../data/config/api';
 import { mockEquipmentData } from './mock-data';
-import { logger } from '../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class EquipmentApiClient extends BaseApiClient {
   async fetchEquipmentData(): Promise<EquipmentData> {

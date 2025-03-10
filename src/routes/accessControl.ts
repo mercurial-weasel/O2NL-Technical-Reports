@@ -1,4 +1,4 @@
-import { AccessRight } from '../lib/auth/types';
+import { AccessRight } from '@lib/auth/types';
 
 // Define route configuration with access rights
 export interface RouteConfig {

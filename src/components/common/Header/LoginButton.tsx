@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LogIn, LogOut } from 'lucide-react';
-import { useAuth } from '../../../lib/auth';
+import { useAuth } from '@lib/auth';
 import { shadows } from '../../../constants/theme';
 
 export function LoginButton() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DisciplineTest } from '../types';
-import { useAuth } from '../../../../lib/auth';
+import { useAuth } from '@lib/auth';
 
 interface DisciplineCardProps {
   test: DisciplineTest;

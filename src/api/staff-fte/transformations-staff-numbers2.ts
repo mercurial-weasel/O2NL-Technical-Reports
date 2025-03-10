@@ -1,5 +1,5 @@
 import { O2NL_Staff } from './types';
-import { logger } from '../../lib/logger';
+import { logger } from '@lib/logger';
 
 // Interface for active staff counts
 export interface ActiveStaff {

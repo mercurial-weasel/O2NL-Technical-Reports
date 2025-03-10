@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Header } from '../../../../components/common/Header';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from '../../../../lib/auth';
+import { AuthProvider } from '@lib/auth';
 
 describe('Header', () => {
   const renderHeader = () => {

@@ -1,7 +1,7 @@
 import { BaseApiClient } from '../../base/client';
 import { SustainabilityMonthlyRecord, SustainabilityRecords } from './types';
 import { mockSustainabilityData } from './mock-data';
-import { logger } from '../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class SustainabilityReportApiClient extends BaseApiClient {
   // Get all available months

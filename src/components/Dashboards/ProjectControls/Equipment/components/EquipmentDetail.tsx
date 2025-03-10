@@ -3,8 +3,8 @@ import { MapPin, Table, Download } from 'lucide-react';
 import { EquipmentType, EquipmentStatus } from '@api/equipment/types';
 import { EquipmentTable } from './EquipmentTable';
 import { EquipmentMap } from './EquipmentMap';
-import { Button } from '../../../../common/Button/Button';
-import { logger } from '../../../../../lib/logger';
+import { Button } from '@common/Button/Button';
+import { logger } from '@lib/logger';
 
 interface EquipmentDetailProps {
   equipmentType: EquipmentType;

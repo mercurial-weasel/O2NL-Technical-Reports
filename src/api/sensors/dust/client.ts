@@ -2,7 +2,7 @@ import { BaseApiClient } from '../../base/client';
 import { DustData } from './types';
 import { API_CONFIG } from '../../../data/config/api';
 import { mockDustData } from './mock-data';
-import { logger } from '../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export class DustApiClient extends BaseApiClient {
   async fetchDustData(): Promise<DustData> {

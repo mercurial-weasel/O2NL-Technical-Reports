@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card } from '../../../../common/Card';
+import { Card } from '@common/Card';
 import { StatusIndicator } from './StatusIndicator';
 import { TrendIndicator } from './TrendIndicator';
 import { AMTItem } from '../data/amtData';

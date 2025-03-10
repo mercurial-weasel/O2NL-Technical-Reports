@@ -1,5 +1,5 @@
 import { DivideIcon as LucideIcon } from 'lucide-react';
-import { AccessRight } from '../../../../lib/auth/types';
+import { AccessRight } from '@lib/auth/types';
 
 export interface IconConfig {
   icon: LucideIcon;

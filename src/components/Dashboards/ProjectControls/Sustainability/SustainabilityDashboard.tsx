@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { Header } from '../../../common/Header/Header';
-import { Footer } from '../../../common/Footer/Footer';
-import { Section } from '../../../common/Section/Section';
-import { Card } from '../../../common/Card/Card';
-import { BackNavigation } from '../../../common/BackNavigation/BackNavigation';
+import { Header } from '@common/Header/Header';
+import { Footer } from '@common/Footer/Footer';
+import { Section } from '@common/Section/Section';
+import { Card } from '@common/Card/Card';
+import { BackNavigation } from '@common/BackNavigation/BackNavigation';
 import { SustainabilityReportApiClient } from '@api/programme/sustainability/client';
 import { SustainabilityMonthlyRecord } from '@api/programme/sustainability/types';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 type SortField = 'discipline' | 'status' | 'trend';
 type SortDirection = 'asc' | 'desc';

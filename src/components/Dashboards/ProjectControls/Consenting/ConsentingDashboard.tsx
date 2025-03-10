@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../../../common/Header/Header';
-import { Footer } from '../../../common/Footer/Footer';
-import { Section } from '../../../common/Section/Section';
-import { Card } from '../../../common/Card/Card';
-import { BackNavigation } from '../../../common/BackNavigation/BackNavigation';
+import { Header } from '@common/Header/Header';
+import { Footer } from '@common/Footer/Footer';
+import { Section } from '@common/Section/Section';
+import { Card } from '@common/Card/Card';
+import { BackNavigation } from '@common/BackNavigation/BackNavigation';
 import { ConsentingApiClient } from '@api/programme/consenting/client';
 import { ConsentingTable } from './components/ConsentingTable';
 import { RiskSummaryCards } from './components/RiskSummaryCards';
 import { calculateRiskSummary } from '@api/programme/consenting/transformations';
-import { logger } from '../../../../lib/logger';
+import { logger } from '@lib/logger';
 
 export function ConsentingDashboard() {
   const [selectedMonth, setSelectedMonth] = useState<string>('');
