@@ -7,22 +7,36 @@ import HomeTest from '@components/HomeTest';
 import { GeotechnicalTests } from '@components/DisciplineDashboards/Geotechnical';
 import { EnvironmentalTests } from '@components/DisciplineDashboards/Environmental';
 import { ProjectControlsDashboards } from '@components/DisciplineDashboards/ProjectControls';
-import { ProjectMilestones } from '@dashboards/ProjectControls/Milestones';
-import { PABDashboard } from '@dashboards/ProjectControls/PAB';
-import { AMTDashboard, AMTDetailPage, BudgetTracking } from '@dashboards/ProjectControls/AMT';
-import { SystemsDashboard } from '@dashboards/ProjectControls/Systems';
-import { StaffNumbers } from '@dashboards/ProjectControls/P+C';
-import { StaffFTEDashboard } from '@dashboards/ProjectControls/StaffFTE';
-import { StaffMovementDashboard } from '@dashboards/ProjectControls/P+C/StaffMovement';
-import { TimeLogsDashboard } from '@dashboards/P+C/TimeLogs';
+
+// Commercial
+import { BudgetTracking } from '@dashboards/ProjectControls/Commercial/BudgetTracking';
 import { EarnedValueSummary } from '@dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
-import { EmissionsTracking } from '@dashboards/ProjectControls/EmissionsTracking';
-import { ConsentingDashboard } from '@dashboards/ProjectControls/Consenting';
+
+// Project Controls
+import { ProjectMilestones } from '@dashboards/ProjectControls/Milestones';
+import { PABDashboard } from '@dashboards/ProjectControls/Programme/PAB';
+import { AMTDashboard, AMTDetailPage } from '@dashboards/ProjectControls/Programme/AMT';
+import { SystemsDashboard } from '@dashboards/ProjectControls/Programme/Systems';
+import { ConsentingDashboard } from '@dashboards/ProjectControls/Programme/Consenting';
+import { SustainabilityDashboard, SustainabilityDetailPage } from '@dashboards/ProjectControls/Programme/Sustainability';
+
+// P+C
+import { StaffNumbers2Dashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffNumbers2';
+import { StaffFTEDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffFTE';
+import { StaffMovementDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffMovement';
+import { TimeLogsDashboard } from '@dashboards/ProjectControls/PeopleCulture/TimeLogs';
+
+
+
+// Other
+import { EmissionsTracking } from '@dashboards/ProjectControls/Other/EmissionsTracking';
+import { EquipmentStatus } from '@dashboards/ProjectControls/Other/Equipment';
+
+
+
 import { GeoDashboardSPT } from '@dashboards/Geo';
-import { EquipmentStatus } from '@dashboards/ProjectControls/Equipment';
 //import { DustMonitoring } from '@environmental_dust'; // Fixed import path
 import { getRequiredAccessRights } from '@routes/accessControl';
-import { SustainabilityDashboard, SustainabilityDetailPage } from '@dashboards/ProjectControls/Sustainability';
 
 function App2() {
   return (
@@ -78,7 +92,7 @@ function App2() {
           
           <Route path="/project-controls/staff-numbers" element={
             <ProtectedRoute requiredAccess={getRequiredAccessRights('/project-controls/staff-numbers')}>
-              <StaffNumbers />
+              <StaffNumbers2Dashboard />
             </ProtectedRoute>
           } />
           

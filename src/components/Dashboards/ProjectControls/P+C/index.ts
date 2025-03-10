@@ -1,1 +1,0 @@
-export { StaffNumbers2Dashboard as StaffNumbers } from './StaffNumbers2';
