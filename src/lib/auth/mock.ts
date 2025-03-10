@@ -47,7 +47,80 @@ const mockUsers: (AuthUser & { password: string })[] = [
     password: 'pab123',
     accessRights: ['PAB'],
     created_at: new Date().toISOString()
-  }
+  },
+  {
+    id: '6',
+    email: 'hugh.milliken@o2nl.nz',
+    firstName: 'Hugh',
+    lastName: 'Milliken',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '7',
+    email: 'andrew.goldie@o2nl.nz',
+    firstName: 'Andrew',
+    lastName: 'Goldie',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '8',
+    email: 'peter.bradshaw@o2nl.nz',
+    firstName: 'Peter',
+    lastName: 'Bradshaw',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '9',
+    email: 'sam.moore@o2nl.nz',
+    firstName: 'Sam',
+    lastName: 'Moore',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '10',
+    email: 'natalie.roach@o2nl.nz',
+    firstName: 'Natalie',
+    lastName: 'Roach',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '11',
+    email: 'kate.searle@o2nl.nz',
+    firstName: 'Kate',
+    lastName: 'Searle',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+},
+{
+    id: '12',
+    email: 'jarrod.telford@o2nl.nz',
+    firstName: 'Jarrod',
+    lastName: 'Telford',
+    password: 'O2NL2025',
+    accessRights: ['P+C'],
+    created_at: new Date().toISOString()
+}, 
+{
+  id: '14',
+  email: 'danielle.bevan@o2nl.nz',
+  firstName: 'Danielle',
+  lastName: 'Bevan',
+  password: 'O2NL2025',
+  accessRights: ['P+C'],
+  created_at: new Date().toISOString()
+}
+
 ];
 
 // Mock authentication functions

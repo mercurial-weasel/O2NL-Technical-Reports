@@ -1,7 +1,7 @@
 // src/components/Dashboards/ProjectControls/PAB/ExpenditureChart.tsx
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { Card } from '../../../common/Card';
+import { Card } from '../../../common/Card/Card';
 import { ExpenditureData } from '../../../../api/cost/pab/types';
 
 interface ExpenditureChartProps {

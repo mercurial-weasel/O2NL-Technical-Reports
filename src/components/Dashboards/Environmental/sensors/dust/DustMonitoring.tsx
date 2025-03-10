@@ -1,24 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '../../../../common/Card';
-import { DustApiClient } from '../../../../../api/sensors/dust/client';
-import { DustTable } from './components/DustTable';
+import { Card } from '@common/Card/Card';
+import { Button } from '@common/Button/Button';
+import { DustApiClient } from '@api/sensors/dust/client';
 import { DustChart } from './components/DustChart';
 import { DustCalendar } from './components/DustCalendar';
-import { WindRose } from './components/WindRose';
 import { DustMap } from './components/DustMap';
-import { calculateWindRoseData, calculateDailyAverages } from '../../../../../api/sensors/dust/transformations';
+import { calculateWindRoseData, calculateDailyAverages } from '@api/sensors/dust/transformations';
 
 // Import common components
 import {
   DateRangeSelector,
   DeviceSelector,
   ViewModeToggle,
-  ParameterSelector,
+  SensorMap,
+  ChartContainer,
+  ChartLegend,
+  ComplianceIndicator,
+  DeviceStatusBadge,
+  MetricCard
+} from '@common';
+
+// Import sensor-specific components
+import {
   SensorHeader,
   SensorLayout,
   LoadingState,
-  ErrorState
-} from '../common';
+  ErrorState,
+  SensorMetrics,
+  SensorStats,
+  SensorFilters,
+  SensorThresholds,
+  SensorAlerts,
+  SensorExport
+} from '@sensor_common';
 
 type ViewMode = 'table' | 'chart' | 'calendar';
 
@@ -48,19 +62,11 @@ export function DustMonitoring() {
     fetchData();
   }, []);
 
-  if (isLoading) {
-    return <LoadingState backLink="/environmental" backText="Back to Environmental Tests" />;
-  }
-
-  if (error) {
-    return <ErrorState error={error} backLink="/environmental" backText="Back to Environmental Tests" />;
-  }
-
-  const devices = dustData.devices.map(device => ({
+  const devices = dustData?.devices.map(device => ({
     id: device.id,
     name: device.deviceName,
     model: device.deviceModel
-  }));
+  })) || [];
 
   const windRoseData = calculateWindRoseData(dustData, selectedDevices, dateRange);
   const monthlyData = calculateDailyAverages(dustData, selectedDevices, dateRange, selectedParameters);
@@ -68,6 +74,14 @@ export function DustMonitoring() {
   const handleDownloadCSV = () => {
     // ... CSV download logic (unchanged)
   };
+
+  if (isLoading) {
+    return <LoadingState backLink="/environmental" backText="Back to Environmental Tests" />;
+  }
+
+  if (error) {
+    return <ErrorState error={error} backLink="/environmental" backText="Back to Environmental Tests" />;
+  }
 
   return (
     <SensorLayout backLink="/environmental" backText="Back to Environmental Tests">
@@ -120,7 +134,7 @@ export function DustMonitoring() {
         <div className="space-y-6">
           {/* Wind Rose */}
           <Card className="p-6 h-[500px]" hover>
-            <WindRose data={windRoseData} />
+            <DustMap data={dustData} />
           </Card>
 
           {/* Map */}

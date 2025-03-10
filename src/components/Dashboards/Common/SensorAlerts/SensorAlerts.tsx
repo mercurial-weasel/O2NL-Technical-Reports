@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../../../common/Card';
+import { Card } from '@common/Card';
 import { Bell } from 'lucide-react';
 
 interface Alert {

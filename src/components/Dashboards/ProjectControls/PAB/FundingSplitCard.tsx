@@ -1,7 +1,6 @@
-// src/components/Dashboards/ProjectControls/PAB/FundingSplitCard.tsx
 import React from 'react';
 import Plot from 'react-plotly.js';
-import { Card } from '../../../common/Card';
+import { Card } from '../../../common/Card/Card';
 import { FundingSplitData } from '../../../../api/cost/pab/types';
 
 interface FundingSplitCardProps {

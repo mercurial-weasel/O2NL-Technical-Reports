@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Card } from '../../../common/Card';
-import { Button } from '../../../common/Button';
-import { BackNavigation } from '../../../common/BackNavigation';
-import { EmissionsApiClient } from '../../../../api/emissions/client';
+import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
+import { EmissionsApiClient } from '@api/emissions/client';
 import { EmissionsChart } from './components/EmissionsChart';
 import { EmissionsTable } from './components/EmissionsTable';
 import { EmissionsFilters } from './components/EmissionsFilters';
-import { getUniqueCategories } from '../../../../api/emissions/transformations';
-import { logger } from '../../../../lib/logger';
+import { getUniqueCategories } from '@api/emissions/transformations';
+import { logger } from '@lib/logger';
 
 type ViewMode = 'chart' | 'table';
 
 export function EmissionsTracking() {
   const [viewMode, setViewMode] = useState<ViewMode>('chart');
+  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set(['all']));
+  const [selectedYears, setSelectedYears] = useState<Set<string>>(new Set(['all']));
   const [emissionsData, setEmissionsData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const [selectedCategories, setSelectedCategories] = useState<Set<string>>(new Set(['all']));
-  const [selectedYears, setSelectedYears] = useState<Set<string>>(new Set(['all']));
 
   useEffect(() => {
     const fetchData = async () => {

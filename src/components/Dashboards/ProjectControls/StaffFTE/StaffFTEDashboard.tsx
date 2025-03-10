@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Card } from '../../../common/Card';
-import { Button } from '../../../common/Button';
-import { BackNavigation } from '../../../common/BackNavigation';
-import { StaffFTEApiClient } from '../../../../api/staff-fte/client';
-import { O2NL_Staff } from '../../../../api/staff-fte/types';
-import { logger } from '../../../../lib/logger';
-import { StaffChart } from '../P+C/StaffComponents/StaffChart';
+import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
+import { StaffFTEApiClient } from '@api/staff-fte/client';
+import { O2NL_Staff } from '@api/staff-fte/types';
+import { logger } from '@lib/logger';
+import { StaffChart } from '@dashboards';
 import { TableFilters } from './components/TableFilters';
 import { FTESummaryTable } from './components/FTESummaryTable';
 import { StaffTable } from './components/StaffTable';
 import { useTableFilters } from './hooks/useTableFilters';
 import { MonthColumn } from './types';
-import { calculateFTESummaries } from '../../../../api/staff-fte/transformations';
+import { calculateFTESummaries } from '@api/staff-fte/transformations';
 
 // Generate array of month columns from Sep 24 to Dec 30
 const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {
@@ -125,9 +120,9 @@ export function StaffFTEDashboard() {
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
 
-      logger.info('FTE CSV download completed');
+      logger.info('CSV download completed');
     } catch (error) {
-      logger.error('FTE CSV download failed', { error });
+      logger.error('CSV download failed', { error });
       // You might want to show a user-friendly error message here
     }
   };
@@ -221,7 +216,7 @@ export function StaffFTEDashboard() {
             </p>
           </div>
 
-          {/* Filters - Always visible */}
+          {/* Filters */}
           <TableFilters
             filters={{
               disciplines: uniqueValues.disciplines.map(d => ({ value: d, label: d })),

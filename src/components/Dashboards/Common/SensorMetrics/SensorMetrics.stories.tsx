@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SensorMetrics } from './SensorMetrics';
+import { SensorMetrics } from '@dashboards/Common/SensorMetrics';
 import { Thermometer, Wind, Droplets, Gauge } from 'lucide-react';
 
 const meta = {

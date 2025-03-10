@@ -1,7 +1,40 @@
 {
-  "files": [],
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@common/*": ["src/components/common/*"],
+      "@sensor_common/*": ["src/components/Dashboards/Environmental/sensors/sensor_common/*"],
+      "@dashboards/*": ["src/components/Dashboards/*"],
+      "@api/*": ["src/api/*"],
+      "@lib/*": ["src/lib/*"],
+      "@constants/*": ["src/constants/*"],
+      "@config/*": ["src/config/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@types/*": ["src/types/*"],
+      "@tests/*": ["src/tests/*"],
+      "@data/*": ["src/data/*"],
+      "@routes/*": ["src/routes/*"]
+    }
+  },
+  "include": ["src"],
   "references": [
-    { "path": "./src/config/tsconfig/tsconfig.app.json" },
-    { "path": "./src/config/tsconfig/tsconfig.node.json" }
+    { "path": "./tsconfig.node.json" }
   ]
 }

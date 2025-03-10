@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Card } from '../../../common/Card';
+import { Card } from '@common';
 import { SustainabilityInitiative } from './data';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
 

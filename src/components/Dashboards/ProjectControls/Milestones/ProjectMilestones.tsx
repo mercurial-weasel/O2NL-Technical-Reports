@@ -1,11 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { Header } from '../../../common/Header';
-import { Footer } from '../../../common/Footer';
-import { Section } from '../../../common';
-import { Card } from '../../../common/Card';
-import { BackNavigation } from '../../../common/BackNavigation';
-import { MultiSelectFilter } from '../../../common/Filters';
+import { Header, Footer, Section, Card, BackNavigation, MultiSelectFilter } from '@common';
 import { milestoneData, MilestoneTask } from './data';
 
 type SortField = keyof MilestoneTask;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from '../../../../common/Card';
+import { Card } from '../../../../common/Card/Card';
 import { HelpCircle } from 'lucide-react';
 
 interface DependenciesCardProps {

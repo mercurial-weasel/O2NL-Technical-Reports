@@ -1,6 +1,6 @@
 import React from 'react';
 import { Download } from 'lucide-react';
-import { Button } from '../../../common/Button';
+import { Button } from '@common/Button';
 
 interface SensorExportProps {
   onExport: () => void;
