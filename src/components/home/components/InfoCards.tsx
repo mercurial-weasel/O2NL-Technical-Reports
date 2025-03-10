@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section } from '../../common';
 import { InfoCard } from './InfoCard';
-import { CARDS } from '../../../constants/default';
+import { CARDS } from '@constants/default';
 
 interface InfoCardsProps {
   onGeotechnicalClick: () => void;

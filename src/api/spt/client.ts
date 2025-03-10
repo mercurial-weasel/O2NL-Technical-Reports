@@ -1,7 +1,7 @@
 // src/api/spt/client.ts
 import { BaseApiClient } from '../base/client';
 import { SPTResponse } from './types';
-import { API_CONFIG } from '../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { mockSPTData } from './mock-data';
 
 export class SPTApiClient extends BaseApiClient {

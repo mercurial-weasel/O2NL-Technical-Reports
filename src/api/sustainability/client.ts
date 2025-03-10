@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../base/client';
 import { SustainabilityInitiative } from './types';
-import { API_CONFIG } from '../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { mockSustainabilityData } from './mock-data';
 
 export class SustainabilityApiClient extends BaseApiClient {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, X } from 'lucide-react';
-import { Point } from '../../../../data/models';
+import { Point } from '@data/models';
 
 interface BoreholesCardProps {
   points: Point[];

@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../base/client';
 import { EmissionsData, EmissionRecord } from './types';
-import { API_CONFIG } from '../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { generateEmissionData } from './generators';
 import { calculateTotalCarbonEstimate } from './transformations';
 import { logger } from '@lib/logger';

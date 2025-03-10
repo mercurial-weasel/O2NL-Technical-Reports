@@ -1,9 +1,9 @@
 import React from 'react';
 import { LineChart } from 'lucide-react';
 import Plot from 'react-plotly.js';
-import { boxPlotConfig, boxPlotLayout } from '../../../../constants/chartConfig';
-import { SPTResult, Point } from '../../../../data/models';
-import { materials } from '../../../../constants/materials';
+import { boxPlotConfig, boxPlotLayout } from '@constants/chartConfig';
+import { SPTResult, Point } from '@data/models';
+import { materials } from '@constants/materials';
 
 interface SPTPlotsProps {
   sptResults: SPTResult[];

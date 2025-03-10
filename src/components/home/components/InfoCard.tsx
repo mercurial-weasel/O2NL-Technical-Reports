@@ -1,5 +1,5 @@
 import React from 'react';
-import { gradients } from '../../../constants/theme';
+import { gradients } from '@constants/theme';
 import { CardProps } from '../../../types/default';
 
 export function InfoCard({ 

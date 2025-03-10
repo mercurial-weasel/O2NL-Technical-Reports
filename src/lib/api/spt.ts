@@ -1,5 +1,5 @@
-import { Point, SPTResult } from '../../data/models';
-import { API_CONFIG } from '../../data/config/api';
+import { Point, SPTResult } from '@data/models';
+import { API_CONFIG } from '@data/config/api';
 import { logger } from '../logger';
 
 export interface SPTResponse {

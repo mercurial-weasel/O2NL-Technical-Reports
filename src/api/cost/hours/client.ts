@@ -1,5 +1,5 @@
 import { BaseApiClient } from '../../base/client';
-import { API_CONFIG } from '../../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { logger } from '@lib/logger';
 import { TimeLogEntry, HoursResponse } from './types';
 import { transformToHoursPivot } from './transformations';

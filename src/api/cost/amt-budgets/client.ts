@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../../base/client';
 import { AMTBudgetData } from './types';
-import { API_CONFIG } from '../../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { mockAMTBudgetData } from './mock-data';
 
 export class AMTBudgetApiClient extends BaseApiClient {

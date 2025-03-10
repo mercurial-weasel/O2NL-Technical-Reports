@@ -1,5 +1,5 @@
 import { O2NL_Staff } from './types';
-import { API_CONFIG } from '../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { logger } from '@lib/logger';
 import { mockStaffFTEData } from './mock-data';
 

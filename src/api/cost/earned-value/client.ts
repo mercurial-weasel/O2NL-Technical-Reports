@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../../base/client';
 import { EarnedValueData } from './types';
-import { API_CONFIG } from '../../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { mockEarnedValueData } from './mock-data';
 
 export class EarnedValueApiClient extends BaseApiClient {

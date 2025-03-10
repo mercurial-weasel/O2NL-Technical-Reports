@@ -35,11 +35,13 @@
       "@lib/*": ["./src/lib/*"],
       "@lib": ["./src/lib"],
       "@constants/*": ["./src/constants/*"],
+      "@constants": ["./src/constants"],
       "@config/*": ["./src/config/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@types/*": ["./src/types/*"],
       "@tests/*": ["./src/tests/*"],
       "@data/*": ["./src/data/*"],
+      "@data": ["./src/data"],
       "@routes/*": ["./src/routes/*"]
     }
   },

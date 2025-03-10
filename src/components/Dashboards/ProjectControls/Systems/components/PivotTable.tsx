@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { PivotCategory, PivotItem } from '../data/pivotData';
+import { PivotCategory, PivotItem } from '@data/pivotData';
 
 interface PivotTableProps {
   data: PivotCategory[];

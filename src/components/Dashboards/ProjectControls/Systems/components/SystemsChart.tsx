@@ -1,5 +1,5 @@
 import React from 'react';
-import { PivotCategory } from '../data/pivotData';
+import { PivotCategory } from '@data/pivotData';
 import { BusinessAreaChart } from './BusinessAreaChart';
 
 interface SystemsChartProps {

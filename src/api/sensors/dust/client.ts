@@ -1,6 +1,6 @@
 import { BaseApiClient } from '../../base/client';
 import { DustData } from './types';
-import { API_CONFIG } from '../../../data/config/api';
+import { API_CONFIG } from '@data/config/api';
 import { mockDustData } from './mock-data';
 import { logger } from '@lib/logger';
 

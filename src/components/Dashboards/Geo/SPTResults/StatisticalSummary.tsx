@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { BarChart2 } from 'lucide-react';
 import Plot from 'react-plotly.js';
-import { boxPlotConfig, boxPlotLayout } from '../../../../constants/chartConfig';
-import { SPTResult } from '../../../../data/models';
+import { boxPlotConfig, boxPlotLayout } from '@constants/chartConfig';
+import { SPTResult } from '@data/models';
 
 interface StatisticalSummaryProps {
   sptResults: SPTResult[];

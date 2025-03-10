@@ -1,6 +1,6 @@
 // src/api/base/client.ts
-import { APIResponse, APIError } from '../../data/types/api';
-import { API_CONFIG } from '../../data/config/api';
+import { APIResponse, APIError } from '@data/types/api';
+import { API_CONFIG } from '@data/config/api';
 import { logger } from '@lib/logger';
 
 export abstract class BaseApiClient {
