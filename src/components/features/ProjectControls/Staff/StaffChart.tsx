@@ -30,10 +30,10 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
     if (mode === 'fte' && monthColumns) {
       const xLabels = monthColumns.map(m => m.label);
       const items = chartView === 'organization' 
-        ? summaries.orgSummaries.map(s => ({ name: s.org, values: s.totals }))
+        ? summaries.orgSummaries.map(s => ({ name: s.org, values: s.totals, staffMembers: s.staffMembers }))
         : chartView === 'discipline'
-        ? summaries.disciplineSummaries.map(s => ({ name: s.discipline, values: s.totals }))
-        : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.totals }));
+        ? summaries.disciplineSummaries.map(s => ({ name: s.discipline, values: s.totals, staffMembers: s.staffMembers }))
+        : summaries.nopTypeSummaries.map(s => ({ name: s.nopType, values: s.totals, staffMembers: s.staffMembers }));
       return { xLabels, items };
     } else {
       const xLabels = summaries.months;
@@ -56,7 +56,7 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
   }, [summaries, chartView, mode, monthColumns]);
 
   // Create traces for each category
-  const traces = items.map(({ name, values }) => ({
+  const traces = items.map(({ name, values, staffMembers }) => ({
     name,
     type: 'bar' as const,
     x: xLabels,
@@ -67,8 +67,26 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
       color: colorPalettes[chartView][name as keyof typeof colorPalettes[typeof chartView]] || '#95A5A6'
     },
     hovertemplate: mode === 'fte'
-      ? `${name}<br>Month: %{x}<br>FTE: %{y:.2f}<extra></extra>`
-      : `${name}<br>Month: %{x}<br>Staff Count: %{y}<extra></extra>`
+      ? monthColumns.map(m => {
+          const value = values[m.key] || 0;
+          const staffList = staffMembers[m.key] || [];
+          
+          // Create a list of staff with names and roles
+          const staffDisplay = staffList.length > 0 
+            ? '<br><br>Staff:<br>' + staffList.map(s => `${s.name} (${s.projectRoleTitle}) - ${s.fte.toFixed(2)}`).join('<br>')
+            : '';
+            
+          return `
+            <b>${name}</b><br>
+            Month: ${m.label}<br>
+            FTE: ${value.toFixed(2)}${staffDisplay}
+            <extra></extra>
+          `;
+        })
+      : `${name}<br>Month: %{x}<br>Staff Count: %{y}<extra></extra>`,
+    hoverlabel: {
+      align: 'left' as const
+    }
   }));
 
   return (
