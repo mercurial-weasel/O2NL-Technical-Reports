@@ -37,7 +37,7 @@ export default defineConfig({
       '@auth': path.resolve(__dirname, './src/auth'),
       '@api': path.resolve(__dirname, './src/api'),
       '@lib': path.resolve(__dirname, './src/lib'),
-      '@home': path.resolve(__dirname, './src/home'),
+      '@pages': path.resolve(__dirname, './src/pages'),
       '@constants': path.resolve(__dirname, './src/constants'),
       '@config': path.resolve(__dirname, './src/config'),
       '@hooks': path.resolve(__dirname, './src/hooks'),

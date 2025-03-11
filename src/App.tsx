@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { LegacyAuthWrapper } from '@auth/ClerkAuthAdapter'; // Wraps authentication
 import { AuthChecker } from '@components/Authentication/AuthChecker'; // Middleware to check auth
 
-// Clerk Authentication Pages
-import { ClerkLoginPage } from '@components/Authentication/LoginPage/ClerkLoginPage';
-import { ClerkRegisterPage } from '@components/Authentication/RegisterPage/ClerkRegisterPage';
+// Auth Pages
+import LoginPage from '@pages/AuthPages/LoginPage';
+import RegisterPage from '@pages/AuthPages/RegisterPage';
 
 // Public Pages
-import HomePage from '@home/HomeTest';
+import HomePage from '@pages/home/HomeTest';
 
 // Geotechnical & Environmental Dashboards
 import { ProjectControlsDashboards } from '@dashboardGroups/ProjectControls';
@@ -44,12 +44,12 @@ function App() {
         <AuthChecker>
           <Routes>
             {/* Public Routes */}
-            <Route path="/login" element={<ClerkLoginPage />} />
-            <Route path="/register" element={<ClerkRegisterPage />} />
-
-            {/* Home Route */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            
+            {/* Redirect root to dashboard if authenticated, otherwise to login */}
             <Route path="/" element={<HomePage />} />
-
+            
             {/* Project Controls Routes */}
             <Route path="/project-controls" element={<ProjectControlsDashboards />} />
             <Route path="/project-controls/pab" element={<PABDashboard />} />
@@ -66,7 +66,7 @@ function App() {
             <Route path="/project-controls/sustainability/:id" element={<SustainabilityDetailPage />} />
             <Route path="/project-controls/emissions" element={<EmissionsTracking />} />
             <Route path="/project-controls/consenting" element={<ConsentingDashboard />} />
-
+            
             {/* Geotechnical Routes */}
             <Route path="/geotechnical" element={<GeotechnicalTests />} />
             <Route path="/geotechnical/spt" element={<GeoDashboardSPT />} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderNav } from './HeaderNav';
-import { LoginButton } from './LoginButton';
 import { gradients, shadows } from '@constants/theme';
 
 export function Header() {
@@ -13,7 +12,7 @@ export function Header() {
             <HeaderLogo />
             <div className="flex items-center gap-4">
               <HeaderNav />
-              <LoginButton />
+              {/* LoginButton removed as we now have the Sign In button on the login page */}
             </div>
           </div>
         </div>

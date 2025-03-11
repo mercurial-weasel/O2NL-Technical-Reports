@@ -32,7 +32,7 @@ export default defineConfig({
 
       '@auth': path.resolve(__dirname, './src/auth'),
       '@data': path.resolve(__dirname, './src/data'),
-      '@home': path.resolve(__dirname, './src/home'),
+      '@pages': path.resolve(__dirname, './src/pages'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@lib': path.resolve(__dirname, './src/lib'),
       '@types': path.resolve(__dirname, './src/types'),

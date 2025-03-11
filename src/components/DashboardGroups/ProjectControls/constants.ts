@@ -18,7 +18,6 @@ import {
   DivideIcon as LucideIcon
 } from 'lucide-react';
 import { DisciplineSection } from '../AllDisciplines/types';
-import { AccessRight } from '@lib/auth/types';
 
 // Helper function to create icon components
 const createIcon = (Icon: LucideIcon) => {
@@ -91,12 +90,12 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     id: 'people-culture',
     title: 'People and Culture',
     icon: Users,
-    accessFor: ['AMT', 'P+C'],
+    accessFor: ['AMT', 'people'],
     tests: [
-      { name: 'Staff Numbers', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
-      { name: 'Staff FTE', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
-      { name: 'Staff Movement', icon: createIcon(Users), status: 'published', accessFor: ['AMT', 'P+C'] },
-      { name: 'Time Logs', icon: createIcon(Clock), status: 'published', accessFor: ['AMT', 'P+C'] }
+      { name: 'Staff Numbers', icon: createIcon(Users), status: 'published', accessFor: ['amt', 'people'] },
+      { name: 'Staff FTE', icon: createIcon(Users), status: 'published', accessFor: ['amt', 'people'] },
+      { name: 'Staff Movement', icon: createIcon(Users), status: 'published', accessFor: ['amt', 'people'] },
+      { name: 'Time Logs', icon: createIcon(Clock), status: 'published', accessFor: ['amt', 'people'] }
     ]
   },
   {
@@ -105,9 +104,9 @@ export const PROJECT_CONTROLS_SECTIONS: DisciplineSection[] = [
     icon: Boxes,
     accessFor: ['Admin', 'Commercial', 'AMT'],
     tests: [
-      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
-      { name: 'Emission Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['Design Lead', 'AMT'] },
-      { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['Design Lead', 'AMT'] }
+      { name: 'Sustainability Initiatives', icon: createIcon(Leaf), status: 'concept', accessFor: ['test', 'AMT'] },
+      { name: 'Emission Tracking', icon: createIcon(Leaf), status: 'concept', accessFor: ['test', 'AMT'] },
+      { name: 'Equipment Status', icon: createIcon(Wrench), status: 'concept', accessFor: ['test', 'AMT'] }
     ]
   }
 ];

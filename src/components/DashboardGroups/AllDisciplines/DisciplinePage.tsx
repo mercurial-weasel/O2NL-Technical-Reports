@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Header } from '@common/Header';
 import { Footer } from '@common/Footer';
 import { Section } from '../../common';
@@ -6,8 +6,13 @@ import { DisciplineSection } from './DisciplineSection';
 import { DisciplineProps, DisciplineStatus } from './types';
 import { StatusFilter } from './StatusFilter';
 import { logger } from '@lib/logger';
+import { useUser } from '@clerk/clerk-react';
+import { getUserRole } from '@lib/roles';
 
 export function DisciplinePage({ title, sections }: DisciplineProps) {
+  const { user } = useUser();
+  const userRole = useMemo(() => getUserRole(user?.organizationMemberships), [user]);
+
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>(
     sections.reduce((acc, section) => ({
       ...acc,
@@ -51,12 +56,20 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
     });
   };
 
-  // Filter sections based on status only
+  // Filter sections based on status and user role
   const filteredSections = sections.map(section => ({
     ...section,
     tests: section.tests.filter(test => {
-      // Check status filter only
-      return selectedStatuses.has('all') || selectedStatuses.has(test.status);
+      // Check status filter
+      const statusMatch = selectedStatuses.has('all') || selectedStatuses.has(test.status);
+      
+      // Check role access - use normalized userRole (without org: prefix)
+      const hasAccess = !test.accessFor || 
+        test.accessFor.length === 0 || 
+        test.accessFor.some(role => role.toLowerCase() === userRole?.toLowerCase()) ||
+        userRole?.toLowerCase() === 'admin';
+        
+      return statusMatch && hasAccess;
     })
   })).filter(section => section.tests.length > 0);
 

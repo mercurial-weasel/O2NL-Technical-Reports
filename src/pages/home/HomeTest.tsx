@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Header } from '@common/Header';
 import { Footer } from '@common/Footer';
-import { HeroSection } from '@/home/components/HeroSection';
+import { HeroSection } from './components/HeroSection';
 import { BackgroundGrid } from './components/BackgroundGrid';
 import { GradientOverlay } from './components/GradientOverlay';
 import { ContactSection } from './components/ContactSection';

@@ -32,6 +32,13 @@ export function AuthChecker({ children }: AuthCheckerProps) {
     // Get redirect destination from location state or default to dashboard
     const from = location.state?.from?.pathname || '/dashboard';
     
+    // Redirect to login if at root path and not signed in
+    if (location.pathname === '/' && !isSignedIn) {
+      console.log('User at root path and not authenticated, redirecting to login');
+      navigate('/login', { state: { from: location }, replace: true });
+      return;
+    }
+    
     if (isSignedIn && isAuthOnlyPath) {
       // If user is signed in and tries to access login/register pages, 
       // redirect to previous location or dashboard

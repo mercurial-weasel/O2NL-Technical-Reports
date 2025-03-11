@@ -4,6 +4,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { ClerkLoginPage } from '@components/Authentication/LoginPage/ClerkLoginPage';
 import { ClerkRegisterPage } from '@components/Authentication/RegisterPage/ClerkRegisterPage';
 import { useAuth } from '@clerk/clerk-react';
+import { UserRole } from '@lib/roles';
 
 // Import components directly from their source locations
 import { HomeTest } from '@home/HomeTest'; 
@@ -75,11 +76,11 @@ export function AppRoutes() {
           } 
         />
         
-        {/* Protected routes */}
+        {/* Protected routes with role requirements */}
         <Route 
           path="/project-controls" 
           element={
-            <ProtectedRoute>
+            <ProtectedRoute requiredRoles={['admin', 'amt', 'commercial', 'people']}>
               <ProjectControlsDashboards />
             </ProtectedRoute>
           } 
@@ -88,13 +89,24 @@ export function AppRoutes() {
         <Route 
           path="/project-controls/staff-fte" 
           element={
-            <ProtectedRoute>
+            <ProtectedRoute requiredRoles={['admin', 'amt', 'people']}>
               <StaffFTEDashboard />
             </ProtectedRoute>
           } 
         />
         
-        {/* Add similar protection to other routes that require authentication */}
+        {/* Dashboard as fallback route */}
+        <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <HomeTest />
+            </ProtectedRoute>
+          } 
+        />
+        
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

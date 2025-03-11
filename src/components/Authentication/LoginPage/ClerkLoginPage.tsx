@@ -40,9 +40,18 @@ export function ClerkLoginPage() {
                     card: "bg-transparent shadow-none",
                     header: "text-text-primary",
                     footer: "text-text-secondary"
+                  },
+                  layout: {
+                    shimmer: false,
+                    socialButtonsPlacement: "bottom",
+                    socialButtonsVariant: "iconButton",
+                    showOptionalFields: true,
+                    termsPageUrl: "https://clerk.com/terms",
+                    privacyPageUrl: "https://clerk.com/privacy"
                   }
                 }}
                 afterSignInUrl={from}
+                signInMode="popup"
               />
             </div>
           </div>

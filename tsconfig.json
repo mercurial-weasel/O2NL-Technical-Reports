@@ -42,8 +42,8 @@
 
       "@auth/*": ["./src/auth/*"],
       "@auth": ["./src/auth"],
-      "@home/*": ["./src/home/*"],
-      "@home": ["./src/home"],
+      "@pages/*": ["./src/pages/*"],
+      "@pages": ["./src/pages"],
       "@lib/*": ["./src/lib/*"],
       "@lib": ["./src/lib"],
       "@constants/*": ["./src/constants/*"],

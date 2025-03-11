@@ -23,10 +23,17 @@ export function LoginPage() {
                     card: "bg-transparent shadow-none",
                     header: "text-text-primary",
                     footer: "text-text-secondary"
+                  },
+                  layout: {
+                    shimmer: false,
+                    socialButtonsPlacement: "bottom",
+                    socialButtonsVariant: "iconButton",
+                    showOptionalFields: true
                   }
                 }}
                 afterSignInUrl="/dashboard"
                 afterSignUpUrl="/dashboard"
+                signInMode="popup"
               />
             </div>
           </div>
