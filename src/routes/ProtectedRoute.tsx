@@ -9,6 +9,27 @@ interface ProtectedRouteProps {
   requiredRoles?: UserRole[];
 }
 
+// Extracted component for access denied screen
+function AccessDeniedScreen({ userRole, requiredRoles }: { userRole: string | null, requiredRoles: UserRole[] }) {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background-base">
+      <div className="text-center p-8 max-w-md">
+        <h1 className="text-3xl font-bold text-red-500 mb-4">Access Denied</h1>
+        <p className="text-text-secondary mb-6">
+          You don't have the required permissions to access this page.
+          Your current role: <span className="font-semibold">{userRole || 'None'}</span>
+        </p>
+        <p className="text-xs text-text-secondary mb-4">
+          Required roles: {requiredRoles.join(', ')}
+        </p>
+        <div className="mt-4">
+          <Navigate to="/dashboard" replace />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ProtectedRoute({ children, requiredRoles }: ProtectedRouteProps) {
   const location = useLocation();
   const { user, isLoaded } = useUser();
@@ -29,47 +50,27 @@ export function ProtectedRoute({ children, requiredRoles }: ProtectedRouteProps)
     }
   }, [location.pathname, requiredRoles, isLoaded, user]);
 
+  // Early check - if no role requirements or not loaded, just render children
+  if (!isLoaded || !requiredRoles || requiredRoles.length === 0) {
+    return <AuthGuard fallbackUrl="/login">{children}</AuthGuard>;
+  }
+
+  // Get user role and check permissions
+  const userRole = getUserRole(user?.organizationMemberships);
+  
+  // Debug raw role data
+  console.log('Role check raw data:', { 
+    userRole, 
+    organizationMemberships: user?.organizationMemberships,
+    requiredRoles 
+  });
+  
+  // Check if user has required role
+  const hasAccess = hasRequiredRole(userRole, requiredRoles);
+
   return (
     <AuthGuard fallbackUrl="/login">
-      {isLoaded && requiredRoles && requiredRoles.length > 0 ? (
-        // Check role-based access
-        (() => {
-          const userRole = getUserRole(user?.organizationMemberships);
-          
-          // Debug raw role data
-          console.log('Role check raw data:', { 
-            userRole, 
-            organizationMemberships: user?.organizationMemberships,
-            requiredRoles 
-          });
-          
-          if (hasRequiredRole(userRole, requiredRoles)) {
-            return children;
-          } else {
-            // Unauthorized access
-            return (
-              <div className="min-h-screen flex flex-col items-center justify-center bg-background-base">
-                <div className="text-center p-8 max-w-md">
-                  <h1 className="text-3xl font-bold text-red-500 mb-4">Access Denied</h1>
-                  <p className="text-text-secondary mb-6">
-                    You don't have the required permissions to access this page.
-                    Your current role: <span className="font-semibold">{userRole || 'None'}</span>
-                  </p>
-                  <p className="text-xs text-text-secondary mb-4">
-                    Required roles: {requiredRoles.join(', ')}
-                  </p>
-                  <div className="mt-4">
-                    <Navigate to="/dashboard" replace />
-                  </div>
-                </div>
-              </div>
-            );
-          }
-        })()
-      ) : (
-        // No specific role required
-        children
-      )}
+      {hasAccess ? children : <AccessDeniedScreen userRole={userRole} requiredRoles={requiredRoles} />}
     </AuthGuard>
   );
 }

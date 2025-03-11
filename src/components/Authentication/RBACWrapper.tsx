@@ -9,6 +9,24 @@ interface RBACWrapperProps {
   fallbackPath?: string;
 }
 
+// Extracted component for access denied screen
+function AccessDeniedScreen({ userRole, fallbackPath }: { userRole: string | null, fallbackPath: string }) {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background-base">
+      <div className="text-center p-8 max-w-md">
+        <h1 className="text-3xl font-bold text-red-500 mb-4">Access Denied</h1>
+        <p className="text-text-secondary mb-6">
+          You don't have the required permissions to access this page.
+          Your current role: <span className="font-semibold">{userRole || 'None'}</span>
+        </p>
+        <div className="mt-4">
+          <Navigate to={fallbackPath} replace />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function RBACWrapper({ 
   children, 
   requiredRoles, 
@@ -32,22 +50,9 @@ export function RBACWrapper({
     path: window.location.pathname
   });
   
-  // If user doesn't have permission, redirect
+  // If user doesn't have permission, show access denied
   if (!hasPermission) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background-base">
-        <div className="text-center p-8 max-w-md">
-          <h1 className="text-3xl font-bold text-red-500 mb-4">Access Denied</h1>
-          <p className="text-text-secondary mb-6">
-            You don't have the required permissions to access this page.
-            Your current role: <span className="font-semibold">{userRole || 'None'}</span>
-          </p>
-          <div className="mt-4">
-            <Navigate to={fallbackPath} replace />
-          </div>
-        </div>
-      </div>
-    );
+    return <AccessDeniedScreen userRole={userRole} fallbackPath={fallbackPath} />;
   }
   
   // User has permission, render children

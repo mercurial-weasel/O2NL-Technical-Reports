@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth, useClerk, useUser } from '@clerk/clerk-react';
-import { UserIcon, ChevronDownIcon, PencilSquareIcon, KeyIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { UserIcon, ChevronDownIcon, PencilSquareIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { getUserRole } from '@lib/roles';
 
@@ -44,14 +44,7 @@ export function HeaderNav() {
   };
 
   const handleEditProfile = () => {
-    openUserProfile();
-    setDropdownOpen(false);
-  };
-
-  const handleChangePassword = () => {
-    openUserProfile({
-      initialPage: 'security'
-    });
+    openUserProfile(); // This will open the default profile page
     setDropdownOpen(false);
   };
 
@@ -104,19 +97,13 @@ export function HeaderNav() {
               {dropdownOpen && (
                 <div className="absolute right-0 mt-1 w-48 bg-background-card-from border border-border-primary rounded-md shadow-lg z-10">
                   <div className="py-1">
+                    {/* Simplified to a single option */}
                     <button
                       onClick={handleEditProfile}
                       className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-brand-primary/10 w-full text-left"
                     >
                       <PencilSquareIcon className="h-4 w-4" />
-                      Edit Profile
-                    </button>
-                    <button
-                      onClick={handleChangePassword}
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-brand-primary/10 w-full text-left"
-                    >
-                      <KeyIcon className="h-4 w-4" />
-                      Change Password
+                      Edit Profile / Password
                     </button>
                   </div>
                 </div>

@@ -58,8 +58,10 @@ function AuthAwareRoute({ element, requireAuth, redirectTo }) {
     return <Navigate to={redirectTo} replace />;
   }
   
-  // If route is for non-authenticated users but user is signed in, redirect 
-  if (!requireAuth && isSignedIn && redirectTo) {
+  // This condition may be causing the redirect loop - let's fix it
+  // Only redirect if we're on a specific auth page, not during the auth flow
+  if (!requireAuth && isSignedIn && redirectTo && 
+      (location.pathname === '/login' || location.pathname === '/register')) {
     console.log('AuthAwareRoute: Already authenticated, redirecting to', redirectTo);
     return <Navigate to={redirectTo} replace />;
   }
@@ -74,21 +76,9 @@ export function AppRoutes() {
   // FIXED: Removed BrowserRouter wrapper - it's now in App.tsx
   return (
     <Routes>
-      {/* Public Routes */}
-      <Route path="/login" element={
-        <AuthAwareRoute 
-          element={<ClerkLoginPage />} 
-          requireAuth={false}
-          redirectTo="/dashboard"
-        />
-      } />
-      <Route path="/register" element={
-        <AuthAwareRoute 
-          element={<ClerkRegisterPage />} 
-          requireAuth={false}
-          redirectTo="/dashboard"
-        />
-      } />
+      {/* Public Routes - Fix login flow */}
+      <Route path="/login/*" element={<ClerkLoginPage />} />
+      <Route path="/register/*" element={<ClerkRegisterPage />} />
       
       {/* Redirect root to dashboard if authenticated */}
       <Route path="/" element={<HomeTest />} />

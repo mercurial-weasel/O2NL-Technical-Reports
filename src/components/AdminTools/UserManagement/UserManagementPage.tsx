@@ -91,13 +91,31 @@ export function UserManagementPage() {
     try {
       setIsLoading(true);
       
-      // Redirect to organization profile
-      await clerk.openOrganizationProfile({
-        organizationId: O2NL_ORG_ID
-      });
+      // First, attempt to set the organization as active
+      try {
+        await clerk.organization.setActive({ organization: O2NL_ORG_ID });
+        console.log('Set organization as active:', O2NL_ORG_ID);
+      } catch (err) {
+        console.warn('Could not set organization as active:', err);
+        // Continue anyway - might just need to join
+      }
+      
+      // Try to open the organization join flow instead
+      try {
+        await clerk.openOrganizationProfile();
+      } catch (profileErr) {
+        console.error('Error opening organization profile:', profileErr);
+        
+        // Alternative: Open the organization switcher if profile fails
+        await clerk.openUserProfile({
+          initialPage: 'organization',
+        });
+      }
       
     } catch (error) {
-      console.error('Error opening organization profile:', error);
+      console.error('Overall error handling organization:', error);
+      alert('Could not access organization settings. Please try again.');
+    } finally {
       setIsLoading(false);
     }
   };

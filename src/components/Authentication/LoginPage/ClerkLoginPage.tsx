@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { SignIn } from '@clerk/clerk-react';
-import { Header, Footer, Section } from '@common';
+import { Header, Footer } from '@common';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 
@@ -23,39 +23,37 @@ export function ClerkLoginPage() {
   }, [isLoaded, isSignedIn, navigate, from]);
   
   return (
-    <div className="min-h-screen bg-background-base">
+    <div className="min-h-screen flex flex-col bg-background-base">
       <Header />
-      <div className="pt-24">
-        <Section className="py-8">
-          <div className="max-w-md mx-auto">
-            <div className="bg-background-darker border border-border-subtle rounded-lg overflow-hidden">
-              <SignIn 
-                path="/login" 
-                routing="path" 
-                signUpUrl="/register"
-                redirectUrl={from}
-                appearance={{
-                  elements: {
-                    rootBox: "mx-auto",
-                    card: "bg-transparent shadow-none",
-                    header: "text-text-primary",
-                    footer: "text-text-secondary"
-                  },
-                  layout: {
-                    shimmer: false,
-                    socialButtonsPlacement: "bottom",
-                    socialButtonsVariant: "iconButton",
-                    showOptionalFields: true,
-                    termsPageUrl: "https://clerk.com/terms",
-                    privacyPageUrl: "https://clerk.com/privacy"
-                  }
-                }}
-                afterSignInUrl={from}
-                signInMode="popup"
-              />
-            </div>
-          </div>
-        </Section>
+      <div className="flex-grow flex items-center justify-center py-12">
+        <div className="w-full max-w-md p-6">
+          <SignIn 
+            routing="path" 
+            path="/login" 
+            signUpUrl="/register"
+            appearance={{
+              baseTheme: "light", // Explicitly set light theme
+              layout: {
+                logoPlacement: "inside",
+                socialButtonsVariant: "iconButton",
+              },
+              elements: {
+                rootBox: "mx-auto",
+                card: "bg-white shadow-lg border border-gray-200",
+                headerTitle: "text-gray-900",
+                headerSubtitle: "text-gray-600",
+                formFieldLabel: "text-gray-700",
+                formFieldInput: "bg-white border-gray-300 text-gray-900",
+                formButtonPrimary: "bg-brand-primary hover:bg-brand-primary/90",
+                footerActionText: "text-gray-600",
+                footerActionLink: "text-brand-primary hover:text-brand-secondary",
+                dividerText: "text-gray-500",
+                formFieldError: "text-red-500",
+              },
+            }}
+            redirectUrl={from}
+          />
+        </div>
       </div>
       <Footer />
     </div>

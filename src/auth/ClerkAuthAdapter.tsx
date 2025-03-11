@@ -61,6 +61,21 @@ function getUserAccessRights(user: any): AccessRight[] {
 
 // Create a wrapper component to replace the old AuthProvider
 export function LegacyAuthWrapper({ children }: { children: React.ReactNode }) {
+  // Check if we're in the middle of a Clerk auth flow to prevent redirects
+  const isInAuthFlow = window.location.pathname.includes('/login') || 
+                       window.location.pathname.includes('/register') ||
+                       window.location.search.includes('__clerk');
+  
+  // Prevent any redirects during the auth flow
+  const preventRedirectsDuringAuth = (e) => {
+    if (isInAuthFlow && e && e.preventDefault) {
+      console.log('Preventing redirect during auth flow');
+      e.preventDefault();
+      return false;
+    }
+    return true;
+  };
+  
   const auth = useAuthAdapter();
   console.log('LegacyAuthWrapper: Providing backwards compatibility for legacy auth code');
   
