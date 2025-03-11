@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useAuth, useClerk, useUser } from '@clerk/clerk-react';
+import { UserIcon, ChevronDownIcon, PencilSquareIcon, KeyIcon } from '@heroicons/react/24/outline';
 
 export function HeaderNav() {
   const { isSignedIn } = useAuth();
-  const { signOut } = useClerk();
+  const { signOut, openUserProfile } = useClerk();
   const { user } = useUser();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
   // Extract user info
   const userName = user?.firstName ? `${user.firstName} ${user.lastName || ''}` : user?.primaryEmailAddress?.emailAddress || '';
@@ -37,18 +40,81 @@ export function HeaderNav() {
       });
     }
   };
+
+  const handleEditProfile = () => {
+    openUserProfile();
+    setDropdownOpen(false);
+  };
+
+  const handleChangePassword = () => {
+    openUserProfile({
+      initialPage: 'security'
+    });
+    setDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   
   return (
     <nav className="hidden md:flex items-center gap-4">
-      {/* Navigation items removed */}
+      {/* Space for other navigation items */}
+      <div className="flex-grow"></div>
       
-      {/* User info and logout button */}
+      {/* User info, dropdown, and logout button */}
       <div className="flex items-center gap-4">
         {isSignedIn && (
-          <div className="text-right mr-2">
-            <div className="text-text-primary font-medium">{userName}</div>
-            <div className="text-text-secondary text-sm">{userRole}</div>
-          </div>
+          <>
+            {/* User profile dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center gap-1.5 py-2 px-3 rounded-md hover:bg-gray-700/20 transition-colors"
+              >
+                <UserIcon className="h-5 w-5 text-text-secondary" />
+                <span className="text-text-secondary">Profile</span>
+                <ChevronDownIcon className={`h-4 w-4 text-text-secondary transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-1 w-48 bg-background-card-from border border-border-primary rounded-md shadow-lg z-10">
+                  <div className="py-1">
+                    <button
+                      onClick={handleEditProfile}
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-brand-primary/10 w-full text-left"
+                    >
+                      <PencilSquareIcon className="h-4 w-4" />
+                      Edit Profile
+                    </button>
+                    <button
+                      onClick={handleChangePassword}
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-text-primary hover:bg-brand-primary/10 w-full text-left"
+                    >
+                      <KeyIcon className="h-4 w-4" />
+                      Change Password
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* User info moved to the right */}
+            <div className="text-right">
+              <div className="text-text-primary font-medium">{userName}</div>
+              <div className="text-text-secondary text-sm">{userRole}</div>
+            </div>
+          </>
         )}
         
         <button 
