@@ -19,14 +19,23 @@ export function hasRequiredRole(
 
   // Strip 'org:' prefix if present for comparison
   const normalizedUserRole = userRole.toLowerCase().replace(/^org:/, '');
+  
+  console.log('Role comparison:', {
+    original: userRole,
+    normalized: normalizedUserRole,
+    requiredRoles: requiredRoles.map(r => r.toLowerCase())
+  });
 
   // Admin always has access
   if (normalizedUserRole === 'admin') {
+    console.log('Admin access granted');
     return true;
   }
 
   // Check if user's normalized role is in the list of required roles
-  return requiredRoles.map(r => r.toLowerCase()).includes(normalizedUserRole);
+  const hasRole = requiredRoles.map(r => r.toLowerCase()).includes(normalizedUserRole);
+  console.log('Role match result:', hasRole);
+  return hasRole;
 }
 
 /**
@@ -34,11 +43,16 @@ export function hasRequiredRole(
  */
 export function getUserRole(organizationMemberships: any[] | null | undefined): string | null {
   if (!organizationMemberships || organizationMemberships.length === 0) {
+    console.log('No organization memberships found');
     return null;
   }
   
   const roleWithPrefix = organizationMemberships[0].role || null;
+  console.log('Raw role from organization:', roleWithPrefix);
   
   // Return the role without the 'org:' prefix if it exists
-  return roleWithPrefix ? roleWithPrefix.replace(/^org:/, '') : null;
+  const normalizedRole = roleWithPrefix ? roleWithPrefix.replace(/^org:/, '') : null;
+  console.log('Normalized role:', normalizedRole);
+  
+  return normalizedRole;
 }

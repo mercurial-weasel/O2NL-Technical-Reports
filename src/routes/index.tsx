@@ -10,9 +10,8 @@ import { UserRole } from '@lib/roles';
 import { HomeTest } from '@home/HomeTest'; 
 
 import { ProjectControlsDashboards } from '@dashboardGroups/ProjectControls';
-'@dashboards/ProjectControls';
 import { StaffFTEDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffFTE';
-
+import { UserManagementPage } from '@components/AdminTools/UserManagement/UserManagementPage';
 
 // Auth-aware route component
 function AuthAwareRoute({ element, requireAuth, redirectTo }) {
@@ -92,6 +91,24 @@ export function AppRoutes() {
             <ProtectedRoute requiredRoles={['admin', 'amt', 'people']}>
               <StaffFTEDashboard />
             </ProtectedRoute>
+          } 
+        />
+        
+        {/* Admin routes */}
+        <Route 
+          path="/admin/users" 
+          element={
+            <ProtectedRoute requiredRoles={['admin']}>
+              <UserManagementPage />
+            </ProtectedRoute>
+          } 
+        />
+        
+        {/* Explicit route for admin page access debugging */}
+        <Route 
+          path="/admin" 
+          element={
+            <Navigate to="/admin/users" replace />
           } 
         />
         

@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useAuth, useClerk, useUser } from '@clerk/clerk-react';
-import { UserIcon, ChevronDownIcon, PencilSquareIcon, KeyIcon } from '@heroicons/react/24/outline';
+import { UserIcon, ChevronDownIcon, PencilSquareIcon, KeyIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
+import { getUserRole } from '@lib/roles';
 
 export function HeaderNav() {
   const { isSignedIn } = useAuth();
@@ -16,20 +18,20 @@ export function HeaderNav() {
   const userRole = React.useMemo(() => {
     if (!user) return '';
     
-    // Get the user's organization role
-    const organizationMemberships = user.organizationMemberships || [];
-    const roleWithPrefix = organizationMemberships.length > 0
-      ? organizationMemberships[0].role // First organization role
-      : "User"; // Default role if none found
-
-    // Remove org: prefix if present
-    const role = roleWithPrefix ? roleWithPrefix.replace(/^org:/, '') : roleWithPrefix;
-
-    console.log("Raw User Role:", roleWithPrefix);
-    console.log("Normalized User Role:", role);
-    return role;
+    const normalizedRole = getUserRole(user.organizationMemberships);
+    console.log("HeaderNav - User Role:", {
+      raw: user.organizationMemberships?.[0]?.role,
+      normalized: normalizedRole
+    });
+    
+    return normalizedRole || '';
   }, [user]);
   
+  // Check if user is an admin - use the same logic as in the roles utility
+  const isAdmin = userRole?.toLowerCase() === 'admin';
+  
+  console.log("HeaderNav - Admin Check:", { userRole, isAdmin });
+
   const handleLogout = () => {
     if (isSignedIn) {
       console.log('Logout requested from header');
@@ -74,6 +76,18 @@ export function HeaderNav() {
       
       {/* User info, dropdown, and logout button */}
       <div className="flex items-center gap-4">
+        {/* Admin Settings icon - only visible to admins */}
+        {isSignedIn && isAdmin && (
+          <Link 
+            to="/admin/users" 
+            className="flex items-center justify-center h-10 w-10 rounded-full hover:bg-brand-primary/10 transition-colors"
+            title="User Management"
+            onClick={() => console.log("Admin gear icon clicked - navigating to /admin/users")}
+          >
+            <Cog6ToothIcon className="h-5 w-5 text-brand-primary" />
+          </Link>
+        )}
+      
         {isSignedIn && (
           <>
             {/* User profile dropdown */}

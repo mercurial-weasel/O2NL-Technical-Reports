@@ -13,12 +13,21 @@ export function ProtectedRoute({ children, requiredRoles }: ProtectedRouteProps)
   const location = useLocation();
   const { user, isLoaded } = useUser();
   
+  // Enhanced debugging for role-based access
   useEffect(() => {
-    console.log('ProtectedRoute: Component initialized', {
-      path: location.pathname,
-      requiredRoles: requiredRoles?.join(', ') || 'none'
-    });
-  }, [location.pathname, requiredRoles]);
+    if (isLoaded && user) {
+      const userRole = getUserRole(user?.organizationMemberships);
+      const hasAccess = hasRequiredRole(userRole, requiredRoles);
+      
+      console.log('ProtectedRoute: Access check', {
+        path: location.pathname,
+        requiredRoles: requiredRoles?.join(', ') || 'none',
+        userRole,
+        rawRole: user?.organizationMemberships?.[0]?.role,
+        hasAccess,
+      });
+    }
+  }, [location.pathname, requiredRoles, isLoaded, user]);
 
   return (
     <AuthGuard fallbackUrl="/login">
@@ -27,7 +36,12 @@ export function ProtectedRoute({ children, requiredRoles }: ProtectedRouteProps)
         (() => {
           const userRole = getUserRole(user?.organizationMemberships);
           
-          console.log('Role check:', { userRole, requiredRoles });
+          // Debug raw role data
+          console.log('Role check raw data:', { 
+            userRole, 
+            organizationMemberships: user?.organizationMemberships,
+            requiredRoles 
+          });
           
           if (hasRequiredRole(userRole, requiredRoles)) {
             return children;
@@ -40,6 +54,9 @@ export function ProtectedRoute({ children, requiredRoles }: ProtectedRouteProps)
                   <p className="text-text-secondary mb-6">
                     You don't have the required permissions to access this page.
                     Your current role: <span className="font-semibold">{userRole || 'None'}</span>
+                  </p>
+                  <p className="text-xs text-text-secondary mb-4">
+                    Required roles: {requiredRoles.join(', ')}
                   </p>
                   <div className="mt-4">
                     <Navigate to="/dashboard" replace />

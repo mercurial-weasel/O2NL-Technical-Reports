@@ -36,6 +36,10 @@ import { SustainabilityInitiatives } from '@dashboards/ProjectControls/Sustainab
 import { EmissionsTracking } from '@dashboards/ProjectControls/Other/EmissionsTracking';
 import { EquipmentStatus } from '@dashboards/ProjectControls/Other/Equipment';
 
+// Admin components
+import { UserManagementPage } from '@components/AdminTools/UserManagement/UserManagementPage';
+import { RBACWrapper } from '@components/Authentication/RBACWrapper';
+
 
 function App() {
   return (
@@ -49,6 +53,16 @@ function App() {
             
             {/* Redirect root to dashboard if authenticated, otherwise to login */}
             <Route path="/" element={<HomePage />} />
+            
+            {/* Admin routes */}
+            <Route path="/admin/users" element={
+              <RBACWrapper requiredRoles={['admin']}>
+                <UserManagementPage />
+              </RBACWrapper>
+            } />
+            
+            {/* Admin redirect route */}
+            <Route path="/admin" element={<Navigate to="/admin/users" replace />} />
             
             {/* Project Controls Routes */}
             <Route path="/project-controls" element={<ProjectControlsDashboards />} />
