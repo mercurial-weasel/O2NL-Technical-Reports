@@ -4,9 +4,17 @@ import { Footer } from '@common/Footer';
 import { Section } from '@components/common';
 import { UserList } from './UserList';
 import { UserDetailsModal } from './UserDetailsModal';
-import { useOrganization, useOrganizationList, useUser } from '@clerk/clerk-react';
+import { useOrganization, useOrganizationList, useUser, useClerk } from '@clerk/clerk-react';
 import { Spinner } from '@components/common/Spinner';
-import { TrashIcon, UserPlusIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { 
+  TrashIcon, 
+  UserPlusIcon, 
+  ExclamationTriangleIcon, 
+  BuildingOffice2Icon 
+} from '@heroicons/react/24/outline';
+
+// Organization ID from your Clerk dashboard
+const O2NL_ORG_ID = "org_2uAAK2GsAAG4KZhoUlq0efZdxPo";
 
 export function UserManagementPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,24 +23,29 @@ export function UserManagementPage() {
   const [isUserDetailsModalOpen, setIsUserDetailsModalOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  const { organization } = useOrganization();
+  // Pass the organization ID to useOrganization
+  const { organization, isLoaded: isOrgLoaded } = useOrganization({ organizationId: O2NL_ORG_ID });
   const { createOrganization } = useOrganizationList();
   const { user } = useUser();
+  const clerk = useClerk();
 
-  // Debug output for admin access
+  // Debug output for organization
   useEffect(() => {
-    console.log('UserManagementPage accessed with user:', {
-      userId: user?.id,
-      email: user?.primaryEmailAddress?.emailAddress,
+    console.log('Organization data:', {
+      isLoaded: isOrgLoaded,
       organization,
-      role: user?.organizationMemberships?.[0]?.role
+      organizationId: O2NL_ORG_ID
     });
-  }, [user, organization]);
+  }, [isOrgLoaded, organization]);
 
   useEffect(() => {
     async function loadUsers() {
+      if (!isOrgLoaded) {
+        return; // Wait for organization to load
+      }
+      
       if (!organization) {
-        setError("No organization found. Please create an organization first.");
+        setError("Organization not found. Please check your organization ID or permissions.");
         setIsLoading(false);
         return;
       }
@@ -48,14 +61,46 @@ export function UserManagementPage() {
         setUsers(members);
       } catch (error) {
         console.error('Error fetching organization members:', error);
-        setError("Failed to load user list. Please try refreshing the page.");
+        setError(`Failed to load user list: ${error.message || 'Unknown error'}`);
       } finally {
         setIsLoading(false);
       }
     }
     
     loadUsers();
-  }, [organization]);
+  }, [isOrgLoaded, organization]);
+
+  // Handle creating organization if needed
+  const handleCreateOrganization = async () => {
+    try {
+      setIsLoading(true);
+      const newOrg = await createOrganization({ name: "O2NL" });
+      console.log('Created new organization:', newOrg);
+      
+      // Refresh the page to use the new organization
+      window.location.reload();
+    } catch (error) {
+      console.error('Error creating organization:', error);
+      setError(`Failed to create organization: ${error.message}`);
+      setIsLoading(false);
+    }
+  };
+
+  // Handle joining existing organization
+  const handleJoinOrganization = async () => {
+    try {
+      setIsLoading(true);
+      
+      // Redirect to organization profile
+      await clerk.openOrganizationProfile({
+        organizationId: O2NL_ORG_ID
+      });
+      
+    } catch (error) {
+      console.error('Error opening organization profile:', error);
+      setIsLoading(false);
+    }
+  };
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
@@ -140,12 +185,14 @@ export function UserManagementPage() {
         <Section className="py-8">
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-text-primary">User Management</h1>
-            <button
-              onClick={handleInviteUser}
-              className="flex items-center gap-2 bg-brand-primary hover:bg-brand-primary/90 text-white px-4 py-2 rounded-md transition-colors"
-            >
-              <UserPlusIcon className="h-5 w-5" /> Invite User
-            </button>
+            {organization && (
+              <button
+                onClick={handleInviteUser}
+                className="flex items-center gap-2 bg-brand-primary hover:bg-brand-primary/90 text-white px-4 py-2 rounded-md transition-colors"
+              >
+                <UserPlusIcon className="h-5 w-5" /> Invite User
+              </button>
+            )}
           </div>
           
           {isLoading ? (
@@ -153,13 +200,44 @@ export function UserManagementPage() {
               <Spinner size="lg" />
             </div>
           ) : error ? (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-6 text-center">
-              <ExclamationTriangleIcon className="h-12 w-12 text-red-500 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-red-500 mb-2">Error Loading Users</h3>
-              <p className="text-text-secondary">{error}</p>
+            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-6">
+              <div className="text-center mb-6">
+                <ExclamationTriangleIcon className="h-12 w-12 text-red-500 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-red-500 mb-2">Error Loading Users</h3>
+                <p className="text-text-secondary">{error}</p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                <button
+                  onClick={handleJoinOrganization}
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+                >
+                  <BuildingOffice2Icon className="h-5 w-5" /> 
+                  Join Organization
+                </button>
+                
+                <button
+                  onClick={handleCreateOrganization}
+                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md transition-colors"
+                >
+                  <BuildingOffice2Icon className="h-5 w-5" /> 
+                  Create New Organization
+                </button>
+              </div>
             </div>
           ) : (
             <div className="bg-background-card-from p-6 rounded-lg border border-border-primary">
+              {organization && (
+                <div className="mb-4 pb-4 border-b border-border-primary">
+                  <h2 className="text-lg font-medium text-text-primary">
+                    Organization: {organization.name}
+                  </h2>
+                  <p className="text-sm text-text-secondary">
+                    ID: {organization.id} • Members: {users.length}
+                  </p>
+                </div>
+              )}
+              
               <UserList 
                 users={users} 
                 onUserClick={handleUserClick}
