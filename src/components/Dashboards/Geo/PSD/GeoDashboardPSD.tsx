@@ -6,11 +6,11 @@ import { Card } from '@common/Card/Card';
 
 // Import components
 import { DashboardHeader } from '@features/geotechnical/common/DashboardHeader';
-import { PSDFilterControls } from '@features/geotechnical/PSD/PSDFilterControls';
-import { PSDFilterSummary } from '@features/geotechnical/PSD/PSDFilterSummary';
-import { PSDTableView } from '@features/geotechnical/PSD/PSDTableView';
-import { PSDChartView } from '@features/geotechnical/PSD/PSDChartView';
-import { usePSDData } from '@features/geotechnical/PSD/hooks/usePSDData';
+import { PSDFilterControls } from '@features/geotechnical/psd/PSDFilterControls';
+import { PSDFilterSummary } from '@features/geotechnical/psd/PSDFilterSummary';
+import { PSDTableView } from '@features/geotechnical/psd/PSDTableView';
+import { PSDChartView } from '@features/geotechnical/psd/PSDChartView';
+import { usePSDData } from '@features/geotechnical/psd/hooks/usePSDData';
 
 // Import types
 import { ParticleSizeDistributionTest } from '@api/geotechnical/psd';
