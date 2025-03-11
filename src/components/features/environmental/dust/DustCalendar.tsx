@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { MonthlyDustData, getDustLevelColor, getDustLevelStatus } from '@api/sensors/dust/transformations';
-import { calculateDailyAverages } from '@api/sensors/dust/transformations';
+import { MonthlyDustData, getDustLevelColor, getDustLevelStatus } from '@api/environmental/sensors/dust';
+import { calculateDailyAverages } from '@api/environmental/sensors/dust';
 
 interface DustCalendarProps {
   data: MonthlyDustData[];

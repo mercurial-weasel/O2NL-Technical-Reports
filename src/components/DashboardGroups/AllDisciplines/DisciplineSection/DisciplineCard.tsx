@@ -1,6 +1,5 @@
 import React from 'react';
 import { DisciplineTest } from '../types';
-import { useAuth } from '@lib/auth';
 
 interface DisciplineCardProps {
   test: DisciplineTest;
@@ -50,20 +49,10 @@ const statusConfig = {
 };
 
 export function DisciplineCard({ test }: DisciplineCardProps) {
-  const { state: authState } = useAuth();
   const Icon = test.icon.icon;
   const config = statusConfig[test.status] || statusConfig['not-available'];
   const showDebugInfo = import.meta.env.VITE_DEBUG_ACCESS_RIGHTS === 'true';
   
-  // Check if user has access to this test
-  const hasAccess = authState.user?.accessRights.includes('Admin') || 
-    test.accessFor.some(right => authState.user?.accessRights.includes(right));
-
-  // If user doesn't have access, don't render the card at all
-  if (!hasAccess) {
-    return null;
-  }
-
   const CardWrapper = config.interactive && test.onClick ? 'button' : 'div';
   
   return (

@@ -4,14 +4,14 @@ import { Header, Footer, Section, Card, BackNavigation, MultiSelectFilter } from
 import { ThemeCard } from './ThemeCard';
 import { ThemeDetail } from './ThemeDetail';
 import { GanttChart } from './GanttChart';
-import { SustainabilityApiClient } from '@api/sustainability/client';
-import { SustainabilityInitiative } from '@api/sustainability/types';
+import { SustainabilityApiClient } from '@api/projectcontrols/other/sustainability';
+import { SustainabilityInitiative } from '@api/projectcontrols/other/sustainability';
 import { logger } from '@lib/logger';
 import { 
   filterInitiativesByStatus, 
   filterInitiativesByTheme,
   sortInitiativesByDate 
-} from '@api/sustainability/transformations';
+} from '@api/projectcontrols/other/sustainability';
 
 const ITEMS_PER_PAGE = 10;
 

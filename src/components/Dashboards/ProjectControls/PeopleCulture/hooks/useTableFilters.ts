@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { O2NL_Staff } from '@api/staff-fte/types';
+import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
 import { FilterState } from '../types';
 
 export function useTableFilters(data: O2NL_Staff[]) {

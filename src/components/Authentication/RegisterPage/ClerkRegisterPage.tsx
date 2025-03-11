@@ -1,9 +1,22 @@
-import React from 'react';
-import { SignIn } from '@clerk/clerk-react';
+import React, { useEffect } from 'react';
+import { SignUp } from '@clerk/clerk-react';
 import { Header, Footer, Section } from '@common';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@clerk/clerk-react';
 
-export function LoginPage() {
-  console.log('Rendering Clerk login page');
+export function ClerkRegisterPage() {
+  const navigate = useNavigate();
+  const { isSignedIn, isLoaded } = useAuth();
+  
+  useEffect(() => {
+    console.log('ClerkRegisterPage: Component mounted', { isLoaded, isSignedIn });
+    
+    // Redirect to dashboard if already signed in
+    if (isLoaded && isSignedIn) {
+      console.log('ClerkRegisterPage: User already signed in, redirecting to dashboard');
+      navigate('/dashboard');
+    }
+  }, [isLoaded, isSignedIn, navigate]);
   
   return (
     <div className="min-h-screen bg-background-base">
@@ -12,10 +25,10 @@ export function LoginPage() {
         <Section className="py-8">
           <div className="max-w-md mx-auto">
             <div className="bg-background-darker border border-border-subtle rounded-lg overflow-hidden">
-              <SignIn 
-                path="/login" 
+              <SignUp 
+                path="/register" 
                 routing="path" 
-                signUpUrl="/register"
+                signInUrl="/login"
                 redirectUrl="/dashboard"
                 appearance={{
                   elements: {

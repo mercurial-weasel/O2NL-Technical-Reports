@@ -1,14 +1,13 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Header } from './common/Header';
-import { Footer } from './common/Footer';
-import { HeroSection } from './home/components/HeroSection';
-import { BackgroundGrid } from './home/components/BackgroundGrid';
-import { GradientOverlay } from './home/components/GradientOverlay';
-import { ContactSection } from './home/components/ContactSection';
-import { InfoCards } from './home/components/InfoCards';
+import { Header } from '@common/Header';
+import { Footer } from '@common/Footer';
+import { HeroSection } from '@/home/components/HeroSection';
+import { BackgroundGrid } from './components/BackgroundGrid';
+import { GradientOverlay } from './components/GradientOverlay';
+import { ContactSection } from './components/ContactSection';
+import { InfoCards } from './components/InfoCards';
 
-function HomeTest() {
+export default function HomeTest() {
   const navigate = useNavigate();
 
   const handleGeotechnicalClick = () => {
@@ -45,5 +44,3 @@ function HomeTest() {
     </div>
   );
 }
-
-export default HomeTest;

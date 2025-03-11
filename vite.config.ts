@@ -13,23 +13,30 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@common': path.resolve(__dirname, './src/components/common'),
+      '@api': path.resolve(__dirname, './src/api'),
+      '@config': path.resolve(__dirname, './src/config'),
+      '@constants': path.resolve(__dirname, './src/constants'),
+
       '@components': path.resolve(__dirname, './src/components'),
+      '@common': path.resolve(__dirname, './src/components/common'),
+
+      '@dashboards': path.resolve(__dirname, './src/components/Dashboards'),
+      '@dashboardGroups': path.resolve(__dirname, './src/components/DashboardGroups'),
+
       '@features': path.resolve(__dirname, './src/components/features'),
       '@FeaturesCommon': path.resolve(__dirname, './src/components/features/Common'),
       '@features_environmental': path.resolve(__dirname, './src/components/features/environmental'),
       '@features_ProjectControls': path.resolve(__dirname, './src/components/features/ProjectControls'),
       '@environmental_sensor_common': path.resolve(__dirname, './src/components/features/environmental/sensor_common'),
       '@environmental_dust': path.resolve(__dirname, './src/components/features/environmental/dust'),
-      '@dashboards': path.resolve(__dirname, './src/components/Dashboards'),
-      '@api': path.resolve(__dirname, './src/api'),
-      '@lib': path.resolve(__dirname, './src/lib'),
-      '@constants': path.resolve(__dirname, './src/constants'),
-      '@config': path.resolve(__dirname, './src/config'),
+
+      '@auth': path.resolve(__dirname, './src/auth'),
+      '@data': path.resolve(__dirname, './src/data'),
+      '@home': path.resolve(__dirname, './src/home'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@lib': path.resolve(__dirname, './src/lib'),
       '@types': path.resolve(__dirname, './src/types'),
       '@tests': path.resolve(__dirname, './src/tests'),
-      '@data': path.resolve(__dirname, './src/data'),
       '@routes': path.resolve(__dirname, './src/routes')
     }
   }

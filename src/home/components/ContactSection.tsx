@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section } from '../../common';
+import { Section } from '@common';
 import { CONTACT_LINKS } from '@constants/default';
 
 export function ContactSection() {

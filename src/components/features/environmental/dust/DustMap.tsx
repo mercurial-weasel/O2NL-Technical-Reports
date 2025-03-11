@@ -1,9 +1,9 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet';
-import { DustData } from '@api/sensors/dust/types';
-import { getDeviceLocations } from '@api/sensors/dust/transformations';
-import { calculateMapData } from '@api/sensors/dust/transformations';
+import { DustData } from '@api/environmental/sensors';
+import { getDeviceLocations } from '@api/environmental/sensors';
+import { calculateMapData } from '@api/environmental/sensors';
 import 'leaflet/dist/leaflet.css';
 
 interface DustMapProps {

@@ -18,9 +18,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@api/*": ["./src/api/*"],
+
       "@common/*": ["./src/components/common/*"],
       "@common": ["./src/components/common"],
       "@components/*": ["./src/components/*"],
+
       "@features/*": ["./src/components/features/*"],
       "@FeaturesCommon/*": ["./src/components/features/Common/*"],
       "@FeaturesCommon": ["./src/components/features/Common"],
@@ -32,8 +35,15 @@
       "@environmental_sensor_common": ["./src/components/features/environmental/sensor_common"],
       "@environmental_dust/*": ["./src/components/features/environmental/dust/*"],
       "@environmental_dust": ["./src/components/features/environmental/dust"],
+
       "@dashboards/*": ["./src/components/Dashboards/*"],
-      "@api/*": ["./src/api/*"],
+      "@dashboardGroups/*": ["./src/components/DashboardGroups/*"],
+      "@dashboardGroups": ["./src/components/DashboardGroups"],
+
+      "@auth/*": ["./src/auth/*"],
+      "@auth": ["./src/auth"],
+      "@home/*": ["./src/home/*"],
+      "@home": ["./src/home"],
       "@lib/*": ["./src/lib/*"],
       "@lib": ["./src/lib"],
       "@constants/*": ["./src/constants/*"],

@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SignIn } from '@clerk/clerk-react';
 import { Header, Footer, Section } from '@common';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '@clerk/clerk-react';
 
-export function LoginPage() {
-  console.log('Rendering Clerk login page');
+export function ClerkLoginPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { isSignedIn, isLoaded } = useAuth();
+  
+  // Get the redirect URL from location state or default to dashboard
+  const from = location.state?.from?.pathname || '/dashboard';
+  
+  useEffect(() => {
+    console.log('ClerkLoginPage: Component mounted', { isLoaded, isSignedIn, redirectTo: from });
+    
+    // Redirect to intended destination if already signed in
+    if (isLoaded && isSignedIn) {
+      console.log(`ClerkLoginPage: User already signed in, redirecting to ${from}`);
+      navigate(from, { replace: true });
+    }
+  }, [isLoaded, isSignedIn, navigate, from]);
   
   return (
     <div className="min-h-screen bg-background-base">
@@ -16,7 +33,7 @@ export function LoginPage() {
                 path="/login" 
                 routing="path" 
                 signUpUrl="/register"
-                redirectUrl="/dashboard"
+                redirectUrl={from}
                 appearance={{
                   elements: {
                     rootBox: "mx-auto",
@@ -25,8 +42,7 @@ export function LoginPage() {
                     footer: "text-text-secondary"
                   }
                 }}
-                afterSignInUrl="/dashboard"
-                afterSignUpUrl="/dashboard"
+                afterSignInUrl={from}
               />
             </div>
           </div>

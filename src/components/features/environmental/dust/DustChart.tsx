@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { DustData } from '@api/sensors/dust/types';
-import { calculateTrends, calculateAverages } from '@api/sensors/dust/transformations';
+import { DustData } from '@api/environmental/sensors/dust';
+import { calculateTrends, calculateAverages } from '@api/environmental/sensors/dust';
 
 interface DustChartProps {
   data: DustData;

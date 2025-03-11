@@ -5,11 +5,9 @@ import { Section } from '../../common';
 import { DisciplineSection } from './DisciplineSection';
 import { DisciplineProps, DisciplineStatus } from './types';
 import { StatusFilter } from './StatusFilter';
-import { useAuth } from '@lib/auth';
 import { logger } from '@lib/logger';
 
 export function DisciplinePage({ title, sections }: DisciplineProps) {
-  const { state: authState } = useAuth();
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>(
     sections.reduce((acc, section) => ({
       ...acc,
@@ -53,56 +51,12 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
     });
   };
 
-  // Filter sections based on user access rights
-  const accessibleSections = sections.filter(section => {
-    // Admin has access to all sections
-    if (authState.user?.accessRights.includes('Admin')) {
-      return true;
-    }
-
-    // Check if user has access to the section
-    const hasAccess = section.accessFor.some(right => 
-      authState.user?.accessRights.includes(right)
-    );
-
-    if (!hasAccess) {
-      logger.debug('User does not have access to section', { 
-        section: section.title, 
-        requiredAccess: section.accessFor,
-        userAccess: authState.user?.accessRights 
-      });
-      return false;
-    }
-
-    return true;
-  });
-
-  // Filter sections and tests based on status and access
-  const filteredSections = accessibleSections.map(section => ({
+  // Filter sections based on status only
+  const filteredSections = sections.map(section => ({
     ...section,
     tests: section.tests.filter(test => {
-      // Check status filter
-      const statusMatch = selectedStatuses.has('all') || selectedStatuses.has(test.status);
-      
-      // Admin has access to all tests
-      if (authState.user?.accessRights.includes('Admin')) {
-        return statusMatch;
-      }
-
-      // Check access rights
-      const accessMatch = test.accessFor.some(right => 
-        authState.user?.accessRights.includes(right)
-      );
-
-      if (!accessMatch) {
-        logger.debug('User does not have access to test', {
-          test: test.name,
-          requiredAccess: test.accessFor,
-          userAccess: authState.user?.accessRights
-        });
-      }
-
-      return statusMatch && accessMatch;
+      // Check status filter only
+      return selectedStatuses.has('all') || selectedStatuses.has(test.status);
     })
   })).filter(section => section.tests.length > 0);
 
@@ -132,9 +86,7 @@ export function DisciplinePage({ title, sections }: DisciplineProps) {
             ))
           ) : (
             <div className="text-center py-12 text-text-secondary">
-              {authState.user ? 
-                "You don't have access to any tests in this section" : 
-                "Please sign in to view available tests"}
+              No tests available with the selected filters
             </div>
           )}
         </Section>
