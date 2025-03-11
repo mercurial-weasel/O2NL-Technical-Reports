@@ -6,7 +6,7 @@ export const mockUsers: AuthUser[] = [
     email: 'admin@o2nl.nz',
     firstName: 'Dave',
     lastName: 'Braendler',
-    accessRights: ['PAB', 'AMT', 'Design Lead', 'General', 'Admin'],
+    accessRights: ['PAB', 'AMT', 'Design', 'General', 'Admin'],
     created_at: '2025-01-01T00:00:00.000Z'
   },
   {
@@ -14,7 +14,7 @@ export const mockUsers: AuthUser[] = [
     email: 'design@o2nl.nz',
     firstName: 'Emma',
     lastName: 'Christie',
-    accessRights: ['Design Lead', 'General'],
+    accessRights: ['Design', 'General'],
     created_at: '2025-01-01T00:00:00.000Z'
   },
   {

@@ -11,9 +11,12 @@ function GeotechnicalTests() {
     ...section,
     tests: section.tests.map(test => ({
       ...test,
-      onClick: test.name === 'Standard Penetrometer Test (SPT)' 
-        ? () => navigate('/geotechnical/spt')
-        : undefined
+      onClick: 
+        test.name === 'Standard Penetrometer Test (SPT)'
+          ? () => navigate('/geotechnical/spt')
+          : test.name === 'Particle Size Distribution (PSD)'
+            ? () => navigate('/geotechnical/psd')
+            : undefined
     }))
   }));
 

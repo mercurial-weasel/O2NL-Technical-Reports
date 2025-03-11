@@ -17,7 +17,8 @@ import { ProjectControlsDashboards } from '@dashboardGroups/ProjectControls';
 import { GeotechnicalTests } from '@dashboardGroups/Geotechnical';
 import { EnvironmentalTests } from '@dashboardGroups/Environmental';
 
-import { GeoDashboardSPT } from '@dashboards/Geo';
+import GeoDashboardSPT from '@dashboards/Geo/SPT/GeoDashboardSPT';
+import GeoDashboardPSD from '@dashboards/Geo/PSD/GeoDashboardPSD';
 
 import { EarnedValueSummary } from '@dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { BudgetTracking } from '@dashboards/ProjectControls/Commercial/BudgetTracking';
@@ -194,6 +195,13 @@ export function AppRoutes() {
       <Route path="/geotechnical/spt" element={
         <RBACWrapper>
           <GeoDashboardSPT />
+        </RBACWrapper>
+      } />
+
+      {/* Add this new route for PSD dashboard */}
+      <Route path="/geotechnical/psd" element={
+        <RBACWrapper>
+          <GeoDashboardPSD />
         </RBACWrapper>
       } />
       
