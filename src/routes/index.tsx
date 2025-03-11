@@ -96,61 +96,61 @@ export function AppRoutes() {
       
       {/* Project Controls Routes */}
       <Route path="/project-controls" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial', 'people']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial', 'people', 'test']}>
           <ProjectControlsDashboards />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/pab" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <PABDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/amt" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <AMTDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/amt/:id" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <AMTDetailPage />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/amt/budget" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial', 'test']}>
           <BudgetTracking />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/systems" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <SystemsDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/staff-numbers" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'people']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'people', 'test']}>
           <StaffNumbers2Dashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/staff-fte" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'people']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'people', 'test']}>
           <StaffFTEDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/staff-movement" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'people']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'people', 'test']}>
           <StaffMovementDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/time-logs" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <TimeLogsDashboard />
         </RBACWrapper>
       } />
@@ -162,58 +162,58 @@ export function AppRoutes() {
       } />
       
       <Route path="/project-controls/sustainability" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial', 'test']}>
           <SustainabilityDashboard />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/sustainability/:id" element={
-        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'commercial', 'test']}>
           <SustainabilityDetailPage />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/emissions" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <EmissionsTracking />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/consenting" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <ConsentingDashboard />
         </RBACWrapper>
       } />
       
       {/* Geotechnical Routes */}
       <Route path="/geotechnical" element={
-        <RBACWrapper>
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
           <GeotechnicalTests />
         </RBACWrapper>
       } />
       
       <Route path="/geotechnical/spt" element={
-        <RBACWrapper>
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
           <GeoDashboardSPT />
         </RBACWrapper>
       } />
 
       {/* Add this new route for PSD dashboard */}
       <Route path="/geotechnical/psd" element={
-        <RBACWrapper>
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
           <GeoDashboardPSD />
         </RBACWrapper>
       } />
       
       {/* Environmental Routes */}
       <Route path="/environmental" element={
-        <RBACWrapper>
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
           <EnvironmentalTests />
         </RBACWrapper>
       } />
       
       <Route path="/project-controls/equipment" element={
-        <RBACWrapper requiredRoles={['admin', 'amt']}>
+        <RBACWrapper requiredRoles={['admin', 'amt', 'test']}>
           <EquipmentStatus />
         </RBACWrapper>
       } />

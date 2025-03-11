@@ -1,5 +1,5 @@
 import React from 'react';
-import { PSDPlot } from '@features/geotechnical/PSD/PSDPlot';
+import { PSDPlot } from '@features/geotechnical/psd/PSDPlot';
 
 interface PSDChartViewProps {
   data: any[]; // Using the PSDPlot component's expected data format
