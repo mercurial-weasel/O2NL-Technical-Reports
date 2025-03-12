@@ -27,6 +27,7 @@ export function ClerkProvider({ children }: ClerkProviderProps) {
         variables: { colorPrimary: '#10b981' },
         baseTheme: prefersDarkMode ? 'dark' : 'light'
       }}
+      logLevel="debug"
       navigate={(to) => {
         console.log('Clerk navigation requested to:', to);
         window.history.pushState({}, '', to);
