@@ -6,6 +6,7 @@ interface PSDFilterSummaryProps {
   selectedAditIds: string[];
   selectedLocationIds: string[];
   selectedSampleType?: string;
+  depthRange?: [number, number];
 }
 
 export const PSDFilterSummary: React.FC<PSDFilterSummaryProps> = ({
@@ -13,9 +14,13 @@ export const PSDFilterSummary: React.FC<PSDFilterSummaryProps> = ({
   totalCount,
   selectedAditIds,
   selectedLocationIds,
-  selectedSampleType
+  selectedSampleType,
+  depthRange
 }) => {
-  const hasFilters = selectedAditIds.length > 0 || selectedLocationIds.length > 0 || selectedSampleType;
+  const hasFilters = selectedAditIds.length > 0 || 
+                    selectedLocationIds.length > 0 || 
+                    selectedSampleType || 
+                    (depthRange && (depthRange[0] > 0 || depthRange[1] < 40));
 
   return (
     <div className="mb-4 px-4">
@@ -31,6 +36,9 @@ export const PSDFilterSummary: React.FC<PSDFilterSummaryProps> = ({
               <span> Location IDs: {selectedLocationIds.length === 1 ? selectedLocationIds[0] : `${selectedLocationIds.length} selected`}</span>
             )}
             {selectedSampleType && <span> Sample Type: {selectedSampleType}</span>}
+            {depthRange && (depthRange[0] > 0 || depthRange[1] < 40) && (
+              <span> Depth: {depthRange[0].toFixed(1)}m - {depthRange[1].toFixed(1)}m</span>
+            )}
           </span>
         )}
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Header } from '@common/Header/Header';
 import { Footer } from '@common/Footer/Footer';
 import { Section } from '@common/Section/Section';
@@ -11,6 +11,7 @@ import { MDDFilterSummary } from '@features/mdd/MDDFilterSummary';
 import { MDDTableView } from '@features/mdd/MDDTableView';
 import { MDDChartView } from '@features/mdd/MDDChartView';
 import { useMDDData } from '@features/mdd/hooks/useMDDData';
+import { DepthRangeSlider } from '@features/geotechnical/common/DepthRangeSlider';
 
 // Import types
 import { TestData } from '@api/geotechnical/mdd/types';
@@ -40,6 +41,34 @@ function GeoDashboardMDD() {
   const [selectedLocationIds, setSelectedLocationIds] = useState<string[]>([]);
   const [selectedSampleType, setSelectedSampleType] = useState<string>('');
   
+  // Calculate min and max depth from actual data
+  const [minDepth, setMinDepth] = useState<number>(0);
+  const [maxDepth, setMaxDepth] = useState<number>(40);
+  const [depthRange, setDepthRange] = useState<[number, number]>([0, 40]);
+  
+  // Scan dataset for actual min and max depths when data loads
+  useEffect(() => {
+    if (data.mddResults && data.mddResults.length > 0) {
+      // Extract all depth_to values from the dataset
+      const depths = data.mddResults.map(result => 
+        typeof result.depth_to === 'number' ? result.depth_to : parseFloat(result.depth_to.toString())
+      );
+      
+      // Calculate min and max, with floor/ceil to get clean values
+      const calculatedMinDepth = Math.floor(Math.min(...depths));
+      const calculatedMaxDepth = Math.ceil(Math.max(...depths));
+      
+      // Update state values
+      setMinDepth(calculatedMinDepth);
+      setMaxDepth(calculatedMaxDepth);
+      
+      // Reset the depth range filter to match the actual data range
+      setDepthRange([calculatedMinDepth, calculatedMaxDepth]);
+      
+      console.log(`MDD depth range in dataset: ${calculatedMinDepth} to ${calculatedMaxDepth}`);
+    }
+  }, [data.mddResults]);
+  
   // State for view mode and sorting
   const [viewMode, setViewMode] = useState<ViewMode>('chart');
   const [sortConfig, setSortConfig] = useState<SortConfig>({
@@ -47,11 +76,12 @@ function GeoDashboardMDD() {
     direction: 'ascending'
   });
 
-  // Reset all filters
+  // Reset all filters - now uses calculated depth bounds
   const handleResetFilters = () => {
     setSelectedAditIds([]);
     setSelectedLocationIds([]);
     setSelectedSampleType('');
+    setDepthRange([minDepth, maxDepth]); // Reset to calculated min/max depths
   };
 
   // Sort function for table data
@@ -82,8 +112,16 @@ function GeoDashboardMDD() {
       filtered = filtered.filter(result => result.sample_type === selectedSampleType);
     }
 
+    // Filter by depth range
+    filtered = filtered.filter(
+      result => {
+        const depth = parseFloat(result.depth_to.toString());
+        return depth >= depthRange[0] && depth <= depthRange[1];
+      }
+    );
+
     return filtered;
-  }, [data.mddResults, selectedAditIds, selectedLocationIds, selectedSampleType]);
+  }, [data.mddResults, selectedAditIds, selectedLocationIds, selectedSampleType, depthRange]);
 
   // Apply sorting to filtered results for table view
   const sortedMDDResults = useMemo(() => {
@@ -143,6 +181,16 @@ function GeoDashboardMDD() {
               setViewMode={setViewMode}
             />
             
+            {/* Depth Range Slider with dynamic min/max based on dataset */}
+            <div className="px-4 py-3 border-t border-gray-200">
+              <DepthRangeSlider
+                minDepth={minDepth}
+                maxDepth={maxDepth}
+                defaultValue={depthRange}
+                onChange={setDepthRange}
+              />
+            </div>
+            
             {/* Filter summary */}
             <MDDFilterSummary
               filteredCount={filteredMDDResults.length}
@@ -150,6 +198,7 @@ function GeoDashboardMDD() {
               selectedAditIds={selectedAditIds}
               selectedLocationIds={selectedLocationIds}
               selectedSampleType={selectedSampleType}
+              depthRange={depthRange}
             />
             
             {/* View Content - Chart or Table */}

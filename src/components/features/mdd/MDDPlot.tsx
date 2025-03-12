@@ -7,16 +7,12 @@ interface MDDPlotProps {
   height?: string;
 }
 
-/**
- * Generates an interactive moisture content vs dry density plot using Plotly.
- * 
- * For each sample, the function extracts the moisture content and dry density values
- * from the 'mdd_results' array and plots them as a curve with markers.
- * 
- * @param {HTMLDivElement} plotDiv - The DOM element to render the plot into
- * @param {TestData[]} data - List of test results loaded from mdd api
- */
-function plotMoistureContentVsDryDensity(plotDiv: HTMLDivElement, data: TestData[]) {
+export const MDDPlot: React.FC<MDDPlotProps> = ({ data, height = '500px' }) => {
+  const plotRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!plotRef.current || !data || data.length === 0) return;
+
     let traces = [];
 
     // Iterate over each sample in the data
@@ -58,44 +54,57 @@ function plotMoistureContentVsDryDensity(plotDiv: HTMLDivElement, data: TestData
         });
     });
 
-    // Define the layout
+    // Define the layout with matching style to PSDPlot
     const layout = {
-        title: 'Maximum Dry Density Test Results',
+        title: {
+            text: "Moisture Content vs Dry Density",
+            font: { size: 18, weight: 'bold' },
+            y: 0.95, // Position slightly lower
+        },
         xaxis: {
-            title: 'Moisture Content (%)',
+            title: {
+                text: "Moisture Content (%)",
+                font: { size: 14 },
+                standoff: 15, // Extra space for axis title
+            },
             showgrid: true,
-            gridcolor: 'lightgrey'
+            gridcolor: 'lightgrey',
         },
         yaxis: {
-            title: 'Dry Density (Mg/m³)',
+            title: {
+                text: "Dry Density (kN/m³)",
+                font: { size: 14 },
+                standoff: 15, // Extra space for axis title
+            },
             showgrid: true,
             gridcolor: 'lightgrey'
         },
         legend: {
-          title: "Sample References",
-          x: 1.05,
-          y: 0.5,
-          xanchor: "left",
-          yanchor: "middle",
-          traceorder: "normal",
+            title: "Sample References",
+            x: 1.05,
+            y: 0.5,
+            xanchor: "left",
+            yanchor: "middle",
+            traceorder: "normal",
         },
         plot_bgcolor: "white",
-        margin: { l: 50, r: 250, t: 50, b: 50 },
+        margin: { l: 80, r: 250, t: 80, b: 80 }, // Increased margins to match PSDPlot
         autosize: true
     };
 
-    // Plot the figure
-    Plotly.newPlot(plotDiv, traces, layout);
-}
-
-export const MDDPlot: React.FC<MDDPlotProps> = ({ data, height = '500px' }) => {
-  const plotRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!plotRef.current || !data || data.length === 0) return;
-
-    // Use the plotting function to render the plot
-    plotMoistureContentVsDryDensity(plotRef.current, data);
+    // Render the plot with improved config - matching PSDPlot
+    Plotly.newPlot(plotRef.current, traces, layout, {
+      responsive: true,
+      displayModeBar: true,
+      displaylogo: false,
+      toImageButtonOptions: {
+        format: 'png',
+        filename: 'moisture_content_vs_dry_density',
+        height: 800,
+        width: 1200,
+        scale: 2
+      }
+    });
 
     // Clean up on unmount
     return () => {
