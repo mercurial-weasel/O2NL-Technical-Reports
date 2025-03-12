@@ -16,7 +16,9 @@ function GeotechnicalTests() {
           ? () => navigate('/geotechnical/spt')
           : test.name === 'Particle Size Distribution (PSD)'
             ? () => navigate('/geotechnical/psd')
-            : undefined
+            : test.name === 'Maximum Dry Density (MDD)'
+              ? () => navigate('/geotechnical/mdd')
+              : undefined
     }))
   }));
 

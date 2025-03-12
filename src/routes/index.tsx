@@ -19,6 +19,7 @@ import { EnvironmentalTests } from '@dashboardGroups/Environmental';
 
 import GeoDashboardSPT from '@dashboards/Geo/SPT/GeoDashboardSPT';
 import GeoDashboardPSD from '@dashboards/Geo/PSD/GeoDashboardPSD';
+import GeoDashboardMDD from '@dashboards/Geo/MDD/GeoDashboardMDD';
 
 import { EarnedValueSummary } from '@dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
 import { BudgetTracking } from '@dashboards/ProjectControls/Commercial/BudgetTracking';
@@ -204,7 +205,17 @@ export function AppRoutes() {
           <GeoDashboardPSD />
         </RBACWrapper>
       } />
-      
+
+
+      {/* Add this new route for MDD dashboard */}
+      <Route path="/geotechnical/mdd" element={
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
+          <GeoDashboardMDD />
+        </RBACWrapper>
+      } />
+
+
+
       {/* Environmental Routes */}
       <Route path="/environmental" element={
         <RBACWrapper requiredRoles={['admin', 'test', 'design']}>

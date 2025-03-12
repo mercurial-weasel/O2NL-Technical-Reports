@@ -46,6 +46,7 @@ export const GEOTECHNICAL_SECTIONS: DisciplineSection[] = [
       { name: 'Direct Shear', icon: createIcon(ArrowDownUp), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Dry Density', icon: createIcon(Scale), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Hook Cell', icon: createIcon(Container), status: 'not-available', accessFor: ['Test', 'Design'] },
+      { name: 'Maximum Dry Density (MDD)', icon: createIcon(Scale), status: 'draft', accessFor: ['test', 'design', 'admin'] },
       { name: 'Moisture Content', icon: createIcon(Droplets), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Organic Matter', icon: createIcon(Microscope), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Permeability', icon: createIcon(Waves), status: 'not-available', accessFor: ['Test', 'Design'] },
