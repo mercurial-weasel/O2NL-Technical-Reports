@@ -95,7 +95,7 @@ const PlasticityDashboard: React.FC = () => {
                 No data matches your current filter criteria. Try adjusting your filters.
               </div>
             ) : activeTab === 'chart' ? (
-              <div className="h-[600px]">
+              <div className="w-full">
                 <PlasticityPlot data={filteredData} />
               </div>
             ) : (

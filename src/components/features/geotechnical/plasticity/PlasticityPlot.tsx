@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Plot from "react-plotly.js";
 import { Atterbergs } from "@api/geotechnical/plasticity";
 
@@ -7,6 +7,40 @@ interface PlasticityPlotProps {
 }
 
 const PlasticityPlot: React.FC<PlasticityPlotProps> = ({ data }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  // Update dimensions when container size changes
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth;
+        // Maintain aspect ratio close to 4:3 for the chart
+        const containerHeight = Math.min(containerWidth * 0.75, 600);
+        setDimensions({
+          width: containerWidth,
+          height: containerHeight
+        });
+      }
+    };
+
+    // Initial dimensions
+    updateDimensions();
+
+    // Set up resize observer to update dimensions when container resizes
+    const resizeObserver = new ResizeObserver(updateDimensions);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    // Clean up
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const traces = data.map((sample) => ({
     x: [sample.liquid_limit],
     y: [sample.plasticity_index],
@@ -49,19 +83,38 @@ const PlasticityPlot: React.FC<PlasticityPlotProps> = ({ data }) => {
   ].map((ann) => ({ x: ann.x, y: ann.y, text: ann.text, showarrow: false, font: { size: 10 } }));
 
   return (
-    <Plot
-      data={traces}
-      layout={{
-        title: "Atterberg Plasticity Chart",
-        xaxis: { title: "Liquid Limit", range: [0, 120], showgrid: true, gridcolor: "lightgrey" },
-        yaxis: { title: "Plasticity Index", range: [0, 90], showgrid: true, gridcolor: "lightgrey" },
-        shapes,
-        annotations,
-        plot_bgcolor: "white",
-        margin: { l: 50, r: 250, t: 50, b: 50 },
-        legend: { title: "Test Samples" },
-      }}
-    />
+    <div ref={containerRef} className="w-full">
+      {dimensions.width > 0 && (
+        <Plot
+          data={traces}
+          layout={{
+            title: "Atterberg Plasticity Chart",
+            xaxis: { title: "Liquid Limit", range: [0, 120], showgrid: true, gridcolor: "lightgrey" },
+            yaxis: { title: "Plasticity Index", range: [0, 90], showgrid: true, gridcolor: "lightgrey" },
+            shapes,
+            annotations,
+            plot_bgcolor: "white",
+            margin: { l: 50, r: 140, t: 50, b: 50 },
+            legend: { title: "Test Samples" },
+            width: dimensions.width,
+            height: dimensions.height,
+            autosize: false,
+          }}
+          config={{
+            responsive: true,
+            displayModeBar: true,
+            displaylogo: false,
+            modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+            toImageButtonOptions: {
+              format: 'png',
+              filename: 'atterberg_plasticity_chart',
+              scale: 2
+            }
+          }}
+          style={{ width: "100%", height: "100%" }}
+        />
+      )}
+    </div>
   );
 };
 
