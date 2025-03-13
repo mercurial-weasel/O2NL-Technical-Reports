@@ -18,7 +18,9 @@ function GeotechnicalTests() {
             ? () => navigate('/geotechnical/psd')
             : test.name === 'Maximum Dry Density (MDD)'
               ? () => navigate('/geotechnical/mdd')
-              : undefined
+              : test.name === 'Atterberg Limits (Plasticity)'
+                ? () => navigate('/geotechnical/plasticity')
+                : undefined
     }))
   }));
 
