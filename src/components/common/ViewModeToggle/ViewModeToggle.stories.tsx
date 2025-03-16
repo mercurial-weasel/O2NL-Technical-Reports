@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     mode: {
       control: 'radio',
-      options: ['table', 'chart', 'calendar'],
+      options: ['table', 'chart', 'map'], // Changed 'calendar' to 'map'
       description: 'Current view mode'
     },
     onChange: {
@@ -35,8 +35,8 @@ export const TableMode: Story = {
   }
 };
 
-export const CalendarMode: Story = {
+export const MapMode: Story = { // Changed from CalendarMode to MapMode
   args: {
-    mode: 'calendar'
+    mode: 'map' // Changed from 'calendar' to 'map'
   }
 };
