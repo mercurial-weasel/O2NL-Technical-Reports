@@ -4,14 +4,37 @@ import PlasticityPlot from '@components/features/geotechnical/plasticity/Plastic
 import AtterbergsTable from '@components/features/geotechnical/plasticity/AtterbergsTable';
 import AtterbergsFilterPanel from '@components/features/geotechnical/plasticity/AtterbergsFilters';
 import PlasticityStats from '@components/features/geotechnical/plasticity/PlasticityStats';
+import MapComponent from '@components/features/geotechnical/plasticity/MapComponent';
 import DashboardLayout from './DashboardLayout';
+import { LatLngBounds } from 'leaflet';
+import proj4 from 'proj4';
+
+// Set up coordinate system definitions
+// NZTM2000 (EPSG:2193) definition
+proj4.defs('EPSG:2193', '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs');
+
+// Function to convert NZTM2000 coordinates to WGS84 latitude/longitude
+const convertNZTM2000ToLatLng = (x: number, y: number): [number, number] => {
+  try {
+    // proj4 expects [x, y] and returns [longitude, latitude]
+    const [lng, lat] = proj4('EPSG:2193', 'EPSG:4326', [x, y]);
+    return [lat, lng]; // Return as [lat, lng] for Leaflet
+  } catch (error) {
+    console.error('Error converting coordinates:', error);
+    // Return a default location in New Zealand as fallback
+    return [-41.2865, 174.7762]; // Wellington, NZ
+  }
+};
 
 const PlasticityDashboard: React.FC = () => {
   const [atterbergsData, setAtterbergsData] = useState<Atterbergs[]>([]);
   const [filteredData, setFilteredData] = useState<Atterbergs[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'chart' | 'table'>('chart');
+  const [activeTab, setActiveTab] = useState<'chart' | 'table' | 'map'>('chart');
+  const [attributeFilters, setAttributeFilters] = useState<AtterbergsFilters>({});
+  const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
+  const [activeItem, setActiveItem] = useState<Atterbergs | null>(null);
   
   // Load data
   useEffect(() => {
@@ -32,23 +55,65 @@ const PlasticityDashboard: React.FC = () => {
     loadData();
   }, []);
   
-  // Handle filter changes
-  const handleFilterChange = (filters: AtterbergsFilters) => {
+  // Apply filters when they change
+  useEffect(() => {
     let filtered = [...atterbergsData];
     
-    if (filters.location_id) {
-      filtered = filtered.filter(item => item.location_id === filters.location_id);
+    // Apply attribute filters
+    if (attributeFilters.location_id) {
+      filtered = filtered.filter(item => item.location_id === attributeFilters.location_id);
     }
     
-    if (filters.adit_id) {
-      filtered = filtered.filter(item => item.adit_id === filters.adit_id);
+    if (attributeFilters.adit_id) {
+      filtered = filtered.filter(item => item.adit_id === attributeFilters.adit_id);
     }
     
-    if (filters.sample_unique_id) {
-      filtered = filtered.filter(item => item.sample_unique_id === filters.sample_unique_id);
+    if (attributeFilters.sample_unique_id) {
+      filtered = filtered.filter(item => item.sample_unique_id === attributeFilters.sample_unique_id);
+    }
+    
+    if (attributeFilters.construction_subzone) {
+      filtered = filtered.filter(item => item.construction_subzone === attributeFilters.construction_subzone);
     }
     
     setFilteredData(filtered);
+  }, [atterbergsData, attributeFilters]);
+  
+  // Handle attribute filter changes
+  const handleFilterChange = (filters: AtterbergsFilters) => {
+    setAttributeFilters(filters);
+  };
+  
+  // Handle item selection with different modes
+  const handleItemSelect = (itemId: string, mode: 'add' | 'remove' | 'toggle') => {
+    setSelectedItems(prevSelected => {
+      const newSelected = new Set(prevSelected);
+      
+      if (mode === 'add') {
+        newSelected.add(itemId);
+      } else if (mode === 'remove') {
+        newSelected.delete(itemId);
+      } else if (mode === 'toggle') {
+        if (newSelected.has(itemId)) {
+          newSelected.delete(itemId);
+        } else {
+          newSelected.add(itemId);
+        }
+      }
+      
+      return newSelected;
+    });
+  };
+  
+  // Handle popup open in map view
+  const handlePopupOpen = (item: Atterbergs) => {
+    setActiveItem(item);
+  };
+  
+  // Clear all selections
+  const clearSelections = () => {
+    setSelectedItems(new Set());
+    setActiveItem(null);
   };
   
   if (loading) {
@@ -71,7 +136,28 @@ const PlasticityDashboard: React.FC = () => {
         
         <PlasticityStats data={filteredData} />
         
-        <AtterbergsFilterPanel data={atterbergsData} onFilterChange={handleFilterChange} />
+        <AtterbergsFilterPanel 
+          data={atterbergsData} 
+          onFilterChange={handleFilterChange}
+          onClearSelections={clearSelections}
+          selectedItemsCount={selectedItems.size}
+        />
+        
+        {selectedItems.size > 0 && (
+          <div className="bg-blue-50 p-3 mb-4 border border-blue-200 rounded-md">
+            <div className="flex justify-between items-center">
+              <span className="font-medium">
+                {selectedItems.size} sample{selectedItems.size !== 1 ? 's' : ''} selected
+              </span>
+              <button
+                className="px-2 py-1 bg-white border border-blue-300 rounded text-sm hover:bg-blue-50"
+                onClick={clearSelections}
+              >
+                Clear Selection
+              </button>
+            </div>
+          </div>
+        )}
         
         <div className="bg-white p-4 border border-gray-300 rounded-md">
           <div className="flex border-b border-gray-200 mb-4">
@@ -80,6 +166,12 @@ const PlasticityDashboard: React.FC = () => {
               onClick={() => setActiveTab('chart')}
             >
               Plasticity Chart
+            </button>
+            <button
+              className={`py-2 px-4 ${activeTab === 'map' ? 'border-b-2 border-blue-500 font-medium' : 'text-gray-600'}`}
+              onClick={() => setActiveTab('map')}
+            >
+              Map View
             </button>
             <button
               className={`py-2 px-4 ${activeTab === 'table' ? 'border-b-2 border-blue-500 font-medium' : 'text-gray-600'}`}
@@ -96,10 +188,25 @@ const PlasticityDashboard: React.FC = () => {
               </div>
             ) : activeTab === 'chart' ? (
               <div className="w-full">
-                <PlasticityPlot data={filteredData} />
+                <PlasticityPlot 
+                  data={filteredData} 
+                  selectedItems={selectedItems}
+                  onItemSelect={handleItemSelect} 
+                />
               </div>
+            ) : activeTab === 'map' ? (
+              <MapComponent 
+                data={filteredData} 
+                selectedItems={selectedItems}
+                onItemSelect={handleItemSelect}
+                onPopupOpen={handlePopupOpen}
+              />
             ) : (
-              <AtterbergsTable data={filteredData} />
+              <AtterbergsTable 
+                data={filteredData} 
+                selectedItems={selectedItems}
+                onItemSelect={handleItemSelect}
+              />
             )}
           </div>
         </div>
