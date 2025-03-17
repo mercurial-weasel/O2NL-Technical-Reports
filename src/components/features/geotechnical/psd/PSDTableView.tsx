@@ -49,9 +49,10 @@ export const PSDTableView: React.FC<PSDTableViewProps> = ({
             {renderTableHeader('Sample ID', 'sample_unique_id')}
             {renderTableHeader('Test No', 'test_no')}
             {renderTableHeader('Depth (m)', 'depth_to')}
+            {renderTableHeader('Chainage', 'chainage')}
+            {renderTableHeader('Subzone', 'construction_subzone')}
             {renderTableHeader('Date Sampled', 'date_sampled')}
             {renderTableHeader('Date Tested', 'date_tested')}
-            {renderTableHeader('Date Checked', 'date_checked')}
             {renderTableHeader('Water Content', 'average_water_content')}
           </tr>
         </thead>
@@ -65,9 +66,10 @@ export const PSDTableView: React.FC<PSDTableViewProps> = ({
               <td className="px-4 py-2 text-sm text-gray-700">{result.sample_unique_id}</td>
               <td className="px-4 py-2 text-sm text-gray-700">{result.test_no}</td>
               <td className="px-4 py-2 text-sm text-gray-700">{result.depth_to}</td>
+              <td className="px-4 py-2 text-sm text-gray-700">{result.chainage}</td>
+              <td className="px-4 py-2 text-sm text-gray-700">{result.construction_subzone}</td>
               <td className="px-4 py-2 text-sm text-gray-700">{result.date_sampled}</td>
               <td className="px-4 py-2 text-sm text-gray-700">{result.date_tested}</td>
-              <td className="px-4 py-2 text-sm text-gray-700">{result.date_checked}</td>
               <td className="px-4 py-2 text-sm text-gray-700">{result.average_water_content}%</td>
             </tr>
           ))}

@@ -1,4 +1,4 @@
-import { PSDData, PSDDataSchema } from './types';
+import { PSDData } from './types';
 import { mockParticleSizeDistributionTests } from './mock-data';
 
 /**
@@ -9,9 +9,7 @@ export async function getPSDTests(): Promise<PSDData> {
   // For development/demo purposes, return mock data with simulated delay
   return new Promise((resolve) => {
     setTimeout(() => {
-      // Validate data through Zod schema
-      const data = PSDDataSchema.parse(mockParticleSizeDistributionTests);
-      resolve(data);
+      resolve(mockParticleSizeDistributionTests);
     }, 300);
   });
 }

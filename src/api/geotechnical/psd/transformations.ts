@@ -1,4 +1,76 @@
 import { ParticleSizeDistributionTest, PSDData } from './types';
+import proj4 from 'proj4';
+
+// Set up coordinate system definitions
+// NZTM2000 (EPSG:2193) definition
+proj4.defs('EPSG:2193', '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs');
+
+/**
+ * Validates if a value is a finite number
+ */
+function isValidCoordinate(value: any): boolean {
+  return typeof value === 'number' && isFinite(value) && !isNaN(value);
+}
+
+/**
+ * Converts NZTM2000 coordinates to WGS84 latitude/longitude
+ */
+export function convertNZTM2000ToLatLng(x: number, y: number): [number, number] | undefined {
+  try {
+    // Validate coordinates
+    if (!isValidCoordinate(x) || !isValidCoordinate(y)) {
+      console.error('Invalid coordinates:', { x, y });
+      return undefined;
+    }
+    
+    // Check for reasonable NZTM2000 bounds for New Zealand
+    if (x < 1000000 || x > 2100000 || y < 4700000 || y > 6200000) {
+      console.warn('Coordinates outside normal NZTM2000 bounds for New Zealand:', { x, y });
+      // Continue anyway, but log the warning
+    }
+    
+    // proj4 expects [x, y] and returns [longitude, latitude]
+    const [lng, lat] = proj4('EPSG:2193', 'EPSG:4326', [x, y]);
+    
+    // Validate the result
+    if (!isValidCoordinate(lat) || !isValidCoordinate(lng)) {
+      console.error('Invalid conversion result:', { lat, lng });
+      return undefined;
+    }
+    
+    return [lat, lng]; // Return as [lat, lng] for Leaflet
+  } catch (error) {
+    console.error('Error converting coordinates:', error);
+    console.error('Input values:', { x, y });
+    return undefined; // Return undefined instead of default location
+  }
+}
+
+/**
+ * Formats PSD test data for display and adds converted coordinates
+ */
+export function formatPSDData(data: ParticleSizeDistributionTest): ParticleSizeDistributionTest & { latLng?: [number, number] } {
+  // Default result without latLng
+  const result = {
+    ...data,
+    // Format numeric fields for display
+    depth_to: Number(isFinite(Number(data.depth_to)) ? Number(data.depth_to).toFixed(1) : 0),
+    distance_to_alignment: Number(isFinite(Number(data.distance_to_alignment)) ? Number(data.distance_to_alignment).toFixed(1) : 0),
+    angle_to_alignment_deg_cc: Number(isFinite(Number(data.angle_to_alignment_deg_cc)) ? Number(data.angle_to_alignment_deg_cc).toFixed(1) : 0),
+    x_coordinate: Number(isFinite(Number(data.x_coordinate)) ? Number(data.x_coordinate).toFixed(4) : 0),
+    y_coordinate: Number(isFinite(Number(data.y_coordinate)) ? Number(data.y_coordinate).toFixed(4) : 0),
+  };
+  
+  // Only add latLng if coordinate conversion succeeds
+  if (isValidCoordinate(data.x_coordinate) && isValidCoordinate(data.y_coordinate)) {
+    const latLng = convertNZTM2000ToLatLng(data.x_coordinate, data.y_coordinate);
+    if (latLng) {
+      return { ...result, latLng };
+    }
+  }
+  
+  return result;
+}
 
 // Interface for PSD test summary information
 export interface PSDSummary {
@@ -16,6 +88,14 @@ export interface PSDSummary {
   gravel: number; // Percentage of gravel (>4.75mm)
   sand: number;   // Percentage of sand (0.075-4.75mm)
   silt: number;   // Percentage of fines (<0.075mm)
+  chainage: number;
+  distance_to_alignment: number;
+  construction_subzone: string;
+  coordinates: {
+    x: number;
+    y: number;
+  };
+  latLng?: [number, number]; // Added to store converted coordinates
 }
 
 // Find the approximate sieve size for a given percent passing using linear interpolation
@@ -100,6 +180,9 @@ function calculatePSDSummary(test: ParticleSizeDistributionTest): PSDSummary {
   const sand = percentPassing4_75mm - percentPassing0_075mm;
   const silt = percentPassing0_075mm;
   
+  // Convert coordinates to lat/lng
+  const latLng = convertNZTM2000ToLatLng(test.x_coordinate, test.y_coordinate);
+  
   return {
     sampleId: test.sample_unique_id,
     locationId: test.location_id,
@@ -114,7 +197,15 @@ function calculatePSDSummary(test: ParticleSizeDistributionTest): PSDSummary {
     soilClassification: classifySoil(gravel, sand, silt),
     gravel,
     sand,
-    silt
+    silt,
+    chainage: test.chainage,
+    distance_to_alignment: test.distance_to_alignment,
+    construction_subzone: test.construction_subzone,
+    coordinates: {
+      x: test.x_coordinate,
+      y: test.y_coordinate
+    },
+    latLng // Add the converted coordinates
   };
 }
 

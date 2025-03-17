@@ -1,34 +1,30 @@
-import { z } from 'zod';
+export interface SieveItem {
+    sieve_size_mm: number;
+    percent_passing: number;
+}
 
-// Define the sieve item schema
-export const SieveItemSchema = z.object({
-  sieve_size_mm: z.number(),
-  percent_passing: z.number()
-});
+export interface ParticleSizeDistributionTest {
+    adit_id: string;
+    location_id: string;
+    depth_to: number;
+    sample_reference: string;
+    sample_type: string;
+    date_sampled: string;
+    sample_unique_id: string;
+    test_no: number;
+    date_tested: string;
+    date_checked: string;
+    date_approved: string;
+    remark_dot_test_remarks: string;
+    average_water_content: string;
+    superseeding_note?: string;
+    particle_size_result: SieveItem[];
+    chainage: number;
+    distance_to_alignment: number;
+    angle_to_alignment_deg_cc: number;
+    construction_subzone: string;
+    x_coordinate: number;
+    y_coordinate: number;
+}
 
-// Define the particle size distribution test schema
-export const ParticleSizeDistributionTestSchema = z.object({
-  adit_id: z.string(),
-  location_id: z.string(),
-  depth_to: z.number(),
-  sample_reference: z.string(),
-  sample_type: z.string(),
-  date_sampled: z.string(),
-  sample_unique_id: z.string(),
-  test_no: z.number(),
-  date_tested: z.string(),
-  date_checked: z.string(),
-  date_approved: z.string(),
-  remark_dot_test_remarks: z.string(),
-  average_water_content: z.string(),
-  superseeding_note: z.string().optional(),
-  particle_size_result: z.array(SieveItemSchema)
-});
-
-// Export types
-export type SieveItem = z.infer<typeof SieveItemSchema>;
-export type ParticleSizeDistributionTest = z.infer<typeof ParticleSizeDistributionTestSchema>;
-
-// Define schema for API responses
-export const PSDDataSchema = z.array(ParticleSizeDistributionTestSchema);
-export type PSDData = z.infer<typeof PSDDataSchema>;
+export type PSDData = ParticleSizeDistributionTest[];

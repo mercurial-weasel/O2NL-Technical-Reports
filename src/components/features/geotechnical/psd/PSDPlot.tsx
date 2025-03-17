@@ -1,24 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import Plotly from 'plotly.js-dist';
+import { ParticleSizeDistributionTest, SieveItem } from '@api/geotechnical/psd';
 
-interface ParticleSizeResult {
-  sieve_size_mm: number;
-  percent_passing: number;
-}
-
-export interface ParticleSizeDistributionTest {
+interface PlotData {
   sample_id: string;
   sample_reference: string;
   point_id: string;
-  depth_from: number;
   depth_to: number;
   test_date: string;
   material: string;
-  particle_size_result: ParticleSizeResult[];
+  particle_size_result: SieveItem[];
 }
 
 interface PSDPlotProps {
-  data: ParticleSizeDistributionTest[];
+  data: PlotData[];
   height?: string;
 }
 
