@@ -5,7 +5,7 @@ interface SpinnerProps {
   color?: string;
 }
 
-export function Spinner({ size = 'md', color = 'text-brand-primary' }: SpinnerProps) {
+export function Spinner({ size = 'md', color = 'text-primary' }: SpinnerProps) {
   const sizeClass = {
     sm: 'h-4 w-4',
     md: 'h-8 w-8',
@@ -18,5 +18,3 @@ export function Spinner({ size = 'md', color = 'text-brand-primary' }: SpinnerPr
     </div>
   );
 }
-
-export * from './Spinner';

@@ -1,43 +1,37 @@
 import React from 'react';
-import { BarChart, Table as TableIcon, Map, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Button } from '@common/Button/Button';
-
-type ViewMode = 'chart' | 'table' | 'map';
 
 interface PSDFilterControlsProps {
   uniqueAditIds: string[];
   uniqueLocationIds: string[];
   uniqueSampleTypes: string[];
-  uniqueSubzones?: string[];  // Make optional
+  uniqueSubzones?: string[];
   selectedAditIds: string[];
   setSelectedAditIds: (ids: string[]) => void;
   selectedLocationIds: string[];
   setSelectedLocationIds: (ids: string[]) => void;
   selectedSampleType: string;
   setSelectedSampleType: (type: string) => void;
-  selectedSubzones?: string[];  // Changed from string to string[]
-  setSelectedSubzones?: (subzones: string[]) => void;  // Changed from string to string[]
+  selectedSubzones?: string[];
+  setSelectedSubzones?: (subzones: string[]) => void;
   handleResetFilters: () => void;
-  viewMode: ViewMode;
-  setViewMode: (mode: ViewMode) => void;
 }
 
 export const PSDFilterControls: React.FC<PSDFilterControlsProps> = ({
   uniqueAditIds,
   uniqueLocationIds,
   uniqueSampleTypes,
-  uniqueSubzones = [],  // Default to empty array
+  uniqueSubzones = [],
   selectedAditIds,
   setSelectedAditIds,
   selectedLocationIds,
   setSelectedLocationIds,
   selectedSampleType,
   setSelectedSampleType,
-  selectedSubzones = [],  // Default to empty array
-  setSelectedSubzones = () => {},  // Default no-op function
-  handleResetFilters,
-  viewMode,
-  setViewMode
+  selectedSubzones = [],
+  setSelectedSubzones = () => {},
+  handleResetFilters
 }) => {
   // Helper function to toggle an item in an array
   const toggleArrayItem = (array: string[], item: string): string[] => {
@@ -166,36 +160,6 @@ export const PSDFilterControls: React.FC<PSDFilterControlsProps> = ({
           >
             Reset Filters
           </Button>
-        </div>
-      </div>
-
-      {/* View Mode Toggle */}
-      <div className="mb-3">
-        <div className="w-full flex rounded-md border border-gray-300 overflow-hidden">
-          <button
-            onClick={() => setViewMode('chart')}
-            className={`flex-1 flex items-center justify-center py-2 px-3 text-sm border-r border-gray-300 ${
-              viewMode === 'chart' ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
-            }`}
-          >
-            <BarChart className="w-4 h-4 mr-2" /> Chart
-          </button>
-          <button
-            onClick={() => setViewMode('table')}
-            className={`flex-1 flex items-center justify-center py-2 px-3 text-sm border-r border-gray-300 ${
-              viewMode === 'table' ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
-            }`}
-          >
-            <TableIcon className="w-4 h-4 mr-2" /> Table
-          </button>
-          <button
-            onClick={() => setViewMode('map')}
-            className={`flex-1 flex items-center justify-center py-2 px-3 text-sm ${
-              viewMode === 'map' ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
-            }`}
-          >
-            <Map className="w-4 h-4 mr-2" /> Map
-          </button>
         </div>
       </div>
 

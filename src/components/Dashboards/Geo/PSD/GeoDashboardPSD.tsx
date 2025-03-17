@@ -3,6 +3,9 @@ import { Header } from '@common/Header/Header';
 import { Footer } from '@common/Footer/Footer';
 import { Section } from '@common/Section/Section';
 import { Card } from '@common/Card/Card';
+import { Container } from '@common/Container/Container';
+import { LoadingSpinner } from '@common/Spinner/Spinner';
+import { AlertBox } from '@common/AlertBox';
 
 // Import components
 import { DashboardHeader } from '@features/geotechnical/common/DashboardHeader';
@@ -13,12 +16,10 @@ import { PSDChartView } from '@features/geotechnical/psd/PSDChartView';
 import PSDMap from '@features/geotechnical/psd/PSDMap';
 import { usePSDData } from '@features/geotechnical/psd/hooks/usePSDData';
 import { DepthRangeSlider } from '@features/geotechnical/common/DepthRangeSlider';
+import { ViewMode, ViewModeToggle } from '@features/geotechnical/common/ViewModeToggle';
 
 // Import types
 import { ParticleSizeDistributionTest } from '@api/geotechnical/psd';
-
-// Define view modes
-type ViewMode = 'chart' | 'table' | 'map';
 
 // Define sort configuration
 interface SortConfig {
@@ -41,7 +42,7 @@ function GeoDashboardPSD() {
   const [selectedAditIds, setSelectedAditIds] = useState<string[]>([]);
   const [selectedLocationIds, setSelectedLocationIds] = useState<string[]>([]);
   const [selectedSampleType, setSelectedSampleType] = useState<string>('');
-  const [selectedSubzones, setSelectedSubzones] = useState<string[]>([]); // Changed from string to string[]
+  const [selectedSubzones, setSelectedSubzones] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set());
   
   // Calculate min and max depth from actual data
@@ -94,8 +95,8 @@ function GeoDashboardPSD() {
     setSelectedAditIds([]);
     setSelectedLocationIds([]);
     setSelectedSampleType('');
-    setSelectedSubzones([]); // Reset subzone filter (now an array)
-    setDepthRange([minDepth, maxDepth]); // Reset to calculated min/max depths
+    setSelectedSubzones([]);
+    setDepthRange([minDepth, maxDepth]);
   };
 
   // Handle item selection for map markers
@@ -216,12 +217,14 @@ function GeoDashboardPSD() {
         <Header />
         <div className="pt-24">
           <Section>
-            <Card>
-              <div className="flex justify-center items-center p-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-                <span className="ml-3">Loading data...</span>
-              </div>
-            </Card>
+            <Container>
+              <Card>
+                <div className="flex justify-center items-center p-12">
+                  <LoadingSpinner size="lg" />
+                  <span className="ml-3">Loading data...</span>
+                </div>
+              </Card>
+            </Container>
           </Section>
         </div>
       </div>
@@ -234,23 +237,29 @@ function GeoDashboardPSD() {
         <Header />
         <div className="pt-24">
           <Section>
-            <Card>
-              <div className="p-6 text-center">
-                <h2 className="text-xl text-red-600 mb-4">Error loading data</h2>
-                <p>{String(data.error)}</p>
-                <button 
-                  onClick={handleReload}
-                  className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark"
-                >
-                  Retry
-                </button>
-              </div>
-            </Card>
+            <Container>
+              <Card>
+                <AlertBox 
+                  title="Error loading data" 
+                  message={String(data.error)}
+                  variant="error"
+                  action={{
+                    label: "Retry",
+                    onClick: handleReload
+                  }}
+                />
+              </Card>
+            </Container>
           </Section>
         </div>
       </div>
     );
   }
+
+  // Handle tab change using ViewModeToggle
+  const handleViewModeChange = (mode: ViewMode) => {
+    setViewMode(mode);
+  };
 
   return (
     <div className="min-h-screen bg-background-base flex flex-col">
@@ -258,92 +267,116 @@ function GeoDashboardPSD() {
       
       <div className="pt-24">
         <Section>
-          <DashboardHeader 
-            title="Particle Size Distribution Dashboard"
-            backTo="/geotechnical"
-            backText="Back to Geotechnical Tests"
-            isLoading={data.isLoading}
-            isReloading={isReloading}
-            lastLoadTime={data.lastLoadTime}
-            onReload={handleReload}
-            error={data.error}
-          />
+          <Container>
+            <DashboardHeader 
+              title="Particle Size Distribution Dashboard"
+              backTo="/geotechnical"
+              backText="Back to Geotechnical Tests"
+              isLoading={data.isLoading}
+              isReloading={isReloading}
+              lastLoadTime={data.lastLoadTime}
+              onReload={handleReload}
+              error={data.error}
+            />
 
-          {/* Main Content */}
-          <Card title="Particle Size Distribution Analysis">
-            {/* Filter controls */}
-            <PSDFilterControls
-              uniqueAditIds={uniqueAditIds || []}
-              uniqueLocationIds={uniqueLocationIds || []}
-              uniqueSampleTypes={uniqueSampleTypes || []}
-              uniqueSubzones={uniqueSubzones}
-              selectedAditIds={selectedAditIds}
-              setSelectedAditIds={setSelectedAditIds}
-              selectedLocationIds={selectedLocationIds}
-              setSelectedLocationIds={setSelectedLocationIds}
-              selectedSampleType={selectedSampleType}
-              setSelectedSampleType={setSelectedSampleType}
-              selectedSubzones={selectedSubzones}
-              setSelectedSubzones={setSelectedSubzones}
-              handleResetFilters={handleResetFilters}
-              viewMode={viewMode}
-              setViewMode={setViewMode}
-            />
-            
-            {/* Depth Range Slider with dynamic min/max based on dataset */}
-            <div className="px-4 py-3 border-t border-gray-200">
-              <DepthRangeSlider
-                minDepth={minDepth}
-                maxDepth={maxDepth}
-                defaultValue={depthRange}
-                onChange={setDepthRange}
+            {/* Main Content */}
+            <Card title="Particle Size Distribution Analysis">
+              {/* Filter controls - remove viewMode props since we're handling it separately now */}
+              <PSDFilterControls
+                uniqueAditIds={uniqueAditIds || []}
+                uniqueLocationIds={uniqueLocationIds || []}
+                uniqueSampleTypes={uniqueSampleTypes || []}
+                uniqueSubzones={uniqueSubzones}
+                selectedAditIds={selectedAditIds}
+                setSelectedAditIds={setSelectedAditIds}
+                selectedLocationIds={selectedLocationIds}
+                setSelectedLocationIds={setSelectedLocationIds}
+                selectedSampleType={selectedSampleType}
+                setSelectedSampleType={setSelectedSampleType}
+                selectedSubzones={selectedSubzones}
+                setSelectedSubzones={setSelectedSubzones}
+                handleResetFilters={handleResetFilters}
               />
-            </div>
-            
-            {/* Filter summary */}
-            <PSDFilterSummary
-              filteredCount={filteredPSDResults.length}
-              totalCount={data.psdResults ? data.psdResults.length : 0}
-              selectedAditIds={selectedAditIds}
-              selectedLocationIds={selectedLocationIds}
-              selectedSampleType={selectedSampleType}
-              selectedSubzones={selectedSubzones}
-              depthRange={depthRange}
-            />
-            
-            {/* View Content - Chart, Table or Map */}
-            {viewMode === 'chart' && plotData.length > 0 ? (
-              <PSDChartView data={plotData} />
-            ) : viewMode === 'chart' && (
-              <div className="p-12 text-center text-gray-500">
-                No data available to display chart
+              
+              {/* Depth Range Slider with dynamic min/max based on dataset */}
+              <div className="px-4 py-3 border-t border-gray-200">
+                <DepthRangeSlider
+                  minDepth={minDepth}
+                  maxDepth={maxDepth}
+                  defaultValue={depthRange}
+                  onChange={setDepthRange}
+                />
               </div>
-            )}
-            
-            {viewMode === 'table' && sortedPSDResults.length > 0 ? (
-              <PSDTableView 
-                data={sortedPSDResults} 
-                sortConfig={sortConfig} 
-                requestSort={requestSort} 
+              
+              {/* Filter summary */}
+              <PSDFilterSummary
+                filteredCount={filteredPSDResults.length}
+                totalCount={data.psdResults ? data.psdResults.length : 0}
+                selectedAditIds={selectedAditIds}
+                selectedLocationIds={selectedLocationIds}
+                selectedSampleType={selectedSampleType}
+                selectedSubzones={selectedSubzones}
+                depthRange={depthRange}
               />
-            ) : viewMode === 'table' && (
-              <div className="p-12 text-center text-gray-500">
-                No data available to display in table
+              
+              {/* View mode toggle - similar to PlasticityDashboard */}
+              <div className="px-4 border-t border-border-primary">
+                <div className="py-4 flex justify-between items-center">
+                  <h3 className="font-medium text-text-primary">View Options</h3>
+                  <ViewModeToggle 
+                    viewMode={viewMode}
+                    setViewMode={handleViewModeChange}
+                  />
+                </div>
+              
+                {/* View Content - Chart, Table or Map */}
+                <div className="mb-4">
+                  {viewMode === 'chart' && plotData.length > 0 ? (
+                    <PSDChartView data={plotData} />
+                  ) : viewMode === 'chart' && (
+                    <div className="p-12 text-center text-text-muted">
+                      No data available to display chart
+                    </div>
+                  )}
+                  
+                  {viewMode === 'table' && sortedPSDResults.length > 0 ? (
+                    <PSDTableView 
+                      data={sortedPSDResults} 
+                      sortConfig={sortConfig} 
+                      requestSort={requestSort} 
+                    />
+                  ) : viewMode === 'table' && (
+                    <div className="p-12 text-center text-text-muted">
+                      No data available to display in table
+                    </div>
+                  )}
+                  
+                  {viewMode === 'map' && filteredPSDResults.length > 0 ? (
+                    <PSDMap 
+                      data={filteredPSDResults}
+                      selectedItems={selectedItems}
+                      onItemSelect={handleItemSelect}
+                    />
+                  ) : viewMode === 'map' && (
+                    <div className="p-12 text-center text-text-muted">
+                      No data available to display on map
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-            
-            {viewMode === 'map' && filteredPSDResults.length > 0 ? (
-              <PSDMap 
-                data={filteredPSDResults}
-                selectedItems={selectedItems}
-                onItemSelect={handleItemSelect}
-              />
-            ) : viewMode === 'map' && (
-              <div className="p-12 text-center text-gray-500">
-                No data available to display on map
+              
+              {/* Add an informational footer section similar to PlasticityDashboard */}
+              <div className="px-4 py-3 border-t border-border-primary text-text-secondary text-sm">
+                <h4 className="font-medium mb-1 text-text-primary">About Particle Size Distribution</h4>
+                <p>
+                  Particle Size Distribution (PSD) tests determine the gradation of soil particles across different size fractions.
+                  This test is crucial for classifying soils, understanding their physical properties, and predicting their
+                  engineering behavior. The distribution of particle sizes affects properties like drainage characteristics,
+                  frost susceptibility, and compaction behavior of soils.
+                </p>
               </div>
-            )}
-          </Card>
+            </Card>
+          </Container>
         </Section>
         <Footer />
       </div>
