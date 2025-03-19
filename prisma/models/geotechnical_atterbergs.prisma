@@ -1,0 +1,30 @@
+
+model Atterbergs {
+    test_type_method          String
+    test_type_name            String
+    display_name              String
+    ags_code                  String
+    adit_id                   String
+    location_id               String
+    depth_to                  Float
+    sample_reference          String
+    sample_type               String
+    date_sampled              DateTime
+    sample_unique_id          String
+    test_no                   Int
+    date_tested               DateTime
+    date_checked              DateTime
+    date_approved             DateTime
+    liquid_limit              Float
+    plastic_limit             Float
+    plasticity_index          Float
+    water_content             Float
+    remark_dot_test_remarks   String? // Optional field
+    chainage                  Float
+    distance_to_alignment     Float
+    angle_to_alignment_deg_cc Float
+    construction_subzone      String
+    x_coordinate              Float
+    y_coordinate              Float
+    latLng                    Float[]? // Optional field for WGS84 coordinates [lat, lng]
+}
