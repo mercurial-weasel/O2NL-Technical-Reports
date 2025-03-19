@@ -1,6 +1,4 @@
-import { Prisma } from '@prisma/client';
-
-export const atterbergsData: Prisma.Geo_AtterbergsCreateInput[] = [
+export const atterbergsData = [
   {
     id: 'att-001',
     test_type_method: 'ASTM D4318-17e1 (Method A)',
@@ -29,7 +27,7 @@ export const atterbergsData: Prisma.Geo_AtterbergsCreateInput[] = [
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788520.7176,
     y_coordinate: 5491856.1932,
-    latLng: [5491856.1932, 1788520.7176], // Converted to [lat, lng] format
+    latLng: [5491856.1932, 1788520.7176], // Always provide latLng
   },
   {
     id: 'att-002',
@@ -59,7 +57,7 @@ export const atterbergsData: Prisma.Geo_AtterbergsCreateInput[] = [
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788520.7176,
     y_coordinate: 5491856.1932,
-    latLng: [5491856.1932, 1788520.7176], // Converted to [lat, lng] format
+    latLng: [5491856.1932, 1788520.7176], // Always provide latLng
   },
   {
     id: 'att-003',
@@ -89,6 +87,6 @@ export const atterbergsData: Prisma.Geo_AtterbergsCreateInput[] = [
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788272.1685,
     y_coordinate: 5491359.6305,
-    latLng: [5491359.6305, 1788272.1685], // Converted to [lat, lng] format
+    latLng: [5491359.6305, 1788272.1685], // Always provide latLng
   },
 ];

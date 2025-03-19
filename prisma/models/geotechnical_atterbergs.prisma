@@ -1,5 +1,5 @@
-
-model Atterbergs {
+model Geo_Atterbergs {
+    id                        String   @id @default(uuid())
     test_type_method          String
     test_type_name            String
     display_name              String
@@ -19,12 +19,13 @@ model Atterbergs {
     plastic_limit             Float
     plasticity_index          Float
     water_content             Float
-    remark_dot_test_remarks   String? // Optional field
+    remark_dot_test_remarks   String?
     chainage                  Float
     distance_to_alignment     Float
     angle_to_alignment_deg_cc Float
     construction_subzone      String
     x_coordinate              Float
     y_coordinate              Float
-    latLng                    Float[]? // Optional field for WGS84 coordinates [lat, lng]
+    latLng                    Float[]
 }
+

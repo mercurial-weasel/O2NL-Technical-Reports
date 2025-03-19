@@ -20,7 +20,7 @@
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prisma:merge": "node prisma/mergePrismaSchema.js",
+    "prisma:merge": "node prisma/mergePrismaSchema.cjs",
     "prisma:migrate": "npm run prisma:merge && npx prisma migrate dev --name init",
     "prisma:generate": "npm run prisma:merge && npx prisma generate",
     "prisma:push": "npx prisma db push",

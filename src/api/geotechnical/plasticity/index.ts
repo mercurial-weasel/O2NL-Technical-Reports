@@ -2,17 +2,10 @@
 export * from './types';
 
 // Export API functions
-export { 
-  fetchAtterbergsData, 
-  fetchAtterbergsById 
-} from './client';
+export * from './client';
 
 // Export transformations
-export {
-  formatAtterbergsData,
-  getSoilClassification,
-  groupAtterbergsByLocation
-} from './transformations';
+export { getSoilClassification } from './transformations';
 
 // Export mock data for testing
 export { mockData } from './mock-data';

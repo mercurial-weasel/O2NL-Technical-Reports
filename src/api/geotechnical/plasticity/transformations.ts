@@ -5,84 +5,93 @@ import proj4 from 'proj4';
 // NZTM2000 (EPSG:2193) definition
 proj4.defs('EPSG:2193', '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs');
 
-/**
- * Converts NZTM2000 coordinates to WGS84 latitude/longitude
- */
-export function convertNZTM2000ToLatLng(x: number, y: number): [number, number] {
+// Function to convert NZTM2000 coordinates to WGS84 latitude/longitude
+const convertNZTM2000ToLatLng = (x: number, y: number): [number, number] => {
   try {
     // proj4 expects [x, y] and returns [longitude, latitude]
     const [lng, lat] = proj4('EPSG:2193', 'EPSG:4326', [x, y]);
     return [lat, lng]; // Return as [lat, lng] for Leaflet
   } catch (error) {
     console.error('Error converting coordinates:', error);
-    console.error('Input values:', x, y);
-    // Return a default location in New Zealand as fallback
-    return [-41.2865, 174.7762]; // Wellington, NZ
+    return [0, 0]; // Return zeros as fallback
   }
-}
+};
 
 /**
- * Formats Atterbergs test data for display
+ * Format raw Atterbergs data from Supabase
+ * - Convert date strings to readable format
+ * - Add latLng field for mapping
  */
-export function formatAtterbergsData(data: Atterbergs): Atterbergs & { latLng?: [number, number] } {
-  // Convert NZTM2000 coordinates to WGS84
-  const latLng = convertNZTM2000ToLatLng(data.x_coordinate, data.y_coordinate);
+export function formatAtterbergsData(data: any): Atterbergs {
+  // Process date fields - convert ISO dates to readable format (DD-MM-YYYY)
+  const formatDate = (dateStr: string | null): string => {
+    if (!dateStr) return '';
+    try {
+      const date = new Date(dateStr);
+      return `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+    } catch (e) {
+      return dateStr || '';
+    }
+  };
+  
+  // Convert coordinates if needed
+  const latLng = data.latLng || convertNZTM2000ToLatLng(data.x_coordinate, data.y_coordinate);
   
   return {
     ...data,
-    // Format any specific fields here if needed
-    liquid_limit: Number(data.liquid_limit.toFixed(1)),
-    plastic_limit: Number(data.plastic_limit.toFixed(1)),
-    plasticity_index: Number(data.plasticity_index.toFixed(1)),
-    water_content: Number(data.water_content.toFixed(1)),
-    depth_to: Number(data.depth_to.toFixed(1)),
-    distance_to_alignment: Number(data.distance_to_alignment.toFixed(1)),
-    angle_to_alignment_deg_cc: Number(data.angle_to_alignment_deg_cc.toFixed(1)),
-    x_coordinate: Number(data.x_coordinate.toFixed(4)),
-    y_coordinate: Number(data.y_coordinate.toFixed(4)),
-    // Add the converted coordinates
+    // Convert dates to the format used in the app (if they're coming as ISO strings from DB)
+    date_sampled: formatDate(data.date_sampled),
+    date_tested: formatDate(data.date_tested),
+    date_checked: formatDate(data.date_checked),
+    date_approved: formatDate(data.date_approved),
+    // Ensure numeric fields are numbers
+    liquid_limit: Number(data.liquid_limit),
+    plastic_limit: Number(data.plastic_limit),
+    plasticity_index: Number(data.plasticity_index),
+    water_content: Number(data.water_content),
+    depth_to: Number(data.depth_to),
+    // Add latLng for mapping
     latLng
   };
 }
 
 /**
- * Calculates soil classification based on Atterberg limits
+ * Determine soil classification based on Atterberg limits
  */
-export function getSoilClassification(data: Atterbergs): string {
-  const { liquid_limit, plasticity_index } = data;
+export function getSoilClassification(sample: Atterbergs): string {
+  const ll = sample.liquid_limit;
+  const pi = sample.plasticity_index;
   
-  if (liquid_limit === 0 || plasticity_index === 0) {
-    return 'Non-plastic';
+  // Invalid data check
+  if (ll === undefined || pi === undefined || isNaN(ll) || isNaN(pi)) {
+    return 'Unknown';
   }
   
-  // Casagrande plasticity chart classification
-  if (liquid_limit < 50) {
+  // A-line equation: PI = 0.73 * (LL - 20)
+  const aLine = 0.73 * (ll - 20);
+  
+  // Basic classification based on plasticity chart
+  if (ll < 35) {
     // Low plasticity
-    if (plasticity_index > 0.73 * (liquid_limit - 20)) {
-      return 'CL - Low plasticity clay';
-    } else {
-      return 'ML - Low plasticity silt';
-    }
-  } else {
+    if (pi < 7) return 'ML'; // Low plasticity silt
+    if (pi < aLine) return 'ML-CL'; // Silty clay of low plasticity
+    return 'CL'; // Low plasticity clay
+  } else if (ll < 50) {
+    // Intermediate plasticity
+    if (pi < aLine) return 'MI'; // Intermediate plasticity silt
+    return 'CI'; // Intermediate plasticity clay
+  } else if (ll < 70) {
     // High plasticity
-    if (plasticity_index > 0.73 * (liquid_limit - 20)) {
-      return 'CH - High plasticity clay';
-    } else {
-      return 'MH - High plasticity silt';
-    }
+    if (pi < aLine) return 'MH'; // High plasticity silt
+    return 'CH'; // High plasticity clay
+  } else {
+    // Very high plasticity
+    if (pi < aLine) return 'MV'; // Very high plasticity silt
+    return 'CV'; // Very high plasticity clay
   }
 }
 
-/**
- * Groups Atterbergs data by location
- */
-export function groupAtterbergsByLocation(data: Atterbergs[]): Record<string, Atterbergs[]> {
-  return data.reduce((acc, item) => {
-    const key = item.location_id;
-    if (!acc[key]) {
-      acc[key] = [];
-    }
-    acc[key].push(item);
-    return acc;
-  }, {} as Record<string, Atterbergs[]>);
-}
+// Export the getSoilClassification for use in components
+export const utils = {
+  getSoilClassification
+};

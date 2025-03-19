@@ -8,6 +8,8 @@ datasource db {
   directUrl = env("DIRECT_URL")  // For migrations, points directly to database, bypassing pooler
 }
 
+// AMT Models
+
 
 // AMT Models
 enum DisciplineType {
@@ -39,6 +41,7 @@ model AMTMonthlyRecord {
   kpis               KPI[]
 }
 
+// AmtBudget Models
 // AMT Budget Models
 model AMTBudgetItem {
   id                 String     @id @default(uuid())
@@ -96,6 +99,8 @@ model AMTBudgetData {
   monthlyData        MonthlyBudgetData[]
 }
 
+// Consenting Models
+
 // Consent Models
 enum RiskLevel {
   Green
@@ -137,6 +142,8 @@ model ConsentMonth {
   // Relations
   assessments         ConsentAssessment[]
 }
+
+// Dust Models
 
 // Dust Sensor Models
 model DustChild {
@@ -188,6 +195,9 @@ model DustData {
   devices            DustParent[]
 }
 
+
+// EarnedValue Models
+
 // Earned Value Models
 model Progress {
   id                 String     @id @default(uuid())
@@ -226,6 +236,8 @@ model EarnedValueData {
 }
 
 // Emissions Models
+
+// Emissions Models
 model EmissionRecord {
   id                 String     @id @default(uuid())
   category           String
@@ -252,6 +264,8 @@ model EmissionsData {
   // Relations
   records            EmissionRecord[]
 }
+
+// Equipment Models
 
 // Equipment Models
 model EquipmentStatus {
@@ -297,6 +311,42 @@ model EquipmentData {
   equipmentTypes     EquipmentType[]
 }
 
+
+// geotechnical_atterbergs Models
+model Geo_Atterbergs {
+    id                        String   @id @default(uuid())
+    test_type_method          String
+    test_type_name            String
+    display_name              String
+    ags_code                  String
+    adit_id                   String
+    location_id               String
+    depth_to                  Float
+    sample_reference          String
+    sample_type               String
+    date_sampled              DateTime
+    sample_unique_id          String
+    test_no                   Int
+    date_tested               DateTime
+    date_checked              DateTime
+    date_approved             DateTime
+    liquid_limit              Float
+    plastic_limit             Float
+    plasticity_index          Float
+    water_content             Float
+    remark_dot_test_remarks   String?
+    chainage                  Float
+    distance_to_alignment     Float
+    angle_to_alignment_deg_cc Float
+    construction_subzone      String
+    x_coordinate              Float
+    y_coordinate              Float
+    latLng                    Float[]
+}
+
+
+
+// geotechnical_psd Models
 // Geotechnical Particle Size Distribution Models
 
 model SieveItem {
@@ -343,6 +393,8 @@ model PSDData {
   // This is a container model if needed for grouping or queries
 }
 
+
+// PAB Models
 // PAB Models
 model BudgetItem {
   id                 String   @id @default(uuid())
@@ -565,6 +617,9 @@ model PABResponse {
   lastUpdated        DateTime
 }
 
+// StaffFTE Models
+
+
 // Staff FTE Model
 model O2NL_Staff {
   id                 String     @id @default(uuid())
@@ -589,6 +644,8 @@ model O2NL_Staff {
   createdAt          DateTime   @default(now())
   updatedAt          DateTime   @updatedAt
 }
+
+// Sustainability Models
 
 // Sustainability Models
 enum Status {
@@ -669,6 +726,9 @@ model SustainabilityMonthlyRecord {
   kpis            KPI[]
 }
 
+// SustainabilityInitiatives Models
+
+
 // Sustainability Initiatives
 enum SustainabilityThemeType {
   Emissions
@@ -731,6 +791,10 @@ model SustainabilityInitiative {
   createdAt          DateTime   @default(now())
   updatedAt          DateTime?
 }
+
+
+// Systems Models
+
 
 // System Models
 enum SystemStatus {
@@ -805,6 +869,8 @@ model SystemData {
   createdAt       DateTime     @default(now())
   updatedAt       DateTime     @updatedAt
 }
+
+// TimeLogs Models
 
 // Hours Tracking Models
 model TimeLogEntry {

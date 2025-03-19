@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAtterbergsData, Atterbergs, AtterbergsFilters } from '@api/geotechnical/plasticity';
+import { getAtterbergsData, Atterbergs, AtterbergsFilters } from '@api/geotechnical/plasticity';
 import PlasticityPlot from '@components/features/geotechnical/plasticity/PlasticityPlot';
 import AtterbergsTable from '@components/features/geotechnical/plasticity/AtterbergsTable';
 import AtterbergsFilterPanel from '@components/features/geotechnical/plasticity/AtterbergsFilters';
@@ -34,7 +34,7 @@ const PlasticityDashboard: React.FC = () => {
     try {
       setLoading(true);
       setIsReloading(true);
-      const response = await fetchAtterbergsData();
+      const response = await getAtterbergsData();
       setAtterbergsData(response.data);
       setFilteredData(response.data);
       setLastLoadTime(new Date());
