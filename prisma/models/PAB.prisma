@@ -1,5 +1,3 @@
-
-
 // PAB Models
 model BudgetItem {
   id                 String   @id @default(uuid())
@@ -25,7 +23,7 @@ model BudgetData {
   // Relations
   items              BudgetItem[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model CostItem {
@@ -52,7 +50,7 @@ model CostData {
   // Relations
   items              CostItem[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model CostIndicator {
@@ -72,7 +70,7 @@ model CostIndicators {
   // Relations
   indicators         CostIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model RiskIndicator {
@@ -91,7 +89,7 @@ model RiskIndicators {
   // Relations
   indicators         RiskIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model ExpenditureData {
@@ -106,7 +104,7 @@ model ExpenditureData {
   
   // Relations
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model ExpenditureIndicator {
@@ -126,7 +124,7 @@ model ExpenditureIndicators {
   // Relations
   indicators         ExpenditureIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model FundingShare {
@@ -150,7 +148,7 @@ model FundingSplitData {
   currentMonth       FundingShare[] @relation("CurrentMonth")
   projectSplit       FundingShare[] @relation("ProjectSplit")
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model Limb1Indicator {
@@ -170,7 +168,7 @@ model Limb1Indicators {
   // Relations
   indicators         Limb1Indicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model Limb3Indicator {
@@ -190,7 +188,7 @@ model Limb3Indicators {
   // Relations
   indicators         Limb3Indicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model MonthlyPABRecord {

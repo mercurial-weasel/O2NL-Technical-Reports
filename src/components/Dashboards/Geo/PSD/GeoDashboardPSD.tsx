@@ -35,7 +35,8 @@ function GeoDashboardPSD() {
     handleReload,
     uniqueAditIds,
     uniqueLocationIds,
-    uniqueSampleTypes
+    uniqueSampleTypes,
+    uniqueSubzones
   } = usePSDData();
   
   // State for filters
@@ -81,14 +82,6 @@ function GeoDashboardPSD() {
     key: 'sample_reference',
     direction: 'ascending'
   });
-
-  // Get unique construction subzones
-  const uniqueSubzones = useMemo(() => {
-    if (!data.psdResults || data.psdResults.length === 0) return [];
-    return [...new Set(data.psdResults.map(item => item.construction_subzone))]
-      .filter(Boolean)
-      .sort();
-  }, [data.psdResults]);
 
   // Reset all filters - now uses calculated depth bounds
   const handleResetFilters = () => {
@@ -221,7 +214,7 @@ function GeoDashboardPSD() {
               <Card>
                 <div className="flex justify-center items-center p-12">
                   <LoadingSpinner size="lg" />
-                  <span className="ml-3">Loading data...</span>
+                  <span className="ml-3">Loading data from API server...</span>
                 </div>
               </Card>
             </Container>
@@ -240,8 +233,8 @@ function GeoDashboardPSD() {
             <Container>
               <Card>
                 <AlertBox 
-                  title="Error loading data" 
-                  message={String(data.error)}
+                  title="Error loading data from API" 
+                  message={`${String(data.error)}. Please check that the server is running and try again.`}
                   variant="error"
                   action={{
                     label: "Retry",
@@ -277,6 +270,7 @@ function GeoDashboardPSD() {
               lastLoadTime={data.lastLoadTime}
               onReload={handleReload}
               error={data.error}
+              apiSource={true} // Indicate that we're using API data
             />
 
             {/* Main Content */}

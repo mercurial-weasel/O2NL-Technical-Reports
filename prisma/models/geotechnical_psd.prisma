@@ -1,0 +1,45 @@
+// Geotechnical Particle Size Distribution Models
+
+model SieveItem {
+  id                            String                       @id @default(uuid())
+  sieve_size_mm                 Float
+  percent_passing               Float
+  particleSizeDistributionTest  ParticleSizeDistributionTest? @relation(fields: [testId], references: [id])
+  testId                        String?
+}
+
+model ParticleSizeDistributionTest {
+  id                            String       @id @default(uuid())
+  adit_id                       String
+  location_id                   String
+  depth_to                      Float
+  sample_reference              String
+  sample_type                   String
+  date_sampled                  String
+  sample_unique_id              String       @unique  // Add unique constraint for better querying
+  test_no                       Int
+  date_tested                   String
+  date_checked                  String
+  date_approved                 String
+  remark_dot_test_remarks       String
+  average_water_content         String
+  superseeding_note             String?
+  chainage                      Float
+  distance_to_alignment         Float
+  angle_to_alignment_deg_cc     Float
+  construction_subzone          String
+  x_coordinate                  Float
+  y_coordinate                  Float
+  
+  // Relations
+  particle_size_result          SieveItem[]
+  createdAt                     DateTime     @default(now())
+  updatedAt                     DateTime     @updatedAt
+}
+
+model PSDData {
+  id                            String       @id @default(uuid())
+  lastUpdated                   DateTime     @default(now())
+  
+  // This is a container model if needed for grouping or queries
+}

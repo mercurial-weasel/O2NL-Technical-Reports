@@ -5,6 +5,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")  // For migrations, points directly to database, bypassing pooler
 }
 
 
@@ -51,7 +52,7 @@ model AMTBudgetItem {
   
   // Relations
   monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
-  monthlyBudgetDataId String?
+  monthlyBudgetDataId String? @unique
 }
 
 model BudgetSummary {
@@ -74,7 +75,7 @@ model BudgetSummary {
   
   // Relations
   monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
-  monthlyBudgetDataId String?
+  monthlyBudgetDataId String? @unique
 }
 
 model MonthlyBudgetData {
@@ -296,6 +297,52 @@ model EquipmentData {
   equipmentTypes     EquipmentType[]
 }
 
+// Geotechnical Particle Size Distribution Models
+
+model SieveItem {
+  id                            String                       @id @default(uuid())
+  sieve_size_mm                 Float
+  percent_passing               Float
+  particleSizeDistributionTest  ParticleSizeDistributionTest? @relation(fields: [testId], references: [id])
+  testId                        String?
+}
+
+model ParticleSizeDistributionTest {
+  id                            String       @id @default(uuid())
+  adit_id                       String
+  location_id                   String
+  depth_to                      Float
+  sample_reference              String
+  sample_type                   String
+  date_sampled                  String
+  sample_unique_id              String       @unique  // Add unique constraint for better querying
+  test_no                       Int
+  date_tested                   String
+  date_checked                  String
+  date_approved                 String
+  remark_dot_test_remarks       String
+  average_water_content         String
+  superseeding_note             String?
+  chainage                      Float
+  distance_to_alignment         Float
+  angle_to_alignment_deg_cc     Float
+  construction_subzone          String
+  x_coordinate                  Float
+  y_coordinate                  Float
+  
+  // Relations
+  particle_size_result          SieveItem[]
+  createdAt                     DateTime     @default(now())
+  updatedAt                     DateTime     @updatedAt
+}
+
+model PSDData {
+  id                            String       @id @default(uuid())
+  lastUpdated                   DateTime     @default(now())
+  
+  // This is a container model if needed for grouping or queries
+}
+
 // PAB Models
 model BudgetItem {
   id                 String   @id @default(uuid())
@@ -321,7 +368,7 @@ model BudgetData {
   // Relations
   items              BudgetItem[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model CostItem {
@@ -348,7 +395,7 @@ model CostData {
   // Relations
   items              CostItem[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model CostIndicator {
@@ -368,7 +415,7 @@ model CostIndicators {
   // Relations
   indicators         CostIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model RiskIndicator {
@@ -387,7 +434,7 @@ model RiskIndicators {
   // Relations
   indicators         RiskIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model ExpenditureData {
@@ -402,7 +449,7 @@ model ExpenditureData {
   
   // Relations
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model ExpenditureIndicator {
@@ -422,7 +469,7 @@ model ExpenditureIndicators {
   // Relations
   indicators         ExpenditureIndicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model FundingShare {
@@ -446,7 +493,7 @@ model FundingSplitData {
   currentMonth       FundingShare[] @relation("CurrentMonth")
   projectSplit       FundingShare[] @relation("ProjectSplit")
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model Limb1Indicator {
@@ -466,7 +513,7 @@ model Limb1Indicators {
   // Relations
   indicators         Limb1Indicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model Limb3Indicator {
@@ -486,7 +533,7 @@ model Limb3Indicators {
   // Relations
   indicators         Limb3Indicator[]
   monthlyPABRecord   MonthlyPABRecord? @relation(fields: [recordId], references: [id])
-  recordId           String?
+  recordId           String? @unique
 }
 
 model MonthlyPABRecord {

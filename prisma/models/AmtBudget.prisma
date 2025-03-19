@@ -1,5 +1,3 @@
-
-
 // AMT Budget Models
 model AMTBudgetItem {
   id                 String     @id @default(uuid())
@@ -13,7 +11,7 @@ model AMTBudgetItem {
   
   // Relations
   monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
-  monthlyBudgetDataId String?
+  monthlyBudgetDataId String? @unique
 }
 
 model BudgetSummary {
@@ -36,7 +34,7 @@ model BudgetSummary {
   
   // Relations
   monthlyBudgetData  MonthlyBudgetData? @relation(fields: [monthlyBudgetDataId], references: [id])
-  monthlyBudgetDataId String?
+  monthlyBudgetDataId String? @unique
 }
 
 model MonthlyBudgetData {
