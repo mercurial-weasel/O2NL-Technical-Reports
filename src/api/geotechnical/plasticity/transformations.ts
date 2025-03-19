@@ -1,4 +1,4 @@
-import { Atterbergs } from './types';
+import { Atterbergs, AtterbergsRecord } from './types';
 import proj4 from 'proj4';
 
 // Set up coordinate system definitions
@@ -6,7 +6,7 @@ import proj4 from 'proj4';
 proj4.defs('EPSG:2193', '+proj=tmerc +lat_0=0 +lon_0=173 +k=0.9996 +x_0=1600000 +y_0=10000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs');
 
 // Function to convert NZTM2000 coordinates to WGS84 latitude/longitude
-const convertNZTM2000ToLatLng = (x: number, y: number): [number, number] => {
+export const convertNZTM2000ToLatLng = (x: number, y: number): [number, number] => {
   try {
     // proj4 expects [x, y] and returns [longitude, latitude]
     const [lng, lat] = proj4('EPSG:2193', 'EPSG:4326', [x, y]);
@@ -20,37 +20,54 @@ const convertNZTM2000ToLatLng = (x: number, y: number): [number, number] => {
 /**
  * Format raw Atterbergs data from Supabase
  * - Convert date strings to readable format
- * - Add latLng field for mapping
+ * - Calculate latLng from x_coordinate and y_coordinate
  */
-export function formatAtterbergsData(data: any): Atterbergs {
+export function formatAtterbergsData(data: AtterbergsRecord): Atterbergs {
   // Process date fields - convert ISO dates to readable format (DD-MM-YYYY)
-  const formatDate = (dateStr: string | null): string => {
+  const formatDate = (dateStr: Date | null): string => {
     if (!dateStr) return '';
     try {
       const date = new Date(dateStr);
       return `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
     } catch (e) {
-      return dateStr || '';
+      return dateStr ? dateStr.toString() : '';
     }
   };
   
-  // Convert coordinates if needed
-  const latLng = data.latLng || convertNZTM2000ToLatLng(data.x_coordinate, data.y_coordinate);
+  // Calculate latLng from x and y coordinates
+  const latLng = convertNZTM2000ToLatLng(data.x_coordinate, data.y_coordinate);
   
   return {
-    ...data,
-    // Convert dates to the format used in the app (if they're coming as ISO strings from DB)
+    id: data.id,
+    // Convert dates to the format used in the app
     date_sampled: formatDate(data.date_sampled),
     date_tested: formatDate(data.date_tested),
     date_checked: formatDate(data.date_checked),
     date_approved: formatDate(data.date_approved),
-    // Ensure numeric fields are numbers
-    liquid_limit: Number(data.liquid_limit),
-    plastic_limit: Number(data.plastic_limit),
-    plasticity_index: Number(data.plasticity_index),
-    water_content: Number(data.water_content),
-    depth_to: Number(data.depth_to),
-    // Add latLng for mapping
+    // Copy all other fields
+    test_type_method: data.test_type_method,
+    test_type_name: data.test_type_name,
+    display_name: data.display_name,
+    ags_code: data.ags_code,
+    adit_id: data.adit_id,
+    location_id: data.location_id,
+    depth_to: data.depth_to,
+    sample_reference: data.sample_reference,
+    sample_type: data.sample_type,
+    sample_unique_id: data.sample_unique_id,
+    test_no: data.test_no,
+    liquid_limit: data.liquid_limit,
+    plastic_limit: data.plastic_limit,
+    plasticity_index: data.plasticity_index,
+    water_content: data.water_content,
+    remark_dot_test_remarks: data.remark_dot_test_remarks,
+    chainage: data.chainage,
+    distance_to_alignment: data.distance_to_alignment,
+    angle_to_alignment_deg_cc: data.angle_to_alignment_deg_cc,
+    construction_subzone: data.construction_subzone,
+    x_coordinate: data.x_coordinate,
+    y_coordinate: data.y_coordinate,
+    // Add calculated latLng
     latLng
   };
 }
@@ -93,5 +110,6 @@ export function getSoilClassification(sample: Atterbergs): string {
 
 // Export the getSoilClassification for use in components
 export const utils = {
-  getSoilClassification
+  getSoilClassification,
+  convertNZTM2000ToLatLng
 };

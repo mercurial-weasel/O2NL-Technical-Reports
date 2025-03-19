@@ -26,6 +26,5 @@ model Geo_Atterbergs {
     construction_subzone      String
     x_coordinate              Float
     y_coordinate              Float
-    latLng                    Float[]
 }
 

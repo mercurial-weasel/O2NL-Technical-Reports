@@ -12,11 +12,6 @@ export async function getPSDTests(): Promise<PSDData> {
   try {
     console.log('Fetching PSD data with Supabase');
     
-    // Return mock data if configured
-    if (USE_MOCK_DATA) {
-      console.log('Using mock PSD data');
-      return mockParticleSizeDistributionTests;
-    }
     
     // Query all ParticleSizeDistributionTest records with their related SieveItem records
     const { data: psdTests, error } = await supabase
@@ -44,13 +39,6 @@ export async function getPSDTests(): Promise<PSDData> {
  */
 export async function getPSDTestById(sampleId: string): Promise<ParticleSizeDistributionTest | null> {
   try {
-    // Return from mock data if configured
-    if (USE_MOCK_DATA) {
-      const mockTest = mockParticleSizeDistributionTests.find(
-        test => test.sample_unique_id === sampleId
-      );
-      return mockTest || null;
-    }
     
     // Query a specific ParticleSizeDistributionTest by sample_unique_id
     const { data, error } = await supabase
@@ -84,12 +72,6 @@ export async function getPSDTestById(sampleId: string): Promise<ParticleSizeDist
  */
 export async function getPSDTestsByLocation(locationId: string): Promise<PSDData> {
   try {
-    // Return filtered mock data if configured
-    if (USE_MOCK_DATA) {
-      return mockParticleSizeDistributionTests.filter(
-        test => test.location_id === locationId
-      );
-    }
     
     // Query ParticleSizeDistributionTest records by location_id
     const { data, error } = await supabase
@@ -117,12 +99,6 @@ export async function getPSDTestsByLocation(locationId: string): Promise<PSDData
  */
 export async function getPSDTestsBySampleType(sampleType: string): Promise<PSDData> {
   try {
-    // Return filtered mock data if configured
-    if (USE_MOCK_DATA) {
-      return mockParticleSizeDistributionTests.filter(
-        test => test.sample_type === sampleType
-      );
-    }
     
     // Query ParticleSizeDistributionTest records by sample_type
     const { data, error } = await supabase
@@ -150,13 +126,6 @@ export async function getPSDTestsBySampleType(sampleType: string): Promise<PSDDa
  */
 export async function getUniqueSampleTypes(): Promise<string[]> {
   try {
-    if (USE_MOCK_DATA) {
-      const sampleTypes = new Set<string>();
-      mockParticleSizeDistributionTests.forEach(test => {
-        sampleTypes.add(test.sample_type);
-      });
-      return Array.from(sampleTypes).sort();
-    }
     
     // This is a bit tricky with Supabase - getting distinct values requires raw SQL
     // So we'll fetch all and extract unique values in JavaScript

@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Atterbergs, getSoilClassification } from '@api/geotechnical/plasticity';
 import { Icon, Marker as LeafletMarker } from 'leaflet';
+import { convertNZTM2000ToLatLng } from '@api/geotechnical/plasticity/transformations';
 
 // Default marker icon fix for Leaflet with React
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -37,6 +38,14 @@ interface MapComponentProps {
   onPopupOpen?: (item: Atterbergs) => void;
 }
 
+// Ensure latLng is always available
+const ensureLatLng = (item: Atterbergs): [number, number] => {
+  if (item.latLng) {
+    return item.latLng;
+  }
+  return convertNZTM2000ToLatLng(item.x_coordinate, item.y_coordinate);
+};
+
 // Custom marker component that supports keyboard modifiers for selection
 const SelectableMarker: React.FC<{
   item: Atterbergs,
@@ -70,7 +79,7 @@ const SelectableMarker: React.FC<{
   
   return (
     <Marker 
-      position={item.latLng!}
+      position={ensureLatLng(item)}
       icon={isSelected ? selectedIcon : defaultIcon}
       ref={markerRef}
       eventHandlers={{
@@ -190,6 +199,14 @@ const MapComponent: React.FC<MapComponentProps> = ({
     };
   }, []);
 
+  // Filter out data without valid coordinates
+  const validData = data.filter(item => {
+    if (item.x_coordinate && item.y_coordinate) {
+      return true;
+    }
+    return false;
+  });
+
   return (
     <div className="w-full h-[500px] border border-gray-300 rounded-md overflow-hidden relative">
       <div className="absolute z-10 top-2 left-2 bg-white px-3 py-1 rounded shadow-md text-sm">
@@ -216,7 +233,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         
-        {data.map((item, index) => {
+        {validData.map((item, index) => {
           // Use pre-converted coordinates
           if (!item.latLng || isNaN(item.latLng[0]) || isNaN(item.latLng[1])) {
             return null;

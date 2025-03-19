@@ -26,8 +26,7 @@ export const atterbergsData = [
     angle_to_alignment_deg_cc: 102.6110226005,
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788520.7176,
-    y_coordinate: 5491856.1932,
-    latLng: [5491856.1932, 1788520.7176], // Always provide latLng
+    y_coordinate: 5491856.1932
   },
   {
     id: 'att-002',
@@ -56,8 +55,7 @@ export const atterbergsData = [
     angle_to_alignment_deg_cc: 102.6110226005,
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788520.7176,
-    y_coordinate: 5491856.1932,
-    latLng: [5491856.1932, 1788520.7176], // Always provide latLng
+    y_coordinate: 5491856.1932
   },
   {
     id: 'att-003',
@@ -86,7 +84,6 @@ export const atterbergsData = [
     angle_to_alignment_deg_cc: 313.8779219392,
     construction_subzone: 'General Zone 5 North',
     x_coordinate: 1788272.1685,
-    y_coordinate: 5491359.6305,
-    latLng: [5491359.6305, 1788272.1685], // Always provide latLng
+    y_coordinate: 5491359.6305
   },
 ];

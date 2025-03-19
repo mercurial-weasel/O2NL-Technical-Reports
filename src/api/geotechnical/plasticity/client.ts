@@ -1,5 +1,4 @@
-import { Atterbergs, AtterbergsFilters, AtterbergsResponse } from './types';
-import { mockData } from './mock-data';
+import { Atterbergs, AtterbergsFilters, AtterbergsResponse, AtterbergsRecord } from './types';
 import { supabase } from '../../base/supabase';
 import { formatAtterbergsData } from './transformations';
 
@@ -12,38 +11,7 @@ const USE_MOCK_DATA = false; // import.meta.env.VITE_USE_MOCK_DATA === 'true';
 export async function getAtterbergsData(filters?: AtterbergsFilters): Promise<AtterbergsResponse> {
   try {
     console.log('Fetching Atterbergs data with Supabase');
-    
-    // Return mock data if configured
-    if (USE_MOCK_DATA) {
-      console.log('Using mock Atterbergs data');
-      let filteredData = [...mockData];
-      
-      // Apply filters to mock data
-      if (filters) {
-        if (filters.adit_id) {
-          filteredData = filteredData.filter(item => item.adit_id === filters.adit_id);
-        }
-        if (filters.location_id) {
-          filteredData = filteredData.filter(item => item.location_id === filters.location_id);
-        }
-        if (filters.sample_unique_id) {
-          filteredData = filteredData.filter(item => item.sample_unique_id === filters.sample_unique_id);
-        }
-        if (filters.construction_subzone) {
-          filteredData = filteredData.filter(item => item.construction_subzone === filters.construction_subzone);
-        }
-      }
-      
-      // Format the mock data
-      const formattedData = filteredData.map(formatAtterbergsData);
-      
-      return {
-        data: formattedData,
-        meta: {
-          total: formattedData.length
-        }
-      };
-    }
+ 
     
     // Build the Supabase query
     let query = supabase
@@ -74,8 +42,8 @@ export async function getAtterbergsData(filters?: AtterbergsFilters): Promise<At
       throw new Error(`Supabase error: ${error.message}`);
     }
     
-    // Format the data
-    const formattedData = data ? data.map(formatAtterbergsData) : [];
+    // Format the data with calculated latLng
+    const formattedData = data ? data.map(item => formatAtterbergsData(item as AtterbergsRecord)) : [];
     
     console.log(`Fetched ${formattedData.length} Atterbergs tests from Supabase`);
     
@@ -96,13 +64,6 @@ export async function getAtterbergsData(filters?: AtterbergsFilters): Promise<At
  */
 export async function getAtterbergsById(sampleId: string): Promise<Atterbergs | null> {
   try {
-    // Return from mock data if configured
-    if (USE_MOCK_DATA) {
-      const mockTest = mockData.find(
-        test => test.sample_unique_id === sampleId
-      );
-      return mockTest ? formatAtterbergsData(mockTest) : null;
-    }
     
     // Query a specific Atterbergs test by sample_unique_id
     const { data, error } = await supabase
@@ -121,7 +82,7 @@ export async function getAtterbergsById(sampleId: string): Promise<Atterbergs | 
       throw new Error(`Supabase error: ${error.message}`);
     }
     
-    return formatAtterbergsData(data);
+    return formatAtterbergsData(data as AtterbergsRecord);
   } catch (error) {
     console.error(`Error fetching Atterbergs test with ID ${sampleId}:`, error);
     throw error; // Propagate error to let the component handle it
@@ -133,13 +94,6 @@ export async function getAtterbergsById(sampleId: string): Promise<Atterbergs | 
  */
 export async function getUniqueSampleTypes(): Promise<string[]> {
   try {
-    if (USE_MOCK_DATA) {
-      const sampleTypes = new Set<string>();
-      mockData.forEach(test => {
-        sampleTypes.add(test.sample_type);
-      });
-      return Array.from(sampleTypes).sort();
-    }
     
     // This is a bit tricky with Supabase - getting distinct values requires raw SQL
     // So we'll fetch all and extract unique values in JavaScript
@@ -171,13 +125,6 @@ export async function getUniqueSampleTypes(): Promise<string[]> {
  */
 export async function getUniqueLocationIds(): Promise<string[]> {
   try {
-    if (USE_MOCK_DATA) {
-      const locationIds = new Set<string>();
-      mockData.forEach(test => {
-        locationIds.add(test.location_id);
-      });
-      return Array.from(locationIds).sort();
-    }
     
     const { data, error } = await supabase
       .from('Geo_Atterbergs')
@@ -207,13 +154,6 @@ export async function getUniqueLocationIds(): Promise<string[]> {
  */
 export async function getUniqueConstructionSubzones(): Promise<string[]> {
   try {
-    if (USE_MOCK_DATA) {
-      const subzones = new Set<string>();
-      mockData.forEach(test => {
-        subzones.add(test.construction_subzone);
-      });
-      return Array.from(subzones).sort();
-    }
     
     const { data, error } = await supabase
       .from('Geo_Atterbergs')

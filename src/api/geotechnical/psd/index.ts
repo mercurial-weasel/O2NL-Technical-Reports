@@ -7,5 +7,3 @@ export * from './client';
 // Export data transformations
 export * from './transformations';
 
-// Export mock data for development
-export { mockParticleSizeDistributionTests } from './mock-data';
