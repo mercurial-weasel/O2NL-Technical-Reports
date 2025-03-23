@@ -3,16 +3,18 @@ import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
 import { StaffMovementChart } from './StaffMovementChart';
 import { TableFilters } from '@features_ProjectControls/Staff';
 import { useTableFilters } from '../hooks/useTableFilters';
-import { StaffFTEApiClient } from '@api/projectcontrols/peopleculture';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
-import { calculateStaffMovement } from '@api/projectcontrols/peopleculture';
+import { 
+  StaffMember, 
+  getStaffMembers,
+  calculateStaffMovement 
+} from '@api/projectcontrols/peopleculture/staff';
 import { logger } from '@lib/logger';
 import { BarChart2, Download } from 'lucide-react';
 
 type GroupBy = 'organization' | 'discipline' | 'nop';
 
 export function StaffMovementDashboard() {
-  const [staffData, setStaffData] = useState<O2NL_Staff[]>([]);
+  const [staffData, setStaffData] = useState<StaffMember[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [groupBy, setGroupBy] = useState<GroupBy>('organization');
@@ -23,8 +25,7 @@ export function StaffMovementDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const client = new StaffFTEApiClient();
-        const data = await client.fetchStaffFTEData();
+        const data = await getStaffMembers();
         setStaffData(data);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load staff movement data');
@@ -138,7 +139,6 @@ export function StaffMovementDashboard() {
       logger.info('Staff movement CSV download completed');
     } catch (error) {
       logger.error('Staff movement CSV download failed', { error });
-      // You might want to show a user-friendly error message here
     }
   };
 

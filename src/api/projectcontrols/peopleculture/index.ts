@@ -1,11 +1,13 @@
 /**
- * Project Controls - People & Culture API exports
- * 
- * This file serves as a barrel export for the people and culture project controls API functionality.
- * Export any classes, functions, or constants that should be accessible from outside this module.
+ * People & Culture API
  */
 
-// Export from staff numbers module
-export * from './staff-numbers';
-export * from './staff-fte';
+// Export everything from staff module - including all the transformations
+export * from './staff';
+
+// Hours tracking exports
 export * from './hours';
+
+// Export the HoursApiClient specifically
+import { HoursApiClient } from './hours';
+export { HoursApiClient };

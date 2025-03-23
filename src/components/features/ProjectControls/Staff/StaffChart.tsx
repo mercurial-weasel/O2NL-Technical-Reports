@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
-import { MonthColumn } from '@features_ProjectControls/Staff';
-import { calculateFTESummaries, calculateStaffNumbers } from '@api/projectcontrols/peopleculture';
+import { 
+  StaffMember, 
+  calculateFTESummaries, 
+  calculateStaffNumbers 
+} from '@api/projectcontrols/peopleculture/staff';
+import { MonthColumn } from './types';
 import { colorPalettes } from './colors';
 
 interface StaffChartProps {
-  data: O2NL_Staff[];
+  data: StaffMember[];
   monthColumns?: MonthColumn[];
   mode: 'fte' | 'numbers';
 }
@@ -40,54 +43,75 @@ export function StaffChart({ data, monthColumns, mode }: StaffChartProps) {
       const items = chartView === 'organization'
         ? summaries.organizations.map(s => ({ 
             name: s.name, 
-            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount])),
+            staffMembers: s.staffCounts
           }))
         : chartView === 'discipline'
         ? summaries.disciplines.map(s => ({ 
             name: s.name, 
-            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount])),
+            staffMembers: s.staffCounts
           }))
         : summaries.nopTypes.map(s => ({ 
             name: s.name, 
-            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount]))
+            values: Object.fromEntries(summaries.months.map(m => [m, s.staffCounts[m].activeCount])),
+            staffMembers: s.staffCounts
           }));
       return { xLabels, items };
     }
   }, [summaries, chartView, mode, monthColumns]);
 
   // Create traces for each category
-  const traces = items.map(({ name, values, staffMembers }) => ({
-    name,
-    type: 'bar' as const,
-    x: xLabels,
-    y: mode === 'fte' && monthColumns
-      ? monthColumns.map(m => values[m.key])
-      : summaries.months.map(m => values[m]),
-    marker: {
-      color: colorPalettes[chartView][name as keyof typeof colorPalettes[typeof chartView]] || '#95A5A6'
-    },
-    hovertemplate: mode === 'fte'
-      ? monthColumns.map(m => {
-          const value = values[m.key] || 0;
-          const staffList = staffMembers[m.key] || [];
-          
-          // Create a list of staff with names and roles
-          const staffDisplay = staffList.length > 0 
-            ? '<br><br>Staff:<br>' + staffList.map(s => `${s.name} (${s.projectRoleTitle}) - ${s.fte.toFixed(2)}`).join('<br>')
-            : '';
+  const traces = items.map(({ name, values, staffMembers }) => {
+    const colorKey = name as keyof typeof colorPalettes[typeof chartView];
+    const palette = colorPalettes[chartView] || colorPalettes.organization;
+    const color = palette[colorKey] || '#95A5A6';
+    
+    return {
+      name,
+      type: 'bar' as const,
+      x: xLabels,
+      y: mode === 'fte' && monthColumns
+        ? monthColumns.map(m => values[m.key] || 0)
+        : summaries.months.map(m => values[m] || 0),
+      marker: {
+        color
+      },
+      hovertemplate: mode === 'fte' && monthColumns
+        ? monthColumns.map((m, i) => {
+            const value = values[m.key] || 0;
+            const staff = staffMembers[m.key] || [];
             
-          return `
-            <b>${name}</b><br>
-            Month: ${m.label}<br>
-            FTE: ${value.toFixed(2)}${staffDisplay}
-            <extra></extra>
-          `;
-        })
-      : `${name}<br>Month: %{x}<br>Staff Count: %{y}<extra></extra>`,
-    hoverlabel: {
-      align: 'left' as const
-    }
-  }));
+            // Create a list of staff with names and roles
+            const staffDisplay = staff.length > 0 
+              ? '<br><br>Staff:<br>' + staff.map(s => `${s.name} (${s.projectRoleTitle}) - ${s.fte.toFixed(2)}`).join('<br>')
+              : '';
+              
+            return `
+              <b>${name}</b><br>
+              Month: ${m.label}<br>
+              FTE: ${value.toFixed(2)}${staffDisplay}
+              <extra></extra>
+            `;
+          })
+        : summaries.months.map((m, i) => {
+            const staffData = (staffMembers as any)[m];
+            const staffDisplay = staffData && staffData.staffNames && staffData.staffNames.length > 0
+              ? '<br><br>Staff:<br>' + staffData.staffNames.map((s: any) => `${s.name} (${s.projectRoleTitle})`).join('<br>')
+              : '';
+            
+            return `
+              <b>${name}</b><br>
+              Month: ${m}<br>
+              Staff Count: ${values[m] || 0}${staffDisplay}
+              <extra></extra>
+            `;
+          }),
+      hoverlabel: {
+        align: 'left' as const
+      }
+    };
+  });
 
   return (
     <div>

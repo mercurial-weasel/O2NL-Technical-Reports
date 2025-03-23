@@ -30,8 +30,8 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
 
   // Find date range
   const dates = data.flatMap(record => [
-    new Date(record.Required_Start),
-    new Date(record.Required_Finish)
+    new Date(record.requiredStart),
+    new Date(record.requiredFinish)
   ]).filter(date => !isNaN(date.getTime()));
 
   //const startDate = new Date(Math.min(...dates.map(d => d.getTime())));
@@ -60,8 +60,8 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
 
   // Process each staff member
   data.forEach(staff => {
-    const startDate = new Date(staff.Required_Start);
-    const endDate = new Date(staff.Required_Finish);
+    const startDate = new Date(staff.requiredStart);
+    const endDate = new Date(staff.requiredFinish);
 
     // Skip if dates are invalid
     if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
@@ -72,10 +72,10 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
     const endMonth = `${endDate.toLocaleString('default', { month: 'long' })}_${endDate.getFullYear().toString().slice(-2)}`;
 
     // Initialize maps if needed
-    if (!orgMap.has(staff.Org)) {
-      orgMap.set(staff.Org, {});
+    if (!orgMap.has(staff.org)) {
+      orgMap.set(staff.org, {});
       months.forEach(month => {
-        orgMap.get(staff.Org)![month] = { 
+        orgMap.get(staff.org)![month] = { 
           onboarding: 0, 
           offboarding: 0,
           onboardingStaff: [],
@@ -84,10 +84,10 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
       });
     }
 
-    if (!disciplineMap.has(staff.Team)) {
-      disciplineMap.set(staff.Team, {});
+    if (!disciplineMap.has(staff.team)) {
+      disciplineMap.set(staff.team, {});
       months.forEach(month => {
-        disciplineMap.get(staff.Team)![month] = { 
+        disciplineMap.get(staff.team)![month] = { 
           onboarding: 0, 
           offboarding: 0,
           onboardingStaff: [],
@@ -96,10 +96,10 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
       });
     }
 
-    if (!nopTypeMap.has(staff.NOP_Type)) {
-      nopTypeMap.set(staff.NOP_Type, {});
+    if (!nopTypeMap.has(staff.nopType)) {
+      nopTypeMap.set(staff.nopType, {});
       months.forEach(month => {
-        nopTypeMap.get(staff.NOP_Type)![month] = { 
+        nopTypeMap.get(staff.nopType)![month] = { 
           onboarding: 0, 
           offboarding: 0,
           onboardingStaff: [],
@@ -110,32 +110,32 @@ export function calculateStaffMovement(data: O2NL_Staff[]): StaffMovement {
 
     // Record onboarding
     if (months.includes(startMonth)) {
-      orgMap.get(staff.Org)![startMonth].onboarding++;
-      orgMap.get(staff.Org)![startMonth].onboardingStaff.push(staff.Name);
+      orgMap.get(staff.org)![startMonth].onboarding++;
+      orgMap.get(staff.org)![startMonth].onboardingStaff.push(staff.name);
       
-      disciplineMap.get(staff.Team)![startMonth].onboarding++;
-      disciplineMap.get(staff.Team)![startMonth].onboardingStaff.push(staff.Name);
+      disciplineMap.get(staff.team)![startMonth].onboarding++;
+      disciplineMap.get(staff.team)![startMonth].onboardingStaff.push(staff.name);
       
-      nopTypeMap.get(staff.NOP_Type)![startMonth].onboarding++;
-      nopTypeMap.get(staff.NOP_Type)![startMonth].onboardingStaff.push(staff.Name);
+      nopTypeMap.get(staff.nopType)![startMonth].onboarding++;
+      nopTypeMap.get(staff.nopType)![startMonth].onboardingStaff.push(staff.name);
       
       totalMovement[startMonth].onboarding++;
-      totalMovement[startMonth].onboardingStaff.push(staff.Name);
+      totalMovement[startMonth].onboardingStaff.push(staff.name);
     }
 
     // Record offboarding
     if (months.includes(endMonth)) {
-      orgMap.get(staff.Org)![endMonth].offboarding++;
-      orgMap.get(staff.Org)![endMonth].offboardingStaff.push(staff.Name);
+      orgMap.get(staff.org)![endMonth].offboarding++;
+      orgMap.get(staff.org)![endMonth].offboardingStaff.push(staff.name);
       
-      disciplineMap.get(staff.Team)![endMonth].offboarding++;
-      disciplineMap.get(staff.Team)![endMonth].offboardingStaff.push(staff.Name);
+      disciplineMap.get(staff.team)![endMonth].offboarding++;
+      disciplineMap.get(staff.team)![endMonth].offboardingStaff.push(staff.name);
       
-      nopTypeMap.get(staff.NOP_Type)![endMonth].offboarding++;
-      nopTypeMap.get(staff.NOP_Type)![endMonth].offboardingStaff.push(staff.Name);
+      nopTypeMap.get(staff.nopType)![endMonth].offboarding++;
+      nopTypeMap.get(staff.nopType)![endMonth].offboardingStaff.push(staff.name);
       
       totalMovement[endMonth].offboarding++;
-      totalMovement[endMonth].offboardingStaff.push(staff.Name);
+      totalMovement[endMonth].offboardingStaff.push(staff.name);
     }
   });
 

@@ -6,9 +6,11 @@ import { Section } from '@common/Section/Section';
 import { Card } from '@common/Card/Card';
 import { Button } from '@common/Button/Button';
 import { BackNavigation } from '@common/BackNavigation/BackNavigation';
-import { StaffNumbersApiClient } from '@api/projectcontrols/peopleculture';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
-import { calculateStaffNumbers } from '@api/projectcontrols/peopleculture';
+import { 
+  StaffMember, 
+  getStaffMembers,
+  calculateStaffNumbers 
+} from '@api/projectcontrols/peopleculture/staff';
 import { TableFilters, StaffNumbers2Chart, StaffNumbers2Table } from '@features_ProjectControls/Staff';
 import { useTableFilters } from '../hooks/useTableFilters';
 import { logger } from '@lib/logger';
@@ -17,7 +19,7 @@ type ViewMode = 'chart' | 'table';
 
 export function StaffNumbers2Dashboard() {
   const [viewMode, setViewMode] = useState<ViewMode>('chart');
-  const [staffData, setStaffData] = useState<O2NL_Staff[]>([]);
+  const [staffData, setStaffData] = useState<StaffMember[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -27,8 +29,7 @@ export function StaffNumbers2Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const client = new StaffNumbersApiClient();
-        const data = await client.fetchStaffNumbersData();
+        const data = await getStaffMembers();
         setStaffData(data);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load staff numbers data');
@@ -118,7 +119,6 @@ export function StaffNumbers2Dashboard() {
       logger.info('CSV download completed');
     } catch (error) {
       logger.error('CSV download failed', { error });
-      // You might want to show a user-friendly error message here
     }
   };
 

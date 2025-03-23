@@ -1,21 +1,18 @@
 /**
- * Staff FTE API exports
- * 
- * This file exports all components from the staff FTE module, including client, types,
- * transformations, and data structures.
+ * Staff FTE Module
  */
-
-// Export the API client
-export { StaffFTEApiClient } from './client';
 
 // Export types
 export * from './types';
 
-// Export all transformations and their types
+// Export transformations
 export * from './transformations';
 export * from './transformations-fte-summary';
 export * from './transformations-staff-numbers2';
 export * from './transformations-staff-movement';
+
+// Export client
+export { StaffFTEApiClient } from './client';
 
 // Export mock data
 export { mockStaffFTEData } from './mock-data';

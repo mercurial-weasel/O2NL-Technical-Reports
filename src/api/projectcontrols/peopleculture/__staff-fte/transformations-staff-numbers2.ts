@@ -28,8 +28,8 @@ export interface StaffSummary {
 export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
   // Find date range from the data
   const dates = data.flatMap(record => [
-    new Date(record.Required_Start),
-    new Date(record.Required_Finish)
+    new Date(record.requiredStart),
+    new Date(record.requiredFinish)
   ]).filter(date => !isNaN(date.getTime()));
 
   //const startDate = new Date(Math.min(...dates.map(d => d.getTime())));
@@ -53,7 +53,6 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
     currentDate.setMonth(currentDate.getMonth() + 1); // Move to next month
 }
 
-
   
   logger.info('Generated months array', { months });
 
@@ -70,8 +69,8 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
 
   // Process each staff member
   data.forEach(staff => {
-    const startDate = new Date(staff.Required_Start);
-    const endDate = new Date(staff.Required_Finish);
+    const startDate = new Date(staff.requiredStart);
+    const endDate = new Date(staff.requiredFinish);
 
     // Skip if dates are invalid
     if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
@@ -79,24 +78,24 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
     }
 
     // Initialize maps if needed
-    if (!orgMap.has(staff.Org)) {
-      orgMap.set(staff.Org, {});
+    if (!orgMap.has(staff.org)) {
+      orgMap.set(staff.org, {});
       months.forEach(month => {
-        orgMap.get(staff.Org)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
+        orgMap.get(staff.org)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
-    if (!disciplineMap.has(staff.Team)) {
-      disciplineMap.set(staff.Team, {});
+    if (!disciplineMap.has(staff.team)) {
+      disciplineMap.set(staff.team, {});
       months.forEach(month => {
-        disciplineMap.get(staff.Team)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
+        disciplineMap.get(staff.team)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
-    if (!nopTypeMap.has(staff.NOP_Type)) {
-      nopTypeMap.set(staff.NOP_Type, {});
+    if (!nopTypeMap.has(staff.nopType)) {
+      nopTypeMap.set(staff.nopType, {});
       months.forEach(month => {
-        nopTypeMap.get(staff.NOP_Type)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
+        nopTypeMap.get(staff.nopType)![month] = { activeCount: 0, staffNames: [], staffTitles: [] };
       });
     }
 
@@ -107,39 +106,39 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
 
       if (startDate <= monthEnd && endDate >= month) {
         // Add to organization counts
-        const orgCounts = orgMap.get(staff.Org)![monthStr];
+        const orgCounts = orgMap.get(staff.org)![monthStr];
         orgCounts.activeCount++;
         orgCounts.staffNames.push({
-          name: staff.Name,
-          projectRoleTitle: staff.Project_Role_Title
+          name: staff.name,
+          projectRoleTitle: staff.projectRoleTitle
         });
-        orgCounts.staffTitles.push(staff.Project_Role_Title);
+        orgCounts.staffTitles.push(staff.projectRoleTitle);
 
         // Add to discipline counts
-        const disciplineCounts = disciplineMap.get(staff.Team)![monthStr];
+        const disciplineCounts = disciplineMap.get(staff.team)![monthStr];
         disciplineCounts.activeCount++;
         disciplineCounts.staffNames.push({
-          name: staff.Name,
-          projectRoleTitle: staff.Project_Role_Title
+          name: staff.name,
+          projectRoleTitle: staff.projectRoleTitle
         });
-        disciplineCounts.staffTitles.push(staff.Project_Role_Title);
+        disciplineCounts.staffTitles.push(staff.projectRoleTitle);
 
         // Add to NOP type counts
-        const nopTypeCounts = nopTypeMap.get(staff.NOP_Type)![monthStr];
+        const nopTypeCounts = nopTypeMap.get(staff.nopType)![monthStr];
         nopTypeCounts.activeCount++;
         nopTypeCounts.staffNames.push({
-          name: staff.Name,
-          projectRoleTitle: staff.Project_Role_Title
+          name: staff.name,
+          projectRoleTitle: staff.projectRoleTitle
         });
-        nopTypeCounts.staffTitles.push(staff.Project_Role_Title);
+        nopTypeCounts.staffTitles.push(staff.projectRoleTitle);
 
         // Add to total counts
         totalStaff[monthStr].activeCount++;
         totalStaff[monthStr].staffNames.push({
-          name: staff.Name,
-          projectRoleTitle: staff.Project_Role_Title
+          name: staff.name,
+          projectRoleTitle: staff.projectRoleTitle
         });
-        totalStaff[monthStr].staffTitles.push(staff.Project_Role_Title);
+        totalStaff[monthStr].staffTitles.push(staff.projectRoleTitle);
       }
     });
   });
@@ -156,19 +155,6 @@ export function calculateStaffNumbers(data: O2NL_Staff[]): StaffSummary {
   const nopTypes = Array.from(nopTypeMap.entries())
     .map(([name, staffCounts]) => ({ name, staffCounts }))
     .sort((a, b) => a.name.localeCompare(b.name));
-
-  // Log summary statistics
-  // logger.info('Staff numbers summary:', {
-  //   totalMonths: months.length,
-  //   organizations: organizations.map(org => ({
-  //     name: org.name,
-  //     counts: Object.entries(org.staffCounts).map(([month, data]) => ({
-  //       month,
-  //       activeCount: data.activeCount,
-  //       staffCount: data.staffNames.length
-  //     }))
-  //   }))
-  // });
 
   return {
     organizations,

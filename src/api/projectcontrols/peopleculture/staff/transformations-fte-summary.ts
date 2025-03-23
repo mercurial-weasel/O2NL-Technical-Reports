@@ -1,6 +1,4 @@
-import { O2NL_Staff } from './types';
-import { MonthColumn } from '../../components/Dashboards/ProjectControls/StaffFTE/types';
-import { logger } from '@lib/logger';
+import { StaffMember, StaffData, monthFormatter, MonthColumn } from './types';
 
 // Staff member interface to track individual contributors
 export interface StaffMember {
@@ -36,7 +34,10 @@ export interface FTESummary {
   allStaffMembers: { [key: string]: StaffMember[] }; // Track all staff by month
 }
 
-export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthColumn[]): FTESummary {
+/**
+ * Calculate FTE summaries across different categories
+ */
+export function calculateFTESummaries(data: StaffData, monthColumns: MonthColumn[]): FTESummary {
   // Initialize maps for each type of summary
   const orgMap = new Map<string, { 
     totals: { [key: string]: number }, 
@@ -65,65 +66,68 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
   // Process each staff member
   data.forEach(staff => {
     // Get or create organization data structure
-    if (!orgMap.has(staff.Org)) {
-      orgMap.set(staff.Org, { 
+    if (!orgMap.has(staff.org)) {
+      orgMap.set(staff.org, { 
         totals: {}, 
         staffMembers: {} 
       });
       monthColumns.forEach(month => {
-        orgMap.get(staff.Org)!.totals[month.key] = 0;
-        orgMap.get(staff.Org)!.staffMembers[month.key] = [];
+        orgMap.get(staff.org)!.totals[month.key] = 0;
+        orgMap.get(staff.org)!.staffMembers[month.key] = [];
       });
     }
 
     // Get or create discipline data structure
-    if (!disciplineMap.has(staff.Team)) {
-      disciplineMap.set(staff.Team, { 
+    if (!disciplineMap.has(staff.team)) {
+      disciplineMap.set(staff.team, { 
         totals: {}, 
         staffMembers: {} 
       });
       monthColumns.forEach(month => {
-        disciplineMap.get(staff.Team)!.totals[month.key] = 0;
-        disciplineMap.get(staff.Team)!.staffMembers[month.key] = [];
+        disciplineMap.get(staff.team)!.totals[month.key] = 0;
+        disciplineMap.get(staff.team)!.staffMembers[month.key] = [];
       });
     }
 
     // Get or create NOP type data structure
-    if (!nopTypeMap.has(staff.NOP_Type)) {
-      nopTypeMap.set(staff.NOP_Type, { 
+    if (!nopTypeMap.has(staff.nopType)) {
+      nopTypeMap.set(staff.nopType, { 
         totals: {}, 
         staffMembers: {} 
       });
       monthColumns.forEach(month => {
-        nopTypeMap.get(staff.NOP_Type)!.totals[month.key] = 0;
-        nopTypeMap.get(staff.NOP_Type)!.staffMembers[month.key] = [];
+        nopTypeMap.get(staff.nopType)!.totals[month.key] = 0;
+        nopTypeMap.get(staff.nopType)!.staffMembers[month.key] = [];
       });
     }
 
     // Calculate totals for each month
     monthColumns.forEach(month => {
-      const monthKey = month.key as keyof O2NL_Staff;
-      const fte = staff[monthKey] as number || 0;
+      // Get the ISO month format (YYYY-MM) from the month key (e.g., January_24)
+      const isoMonth = monthFormatter.toISOFormat(month.key);
+      
+      // Get FTE value for this month from staff.monthlyFTE object
+      const fte = staff.monthlyFTE[isoMonth] || 0;
       
       // Only track staff members with non-zero FTE
       if (fte > 0) {
-        const staffMember: StaffMember = {
-          name: staff.Name,
-          projectRoleTitle: staff.Project_Role_Title,
+        const staffMember = {
+          name: staff.name,
+          projectRoleTitle: staff.projectRoleTitle,
           fte: fte
         };
         
         // Add to organization staffMembers and totals
-        orgMap.get(staff.Org)!.totals[month.key] += fte;
-        orgMap.get(staff.Org)!.staffMembers[month.key].push(staffMember);
+        orgMap.get(staff.org)!.totals[month.key] += fte;
+        orgMap.get(staff.org)!.staffMembers[month.key].push(staffMember);
         
         // Add to discipline staffMembers and totals
-        disciplineMap.get(staff.Team)!.totals[month.key] += fte;
-        disciplineMap.get(staff.Team)!.staffMembers[month.key].push(staffMember);
+        disciplineMap.get(staff.team)!.totals[month.key] += fte;
+        disciplineMap.get(staff.team)!.staffMembers[month.key].push(staffMember);
         
         // Add to NOP type staffMembers and totals
-        nopTypeMap.get(staff.NOP_Type)!.totals[month.key] += fte;
-        nopTypeMap.get(staff.NOP_Type)!.staffMembers[month.key].push(staffMember);
+        nopTypeMap.get(staff.nopType)!.totals[month.key] += fte;
+        nopTypeMap.get(staff.nopType)!.staffMembers[month.key].push(staffMember);
         
         // Add to grand total and all staff members
         grandTotal[month.key] += fte;
@@ -157,7 +161,7 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
     }))
     .sort((a, b) => a.nopType.localeCompare(b.nopType));
 
-  logger.info("FTE Summaries calculated with staff tracking");
+  console.log("FTE Summaries calculated with staff tracking");
 
   return {
     orgSummaries,
@@ -166,4 +170,39 @@ export function calculateFTESummaries(data: O2NL_Staff[], monthColumns: MonthCol
     grandTotal,
     allStaffMembers
   };
+}
+
+/**
+ * Generate month columns for component rendering
+ */
+export function generateMonthColumns(data: StaffData): MonthColumn[] {
+  // Find date range from the data
+  const dates = data.flatMap(record => [
+    new Date(record.requiredStart),
+    new Date(record.requiredFinish)
+  ]).filter(date => !isNaN(date.getTime()));
+
+  // Use January 2024 as a starting point
+  const startDate = new Date(2024, 0, 1);
+  const endDate = new Date(Math.max(...dates.map(d => d.getTime())));
+
+  // Generate array of months between start and end dates
+  const months: MonthColumn[] = [];
+  const currentDate = new Date(startDate);
+  
+  while (currentDate <= endDate) {
+    const monthName = currentDate.toLocaleString('default', { month: 'long' });
+    const yearShort = currentDate.getFullYear().toString().slice(-2);
+    const key = `${monthName}_${yearShort}`;
+    
+    months.push({
+      key,
+      title: `${monthName} '${yearShort}`,
+      dataIndex: key
+    });
+    
+    currentDate.setMonth(currentDate.getMonth() + 1);
+  }
+  
+  return months;
 }

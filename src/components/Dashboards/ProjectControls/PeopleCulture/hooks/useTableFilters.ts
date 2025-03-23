@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
-import { FilterState } from '../types';
+import { StaffMember } from '@api/projectcontrols/peopleculture/staff';
+import { FilterState } from '@features_ProjectControls/Staff/types';
 
-export function useTableFilters(data: O2NL_Staff[]) {
+export function useTableFilters(data: StaffMember[]) {
   const [filterState, setFilterState] = useState<FilterState>({
     disciplines: new Set(['all']),
     locations: new Set(['all']),
@@ -13,12 +13,12 @@ export function useTableFilters(data: O2NL_Staff[]) {
   });
 
   const uniqueValues = useMemo(() => ({
-    disciplines: Array.from(new Set(data.map(item => item.Team))).sort(),
-    locations: Array.from(new Set(data.map(item => item.Location))).sort(),
-    nopTypes: Array.from(new Set(data.map(item => item.NOPType))).sort(),
-    orgs: Array.from(new Set(data.map(item => item.Org))).sort(),
-    phases: Array.from(new Set(data.map(item => item.Phase))).sort(),
-    statuses: Array.from(new Set(data.map(item => item.Status))).sort(),
+    disciplines: Array.from(new Set(data.map(item => item.team))).sort(),
+    locations: Array.from(new Set(data.map(item => item.location))).sort(),
+    nopTypes: Array.from(new Set(data.map(item => item.nopType))).sort(),
+    orgs: Array.from(new Set(data.map(item => item.org))).sort(),
+    phases: Array.from(new Set(data.map(item => item.phase))).sort(),
+    statuses: Array.from(new Set(data.map(item => item.status))).sort(),
   }), [data]);
 
   const handleFilterChange = (filterType: keyof FilterState, value: string) => {
@@ -46,12 +46,12 @@ export function useTableFilters(data: O2NL_Staff[]) {
 
   const filteredData = useMemo(() => {
     return data.filter(item => {
-      const matchesDiscipline = filterState.disciplines.has('all') || filterState.disciplines.has(item.Team);
-      const matchesLocation = filterState.locations.has('all') || filterState.locations.has(item.Location);
-      const matchesNOPType = filterState.nopTypes.has('all') || filterState.nopTypes.has(item.NOPType);
-      const matchesOrg = filterState.orgs.has('all') || filterState.orgs.has(item.Org);
-      const matchesPhase = filterState.phases.has('all') || filterState.phases.has(item.Phase);
-      const matchesStatus = filterState.statuses.has('all') || filterState.statuses.has(item.Status);
+      const matchesDiscipline = filterState.disciplines.has('all') || filterState.disciplines.has(item.team);
+      const matchesLocation = filterState.locations.has('all') || filterState.locations.has(item.location);
+      const matchesNOPType = filterState.nopTypes.has('all') || filterState.nopTypes.has(item.nopType);
+      const matchesOrg = filterState.orgs.has('all') || filterState.orgs.has(item.org);
+      const matchesPhase = filterState.phases.has('all') || filterState.phases.has(item.phase);
+      const matchesStatus = filterState.statuses.has('all') || filterState.statuses.has(item.status);
 
       return matchesDiscipline && matchesLocation && matchesNOPType && 
              matchesOrg && matchesPhase && matchesStatus;

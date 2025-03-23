@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StaffSummary } from '@api/staff-fte/transformations-staff-numbers2';
+import { StaffSummary } from '@api/projectcontrols/peopleculture/staff/transformations-staff-numbers';
 
 interface StaffNumbers2TableProps {
   data: StaffSummary;
@@ -12,7 +12,7 @@ export function StaffNumbers2Table({ data }: StaffNumbers2TableProps) {
 
   const renderSummaryTable = () => {
     let title: string;
-    let items: { name: string; staffCounts: { [month: string]: { activeCount: number; staffNames: string[] } } }[];
+    let items: { name: string; staffCounts: { [month: string]: { activeCount: number; staffNames: Array<{ name: string; projectRoleTitle: string }> } } }[];
 
     switch (summaryView) {
       case 'organization':
@@ -100,7 +100,7 @@ export function StaffNumbers2Table({ data }: StaffNumbers2TableProps) {
                       <td
                         key={month}
                         className="py-2 px-2 text-right text-sm text-text-secondary group-hover:text-text-primary relative"
-                        title={staffCounts[month].staffNames.join('\n')}
+                        title={staffCounts[month].staffNames.map(s => `${s.name} (${s.projectRoleTitle})`).join('\n')}
                       >
                         {staffCounts[month].activeCount}
                       </td>

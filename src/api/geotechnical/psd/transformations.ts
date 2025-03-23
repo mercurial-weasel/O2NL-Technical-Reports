@@ -38,6 +38,12 @@ export function convertNZTM2000ToLatLng(x: number, y: number): [number, number] 
       return undefined;
     }
     
+    // Additional check: Validate coordinates are within reasonable WGS84 bounds for New Zealand
+    if (lat < -47.5 || lat > -34 || lng < 166 || lng > 179) {
+      console.warn('Converted coordinates outside expected WGS84 bounds for New Zealand:', { lat, lng });
+      // Continue but log the warning
+    }
+    
     return [lat, lng]; // Return as [lat, lng] for Leaflet
   } catch (error) {
     console.error('Error converting coordinates:', error);

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { 
   ParticleSizeDistributionTest, 
@@ -32,6 +32,19 @@ const selectedIcon = new Icon({
   shadowSize: [41, 41],
   className: 'marker-icon-green' // Apply CSS class for green color
 });
+
+// Helper component to update map view when center/zoom changes
+const MapUpdater = ({ center, zoom }: { center: [number, number], zoom: number }) => {
+  const map = useMap();
+  
+  useEffect(() => {
+    if (center && zoom) {
+      map.setView(center, zoom);
+    }
+  }, [map, center, zoom]);
+  
+  return null;
+};
 
 interface PSDMapProps {
   data: ParticleSizeDistributionTest[];
@@ -108,11 +121,10 @@ const PSDMap: React.FC<PSDMapProps> = ({
   onItemSelect,
   onPopupOpen
 }) => {
-  const mapRef = useRef<any>(null);
-  const [mapReady, setMapReady] = useState(false);
   // Default center to New Zealand
   const [center, setCenter] = useState<[number, number]>([-41.2865, 174.7762]);
   const [zoom, setZoom] = useState(6); // Start with a wider view
+  const [isMapInitialized, setIsMapInitialized] = useState(false);
 
   // Format the data to include lat/lng - use useMemo to avoid recomputing on every render
   const formattedData = useMemo(() => {
@@ -131,7 +143,7 @@ const PSDMap: React.FC<PSDMapProps> = ({
     };
   }, [formattedData]);
 
-  // Calculate map center and zoom only when formatted data changes
+  // Calculate map center and zoom when formatted data changes
   useEffect(() => {
     console.log(`Valid coordinates: ${validCoordinatesCount} out of ${formattedData.length} items`);
     
@@ -144,34 +156,42 @@ const PSDMap: React.FC<PSDMapProps> = ({
       
       console.log(`Map center calculated: [${avgLat}, ${avgLng}] from average of ${validCoords.length} points`);
       
-      // Set center coordinates
-      setCenter([avgLat, avgLng]);
+      // Calculate appropriate zoom level based on the spread of points
+      let zoomLevel = 12; // Default zoom level
       
-      // Adjust zoom level based on data points
-      if (data.length <= 10) {
-        setZoom(13);
-      } else if (data.length <= 50) {
-        setZoom(12);
-      } else {
-        setZoom(11);
+      if (validCoords.length > 1) {
+        // Find the bounds of the coordinates
+        const maxLat = Math.max(...validCoords.map(c => c[0]));
+        const minLat = Math.min(...validCoords.map(c => c[0]));
+        const maxLng = Math.max(...validCoords.map(c => c[1]));
+        const minLng = Math.min(...validCoords.map(c => c[1]));
+        
+        // Calculate the spread
+        const latSpread = maxLat - minLat;
+        const lngSpread = maxLng - minLng;
+        const maxSpread = Math.max(latSpread, lngSpread);
+        
+        // Adjust zoom based on spread
+        if (maxSpread > 1) zoomLevel = 8;
+        else if (maxSpread > 0.5) zoomLevel = 9;
+        else if (maxSpread > 0.2) zoomLevel = 10;
+        else if (maxSpread > 0.1) zoomLevel = 11;
+        else if (maxSpread > 0.05) zoomLevel = 12;
+        else if (maxSpread > 0.01) zoomLevel = 13;
+        else zoomLevel = 14;
+        
+        console.log(`Calculated zoom level: ${zoomLevel} based on coordinate spread: ${maxSpread}`);
+      } else if (validCoords.length === 1) {
+        // Just one point, zoom in close
+        zoomLevel = 14;
       }
+      
+      // Set center coordinates and zoom
+      setCenter([avgLat, avgLng]);
+      setZoom(zoomLevel);
+      setIsMapInitialized(true);
     }
-  }, [validCoords, validCoordinatesCount, formattedData.length, data.length]);
-
-  // Set the view only when map is ready and center or zoom changes
-  useEffect(() => {
-    if (mapReady && mapRef.current && validCoordinatesCount > 0) {
-      const map = mapRef.current;
-      if (map && map.setView) {
-        try {
-          console.log(`Updating map view to: ${center}, zoom: ${zoom}`);
-          map.setView(center, zoom);
-        } catch (error) {
-          console.error('Error setting map view:', error);
-        }
-      }
-    }
-  }, [center, zoom, mapReady, validCoordinatesCount]);
+  }, [validCoords, validCoordinatesCount, formattedData.length]);
 
   // Inject CSS for marker colors - only once on mount
   useEffect(() => {
@@ -242,16 +262,18 @@ const PSDMap: React.FC<PSDMapProps> = ({
       </div>
       
       <MapContainer 
-        center={[-41.2865, 174.7762]} // Default center (Wellington, NZ)
-        zoom={zoom} 
+        center={[-41.2865, 174.7762]} // Initial default center (Wellington, NZ)
+        zoom={6} // Initial default zoom
         style={{ height: '100%', width: '100%' }}
-        ref={mapRef}
-        whenReady={() => setMapReady(true)}
+        whenReady={() => console.log('Map container is ready')}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        
+        {/* Use the MapUpdater component to set the view when center/zoom changes */}
+        {isMapInitialized && <MapUpdater center={center} zoom={zoom} />}
         
         {formattedData.map((item, index) => {
           // Check if item has valid coordinates

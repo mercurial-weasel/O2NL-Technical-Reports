@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { 
+  StaffMember,
+  calculateFTESummaries 
+} from '@api/projectcontrols/peopleculture/staff';
 import { MonthColumn } from './types';
-import { calculateFTESummaries } from '@api/projectcontrols/peopleculture';
 
 interface FTESummaryTableProps {
-  data: O2NL_Staff[];
+  data: StaffMember[];
   monthColumns: MonthColumn[];
 }
 

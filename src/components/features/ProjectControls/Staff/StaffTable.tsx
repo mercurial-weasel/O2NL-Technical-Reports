@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { O2NL_Staff } from '@api/staff-fte/types';
-import { MonthColumn } from '../types';
+import { StaffMember, monthFormatter } from '@api/projectcontrols/peopleculture/staff';
+import { MonthColumn } from './types';
 
 interface StaffTableProps {
-  data: O2NL_Staff[];
+  data: StaffMember[];
   monthColumns: MonthColumn[];
 }
 
 type SortConfig = {
-  field: keyof O2NL_Staff;
+  field: keyof StaffMember;
   direction: 'asc' | 'desc';
 };
 
@@ -18,12 +18,12 @@ const ITEMS_PER_PAGE = 25;
 export function StaffTable({ data, monthColumns }: StaffTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortConfig, setSortConfig] = useState<SortConfig>({
-    field: 'Name',
+    field: 'name',
     direction: 'asc'
   });
 
   // Handle sorting
-  const handleSort = (field: keyof O2NL_Staff) => {
+  const handleSort = (field: keyof StaffMember) => {
     setSortConfig(prev => ({
       field,
       direction: prev.field === field && prev.direction === 'asc' ? 'desc' : 'asc'
@@ -36,8 +36,8 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
     const aValue = a[sortConfig.field];
     const bValue = b[sortConfig.field];
 
-    if (sortConfig.field === 'RequiredStart' || sortConfig.field === 'RequiredFinish') {
-      return (new Date(aValue).getTime() - new Date(bValue).getTime()) * direction;
+    if (sortConfig.field === 'requiredStart' || sortConfig.field === 'requiredFinish') {
+      return (new Date(aValue as string).getTime() - new Date(bValue as string).getTime()) * direction;
     }
 
     return String(aValue).localeCompare(String(bValue)) * direction;
@@ -50,13 +50,19 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
     currentPage * ITEMS_PER_PAGE
   );
 
-  const renderSortIndicator = (field: keyof O2NL_Staff) => {
+  const renderSortIndicator = (field: keyof StaffMember) => {
     if (sortConfig.field !== field) {
       return <ArrowUpDown className="w-4 h-4 opacity-50" />;
     }
     return sortConfig.direction === 'asc' ? 
       <ArrowUp className="w-4 h-4" /> : 
       <ArrowDown className="w-4 h-4" />;
+  };
+
+  // Get FTE value for a specific month
+  const getFTEForMonth = (staff: StaffMember, monthKey: string): number => {
+    const isoMonth = monthFormatter.toISOFormat(monthKey);
+    return staff.monthlyFTE[isoMonth] || 0;
   };
 
   return (
@@ -68,24 +74,24 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
           <thead>
             <tr className="border-b border-gray-700">
               <th 
-                onClick={() => handleSort('Name')}
+                onClick={() => handleSort('name')}
                 className="sticky left-0 z-10 bg-background-base py-3 px-4 text-left text-sm font-medium text-brand-secondary cursor-pointer group"
               >
                 <div className="flex items-center gap-1 hover:text-brand-primary transition-colors">
                   Name
                   <span className="transition-opacity duration-200 group-hover:opacity-100">
-                    {renderSortIndicator('Name')}
+                    {renderSortIndicator('name')}
                   </span>
                 </div>
               </th>
               <th 
-                onClick={() => handleSort('Team')}
+                onClick={() => handleSort('team')}
                 className="py-3 px-4 text-left text-sm font-medium text-brand-secondary cursor-pointer group"
               >
                 <div className="flex items-center gap-1 hover:text-brand-primary transition-colors">
                   Team
                   <span className="transition-opacity duration-200 group-hover:opacity-100">
-                    {renderSortIndicator('Team')}
+                    {renderSortIndicator('team')}
                   </span>
                 </div>
               </th>
@@ -96,24 +102,24 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
               <th className="py-3 px-4 text-left text-sm font-medium text-brand-secondary">Phase</th>
               <th className="py-3 px-4 text-left text-sm font-medium text-brand-secondary">Status</th>
               <th 
-                onClick={() => handleSort('RequiredStart')}
+                onClick={() => handleSort('requiredStart')}
                 className="py-3 px-4 text-left text-sm font-medium text-brand-secondary cursor-pointer group"
               >
                 <div className="flex items-center gap-1 hover:text-brand-primary transition-colors">
                   Start Date
                   <span className="transition-opacity duration-200 group-hover:opacity-100">
-                    {renderSortIndicator('RequiredStart')}
+                    {renderSortIndicator('requiredStart')}
                   </span>
                 </div>
               </th>
               <th 
-                onClick={() => handleSort('RequiredFinish')}
+                onClick={() => handleSort('requiredFinish')}
                 className="py-3 px-4 text-left text-sm font-medium text-brand-secondary cursor-pointer group"
               >
                 <div className="flex items-center gap-1 hover:text-brand-primary transition-colors">
                   End Date
                   <span className="transition-opacity duration-200 group-hover:opacity-100">
-                    {renderSortIndicator('RequiredFinish')}
+                    {renderSortIndicator('requiredFinish')}
                   </span>
                 </div>
               </th>
@@ -130,31 +136,31 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
           <tbody>
             {paginatedData.map((staff, index) => (
               <tr 
-                key={index}
+                key={staff.id || index}
                 className="border-b border-gray-700/50 hover:bg-gray-700/20"
               >
                 <td className="sticky left-0 z-10 bg-background-base py-3 px-4 text-sm text-text-primary">
-                  {staff.Name}
+                  {staff.name}
                 </td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.Team}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.Location}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.NOPType}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.Org}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.ProjectRoleTitle}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.Phase}</td>
-                <td className="py-3 px-4 text-sm text-text-secondary">{staff.Status}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.team}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.location}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.nopType}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.org}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.projectRoleTitle}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.phase}</td>
+                <td className="py-3 px-4 text-sm text-text-secondary">{staff.status}</td>
                 <td className="py-3 px-4 text-sm text-text-secondary">
-                  {new Date(staff.RequiredStart).toLocaleDateString()}
+                  {new Date(staff.requiredStart).toLocaleDateString()}
                 </td>
                 <td className="py-3 px-4 text-sm text-text-secondary">
-                  {new Date(staff.RequiredFinish).toLocaleDateString()}
+                  {new Date(staff.requiredFinish).toLocaleDateString()}
                 </td>
                 {monthColumns.map(month => (
                   <td 
                     key={month.key}
                     className="py-3 px-2 text-sm text-right text-text-secondary"
                   >
-                    {(staff[month.key as keyof O2NL_Staff] as number)?.toFixed(2) || '0.00'}
+                    {getFTEForMonth(staff, month.key).toFixed(2)}
                   </td>
                 ))}
               </tr>

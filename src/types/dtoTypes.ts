@@ -79,4 +79,52 @@ export interface AtterbergsFiltersDTO {
   construction_subzone?: string;
 }
 
+// Staff DTOs
+export interface StaffFTEDTO {
+  id?: string;
+  disciplineManager: string;
+  team: string;
+  location: string;
+  nopType: string;
+  org: string;
+  projectRoleTitle: string;
+  jobCode: string;
+  phase: string;
+  name: string;
+  status: string;
+  lastUpdatedConf: string;
+  resourceOptions: string;
+  taitokoLevinSiteBased: string;
+  pricingPGProfDirectWorks: string;
+  fteAve: number;
+  requiredStart: string; // ISO string for API
+  requiredFinish: string; // ISO string for API
+  monthlyFTE: { [month: string]: number }; // Structured monthly data
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+// Also add a conversion type to match the current interface format
+export interface LegacyStaffFTEDTO {
+  Discipline_Manager: string;
+  Team: string;
+  Location: string;
+  NOP_Type: string;
+  Org: string;
+  Project_Role_Title: string;
+  Job_Code: string;
+  Phase: string;
+  Name: string;
+  Status: string;
+  Last_updated_conf: string;
+  Resource_Options: string;
+  Taitoko_Levin_Site_Based_: string;
+  Pricing_P_G___Prof___Direct_Works: string;
+  FTE__AVE_: number;
+  Required_Start: Date;
+  Required_Finish: Date;
+  // Monthly fields will be dynamically accessed
+  [key: string]: string | number | Date; // Allow dynamic month columns
+}
+
 // Add other DTOs here as needed

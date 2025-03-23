@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart2, Table2, Download } from 'lucide-react';
 import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
-import { StaffFTEApiClient } from '@api/projectcontrols/peopleculture';
-import { O2NL_Staff } from '@api/projectcontrols/peopleculture';
+import { 
+  StaffMember, 
+  getStaffMembers,
+  calculateFTESummaries
+} from '@api/projectcontrols/peopleculture/staff';
 import { logger } from '@lib/logger';
 import { StaffChart } from '@features_ProjectControls/Staff';
 import { TableFilters, FTESummaryTable, StaffTable } from '@features_ProjectControls/Staff/';
 import { useTableFilters } from '../hooks/useTableFilters';
 import { MonthColumn } from '@features_ProjectControls/Staff/types';
-import { calculateFTESummaries } from '@api/projectcontrols/peopleculture';
 
-// Generate array of month columns from Sep 24 to Dec 30
-const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {
-  const date = new Date(2024, 8 + i); // Start from Sep 2024 (month 8)
+// Generate array of month columns from Jan 24 to Dec 30
+const monthColumns: MonthColumn[] = Array.from({ length: 84 }, (_, i) => {
+  const date = new Date(2024, i); // Start from Jan 2024
   const monthName = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear().toString().slice(-2);
   return {
@@ -23,7 +25,7 @@ const monthColumns: MonthColumn[] = Array.from({ length: 76 }, (_, i) => {
 
 export function StaffFTEDashboard() {
   const [viewMode, setViewMode] = useState<'chart' | 'table'>('chart');
-  const [staffData, setStaffData] = useState<O2NL_Staff[]>([]);
+  const [staffData, setStaffData] = useState<StaffMember[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -33,8 +35,7 @@ export function StaffFTEDashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const client = new StaffFTEApiClient();
-        const data = await client.fetchStaffFTEData();
+        const data = await getStaffMembers();
         setStaffData(data);
       } catch (err) {
         const error = err instanceof Error ? err : new Error('Failed to load staff FTE data');
@@ -121,7 +122,6 @@ export function StaffFTEDashboard() {
       logger.info('CSV download completed');
     } catch (error) {
       logger.error('CSV download failed', { error });
-      // You might want to show a user-friendly error message here
     }
   };
 
