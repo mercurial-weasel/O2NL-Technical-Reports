@@ -61,8 +61,8 @@ export function StaffTable({ data, monthColumns }: StaffTableProps) {
 
   // Get FTE value for a specific month
   const getFTEForMonth = (staff: StaffMember, monthKey: string): number => {
-    const isoMonth = monthFormatter.toISOFormat(monthKey);
-    return staff.monthlyFTE[isoMonth] || 0;
+    // Access the FTE value directly using the month key
+    return staff.monthlyFTE[monthKey] || 0;
   };
 
   return (

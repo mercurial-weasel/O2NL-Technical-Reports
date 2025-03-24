@@ -55,6 +55,13 @@ export const monthFormatter = {
     const year = '20' + yearShort; // Assuming years are in the 2000s
     
     return `${year}-${monthNum.toString().padStart(2, '0')}`;
+  },
+  
+  // Direct access to the key format stored in the database
+  directFormat: (monthKey: string): string => {
+    // This function doesn't transform the key, but returns it as-is
+    // since the data is already stored in this format in the database
+    return monthKey;
   }
 };
 

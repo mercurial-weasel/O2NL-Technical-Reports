@@ -103,11 +103,9 @@ export function calculateFTESummaries(data: StaffData, monthColumns: MonthColumn
 
     // Calculate totals for each month
     monthColumns.forEach(month => {
-      // Get the ISO month format (YYYY-MM) from the month key (e.g., January_24)
-      const isoMonth = monthFormatter.toISOFormat(month.key);
-      
-      // Get FTE value for this month from staff.monthlyFTE object
-      const fte = staff.monthlyFTE[isoMonth] || 0;
+      // Access the FTE value directly using the month key format from the database
+      const monthKey = month.key;
+      const fte = staff.monthlyFTE[monthKey] || 0;
       
       // Only track staff members with non-zero FTE
       if (fte > 0) {
