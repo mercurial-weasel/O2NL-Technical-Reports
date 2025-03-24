@@ -3,13 +3,13 @@ import Plot from 'react-plotly.js';
 import { StaffSummary } from '@api/projectcontrols/peopleculture/staff/transformations-staff-numbers';
 import { colorPalettes } from './colors';
 
-interface StaffNumbers2ChartProps {
+interface StaffNumbersChartProps {
   data: StaffSummary;
 }
 
 type ViewMode = 'organization' | 'discipline' | 'nop';
 
-export function StaffNumbers2Chart({ data }: StaffNumbers2ChartProps) {
+export function StaffNumbersChart({ data }: StaffNumbersChartProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('organization');
 
   // Get the appropriate data array and color palette based on viewMode

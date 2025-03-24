@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { StaffSummary } from '@api/projectcontrols/peopleculture/staff/transformations-staff-numbers';
 
-interface StaffNumbers2TableProps {
+interface StaffNumbersTableProps {
   data: StaffSummary;
 }
 
 type SummaryView = 'organization' | 'discipline' | 'nop';
 
-export function StaffNumbers2Table({ data }: StaffNumbers2TableProps) {
+export function StaffNumbersTable({ data }: StaffNumbersTableProps) {
   const [summaryView, setSummaryView] = useState<SummaryView>('organization');
 
   const renderSummaryTable = () => {

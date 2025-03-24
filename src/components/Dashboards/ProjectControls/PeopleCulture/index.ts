@@ -1,5 +1,5 @@
 // Export PeopleCulture components
-export { StaffNumbers2Dashboard } from './StaffNumbers2';
+export { StaffNumbersDashboard } from './StaffNumbers';
 export { StaffFTEDashboard } from './StaffFTE';
 export { StaffMovementDashboard } from './StaffMovement';
 export { TimeLogsDashboard } from './TimeLogs';

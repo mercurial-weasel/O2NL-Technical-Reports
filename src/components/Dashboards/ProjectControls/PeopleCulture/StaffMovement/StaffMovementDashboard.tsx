@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Header, Footer, Section, Card, Button, BackNavigation } from '@common';
-import { StaffMovementChart } from './StaffMovementChart';
+import { StaffMovementChart } from '@features_ProjectControls/Staff/StaffMovementChart';
 import { TableFilters } from '@features_ProjectControls/Staff';
-import { useTableFilters } from '../hooks/useTableFilters';
+import { useTableFilters } from '@hooks/useTableFilters';
 import { 
   StaffMember, 
   getStaffMembers,

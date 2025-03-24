@@ -9,7 +9,7 @@ import {
 import { logger } from '@lib/logger';
 import { StaffChart } from '@features_ProjectControls/Staff';
 import { TableFilters, FTESummaryTable, StaffTable } from '@features_ProjectControls/Staff/';
-import { useTableFilters } from '../hooks/useTableFilters';
+import { useTableFilters } from '@hooks/useTableFilters';
 import { MonthColumn } from '@features_ProjectControls/Staff/types';
 
 // Generate array of month columns from Jan 24 to Dec 30

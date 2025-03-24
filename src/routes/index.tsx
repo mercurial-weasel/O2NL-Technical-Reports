@@ -32,7 +32,7 @@ import { SystemsDashboard } from '@dashboards/ProjectControls/Programme/Systems'
 import { ConsentingDashboard } from '@dashboards/ProjectControls/Programme/Consenting';
 import { SustainabilityDashboard, SustainabilityDetailPage } from '@dashboards/ProjectControls/Programme/Sustainability';
 
-import { StaffNumbers2Dashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffNumbers2';
+import { StaffNumbersDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffNumbers';
 import { StaffFTEDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffFTE';
 import { StaffMovementDashboard } from '@dashboards/ProjectControls/PeopleCulture/StaffMovement';
 import { TimeLogsDashboard } from '@dashboards/ProjectControls/PeopleCulture/TimeLogs';
@@ -135,7 +135,7 @@ export function AppRoutes() {
       
       <Route path="/project-controls/staff-numbers" element={
         <RBACWrapper requiredRoles={['admin', 'amt', 'people', 'test']}>
-          <StaffNumbers2Dashboard />
+          <StaffNumbersDashboard />
         </RBACWrapper>
       } />
       

@@ -11,13 +11,13 @@ import {
   getStaffMembers,
   calculateStaffNumbers 
 } from '@api/projectcontrols/peopleculture/staff';
-import { TableFilters, StaffNumbers2Chart, StaffNumbers2Table } from '@features_ProjectControls/Staff';
-import { useTableFilters } from '../hooks/useTableFilters';
+import { TableFilters, StaffNumbersChart, StaffNumbersTable } from '@features_ProjectControls/Staff';
+import { useTableFilters } from '@hooks/useTableFilters';
 import { logger } from '@lib/logger';
 
 type ViewMode = 'chart' | 'table';
 
-export function StaffNumbers2Dashboard() {
+export function StaffNumbersDashboard() {
   const [viewMode, setViewMode] = useState<ViewMode>('chart');
   const [staffData, setStaffData] = useState<StaffMember[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -230,12 +230,12 @@ export function StaffNumbers2Dashboard() {
           {/* Content */}
           {viewMode === 'chart' ? (
             <Card className="p-6" hover>
-              <StaffNumbers2Chart data={staffNumbers} />
+              <StaffNumbersChart data={staffNumbers} />
             </Card>
           ) : (
             <div className="space-y-6">
               <Card className="p-6" hover>
-                <StaffNumbers2Table data={staffNumbers} />
+                <StaffNumbersTable data={staffNumbers} />
               </Card>
             </div>
           )}

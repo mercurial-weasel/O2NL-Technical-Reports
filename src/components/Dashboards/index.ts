@@ -36,5 +36,5 @@ export {  EmissionsTracking,
   SustainabilityInitiatives } from './ProjectControls/Other';
 
   
-export { StaffNumbers2Dashboard, StaffFTEDashboard, StaffMovementDashboard, TimeLogsDashboard } from './ProjectControls/PeopleCulture';
+export { StaffNumbersDashboard, StaffFTEDashboard, StaffMovementDashboard, TimeLogsDashboard } from './ProjectControls/PeopleCulture';
 
