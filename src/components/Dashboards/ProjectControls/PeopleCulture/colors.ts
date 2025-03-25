@@ -1,10 +1,12 @@
 // Organization colors
 export const organizationColors = {
-  'TT': '#0077FF',         // Blue for T+T
-  'Beca': '#3498DB',       // Blue
+  'TT': '#0077FF',         // Bright Blue for T+T
+  'Beca': '#7D3C98',       // Deep Purple
   'Downer': '#2ECC71',     // Green
-  'Mc Connell Dowell': '#F5A623', // Orange
-  'Other': '#9B59B6'       // Purple
+  'Mc Connell Dowell': '#FFFFFF', // White
+  'TBC': '#E74C3C',        // Red
+  'Goodmans': '#F1C40F',   // Yellow
+  'Other': '#34495E'       // Dark Slate
 };
 
 // Discipline colors

@@ -1,13 +1,14 @@
 // Professional color palettes for different groupings
 export const colorPalettes = {
   organization: {
-    'TT': '#0077FF',        // Blue for T+T
-    'Beca': '#6CC24A',       // Vibrant Green
-    'MCD/Downer': '#3EB1C8', // Bright Cyan
-    'Downer': '#3EB1C8',     // Bright Cyan
-    'MCD': '#F5A623',        // Warm Orange
-    'DNZ': '#E63946',        // Bold Red
-    'Other': '#9B59B6'       // Rich Purple
+    'TT': '#0077FF',         // Bright Blue for T+T
+    'Beca': '#7D3C98',       // Deep Purple
+    'Downer': '#2FFF71',     // Green
+    'DNZ': '#2ECC71',     // Green
+    'MCD': '#F39C12', // Golden Orange
+    'TBC': '#E74C3C',        // Red
+    'Goodmans': '#F1C40F',   // Yellow
+    'Other': '#34495E'       // Dark Slate
   },
   discipline: {
     'PSS': '#6A0DAD',      // Vivid Purple
