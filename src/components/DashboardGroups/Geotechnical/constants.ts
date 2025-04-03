@@ -39,12 +39,14 @@ export const GEOTECHNICAL_SECTIONS: DisciplineSection[] = [
     accessFor: ['test', 'design', 'admin'] as AccessRight[], // Updated to match route config
     tests: [
       { name: '1D Consolidation', icon: createIcon(ArrowDownUp), status: 'not-available', accessFor: ['Test', 'Design'] },
+      { name: 'California Bearing Ratio (CBR)', icon: createIcon(Gauge), status: 'draft', accessFor: ['test', 'design', 'admin'] },
       { name: 'CD Triaxial', icon: createIcon(FlaskConical), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Compaction', icon: createIcon(Hammer), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'CU Triaxial', icon: createIcon(TestTubes), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Direct Shear', icon: createIcon(ArrowDownUp), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Dry Density', icon: createIcon(Scale), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Hook Cell', icon: createIcon(Container), status: 'not-available', accessFor: ['Test', 'Design'] },
+      { name: 'Lab Grading', icon: createIcon(Boxes), status: 'draft', accessFor: ['test', 'design', 'admin'] },
       { name: 'Maximum Dry Density (MDD)', icon: createIcon(Scale), status: 'draft', accessFor: ['test', 'design', 'admin'] },
       { name: 'Moisture Content', icon: createIcon(Droplets), status: 'not-available', accessFor: ['Test', 'Design'] },
       { name: 'Organic Matter', icon: createIcon(Microscope), status: 'not-available', accessFor: ['Test', 'Design'] },

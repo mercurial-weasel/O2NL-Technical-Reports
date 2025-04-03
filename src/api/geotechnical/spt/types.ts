@@ -25,3 +25,12 @@ export interface SPTResponse {
   recordCount: number;
   rawData: any[] | null;
 }
+
+import { Geo_SPT as PrismaGeoSPT } from '../../../types/prismaTypes';
+
+// Re-export the Prisma types with potentially added functionality
+export interface GeoSPT extends Omit<PrismaGeoSPT, 'createdAt' | 'updatedAt'> {
+  // Add any extended properties here
+}
+
+export type SPTData = GeoSPT[];

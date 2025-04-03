@@ -3,9 +3,11 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")  // For migrations, points directly to database, bypassing pooler
+  provider  = "postgresql"
+  // Use DATABASE_URL for pooled connections (port 6543) in your app
+  url       = env("DATABASE_URL")
+  // Use DIRECT_URL for migrations and admin tasks (port 5432)
+  directUrl = env("DIRECT_URL")
 }
 
 // AMT Models
@@ -345,6 +347,128 @@ model Geo_Atterbergs {
 
 
 
+// geotechnical_cbr Models
+model Geo_CBR {
+  id                        String          @id @default(uuid())
+  sample_id                 String
+  investigation_id          String
+  full_investigation_id     String
+  depth_to                  Float
+  depth_bottom              Float
+  RL                        Float?
+  sample_depth_RL           Float?
+  chainage                  Float?
+  geocodes                  String?
+  o2nl_stage                String?
+  lab_request               String?
+  surcharge_mass            Float?
+  treatment                 String?
+  bulk_density              Float?
+  dry_density               Float?
+  water_content_compacted   Float?
+  water_content_plunger     Float?
+  cbr_perc                  Float?
+  penetration               String?
+  swell_perc                Float?
+  oversize_material_perc    Float?
+  remarks                   String?
+  geological_unit           String?
+}
+
+
+
+// geotechnical_labgrading Models
+model Geo_LabGrading {
+  id                   String    @id @default(uuid())
+  point_id             String
+  latitude             Float
+  longitude            Float
+  national_east        Float
+  national_north       Float
+  national_elevation   Float
+  geology_description  String?
+  material_id          String?
+  sample_top           Float?
+  sample_reference     String?
+  sample_id            String?
+  item                 Float
+  perc_passing         Float
+}
+
+
+// geotechnical_mdd Models
+model Geo_MDD {
+  id                        String          @id @default(uuid())
+  POINT_ID                  String
+  SAMPLE_TOP                Float
+  SAMPLE_REFERENCE          String
+  SAMPLE_TYPE               String
+  SAMPLE_ID                 String
+  SPECIMEN_TOP              Float
+  SPECIMEN_REFERENCE        String
+  ITEM                      Float
+  Description               String?
+  MC                        Float?
+  DryDensity                Float?
+  Remarks                   String?
+  Method                    String
+  SpecimenGeoID             String?
+  LastModifiedDate          String?
+  NMC                       Float?
+  MethodName                String
+  AGScode                   String
+  DateSampled               String
+  ShearVaneMethod           String?
+  DateTested                String
+  DateChecked               String
+  BulkDensity               Float?
+  SolidDensity              Float?
+  AirVoids                  Float?
+  ShearStrengthPeakCorrected Int?
+  
+  // Additional fields from JSON data
+  type                      String?
+  name                      String?
+  chainage                  Float?
+  distance_to_alignment     Float?
+  angle_to_alignment_deg_cc Float?
+  construction_subzone      String?
+  x                         Float?
+  y                         Float?
+  spatial_reference         Float?
+  DepthBase                 Float?
+  RL                        Float?
+  SampleDepthRL             Float?
+  Chainage                  Float?
+  O2NLstage                 String?
+  SolidDensitySource        String?
+  location_id               String?
+  easting                   Float?
+  national_g                String?
+  northing                  Float?
+  local_datu                String?
+  geological_unit           String?
+  
+  // Relationship to MDDResult
+  mdd_results               Geo_MDD_Result[]
+  
+  @@map("Geo_MDD")
+}
+
+model Geo_MDD_Result {
+  id                String              @id @default(uuid())
+  test_no           Int
+  water_content     Float
+  dry_density       Float
+  
+  // Relationship to parent Geo_MDD
+  mddId             String
+  mdd               Geo_MDD             @relation(fields: [mddId], references: [id], onDelete: Cascade)
+  
+  @@map("Geo_MDD_Result")
+}
+
+
 // geotechnical_psd Models
 // Geotechnical Particle Size Distribution Models
 
@@ -617,31 +741,29 @@ model PABResponse {
 }
 
 // StaffFTE Models
-
-
 // Staff FTE Model
 model O2NL_Staff {
-  id                 String     @id @default(uuid())
-  disciplineManager  String
-  team               String
-  location           String
-  nopType            String
-  org                String
-  projectRoleTitle   String
-  jobCode            String
-  phase              String
-  name               String
-  status             String
-  lastUpdatedConf    String
-  resourceOptions    String
-  taitokoLevinSiteBased String
-  pricingPGProfDirectWorks String
-  fteAve             Float
-  requiredStart      DateTime
-  requiredFinish     DateTime
-  monthlyFTE         Json       // Store monthly FTE data as JSON
-  createdAt          DateTime   @default(now())
-  updatedAt          DateTime   @updatedAt
+  id                           String     @id @default(uuid())
+  disciplineManager            String     
+  team                         String     
+  location                     String     
+  nopType                      String     
+  org                          String     
+  projectRoleTitle             String     
+  jobCode                      String     
+  phase                        String     
+  name                         String     
+  status                       String     
+  lastUpdatedConf              String     
+  resourceOptions              String     
+  taitokoLevinSiteBased        String     
+  pricingPGProfDirectWorks     String     
+  fteAve                       Float      
+  requiredStart                DateTime   
+  requiredFinish               DateTime   
+  monthlyFTE                   Json       // Store monthly FTE data as JSON
+  createdAt                    DateTime   @default(now())
+  updatedAt                    DateTime   @updatedAt
 }
 
 // Sustainability Models

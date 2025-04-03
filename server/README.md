@@ -37,6 +37,82 @@ npm run build
 npm start
 ```
 
+## Database Configuration
+
+The application supports two database environments: DEV and PROD. You can select which database to use by setting the `VITE_DATABASE_SELECTION` environment variable.
+
+### Environment Configuration
+
+The application uses dotenv-flow for loading environment variables. This means you can have multiple .env files:
+
+- `.env`: Base environment variables for all environments
+- `.env.local`: Local overrides (not committed to version control)
+- `.env.development`: Development-specific variables (loaded when NODE_ENV=development)
+- `.env.production`: Production-specific variables (loaded when NODE_ENV=production)
+- `.env.test`: Test-specific variables (loaded when NODE_ENV=test)
+
+### Running with Specific Environment
+
+All scripts in package.json have been updated to use the appropriate NODE_ENV:
+
+```bash
+# Development environment
+npm run dev  # Sets NODE_ENV=development
+
+# Production environment
+npm run build  # Sets NODE_ENV=production
+
+# Test environment
+npm run test  # Sets NODE_ENV=test
+```
+
+### Database Migration Commands
+
+The following commands have been added to manage database migrations:
+
+```bash
+# Development migrations
+npm run prisma:migrate:dev  # Create and apply migrations for development
+
+# Production migrations
+npm run prisma:migrate:prod  # Apply existing migrations in production
+
+# Deploy to specific database
+npm run prisma:deploy:dev  # Deploy to development database
+npm run prisma:deploy:prod  # Deploy to production database
+```
+
+### Database Selection
+
+- `VITE_DATABASE_SELECTION=DEV` (default) - Uses the development database
+- `VITE_DATABASE_SELECTION=PROD` - Uses the production database
+
+You can also specify the database when running the Prisma deployment script:
+
+```bash
+npm run prisma:deploy -- --db=DEV
+# or
+npm run prisma:deploy -- --db=PROD
+```
+
+### Environment Variables
+
+For each database environment, set the following variables in your `.env` file:
+
+```
+# DEV DATABASE
+DEV_DATABASE_URL="postgresql://username:password@host:port/database?pgbouncer=true"
+DEV_DIRECT_URL="postgresql://username:password@host:port/database"
+VITE_DEV_SUPABASE_URL="https://your-dev-project.supabase.co"
+VITE_DEV_SUPABASE_ANON_KEY="your-dev-anon-key"
+
+# PROD DATABASE
+PROD_DATABASE_URL="postgresql://username:password@host:port/database?pgbouncer=true"
+PROD_DIRECT_URL="postgresql://username:password@host:port/database"
+VITE_PROD_SUPABASE_URL="https://your-prod-project.supabase.co"
+VITE_PROD_SUPABASE_ANON_KEY="your-prod-anon-key"
+```
+
 ## API Documentation
 
 The API is documented using Swagger/OpenAPI:
@@ -58,14 +134,7 @@ The server exposes the following API endpoints:
 
 ### Health Check
 
-- **GET /health**: Simple health check endpoint that returns status "ok" when the server is running
-
-## Environment Variables
-
-- `PORT`: Port number for the server (default: 3001)
-- `NODE_ENV`: Environment (development, production)
-- `DATABASE_URL`: PostgreSQL connection string
-- `DIRECT_URL`: Direct PostgreSQL connection string (used for migrations)
+- **GET /health**: Health check endpoint that returns status and database configuration
 
 ## Setting Up for Local Development with Frontend
 
@@ -93,3 +162,5 @@ To run both frontend and backend together:
   ```
 
 - **Connection refused from frontend**: Ensure the server is running and that the proxy setting in frontend's package.json matches the server's URL.
+
+- **Database connection issues**: Check that the correct database URL is being used based on your `VITE_DATABASE_SELECTION` setting. You can see which database is being used in the server startup logs.

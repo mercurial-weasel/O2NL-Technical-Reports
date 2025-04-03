@@ -1,5 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const dotenvFlow = require('dotenv-flow');
+
+// Load environment variables with dotenv-flow
+dotenvFlow.config({
+  node_env: process.env.NODE_ENV || 'development',
+  default_node_env: 'development'
+});
 
 // Directory containing model schema files
 const modelsDir = path.join(__dirname, 'models');

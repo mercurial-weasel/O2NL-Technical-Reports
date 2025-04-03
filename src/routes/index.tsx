@@ -20,6 +20,8 @@ import { EnvironmentalTests } from '@dashboardGroups/Environmental';
 import GeoDashboardSPT from '@dashboards/Geo/SPT/GeoDashboardSPT';
 import GeoDashboardPSD from '@dashboards/Geo/PSD/GeoDashboardPSD';
 import GeoDashboardMDD from '@dashboards/Geo/MDD/GeoDashboardMDD';
+import GeoDashboardCBR from '@dashboards/Geo/CBR/GeoDashboardCBR';
+import GeoDashboardLabGrading from '@dashboards/Geo/LabGrading/GeoDashboardLabGrading';
 import { PlasticityDashboard } from '@components/Dashboards/Geo/Plasticity';
 
 import { EarnedValueSummary } from '@dashboards/ProjectControls/Commercial/EarnedValue/EarnedValueSummary';
@@ -209,6 +211,18 @@ export function AppRoutes() {
       <Route path="/geotechnical/mdd" element={
         <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
           <GeoDashboardMDD />
+        </RBACWrapper>
+      } />
+
+      <Route path="/geotechnical/cbr" element={
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
+          <GeoDashboardCBR />
+        </RBACWrapper>
+      } />
+
+      <Route path="/geotechnical/labgrading" element={
+        <RBACWrapper requiredRoles={['admin', 'test', 'design']}>
+          <GeoDashboardLabGrading />
         </RBACWrapper>
       } />
 

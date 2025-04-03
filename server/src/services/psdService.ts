@@ -1,30 +1,5 @@
-import { PrismaClient, Prisma } from '@prisma/client';
-import dotenv from 'dotenv';
-
-// Load environment variables
-dotenv.config();
-
-// Initialize Prisma client with detailed logging
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.DATABASE_URL
-    },
-  },
-  log: [
-    { level: 'query', emit: 'event' },
-    { level: 'error', emit: 'stdout' },
-    { level: 'warn', emit: 'stdout' },
-  ]
-});
-
-// Log detailed query information if in development mode
-if (process.env.NODE_ENV === 'development') {
-  prisma.$on('query', (e: Prisma.QueryEvent) => {
-    console.log(`Query: ${e.query}`);
-    console.log(`Duration: ${e.duration}ms`);
-  });
-}
+import { Prisma } from '@prisma/client';
+import { prisma } from '../config/database';
 
 /**
  * Validates database connection

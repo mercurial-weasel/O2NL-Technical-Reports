@@ -1,0 +1,27 @@
+model Geo_CBR {
+  id                        String          @id @default(uuid())
+  sample_id                 String
+  investigation_id          String
+  full_investigation_id     String
+  depth_to                  Float
+  depth_bottom              Float
+  RL                        Float?
+  sample_depth_RL           Float?
+  chainage                  Float?
+  geocodes                  String?
+  o2nl_stage                String?
+  lab_request               String?
+  surcharge_mass            Float?
+  treatment                 String?
+  bulk_density              Float?
+  dry_density               Float?
+  water_content_compacted   Float?
+  water_content_plunger     Float?
+  cbr_perc                  Float?
+  penetration               String?
+  swell_perc                Float?
+  oversize_material_perc    Float?
+  remarks                   String?
+  geological_unit           String?
+}
+

@@ -1,0 +1,16 @@
+model Geo_LabGrading {
+  id                   String    @id @default(uuid())
+  point_id             String
+  latitude             Float
+  longitude            Float
+  national_east        Float
+  national_north       Float
+  national_elevation   Float
+  geology_description  String?
+  material_id          String?
+  sample_top           Float?
+  sample_reference     String?
+  sample_id            String?
+  item                 Float
+  perc_passing         Float
+}

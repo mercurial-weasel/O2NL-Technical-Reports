@@ -6,21 +6,24 @@ import { GEOTECHNICAL_SECTIONS } from './constants';
 function GeotechnicalTests() {
   const navigate = useNavigate();
 
-  // Clone the sections to add onClick handlers
+  // Clone the sections to add onClick handlers - updated to use flat ternary approach
   const sectionsWithHandlers = GEOTECHNICAL_SECTIONS.map(section => ({
     ...section,
     tests: section.tests.map(test => ({
       ...test,
-      onClick: 
-        test.name === 'Standard Penetrometer Test (SPT)'
-          ? () => navigate('/geotechnical/spt')
-          : test.name === 'Particle Size Distribution (PSD)'
-            ? () => navigate('/geotechnical/psd')
-            : test.name === 'Maximum Dry Density (MDD)'
-              ? () => navigate('/geotechnical/mdd')
-              : test.name === 'Atterberg Limits (Plasticity)'
-                ? () => navigate('/geotechnical/plasticity')
-                : undefined
+      onClick: test.name === 'Standard Penetrometer Test (SPT)'
+        ? () => navigate('/geotechnical/spt')
+        : test.name === 'Particle Size Distribution (PSD)'
+        ? () => navigate('/geotechnical/psd')
+        : test.name === 'Maximum Dry Density (MDD)'
+        ? () => navigate('/geotechnical/mdd')
+        : test.name === 'Atterberg Limits (Plasticity)'
+        ? () => navigate('/geotechnical/plasticity')
+        : test.name === 'California Bearing Ratio (CBR)'
+        ? () => navigate('/geotechnical/cbr')
+        : test.name === 'Lab Grading'
+        ? () => navigate('/geotechnical/labgrading')
+        : undefined
     }))
   }));
 

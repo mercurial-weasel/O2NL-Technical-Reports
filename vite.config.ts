@@ -1,6 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import dotenvFlow from 'dotenv-flow';
 import path from 'path';
+
+// Load environment variables with dotenv-flow
+dotenvFlow.config({
+  node_env: process.env.NODE_ENV || 'development',
+  default_node_env: 'development'
+});
 
 export default defineConfig({
   plugins: [react()],
@@ -39,5 +46,17 @@ export default defineConfig({
       '@tests': path.resolve(__dirname, './src/tests'),
       '@routes': path.resolve(__dirname, './src/routes')
     }
-  }
+  },
+  server: {
+    // Use the PORT from environment variables or default to 5173
+    port: parseInt(process.env.PORT || '5173'),
+    // Configure proxy for API requests
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_BASE_URL || 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });

@@ -1,0 +1,70 @@
+model Geo_MDD {
+  id                        String          @id @default(uuid())
+  POINT_ID                  String
+  SAMPLE_TOP                Float
+  SAMPLE_REFERENCE          String
+  SAMPLE_TYPE               String
+  SAMPLE_ID                 String
+  SPECIMEN_TOP              Float
+  SPECIMEN_REFERENCE        String
+  ITEM                      Float
+  Description               String?
+  MC                        Float?
+  DryDensity                Float?
+  Remarks                   String?
+  Method                    String
+  SpecimenGeoID             String?
+  LastModifiedDate          String?
+  NMC                       Float?
+  MethodName                String
+  AGScode                   String
+  DateSampled               String
+  ShearVaneMethod           String?
+  DateTested                String
+  DateChecked               String
+  BulkDensity               Float?
+  SolidDensity              Float?
+  AirVoids                  Float?
+  ShearStrengthPeakCorrected Int?
+  
+  // Additional fields from JSON data
+  type                      String?
+  name                      String?
+  chainage                  Float?
+  distance_to_alignment     Float?
+  angle_to_alignment_deg_cc Float?
+  construction_subzone      String?
+  x                         Float?
+  y                         Float?
+  spatial_reference         Float?
+  DepthBase                 Float?
+  RL                        Float?
+  SampleDepthRL             Float?
+  Chainage                  Float?
+  O2NLstage                 String?
+  SolidDensitySource        String?
+  location_id               String?
+  easting                   Float?
+  national_g                String?
+  northing                  Float?
+  local_datu                String?
+  geological_unit           String?
+  
+  // Relationship to MDDResult
+  mdd_results               Geo_MDD_Result[]
+  
+  @@map("Geo_MDD")
+}
+
+model Geo_MDD_Result {
+  id                String              @id @default(uuid())
+  test_no           Int
+  water_content     Float
+  dry_density       Float
+  
+  // Relationship to parent Geo_MDD
+  mddId             String
+  mdd               Geo_MDD             @relation(fields: [mddId], references: [id], onDelete: Cascade)
+  
+  @@map("Geo_MDD_Result")
+}

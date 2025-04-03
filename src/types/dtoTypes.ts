@@ -127,4 +127,158 @@ export interface LegacyStaffFTEDTO {
   [key: string]: string | number | Date; // Allow dynamic month columns
 }
 
+// MDD DTOs
+export interface GeoMDDResultDTO {
+  id?: string;
+  test_no: number;
+  water_content: number;
+  dry_density: number;
+  mddId: string;
+}
+
+export interface GeoMDDDTO {
+  id?: string;
+  POINT_ID: string;
+  SAMPLE_TOP: number;
+  SAMPLE_REFERENCE: string;
+  SAMPLE_TYPE: string;
+  SAMPLE_ID: string;
+  SPECIMEN_TOP: number;
+  SPECIMEN_REFERENCE: string;
+  ITEM: number;
+  Description?: string;
+  MC?: number;
+  DryDensity?: number;
+  Remarks?: string;
+  Method: string;
+  SpecimenGeoID?: string;
+  LastModifiedDate?: string;
+  NMC?: number;
+  MethodName: string;
+  AGScode?: string;
+  DateSampled: string;
+  ShearVaneMethod?: string;
+  DateTested: string;
+  DateChecked: string;
+  BulkDensity?: number;
+  SolidDensity?: number;
+  AirVoids?: number;
+  ShearStrengthPeakCorrected?: number;
+  
+  // Additional fields from updated schema
+  type?: string;
+  name?: string;
+  chainage?: number;
+  distance_to_alignment?: number;
+  angle_to_alignment_deg_cc?: number;
+  construction_subzone?: string;
+  x?: number;
+  y?: number;
+  spatial_reference?: number;
+  DepthBase?: number;
+  RL?: number;
+  SampleDepthRL?: number;
+  Chainage?: number;
+  O2NLstage?: string;
+  SolidDensitySource?: string;
+  location_id?: string;
+  easting?: number;
+  national_g?: string;
+  northing?: number;
+  local_datu?: string;
+  geological_unit?: string;
+  
+  mdd_results?: GeoMDDResultDTO[];
+  latLng?: [number, number]; // WGS84 coordinates [lat, lng] for mapping
+}
+
+export interface GeoMDDResponseDTO {
+  data: GeoMDDDTO[];
+  meta: {
+    total: number;
+  };
+}
+
+export interface GeoMDDFiltersDTO {
+  POINT_ID?: string;
+  SAMPLE_ID?: string;
+  SPECIMEN_REFERENCE?: string;
+}
+
+// CBR DTOs
+export interface GeoCBRDTO {
+  id?: string;
+  sample_id: string;
+  investigation_id: string;
+  full_investigation_id: string;
+  depth_to: number;
+  depth_bottom: number;
+  RL?: number;
+  sample_depth_RL?: number;
+  chainage?: number;
+  geocodes?: string;
+  o2nl_stage?: string;
+  lab_request?: string;
+  surcharge_mass?: number;
+  treatment?: string;
+  bulk_density?: number;
+  dry_density?: number;
+  water_content_compacted?: number;
+  water_content_plunger?: number;
+  cbr_perc?: number;
+  penetration?: string;
+  swell_perc?: number;
+  oversize_material_perc?: number;
+  remarks?: string;
+  geological_unit?: string;
+  latLng?: [number, number]; // WGS84 coordinates [lat, lng] for mapping
+}
+
+export interface GeoCBRResponseDTO {
+  data: GeoCBRDTO[];
+  meta: {
+    total: number;
+  };
+}
+
+export interface GeoCBRFiltersDTO {
+  sample_id?: string;
+  investigation_id?: string;
+  geological_unit?: string;
+  o2nl_stage?: string;
+}
+
+// LabGrading DTOs
+export interface GeoLabGradingDTO {
+  id?: string;
+  point_id: string;
+  latitude: number;
+  longitude: number;
+  national_east: number;
+  national_north: number;
+  national_elevation: number;
+  geology_description?: string;
+  material_id?: string;
+  sample_top?: number;
+  sample_reference?: string;
+  sample_id?: string;
+  item: number;
+  perc_passing: number;
+  latLng?: [number, number]; // WGS84 coordinates [lat, lng] for mapping
+}
+
+export interface GeoLabGradingResponseDTO {
+  data: GeoLabGradingDTO[];
+  meta: {
+    total: number;
+  };
+}
+
+export interface GeoLabGradingFiltersDTO {
+  point_id?: string;
+  sample_id?: string;
+  material_id?: string;
+  geology_description?: string;
+}
+
 // Add other DTOs here as needed

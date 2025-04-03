@@ -7,6 +7,8 @@ const GeotechnicalTests = React.lazy(() => import('@components/DashboardGroups/G
 const SPTDashboard = React.lazy(() => import('@components/Dashboards/Geo/SPT'));
 const PSDDashboard = React.lazy(() => import('@components/Dashboards/Geo/PSD'));
 const MDDDashboard = React.lazy(() => import('@components/Dashboards/Geo/MDD'));
+const CBRDashboard = React.lazy(() => import('@components/Dashboards/Geo/CBR'));
+const LabGradingDashboard = React.lazy(() => import('@components/Dashboards/Geo/LabGrading/GeoDashboardLabGrading'));
 
 const GeotechnicalRoutes: React.FC = () => {
   return (
@@ -16,6 +18,8 @@ const GeotechnicalRoutes: React.FC = () => {
         <Route path="spt" element={<SPTDashboard />} />
         <Route path="psd" element={<PSDDashboard />} />
         <Route path="mdd" element={<MDDDashboard />} />
+        <Route path="cbr" element={<CBRDashboard />} />
+        <Route path="labgrading" element={<LabGradingDashboard />} />
         <Route path="*" element={<Navigate to="/geotechnical" replace />} />
       </Routes>
     </React.Suspense>

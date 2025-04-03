@@ -1,23 +1,23 @@
 // Staff FTE Model
 model O2NL_Staff {
   id                           String     @id @default(uuid())
-  disciplineManager            String     @map("Discipline_Manager")
-  team                         String     @map("Team")  
-  location                     String     @map("Location")
-  nopType                      String     @map("NOP_Type")
-  org                          String     @map("Org")
-  projectRoleTitle             String     @map("Project_Role_Title")
-  jobCode                      String     @map("Job_Code")
-  phase                        String     @map("Phase")
-  name                         String     @map("Name")
-  status                       String     @map("Status")
-  lastUpdatedConf              String     @map("Last_updated_conf")
-  resourceOptions              String     @map("Resource_Options")
-  taitokoLevinSiteBased        String     @map("Taitoko_Levin_Site_Based_")
-  pricingPGProfDirectWorks     String     @map("Pricing_P_G___Prof___Direct_Works")
-  fteAve                       Float      @map("FTE__AVE_")
-  requiredStart                DateTime   @map("Required_Start")
-  requiredFinish               DateTime   @map("Required_Finish")
+  disciplineManager            String     
+  team                         String     
+  location                     String     
+  nopType                      String     
+  org                          String     
+  projectRoleTitle             String     
+  jobCode                      String     
+  phase                        String     
+  name                         String     
+  status                       String     
+  lastUpdatedConf              String     
+  resourceOptions              String     
+  taitokoLevinSiteBased        String     
+  pricingPGProfDirectWorks     String     
+  fteAve                       Float      
+  requiredStart                DateTime   
+  requiredFinish               DateTime   
   monthlyFTE                   Json       // Store monthly FTE data as JSON
   createdAt                    DateTime   @default(now())
   updatedAt                    DateTime   @updatedAt

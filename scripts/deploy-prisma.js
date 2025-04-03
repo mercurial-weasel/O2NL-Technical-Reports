@@ -1,24 +1,26 @@
 import { execSync } from 'child_process';
-import dotenv from 'dotenv';
+import 'dotenv-flow/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { setupDatabaseEnvironment } from './setup-database-env.js';
 
 // Get the directory name correctly in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load environment variables from .env file
-dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
+// Setup database environment variables based on VITE_DATABASE_SELECTION
+setupDatabaseEnvironment();
 
 /**
  * Deploy Prisma schema to Supabase
  */
 async function deployPrisma() {
   try {
-    console.log('Running Prisma migrations to deploy schema...');
+    console.log(`Running Prisma migrations to deploy schema for ${process.env.NODE_ENV} environment...`);
+    console.log(`Using database: ${process.env.DATABASE_URL ? 'Configured' : 'Not configured'}`);
     
     // First, merge all model files into schema.prisma
-    execSync('node prisma/mergePrismaSchema.js', { stdio: 'inherit' });
+    execSync('npm run prisma:merge', { stdio: 'inherit' });
     
     // Generate Prisma client
     console.log('Generating Prisma client...');

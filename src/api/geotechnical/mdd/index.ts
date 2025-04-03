@@ -6,6 +6,3 @@ export * from './client';
 
 // Export data transformations
 export * from './transformations';
-
-// Export mock data for development
-export { mockTestData } from './mock-data';
